@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_QkBosgItQK3deU1J",
+        "type": "tab",
+        "createdDate": "2024-05-20T17:42:17.400Z",
+        "label": "Virtual",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "VirtualComponent"
+    },
+    {
+        "id": "sd_BDcLYjKItmVaXcOe",
+        "type": "OnInit",
+        "z": "sd_QkBosgItQK3deU1J",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_BDcLYjKItmVaXcOe",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_irUDg3bGn8kv2b67"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "VirtualComponent"
+    },
+    {
+        "id": "sd_irUDg3bGn8kv2b67",
+        "type": "PageVariables",
+        "z": "sd_QkBosgItQK3deU1J",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_irUDg3bGn8kv2b67",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "VirtualComponent",
+        "generated": true
+    }
+]

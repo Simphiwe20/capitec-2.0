@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_56bgfkbB5gVf3yFa",
+        "type": "tab",
+        "createdDate": "2024-05-17T10:31:05.796Z",
+        "label": "stop_card",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "stop_cardComponent"
+    },
+    {
+        "id": "sd_by2uFppcEbbR0WuN",
+        "type": "OnInit",
+        "z": "sd_56bgfkbB5gVf3yFa",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_by2uFppcEbbR0WuN",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_703p5W0lnvyVWf24"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "stop_cardComponent"
+    },
+    {
+        "id": "sd_703p5W0lnvyVWf24",
+        "type": "PageVariables",
+        "z": "sd_56bgfkbB5gVf3yFa",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_703p5W0lnvyVWf24",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "stop_cardComponent",
+        "generated": true
+    }
+]

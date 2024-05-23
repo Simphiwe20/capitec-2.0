@@ -1,0 +1,134 @@
+[
+    {
+        "id": "sd_GJ607pC0jhkE5y3s",
+        "type": "tab",
+        "createdDate": "2024-05-17T10:24:32.902Z",
+        "label": "activation_instructions",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "activation_instructionsComponent"
+    },
+    {
+        "id": "sd_HMDPIUvK8uKVkIqB",
+        "type": "OnInit",
+        "z": "sd_GJ607pC0jhkE5y3s",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_HMDPIUvK8uKVkIqB",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_HPtLA5FT2M4iizJr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "activation_instructionsComponent"
+    },
+    {
+        "id": "sd_HPtLA5FT2M4iizJr",
+        "type": "PageVariables",
+        "z": "sd_GJ607pC0jhkE5y3s",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "routeData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_HPtLA5FT2M4iizJr",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "activation_instructionsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_X1Q56T4sYoSqZZr0",
+        "type": "PageStart",
+        "z": "sd_GJ607pC0jhkE5y3s",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "route",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "route",
+        "category": "General",
+        "x": 40,
+        "y": 140,
+        "wires": [
+            [
+                "sd_numKQxnBkjmM5McI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "activation_instructionsComponent"
+    },
+    {
+        "id": "sd_numKQxnBkjmM5McI",
+        "type": "Script",
+        "z": "sd_GJ607pC0jhkE5y3s",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.routeData = {data: 'activate_app'}",
+        "functionName": "sd_numKQxnBkjmM5McI",
+        "category": "Function",
+        "x": 145,
+        "y": 140,
+        "wires": [
+            [
+                "sd_cumKsxX0Tfg64LaQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "activation_instructionsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cumKsxX0Tfg64LaQ",
+        "type": "Navigation",
+        "z": "sd_GJ607pC0jhkE5y3s",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/prepare_for_selfie",
+        "qparamsMap": {
+            "type": "this.page",
+            "value": "routeData"
+        },
+        "functionName": "sd_cumKsxX0Tfg64LaQ",
+        "category": "Navigation",
+        "x": 280,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "activation_instructionsComponent",
+        "generated": true
+    }
+]

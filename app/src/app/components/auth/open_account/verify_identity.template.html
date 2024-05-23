@@ -1,0 +1,57 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="border-btm-cyan-b bg-blue height-50px" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="color-w">arrow_back</mat-icon>
+      <div fxLayout="column wrap" class="color-w poppins" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+        <p class="no-margin">
+          Step 1 of 8</p>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="height-50px bg-blue" fxLayoutAlign="center center" [fxShow]="true">
+      <div class="color-w">
+        <small>Verify your identity</small>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="bg-white" fxLayoutGap="0.5em" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="./Web/Images/id-pic.png" style="width: 130px; height: 140px">
+      <div>
+        First, we&apos;ll check that it&apos;s really you</div>
+    </div>
+    <form style="margin-top: 10px">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [required]="false">
+          <mat-label>Full name</mat-label> <mat-icon matSuffix>infor</mat-icon>
+        </mat-form-field><small class="poppins padding-0_75em">
+          First and last name as they appear to your ID</small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [required]="false">
+          <mat-label>SA ID number</mat-label> <mat-icon matSuffix>infor</mat-icon>
+        </mat-form-field><small class="poppins padding-0_75em">
+          You must be 16 years or older</small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [required]="false">
+          <mat-label>Email address</mat-label> <mat-icon matSuffix>infor</mat-icon>
+        </mat-form-field><small class="poppins padding-0_75em">
+          We will verify this email address by email</small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div class="height-50px start-center flex border-blue">
+          <input type="file" class="margin-left-12px" title="Certified ID">
+        </div><small class="poppins padding-0_75em">
+          Certified ID document </small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div class="start-center flex height-50px border-blue">
+          <input type="file" class="margin-left-12px" title="Proof of residence">
+        </div><small class="poppins padding-0_75em">
+          Proof of residence must have your full name</small>
+      </div>
+      <div fxLayout="column wrap" class="margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/prepare_for_selfie" class="bg-blue color-w get-started-btn">Continue</button></div>
+      <div class="text-center poppins no-margin">
+        Your personal information is safe with us</div>
+    </form>
+  </div>
+</div>

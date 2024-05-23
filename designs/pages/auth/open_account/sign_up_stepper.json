@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_zmlCOfxxm8xCmARF",
+        "type": "tab",
+        "createdDate": "2024-05-17T10:28:06.534Z",
+        "label": "sign_up_stepper",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "sign_up_stepperComponent"
+    },
+    {
+        "id": "sd_p57gC29wUTWftUtm",
+        "type": "OnInit",
+        "z": "sd_zmlCOfxxm8xCmARF",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_p57gC29wUTWftUtm",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_8oEnW82uozVbOdt3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sign_up_stepperComponent"
+    },
+    {
+        "id": "sd_8oEnW82uozVbOdt3",
+        "type": "PageVariables",
+        "z": "sd_zmlCOfxxm8xCmARF",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_8oEnW82uozVbOdt3",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sign_up_stepperComponent",
+        "generated": true
+    }
+]

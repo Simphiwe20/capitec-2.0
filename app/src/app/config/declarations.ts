@@ -1,0 +1,294 @@
+// _neu_generated_code__dont_modify_directly_
+import { NeutrinosAuthGuardService } from 'neutrinos-oauth-client';
+import { PageNotFoundComponent } from '../not-found.component';
+import { LayoutComponent } from '../layout/layout.component';
+import { ImgSrcDirective } from '../directives/imgSrc.directive';
+import { APP_INITIALIZER } from '@angular/core';
+import { NDataSourceService } from '../n-services/n-dataSorce.service';
+import { environment } from '../../environments/environment';
+import { NLocaleResource } from '../n-services/n-localeResources.service';
+import { NAuthGuardService } from 'neutrinos-seed-services';
+import { ArtImgSrcDirective } from '../directives/artImgSrc.directive';
+import { localesService } from '../../../baseClasses/localesService';
+
+window['neutrinos'] = {
+  environments: environment,
+};
+
+//CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-savingsComponent
+import { savingsComponent } from '../components/savings/savings.component';
+//CORE_REFERENCE_IMPORT-tailor_made_cardComponent
+import { tailor_made_cardComponent } from '../components/shared/tailor_made_card.component';
+//CORE_REFERENCE_IMPORT-favouritesComponent
+import { favouritesComponent } from '../components/home/favourites.component';
+//CORE_REFERENCE_IMPORT-inboxComponent
+import { inboxComponent } from '../components/messages/inbox.component';
+//CORE_REFERENCE_IMPORT-transactionsComponent
+import { transactionsComponent } from '../components/messages/transactions.component';
+//CORE_REFERENCE_IMPORT-long_card1Component
+import { long_card1Component } from '../components/shared/long_card1.component';
+//CORE_REFERENCE_IMPORT-exploreComponent
+import { exploreComponent } from '../components/explore/explore.component';
+//CORE_REFERENCE_IMPORT-transactComponent
+import { transactComponent } from '../components/transact/transact.component';
+//CORE_REFERENCE_IMPORT-messagesComponent
+import { messagesComponent } from '../components/messages/messages.component';
+//CORE_REFERENCE_IMPORT-cards_landingComponent
+import { cards_landingComponent } from '../components/cards/cards_landing.component';
+//CORE_REFERENCE_IMPORT-VirtualComponent
+import { VirtualComponent } from '../components/cards/virtual/Virtual.component';
+//CORE_REFERENCE_IMPORT-cardsComponent
+import { cardsComponent } from '../components/cards/physical/cards.component';
+//CORE_REFERENCE_IMPORT-home_footerComponent
+import { home_footerComponent } from '../components/shared/home_footer.component';
+//CORE_REFERENCE_IMPORT-logged_in_landingComponent
+import { logged_in_landingComponent } from '../components/landings/logged_in_landing.component';
+//CORE_REFERENCE_IMPORT-medium_cardComponent
+import { medium_cardComponent } from '../components/shared/medium_card.component';
+//CORE_REFERENCE_IMPORT-long_cardComponent
+import { long_cardComponent } from '../components/shared/long_card.component';
+//CORE_REFERENCE_IMPORT-activation_codeComponent
+import { activation_codeComponent } from '../components/auth/activate_app/activation_code.component';
+//CORE_REFERENCE_IMPORT-activate_with_emailComponent
+import { activate_with_emailComponent } from '../components/auth/activate_app/activate_with_email.component';
+//CORE_REFERENCE_IMPORT-activation_optionsComponent
+import { activation_optionsComponent } from '../components/auth/activate_app/activation_options.component';
+//CORE_REFERENCE_IMPORT-homeComponent
+import { homeComponent } from '../components/home/home.component';
+//CORE_REFERENCE_IMPORT-unable_to_captureComponent
+import { unable_to_captureComponent } from '../components/shared/unable_to_capture.component';
+//CORE_REFERENCE_IMPORT-take_selfieComponent
+import { take_selfieComponent } from '../components/shared/take_selfie.component';
+//CORE_REFERENCE_IMPORT-activate_appComponent
+import { activate_appComponent } from '../components/auth/company/activate_app/activate_app.component';
+//CORE_REFERENCE_IMPORT-open_accComponent
+import { open_accComponent } from '../components/auth/company/open_account/open_acc.component';
+//CORE_REFERENCE_IMPORT-verify_identityComponent
+import { verify_identityComponent } from '../components/auth/open_account/verify_identity.component';
+//CORE_REFERENCE_IMPORT-sign_up_stepperComponent
+import { sign_up_stepperComponent } from '../components/auth/open_account/sign_up_stepper.component';
+//CORE_REFERENCE_IMPORT-prepare_for_selfieComponent
+import { prepare_for_selfieComponent } from '../components/auth/open_account/prepare_for_selfie.component';
+//CORE_REFERENCE_IMPORT-instructionsComponent
+import { instructionsComponent } from '../components/auth/open_account/instructions.component';
+//CORE_REFERENCE_IMPORT-sign_in_stepperComponent
+import { sign_in_stepperComponent } from '../components/auth/activate_app/sign_in_stepper.component';
+//CORE_REFERENCE_IMPORT-saving_accountComponent
+import { saving_accountComponent } from '../components/auth/activate_app/saving_account.component';
+//CORE_REFERENCE_IMPORT-remote_app_pinComponent
+import { remote_app_pinComponent } from '../components/auth/activate_app/remote_app_pin.component';
+//CORE_REFERENCE_IMPORT-footerComponent
+import { footerComponent } from '../components/auth/activate_app/footer.component';
+//CORE_REFERENCE_IMPORT-feedbackComponent
+import { feedbackComponent } from '../components/auth/activate_app/feedback.component';
+//CORE_REFERENCE_IMPORT-enter_remote_pinComponent
+import { enter_remote_pinComponent } from '../components/auth/activate_app/enter_remote_pin.component';
+//CORE_REFERENCE_IMPORT-create_remote_pinComponent
+import { create_remote_pinComponent } from '../components/auth/activate_app/create_remote_pin.component';
+//CORE_REFERENCE_IMPORT-confirm_app_activationComponent
+import { confirm_app_activationComponent } from '../components/auth/activate_app/confirm_app_activation.component';
+//CORE_REFERENCE_IMPORT-activation_instructionsComponent
+import { activation_instructionsComponent } from '../components/auth/activate_app/activation_instructions.component';
+//CORE_REFERENCE_IMPORT-stepperComponent
+import { stepperComponent } from '../components/shared/stepper.component';
+//CORE_REFERENCE_IMPORT-landingComponent
+import { landingComponent } from '../components/landings/landing.component';
+//CORE_REFERENCE_IMPORT-ft_landingComponent
+import { ft_landingComponent } from '../components/landings/ft_landing.component';
+//CORE_REFERENCE_IMPORT-update_temporary_limitsComponent
+import { update_temporary_limitsComponent } from '../components/cards/physical/update_temporary_limits.component';
+//CORE_REFERENCE_IMPORT-stop_cardComponent
+import { stop_cardComponent } from '../components/cards/physical/stop_card.component';
+//CORE_REFERENCE_IMPORT-tap_to_payComponent
+import { tap_to_payComponent } from '../components/cards/physical/tap_to_pay.component';
+//CORE_REFERENCE_IMPORT-set_temporary_limitsComponent
+import { set_temporary_limitsComponent } from '../components/cards/physical/set_temporary_limits.component';
+
+/**
+ * Reads datasource object and injects the datasource object into window object
+ * Injects the imported environment object into the window object
+ *
+ */
+export function startupServiceFactory(startupService: NDataSourceService) {
+  return () => {
+    return new Promise((resolve, reject) => {
+      startupService.getDataSource().then(() => {
+        localesService.init().then(() => {
+          resolve(null);
+        });
+      });
+    });
+  };
+}
+
+/**
+ *bootstrap for @NgModule
+ */
+export const appBootstrap: any = [LayoutComponent];
+
+/**
+ *declarations for @NgModule
+ */
+export const appDeclarations = [
+  ImgSrcDirective,
+  LayoutComponent,
+  PageNotFoundComponent,
+  ArtImgSrcDirective,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-savingsComponent
+  savingsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tailor_made_cardComponent
+  tailor_made_cardComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-favouritesComponent
+  favouritesComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-inboxComponent
+  inboxComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-transactionsComponent
+  transactionsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-long_card1Component
+  long_card1Component,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-exploreComponent
+  exploreComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-transactComponent
+  transactComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-messagesComponent
+  messagesComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-cards_landingComponent
+  cards_landingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-VirtualComponent
+  VirtualComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-cardsComponent
+  cardsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-home_footerComponent
+  home_footerComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-logged_in_landingComponent
+  logged_in_landingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-medium_cardComponent
+  medium_cardComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-long_cardComponent
+  long_cardComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-activation_codeComponent
+  activation_codeComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-activate_with_emailComponent
+  activate_with_emailComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-activation_optionsComponent
+  activation_optionsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
+  homeComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-unable_to_captureComponent
+  unable_to_captureComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-take_selfieComponent
+  take_selfieComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-activate_appComponent
+  activate_appComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-open_accComponent
+  open_accComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-verify_identityComponent
+  verify_identityComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-sign_up_stepperComponent
+  sign_up_stepperComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-prepare_for_selfieComponent
+  prepare_for_selfieComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-instructionsComponent
+  instructionsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-sign_in_stepperComponent
+  sign_in_stepperComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-saving_accountComponent
+  saving_accountComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-remote_app_pinComponent
+  remote_app_pinComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-footerComponent
+  footerComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-feedbackComponent
+  feedbackComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-enter_remote_pinComponent
+  enter_remote_pinComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-create_remote_pinComponent
+  create_remote_pinComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-confirm_app_activationComponent
+  confirm_app_activationComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-activation_instructionsComponent
+  activation_instructionsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-stepperComponent
+  stepperComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
+  landingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-ft_landingComponent
+  ft_landingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_temporary_limitsComponent
+  update_temporary_limitsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-stop_cardComponent
+  stop_cardComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tap_to_payComponent
+  tap_to_payComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-set_temporary_limitsComponent
+  set_temporary_limitsComponent,
+];
+
+/**
+ * provider for @NgModule
+ */
+export const appProviders = [
+  NDataSourceService,
+  NLocaleResource,
+  {
+    // Provider for APP_INITIALIZER
+    provide: APP_INITIALIZER,
+    useFactory: startupServiceFactory,
+    deps: [NDataSourceService],
+    multi: true,
+  },
+  NAuthGuardService,
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+];
+
+/**
+ * Routes available for bApp
+ */
+
+// CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
+export const appRoutes = [
+  { path: 'ft-landing', component: ft_landingComponent },
+  { path: 'stepper', component: stepperComponent },
+  { path: 'sign_in_stepper', component: sign_in_stepperComponent },
+  { path: 'sign_up_stepper', component: sign_up_stepperComponent },
+  { path: 'company_activate', component: activate_appComponent },
+  { path: 'company_open_account', component: open_accComponent },
+  { path: 'open_account_instructions', component: instructionsComponent },
+  { path: 'basic_details', component: verify_identityComponent },
+  { path: 'prepare_for_selfie', component: prepare_for_selfieComponent },
+  { path: 'account_number', component: saving_accountComponent },
+  { path: 'enter_remote_pin', component: enter_remote_pinComponent },
+  {
+    path: 'confirm_app_activation',
+    component: confirm_app_activationComponent,
+  },
+  {
+    path: 'app_activation_instructions',
+    component: activation_instructionsComponent,
+  },
+  { path: 'take_selfie', component: take_selfieComponent },
+  { path: 'unable_to_capture', component: unable_to_captureComponent },
+  { path: 'home', component: homeComponent },
+  { path: 'feedback', component: feedbackComponent },
+  { path: 'activation_options', component: activation_optionsComponent },
+  { path: 'activate_with_email', component: activate_with_emailComponent },
+  { path: 'activation_code', component: activation_codeComponent },
+  {
+    path: 'logged_in_landing',
+    component: logged_in_landingComponent,
+    children: [
+      { path: 'home', component: homeComponent },
+      { path: 'cards', component: cards_landingComponent },
+      { path: 'transact', component: transactComponent },
+      { path: 'messages', component: messagesComponent },
+      { path: 'explore', component: exploreComponent },
+      { path: 'favourites', component: favouritesComponent },
+      { path: 'savings_account', component: savingsComponent },
+    ],
+  },
+  { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent },
+];
+// CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

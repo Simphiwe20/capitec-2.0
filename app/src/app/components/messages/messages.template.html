@@ -1,0 +1,11 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="border-btm-cyan-b bg-blue" fxLayoutAlign="start center" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true">
+        <div class="poppins color-w">
+          Message</div>
+      </div><mat-icon class="margin-left-12px color-w">settings</mat-icon>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-tab-group mat-align-tabs="start"><mat-tab label="Transactions" class="full-height"><bh-transactions></bh-transactions></mat-tab><mat-tab label="Inbox"><bh-inbox></bh-inbox></mat-tab></mat-tab-group></div>
+  </div>
+</div>

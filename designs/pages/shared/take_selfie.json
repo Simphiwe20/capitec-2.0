@@ -1,0 +1,634 @@
+[
+    {
+        "id": "sd_G1lYK36VLiHR1778",
+        "type": "tab",
+        "createdDate": "2024-05-19T09:35:43.592Z",
+        "label": "take_selfie",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_hSHgrV075PepeMKt",
+        "type": "OnInit",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_hSHgrV075PepeMKt",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_yM7Cfi5ZuBP6isnN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_KWg4ptS7NlnGR7eG",
+        "type": "PageVariables",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "video",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "similiarityValue",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0.5029092815091631"
+                }
+            },
+            {
+                "textIp": "detectVideoFace",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "detected",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "intervalID",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "videoStream",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_KWg4ptS7NlnGR7eG",
+        "category": "Function",
+        "x": 445,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YIKzF5GhLrdQCfLs",
+        "type": "Script",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.video = bh.pageViews.video\npage.video.nativeElement.controls = false\nconsole.log(page.video)\nconsole.log(bh)",
+        "functionName": "sd_YIKzF5GhLrdQCfLs",
+        "category": "Function",
+        "x": 325,
+        "y": 140,
+        "wires": [
+            [
+                "sd_zdutScQeAYqmLzib"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3fQHtlJC7yyEgGva",
+        "type": "AfterViewInit",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "After View Init",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 60,
+        "y": 140,
+        "wires": [
+            [
+                "sd_9BqAWCoEJNfttuZB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_CL6VBcskCuJZ0KdU",
+        "type": "UseDependency",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "ViewChild",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/core",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_CL6VBcskCuJZ0KdU",
+        "category": "Function",
+        "x": 245,
+        "y": 40,
+        "wires": [
+            [
+                "sd_6xpH57tjRBbrXMO2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9BqAWCoEJNfttuZB",
+        "type": "ViewPicker",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "str",
+                    "value": "video"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_9BqAWCoEJNfttuZB",
+        "category": "Function",
+        "x": 145,
+        "y": 140,
+        "wires": [
+            [
+                "sd_YIKzF5GhLrdQCfLs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ZQ3FkIARQ2zAUqik",
+        "type": "PageStart",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "startVideo",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "startVideo",
+        "category": "General",
+        "x": 65,
+        "y": 340,
+        "wires": [
+            [
+                "sd_SNdARB2MWIUjYKxX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_zdutScQeAYqmLzib",
+        "type": "PageCallService",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_G1lYK36VLiHR1778",
+            "type": "tab",
+            "createdDate": "2024-05-19T09:35:43.592Z",
+            "label": "take_selfie",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_R4Q96rbs43tqihPQ",
+            "flowName": "fetchModels"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "fetchModels",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_zdutScQeAYqmLzib",
+        "category": "General",
+        "x": 445,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_SNdARB2MWIUjYKxX",
+        "type": "Script",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.videoStream = page.video.nativeElement;\n\nif('mediaDevices' in navigator) {\n    navigator.mediaDevices.getUserMedia({video: {}, audio: false})\n        .then((mediaStream) => {\n            page.videoStream.srcObject = mediaStream\n            page.videoStream.onloadedmetadata = () => {\n                page.videoStream.play()\n            }\n        })\n        .catch( (err) =>{\n            console.log('Playing a video error', err)\n        }\n    ) \n}\n\nconsole.log(faceapi)\n",
+        "functionName": "sd_SNdARB2MWIUjYKxX",
+        "category": "Function",
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "sd_kxpmd5c4f2S05N4B"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_jInIYXXYVGmp5z3L",
+        "type": "Script",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "await Promise.all([faceapi.nets.tinyFaceDetector.loadFromUri('../../assets/models'),\n        await faceapi.nets.faceLandmark68Net.loadFromUri('../../assets/models'),    \n        await faceapi.nets.faceRecognitionNet.loadFromUri('../../assets/models'),\n        await faceapi.nets.faceExpressionNet.loadFromUri('../../assets/models'),\n        ]).then(() => this.startVideo())",
+        "functionName": "sd_jInIYXXYVGmp5z3L",
+        "category": "Function",
+        "x": 305,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_R4Q96rbs43tqihPQ",
+        "type": "PageStart",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "fetchModels",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "fetchModels",
+        "category": "General",
+        "x": 185,
+        "y": 240,
+        "wires": [
+            [
+                "sd_jInIYXXYVGmp5z3L"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_HT4LcPxGtsoJbXfd",
+        "type": "PageAsync",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "flowNodes": [
+            {
+                "serviceId": "sd_G1lYK36VLiHR1778",
+                "serviceName": "take_selfie",
+                "flowId": "sd_R4Q96rbs43tqihPQ",
+                "flowName": "fetchModels",
+                "functionName": "fetchModels",
+                "inputParams": [],
+                "inputVariables": [],
+                "accept_bh": false,
+                "viewType": "pages",
+                "randomVal": 507015,
+                "relativePath": "./"
+            }
+        ],
+        "_flowNodes": [
+            {
+                "serviceId": "sd_G1lYK36VLiHR1778",
+                "serviceName": "take_selfie",
+                "flowId": "sd_R4Q96rbs43tqihPQ",
+                "flowName": "fetchModels",
+                "functionName": "fetchModels",
+                "inputParams": [],
+                "inputVariables": [],
+                "accept_bh": false,
+                "viewType": "pages",
+                "randomVal": 507015,
+                "relativePath": "./"
+            }
+        ],
+        "resultMapping": "bh.result",
+        "accept_csd": false,
+        "isValidNode": true,
+        "functionName": "sd_HT4LcPxGtsoJbXfd",
+        "category": "Function",
+        "x": 65,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_6xpH57tjRBbrXMO2",
+        "type": "UseDependency",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "faceapi",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.faceapi",
+        "alias": "faceapi",
+        "modules": [],
+        "import_all": true,
+        "library": "face-api.js",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_6xpH57tjRBbrXMO2",
+        "category": "Function",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            [
+                "sd_KWg4ptS7NlnGR7eG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_jPcPGdKnw2eSDp1Y",
+        "type": "PageStart",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "detectFace",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "detectFace",
+        "category": "General",
+        "x": 65,
+        "y": 440,
+        "wires": [
+            [
+                "sd_LXXiYoy52SuuzbIg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_LXXiYoy52SuuzbIg",
+        "type": "Script",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let videoFace = page.video.nativeElement\npage.intervalID = setInterval(async() => {\n    page.detectVideoFace = await faceapi.detectAllFaces(videoFace, new  faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions().withFaceDescriptors()\n    if(!page.detectVideoFace.length) {\n        page.detected = false\n    }else {\n        page.detected = true\n        console.log(page.detectVideoFace)\n        this.compare()\n    }\n}, 100)",
+        "functionName": "sd_LXXiYoy52SuuzbIg",
+        "category": "Function",
+        "x": 185,
+        "y": 440,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_kxpmd5c4f2S05N4B",
+        "type": "PageCallService",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_G1lYK36VLiHR1778",
+            "type": "tab",
+            "createdDate": "2024-05-19T09:35:43.592Z",
+            "label": "take_selfie",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_jPcPGdKnw2eSDp1Y",
+            "flowName": "detectFace"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "detectFace",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_kxpmd5c4f2S05N4B",
+        "category": "General",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lsTYvhNsCCWlQsxb",
+        "type": "PageStart",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "compare",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "compare",
+        "category": "General",
+        "x": 65,
+        "y": 540,
+        "wires": [
+            [
+                "sd_nEaK8xVJNuiUGIUs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_SYRWXoozvB0Z6fFv",
+        "type": "Script",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let video = page.video.nativeElement;\nlet queryImage = bh.pageViews.queryImage.nativeElement\n\nlet detectqueryImage = await faceapi.detectSingleFace(queryImage, new  faceapi.TinyFaceDetectorOptions())\n                            .withFaceLandmarks().withFaceExpressions().withFaceDescriptor()\n\npage.detectVideoFace.forEach((singleFace: any) => {\n    let distance = faceapi.euclideanDistance(singleFace.descriptor, detectqueryImage.descriptor)\n    if(distance < page.similiarityValue) {\n        //clearInterval(page.intervalID)\n        console.log('You are Simphiwe')\n        page.router.navigate(['/feedback'])\n    }else {\n        // page.clearInterval(page.intervalID)\n        console.log('You are not Simphiwe')        \n        page.router.navigate(['/unable_to_capture'])\n\n    }\nclearInterval(page.intervalID)\n})\nnavigator.mediaDevices.getUserMedia({video: {}, audio: false})\n        .then((mediaStream) => {\n            mediaStream.getTracks().forEach(stream => {\n                console.log(stream)\n                stream.stop()\n            })\n            console.log(page.videoStream)\n            page.videoStream.srcObject = null\n            page.videoStream.stop()\n            console.log(mediaStream)\n        })",
+        "functionName": "sd_SYRWXoozvB0Z6fFv",
+        "category": "Function",
+        "x": 245,
+        "y": 540,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_nEaK8xVJNuiUGIUs",
+        "type": "ViewPicker",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "str",
+                    "value": "queryImage"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_nEaK8xVJNuiUGIUs",
+        "category": "Function",
+        "x": 145,
+        "y": 540,
+        "wires": [
+            [
+                "sd_SYRWXoozvB0Z6fFv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yM7Cfi5ZuBP6isnN",
+        "type": "UseDependency",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_yM7Cfi5ZuBP6isnN",
+        "category": "Function",
+        "x": 145,
+        "y": 40,
+        "wires": [
+            [
+                "sd_CL6VBcskCuJZ0KdU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    }
+]

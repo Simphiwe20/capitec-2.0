@@ -1,0 +1,78 @@
+[
+    {
+        "id": "sd_MncTxFOUMvrbvqkG",
+        "type": "tab",
+        "createdDate": "2024-05-20T12:06:52.589Z",
+        "label": "home_footer",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_AF8lhhmyqOMFCymo",
+        "type": "OnInit",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_AF8lhhmyqOMFCymo",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_fPLi930HWZQSny6s"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_fPLi930HWZQSny6s",
+        "type": "PageVariables",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_fPLi930HWZQSny6s",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_7gfjrecDpNKV8VUQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7gfjrecDpNKV8VUQ",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.menuItems = [\n        {image: '../../../assets/Web/Images/home.PNG', menuName: 'Home', routes: '/logged_in_landing/home'},\n        {image: '../../../assets/Web/Images/card.jpg', menuName: 'Cards', routes: '/logged_in_landing/cards'},\n        {image: '../../../assets/Web/Images/trans.jpg', menuName: 'Transact', routes: '/logged_in_landing/transact'},\n        {image: '../../../assets/Web/Images/message.png', menuName: 'Messages', routes: '/logged_in_landing/messages'},\n        {image: '../../../assets/Web/Images/explore.jpg', menuName: 'Explore', routes: '/logged_in_landing/explore'}\n\n]",
+        "functionName": "sd_7gfjrecDpNKV8VUQ",
+        "category": "Function",
+        "x": 320,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    }
+]

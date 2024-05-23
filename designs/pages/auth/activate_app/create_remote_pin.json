@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_WEKsF7yRmkag4gFe",
+        "type": "tab",
+        "createdDate": "2024-05-17T10:25:40.520Z",
+        "label": "create_remote_pin",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "create_remote_pinComponent"
+    },
+    {
+        "id": "sd_0LDPkx7xkOK660BW",
+        "type": "OnInit",
+        "z": "sd_WEKsF7yRmkag4gFe",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_0LDPkx7xkOK660BW",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_BxvJ6V0yYr8TPVNz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "create_remote_pinComponent"
+    },
+    {
+        "id": "sd_BxvJ6V0yYr8TPVNz",
+        "type": "PageVariables",
+        "z": "sd_WEKsF7yRmkag4gFe",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_BxvJ6V0yYr8TPVNz",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    }
+]

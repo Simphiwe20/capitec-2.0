@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_BWO8E66U1zymlBzE",
+        "type": "tab",
+        "createdDate": "2024-05-17T10:26:21.622Z",
+        "label": "footer",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "footerComponent"
+    },
+    {
+        "id": "sd_IBWVJ6TQjZtyWuGj",
+        "type": "OnInit",
+        "z": "sd_BWO8E66U1zymlBzE",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_IBWVJ6TQjZtyWuGj",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_bD8UjxZfmOimXIE1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "footerComponent"
+    },
+    {
+        "id": "sd_bD8UjxZfmOimXIE1",
+        "type": "PageVariables",
+        "z": "sd_BWO8E66U1zymlBzE",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_bD8UjxZfmOimXIE1",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "footerComponent",
+        "generated": true
+    }
+]

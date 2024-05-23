@@ -1,0 +1,128 @@
+{
+    "routes": [
+        {
+            "path": "ft-landing",
+            "component": "ft_landingComponent"
+        },
+        {
+            "path": "stepper",
+            "component": "stepperComponent"
+        },
+        {
+            "path": "sign_in_stepper",
+            "component": "sign_in_stepperComponent"
+        },
+        {
+            "path": "sign_up_stepper",
+            "component": "sign_up_stepperComponent"
+        },
+        {
+            "path": "company_activate",
+            "component": "activate_appComponent"
+        },
+        {
+            "path": "company_open_account",
+            "component": "open_accComponent"
+        },
+        {
+            "path": "open_account_instructions",
+            "component": "instructionsComponent"
+        },
+        {
+            "path": "basic_details",
+            "component": "verify_identityComponent"
+        },
+        {
+            "path": "prepare_for_selfie",
+            "component": "prepare_for_selfieComponent"
+        },
+        {
+            "path": "account_number",
+            "component": "saving_accountComponent"
+        },
+        {
+            "path": "enter_remote_pin",
+            "component": "enter_remote_pinComponent"
+        },
+        {
+            "path": "confirm_app_activation",
+            "component": "confirm_app_activationComponent"
+        },
+        {
+            "path": "app_activation_instructions",
+            "component": "activation_instructionsComponent"
+        },
+        {
+            "path": "take_selfie",
+            "component": "take_selfieComponent"
+        },
+        {
+            "path": "unable_to_capture",
+            "component": "unable_to_captureComponent"
+        },
+        {
+            "path": "home",
+            "component": "homeComponent"
+        },
+        {
+            "path": "feedback",
+            "component": "feedbackComponent"
+        },
+        {
+            "path": "activation_options",
+            "component": "activation_optionsComponent"
+        },
+        {
+            "path": "activate_with_email",
+            "component": "activate_with_emailComponent"
+        },
+        {
+            "path": "activation_code",
+            "component": "activation_codeComponent"
+        },
+        {
+            "path": "logged_in_landing",
+            "component": "logged_in_landingComponent",
+            "children": [
+                {
+                    "path": "home",
+                    "component": "homeComponent"
+                },
+                {
+                    "path": "cards",
+                    "component": "cards_landingComponent"
+                },
+                {
+                    "path": "transact",
+                    "component": "transactComponent"
+                },
+                {
+                    "path": "messages",
+                    "component": "messagesComponent"
+                },
+                {
+                    "path": "explore",
+                    "component": "exploreComponent"
+                },
+                {
+                    "path": "favourites",
+                    "component": "favouritesComponent"
+                },
+                {
+                    "path": "savings_account",
+                    "component": "savingsComponent"
+                }
+            ]
+        },
+        {
+            "path": "''",
+            "redirectTo": "/ft-landing",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}
