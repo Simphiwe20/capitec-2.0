@@ -119,18 +119,22 @@ export class long_card1Component {
               {
                 image: '../../../assets/Web/Images/pay_beneficiary.jpeg',
                 name: 'Pay beneficiary',
+                routes: '/logged_in_landing/pay_beneficiary',
               },
               {
                 image: '../../../assets/Web/Images/payshap.jpeg',
                 name: 'PayShap',
+                routes: '/logged_in_landing/payshap',
               },
               {
                 image: '../../../assets/Web/Images/pay_bills.jpeg',
                 name: 'Pay bills',
+                routes: '/logged_in_landing/pay_bills',
               },
               {
                 image: '../../../assets/Web/Images/international_payment.jpeg',
                 name: 'International payments',
+                routes: '/logged_in_landing/international_payment',
               },
             ],
           },
@@ -141,22 +145,27 @@ export class long_card1Component {
               {
                 image: '../../../assets/Web/Images/mobile_prepaid.jpg',
                 name: 'Buy prepaid mobile',
+                routes: '/logged_in_landing/buy_prepaid_mobile',
               },
               {
                 image: '../../../assets/Web/Images/electricity.jpg',
                 name: 'Buy electricity',
+                routes: '/logged_in_landing/buy_elecricity',
               },
               {
                 image: '../../../assets/Web/Images/lotto.jpeg',
                 name: 'Play Lotto',
+                routes: '/logged_in_landing/play_lotto',
               },
               {
                 image: '../../../assets/Web/Images/buy_voucher.jpeg',
                 name: 'Buy vouchers',
+                routes: '/logged_in_landing/buy_vouchers',
               },
               {
                 image: '../../../assets/Web/Images/renew_licence_disk.jpeg',
                 name: 'Renew licence disk',
+                routes: '/logged_in_landing/renew_licence_disk',
               },
             ],
           },
@@ -167,14 +176,17 @@ export class long_card1Component {
               {
                 image: '../../../assets/Web/Images/transfer_money.jpeg',
                 name: 'Transfer money',
+                routes: '/logged_in_landing/transfer_money',
               },
               {
                 image: '../../../assets/Web/Images/future_dated.jpeg',
                 name: 'Recurring/future-dated',
+                routes: '/logged_in_landing/future_date',
               },
               {
                 image: '../../../assets/Web/Images/send_cash.jpeg',
                 name: 'Send cash',
+                routes: '/logged_in_landing/send_cash',
               },
             ],
           },
@@ -185,14 +197,17 @@ export class long_card1Component {
               {
                 image: '../../../assets/Web/Images/scan_to_pay.jpeg',
                 name: 'Scan to pay',
+                routes: '/logged_in_landing/scan_to_pay',
               },
               {
                 image: '../../../assets/Web/Images/pay_me.jpeg',
                 name: 'Pay me',
+                routes: '/logged_in_landing/pay_me',
               },
               {
                 image: '../../../assets/Web/Images/capitec_pay.jpeg',
                 name: 'Capitec pay',
+                routes: '/logged_in_landing/capitec_pay',
               },
             ],
           },
@@ -203,10 +218,12 @@ export class long_card1Component {
               {
                 image: '../../../assets/Web/Images/debit_orders.jpeg',
                 name: 'Debit orders',
+                routes: '/logged_in_landing/debit_orders',
               },
               {
                 image: '../../../assets/Web/Images/sars_efiling.jpeg',
                 name: 'SARS eFilling',
+                routes: '/logged_in_landing/sars_efilling',
               },
             ],
           },
@@ -238,6 +255,7 @@ export class long_card1Component {
       //       page.cardsInfor = page.inbox
       // }
 
+      console.log(page.transact);
       bh = this.sd_riMs6rwXfSCR8v1E(bh);
       //appendnew_next_sd_R7SWodKRPlzn2QHr
       return bh;

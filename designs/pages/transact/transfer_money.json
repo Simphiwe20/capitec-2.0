@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_fcSYuUZ7W7jbO4T4",
+        "type": "tab",
+        "createdDate": "2024-05-07T18:39:41.920Z",
+        "label": "transfer_money",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "transfer_moneyComponent"
+    },
+    {
+        "id": "sd_9JJE1r6t5rU3CeIp",
+        "type": "OnInit",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_9JJE1r6t5rU3CeIp",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_HVeLHK8Jw8RAoyMc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "transfer_moneyComponent"
+    },
+    {
+        "id": "sd_HVeLHK8Jw8RAoyMc",
+        "type": "PageVariables",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_HVeLHK8Jw8RAoyMc",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    }
+]

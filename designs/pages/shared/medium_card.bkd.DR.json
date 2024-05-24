@@ -229,6 +229,12 @@
                             "_value": "let card of cardInfor.cards ",
                             "_type": "kv",
                             "_attrDef": "c"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "{{card.routes}}",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
                     "32a96a53-5bea-6195-3532-aca1c2e315fd": {

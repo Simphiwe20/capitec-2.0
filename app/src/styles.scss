@@ -273,6 +273,10 @@ body {
     margin: 0;
 }
 
+.no-margin-top {
+    margin-top: 0;
+}
+
 .margin-left-20px {
     margin-left: 20px;
 }
@@ -438,6 +442,13 @@ hr {
 
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
     border-color: $blue-ish;
+}
+
+.search-input {
+    input.mat-input-element {
+            height: 30px;
+            padding-left: 10px
+    }
 }
 
 .get-started-btn {

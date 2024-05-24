@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_xIZuhBBYE4iCz9hC",
+        "type": "tab",
+        "createdDate": "2024-05-20T08:03:30.129Z",
+        "label": "cellphone",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "cellphoneComponent"
+    },
+    {
+        "id": "sd_EvOjhlbEB71ykLuV",
+        "type": "OnInit",
+        "z": "sd_xIZuhBBYE4iCz9hC",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_EvOjhlbEB71ykLuV",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_rTnAgKOWPRBTKAfp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cellphoneComponent"
+    },
+    {
+        "id": "sd_rTnAgKOWPRBTKAfp",
+        "type": "PageVariables",
+        "z": "sd_xIZuhBBYE4iCz9hC",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_rTnAgKOWPRBTKAfp",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cellphoneComponent",
+        "generated": true
+    }
+]

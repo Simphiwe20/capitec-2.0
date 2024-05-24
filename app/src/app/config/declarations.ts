@@ -16,6 +16,40 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-infoComponent
+import { infoComponent } from '../components/auth/activate_app/info.component';
+//CORE_REFERENCE_IMPORT-scan_to_payComponent
+import { scan_to_payComponent } from '../components/more/scan_to_pay.component';
+//CORE_REFERENCE_IMPORT-choose_banksComponent
+import { choose_banksComponent } from '../components/transact/choose_banks.component';
+//CORE_REFERENCE_IMPORT-bank_accountComponent
+import { bank_accountComponent } from '../components/transact/bank_account.component';
+//CORE_REFERENCE_IMPORT-buy_prepaid_mobileComponent
+import { buy_prepaid_mobileComponent } from '../components/transact/buy_prepaid_mobile.component';
+//CORE_REFERENCE_IMPORT-creditComponent
+import { creditComponent } from '../components/explore/credit.component';
+//CORE_REFERENCE_IMPORT-loanComponent
+import { loanComponent } from '../components/explore/loan.component';
+//CORE_REFERENCE_IMPORT-get_estimateComponent
+import { get_estimateComponent } from '../components/explore/get_estimate.component';
+//CORE_REFERENCE_IMPORT-add_beneficiaryComponent
+import { add_beneficiaryComponent } from '../components/transact/add_beneficiary.component';
+//CORE_REFERENCE_IMPORT-add_electricity_benComponent
+import { add_electricity_benComponent } from '../components/transact/add_electricity_ben.component';
+//CORE_REFERENCE_IMPORT-buy_electricityComponent
+import { buy_electricityComponent } from '../components/transact/buy_electricity.component';
+//CORE_REFERENCE_IMPORT-buy_prepaidComponent
+import { buy_prepaidComponent } from '../components/transact/buy_prepaid.component';
+//CORE_REFERENCE_IMPORT-cellphoneComponent
+import { cellphoneComponent } from '../components/transact/cellphone.component';
+//CORE_REFERENCE_IMPORT-pay_userComponent
+import { pay_userComponent } from '../components/transact/pay_user.component';
+//CORE_REFERENCE_IMPORT-pay_beneficiaryComponent
+import { pay_beneficiaryComponent } from '../components/transact/pay_beneficiary.component';
+//CORE_REFERENCE_IMPORT-send_cashComponent
+import { send_cashComponent } from '../components/transact/send_cash.component';
+//CORE_REFERENCE_IMPORT-transfer_moneyComponent
+import { transfer_moneyComponent } from '../components/transact/transfer_money.component';
 //CORE_REFERENCE_IMPORT-savingsComponent
 import { savingsComponent } from '../components/savings/savings.component';
 //CORE_REFERENCE_IMPORT-tailor_made_cardComponent
@@ -136,6 +170,40 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-infoComponent
+  infoComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-scan_to_payComponent
+  scan_to_payComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-choose_banksComponent
+  choose_banksComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-bank_accountComponent
+  bank_accountComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_prepaid_mobileComponent
+  buy_prepaid_mobileComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-creditComponent
+  creditComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loanComponent
+  loanComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-get_estimateComponent
+  get_estimateComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-add_beneficiaryComponent
+  add_beneficiaryComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-add_electricity_benComponent
+  add_electricity_benComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_electricityComponent
+  buy_electricityComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_prepaidComponent
+  buy_prepaidComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-cellphoneComponent
+  cellphoneComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pay_userComponent
+  pay_userComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pay_beneficiaryComponent
+  pay_beneficiaryComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-send_cashComponent
+  send_cashComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-transfer_moneyComponent
+  transfer_moneyComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-savingsComponent
   savingsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tailor_made_cardComponent
@@ -286,6 +354,22 @@ export const appRoutes = [
       { path: 'explore', component: exploreComponent },
       { path: 'favourites', component: favouritesComponent },
       { path: 'savings_account', component: savingsComponent },
+      { path: 'transfer_money', component: transfer_moneyComponent },
+      { path: 'send_cash', component: send_cashComponent },
+      { path: 'pay_user', component: pay_userComponent },
+      { path: 'pay_beneficiary', component: pay_beneficiaryComponent },
+      { path: 'choose_bank', component: choose_banksComponent },
+      { path: 'cellphone', component: cellphoneComponent },
+      { path: 'buy_prepaid', component: buy_prepaidComponent },
+      { path: 'buy_prepaid_mobile', component: buy_prepaid_mobileComponent },
+      { path: 'buy_electricity', component: buy_electricityComponent },
+      { path: 'bank_account', component: bank_accountComponent },
+      { path: 'add_electricity_ben', component: add_electricity_benComponent },
+      { path: 'add_beneficiary', component: add_beneficiaryComponent },
+      { path: 'scan_to_pay', component: scan_to_payComponent },
+      { path: 'credit', component: creditComponent },
+      { path: 'get_estimate', component: get_estimateComponent },
+      { path: 'loan', component: loanComponent },
     ],
   },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },

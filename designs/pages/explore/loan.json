@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_7pAkxASWZpW70Cpj",
+        "type": "tab",
+        "createdDate": "2024-05-21T10:57:22.170Z",
+        "label": "loan",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "loanComponent"
+    },
+    {
+        "id": "sd_iesyFUF91osEWGnQ",
+        "type": "OnInit",
+        "z": "sd_7pAkxASWZpW70Cpj",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_iesyFUF91osEWGnQ",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_NJmnryFL0sZCRZJZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "loanComponent"
+    },
+    {
+        "id": "sd_NJmnryFL0sZCRZJZ",
+        "type": "PageVariables",
+        "z": "sd_7pAkxASWZpW70Cpj",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_NJmnryFL0sZCRZJZ",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loanComponent",
+        "generated": true
+    }
+]

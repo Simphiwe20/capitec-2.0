@@ -454,6 +454,12 @@
                             "_value": "let card of cards.card_Container.cards",
                             "_type": "kv",
                             "_attrDef": "c"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "{{card.routes}}",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
                     "6dd3ee70-f443-5db7-6ac1-f5dcd3c7aa8f": {

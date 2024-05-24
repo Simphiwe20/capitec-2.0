@@ -1,0 +1,27 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+    <div fxLayout="row wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="height: 10%" class="white blue-bg scan-blue" fxLayoutAlign="center center" [fxShow]="true">
+          <div class="scan-blue">
+            <h2 class="scan-header">Scan to Pay</h2>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="height: 7%" class="scan-under-header" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/images/Masterpass_logo.svg.png" style="height: 25px"></div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/images/snapscan.png" style="height: 50px"></div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/images/zapper-seeklogo.svg" style="height: 30px"></div>
+        </div>
+        <div fxLayout="row wrap" style="max-height: 80%;" class="full-width" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div (click)="viewData(action)">
+            <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
+  
+            <!-- Loading -->
+            <p *ngIf="action.isLoading">&#x231B; Loading...</p>
+  
+            <!-- start -->
+            <button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? &apos;Stop&apos; : &apos;Start&apos;}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

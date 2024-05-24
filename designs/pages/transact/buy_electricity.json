@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_pHkIpybNgj8UrLNA",
+        "type": "tab",
+        "createdDate": "2024-05-07T18:39:30.854Z",
+        "label": "buy_electricity",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "buy_electricityComponent"
+    },
+    {
+        "id": "sd_RhetJNiooF2SX7DS",
+        "type": "OnInit",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_RhetJNiooF2SX7DS",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_GnFOuCY1M8rEoqSR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "buy_electricityComponent"
+    },
+    {
+        "id": "sd_GnFOuCY1M8rEoqSR",
+        "type": "PageVariables",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_GnFOuCY1M8rEoqSR",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    }
+]

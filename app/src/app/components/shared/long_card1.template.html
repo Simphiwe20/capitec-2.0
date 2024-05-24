@@ -3,7 +3,7 @@
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
       <h3 *ngIf="cards.card_Container.title" class="margin-b-10px no-margin poppins">
         {{cards.card_Container.title}}
-      </h3><mat-card *ngFor="let card of cards.card_Container.cards" class="padding-left-25px align-content-center long_card1 box-shadow-grey">
+      </h3><mat-card *ngFor="let card of cards.card_Container.cards" routerLink="{{card.routes}}" class="padding-left-25px align-content-center long_card1 box-shadow-grey">
         <mat-card-content align="left" class="align-content-center">
           <div fxLayout="row wrap" class="padding-0px-15px" fxLayoutGap="0.8em" fxLayoutAlign="space-between stretch" [fxShow]="true">
             <div fxLayout="row wrap" class="width-80" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">

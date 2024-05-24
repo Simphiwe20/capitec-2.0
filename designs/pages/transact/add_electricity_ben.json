@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_D1hMzChH8qZpINvk",
+        "type": "tab",
+        "createdDate": "2024-05-20T10:04:53.112Z",
+        "label": "add_electricity_ben",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "add_electricity_benComponent"
+    },
+    {
+        "id": "sd_4pmxDWUDTCW1NkXl",
+        "type": "OnInit",
+        "z": "sd_D1hMzChH8qZpINvk",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_4pmxDWUDTCW1NkXl",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_VL1zlaote2UI4k8Y"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "add_electricity_benComponent"
+    },
+    {
+        "id": "sd_VL1zlaote2UI4k8Y",
+        "type": "PageVariables",
+        "z": "sd_D1hMzChH8qZpINvk",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_VL1zlaote2UI4k8Y",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_electricity_benComponent",
+        "generated": true
+    }
+]

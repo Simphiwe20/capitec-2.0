@@ -1,0 +1,109 @@
+[
+    {
+        "id": "sd_GQZet17bHn1eur3Q",
+        "type": "tab",
+        "createdDate": "2024-05-07T18:44:01.522Z",
+        "label": "scan_to_pay",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "scan_to_payComponent"
+    },
+    {
+        "id": "sd_3atS8q01zOCtM5Yg",
+        "type": "OnInit",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_3atS8q01zOCtM5Yg",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_tSQIFFsqjdZkMzg4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "scan_to_payComponent"
+    },
+    {
+        "id": "sd_tSQIFFsqjdZkMzg4",
+        "type": "PageVariables",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_tSQIFFsqjdZkMzg4",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_rWyRUT8P5BOi0lE2",
+        "type": "PageStart",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "viewData",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "action",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "viewData",
+        "category": "General",
+        "x": 60,
+        "y": 160,
+        "wires": [
+            [
+                "sd_iDWBGrb7ZN7K6OJV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "scan_to_payComponent"
+    },
+    {
+        "id": "sd_iDWBGrb7ZN7K6OJV",
+        "type": "Script",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "    const data = JSON.stringify(bh.input.action.data.value[0].value)\n    const parsed = JSON.parse(data)\n    console.log(JSON.parse(parsed))\n  ",
+        "functionName": "sd_iDWBGrb7ZN7K6OJV",
+        "category": "Function",
+        "x": 180,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    }
+]

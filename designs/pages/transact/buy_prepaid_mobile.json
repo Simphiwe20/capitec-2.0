@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_rRpEu3GDESHjaCpb",
+        "type": "tab",
+        "createdDate": "2024-05-20T10:32:11.745Z",
+        "label": "buy_prepaid_mobile",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "buy_prepaid_mobileComponent"
+    },
+    {
+        "id": "sd_wr62p43ImUbzs4Dn",
+        "type": "OnInit",
+        "z": "sd_rRpEu3GDESHjaCpb",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_wr62p43ImUbzs4Dn",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_bSHe584qLSNTYCz2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "buy_prepaid_mobileComponent"
+    },
+    {
+        "id": "sd_bSHe584qLSNTYCz2",
+        "type": "PageVariables",
+        "z": "sd_rRpEu3GDESHjaCpb",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_bSHe584qLSNTYCz2",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_prepaid_mobileComponent",
+        "generated": true
+    }
+]

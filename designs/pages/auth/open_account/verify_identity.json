@@ -40,11 +40,146 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "clientDetails",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_iqcHnNX7jsgHG1KD",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            [
+                "sd_vh3M7aFNa9ZH2tRe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "verify_identityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_vh3M7aFNa9ZH2tRe",
+        "type": "Script",
+        "z": "sd_XxBbYAdU1GgX4xX5",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.clientDetails = {fullName: '', email: '', idNum: '', pin: '', confirmPin: '', id: '', proof: '',picture: ''}",
+        "functionName": "sd_vh3M7aFNa9ZH2tRe",
+        "category": "Function",
+        "x": 285,
+        "y": 20,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "verify_identityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_r8Re82cZT1k3uHjb",
+        "type": "PageStart",
+        "z": "sd_XxBbYAdU1GgX4xX5",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "submit",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "submit",
+        "category": "General",
+        "x": 45,
+        "y": 140,
+        "wires": [
+            [
+                "sd_MzwQKtXGUbXHRXL7"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "verify_identityComponent"
+    },
+    {
+        "id": "sd_MzwQKtXGUbXHRXL7",
+        "type": "Log",
+        "z": "sd_XxBbYAdU1GgX4xX5",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh",
+        "functionName": "sd_MzwQKtXGUbXHRXL7",
+        "category": "General",
+        "x": 230,
+        "y": 140,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "verify_identityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TjoN80UNYFtZLJxm",
+        "type": "PageStart",
+        "z": "sd_XxBbYAdU1GgX4xX5",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "upload",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "upload",
+        "category": "General",
+        "x": 45,
+        "y": 260,
+        "wires": [
+            [
+                "sd_ghCy4D8XsVpSIUTz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "verify_identityComponent"
+    },
+    {
+        "id": "sd_ghCy4D8XsVpSIUTz",
+        "type": "Script",
+        "z": "sd_XxBbYAdU1GgX4xX5",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.event)",
+        "functionName": "sd_ghCy4D8XsVpSIUTz",
+        "category": "Function",
+        "x": 180,
+        "y": 260,
         "wires": [
             []
         ],

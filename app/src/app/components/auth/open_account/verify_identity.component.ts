@@ -57,14 +57,86 @@ export class verify_identityComponent {
     }
   }
 
+  submit(form: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { form };
+      bh.local = {};
+      this.sd_MzwQKtXGUbXHRXL7(bh);
+      //appendnew_next_submit
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_r8Re82cZT1k3uHjb');
+    }
+  }
+
+  upload(event: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { event };
+      bh.local = {};
+      bh = this.sd_ghCy4D8XsVpSIUTz(bh);
+      //appendnew_next_upload
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_TjoN80UNYFtZLJxm');
+    }
+  }
   //appendnew_flow_verify_identityComponent_start
 
   sd_iqcHnNX7jsgHG1KD(bh) {
     try {
+      this.page.clientDetails = undefined;
+      bh = this.sd_vh3M7aFNa9ZH2tRe(bh);
       //appendnew_next_sd_iqcHnNX7jsgHG1KD
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_iqcHnNX7jsgHG1KD');
+    }
+  }
+
+  sd_vh3M7aFNa9ZH2tRe(bh) {
+    try {
+      const page = this.page;
+      page.clientDetails = {
+        fullName: '',
+        email: '',
+        idNum: '',
+        pin: '',
+        confirmPin: '',
+        id: '',
+        proof: '',
+        picture: '',
+      };
+      //appendnew_next_sd_vh3M7aFNa9ZH2tRe
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_vh3M7aFNa9ZH2tRe');
+    }
+  }
+
+  sd_MzwQKtXGUbXHRXL7(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh);
+      //appendnew_next_sd_MzwQKtXGUbXHRXL7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_MzwQKtXGUbXHRXL7');
+    }
+  }
+
+  sd_ghCy4D8XsVpSIUTz(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.input.event);
+      //appendnew_next_sd_ghCy4D8XsVpSIUTz
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ghCy4D8XsVpSIUTz');
     }
   }
 
