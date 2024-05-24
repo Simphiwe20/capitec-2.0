@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_i6iHe29eUO6MYHEV",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 40,
         "wires": [
             [
                 "sd_iqcHnNX7jsgHG1KD"
@@ -51,8 +51,8 @@
         ],
         "functionName": "sd_iqcHnNX7jsgHG1KD",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 125,
+        "y": 40,
         "wires": [
             [
                 "sd_vh3M7aFNa9ZH2tRe"
@@ -70,11 +70,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.clientDetails = {fullName: '', email: '', idNum: '', pin: '', confirmPin: '', id: '', proof: '',picture: ''}",
+        "script": "page.clientDetails = {fullName: '', email: '', idNum: '', pin: '', confirmPin: ''}",
         "functionName": "sd_vh3M7aFNa9ZH2tRe",
         "category": "Function",
         "x": 285,
-        "y": 20,
+        "y": 40,
         "wires": [
             []
         ],
@@ -124,12 +124,19 @@
         "nodeType": "flow",
         "name": "",
         "outputs": 0,
-        "logObject": "bh",
+        "logObject": "this.page",
         "functionName": "sd_MzwQKtXGUbXHRXL7",
         "category": "General",
         "x": 230,
         "y": 140,
         "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "verify_identityComponent",

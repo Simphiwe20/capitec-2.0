@@ -1,1 +1,19 @@
-<div id="angularRoot"></div>
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+    <div fxLayout="column wrap" style="height: 20%" class="relative" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" style="height: 40%;" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon style="    width: 100%;     height: 100%;     color: whitesmoke;     z-index: 1;position: absolute;     top: 11px;     bottom: 5px;     left: 4px;     font-size: 33px;">arrow_back</mat-icon><img imgSrc="/Web/Images/Hello.PNG" style="position:absolute;" class="full-height full-width"></div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <form #pinForm="ngForm" style="height:20%;">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="padding-6" fxLayoutAlign="center center" [fxShow]="true">
+            <mat-form-field class="white-bg full-width" [appearance]="'legacy'" [floatLabel]="'auto'" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.remotePin.pin" name="pin" type="password" placeholder="Remote App PIN" [required]="true">
+              <mat-icon matSuffix>visibility_off</mat-icon> <mat-icon matPrefix>lock</mat-icon>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" class="padding-10" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="white blue-bg full-width" (click)="pin(pinForm)">Continue</button></div>
+        </div>
+      </form>
+    </div><bh-footer style="position: absolute;     bottom: 0;" class="text-center"></bh-footer>
+  </div>
+  

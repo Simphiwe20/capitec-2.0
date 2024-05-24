@@ -4,6 +4,7 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { FormBuilder } from '@angular/forms'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -25,6 +26,7 @@ export class set_temporary_limitsComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
+    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -55,6 +57,20 @@ export class set_temporary_limitsComponent {
     }
   }
 
+  sd_lrSazY4fn1uhibmj(el: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { el };
+      bh.local = {};
+      bh = this.sd_po2FqxldVy7WklLJ(bh);
+      //appendnew_next_sd_lrSazY4fn1uhibmj
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lrSazY4fn1uhibmj');
+    }
+  }
   //appendnew_flow_set_temporary_limitsComponent_start
 
   sd_RAdaP8970VHkaTqq(bh) {
@@ -63,6 +79,17 @@ export class set_temporary_limitsComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_RAdaP8970VHkaTqq');
+    }
+  }
+
+  sd_po2FqxldVy7WklLJ(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.input.el);
+      //appendnew_next_sd_po2FqxldVy7WklLJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_po2FqxldVy7WklLJ');
     }
   }
 

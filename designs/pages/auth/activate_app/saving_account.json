@@ -102,7 +102,7 @@
         "outputs": 4,
         "flow": {
             "flowId": "sd_yAO9UqmUHSj9hosA",
-            "label": "info"
+            "label": "infor"
         },
         "relativePath": "app/components/auth/activate_app/infor",
         "data": "this.page",
@@ -434,7 +434,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.user = bh.result.find((user:any) => \nuser.accountNumber == page.accNo.accNo)\nconsole.log(bh.user)\n\n//  if(!bh.user) {\n//           alert(\"user does not exist!\");\n//           return\n//         } else {\n//           alert(\"hi\")\n//           console.log(bh.user)\n//         }",
+        "script": "console.log(bh.result)\nbh.user = bh.result.find((user:any) => user.accountNumber == page.accNo.accNo)\n\n\nconsole.log(bh.user)\n\n\nconsole.log(page.accNo.accNo)\nif( bh.user.accountNumber == page.accNo.accNo) {\n    console.log('Account numbers match ')\n}else {\n    console.log('Doesn\\'t match')\n}\n//  if(!bh.user) {\n//           alert(\"user does not exist!\");\n//           return\n//         } else {\n//           alert(\"hi\")\n//           console.log(bh.user)\n//         }",
         "functionName": "sd_25qbmaWtCWioINyk",
         "category": "Function",
         "x": 585,
@@ -510,9 +510,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -552,9 +550,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -562,8 +558,8 @@
         "direction": "ltr",
         "functionName": "sd_k9bjPiuJWb7fSK3t",
         "category": "General",
-        "x": 805,
-        "y": 260,
+        "x": 845,
+        "y": 280,
         "wires": [
             []
         ],
@@ -579,14 +575,7 @@
         "viewType": "client-pages",
         "nodeType": "flow",
         "name": "",
-        "path": "/remote-app-pin",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
+        "path": "/enter_remote_pin",
         "functionName": "sd_7CE8g6QtNrkyHw08",
         "category": "Navigation",
         "x": 1005,

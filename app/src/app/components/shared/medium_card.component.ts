@@ -84,7 +84,7 @@ export class medium_cardComponent {
       const page = this.page;
       let card = { cards: [] };
       let cards = [];
-      page.cardsInfor = page.cardsInfor.forEach((_card: any, i: number) => {
+      page.cardsInfor = page.cardsInfor?.forEach((_card: any, i: number) => {
         if (card.cards.length <= 2) {
           card.cards.push(_card);
         }

@@ -15,7 +15,7 @@
       <div>
         First, we&apos;ll check that it&apos;s really you</div>
     </div>
-    <form #creacteAccount="ngForm" style="margin-top: 10px">
+    <form #form="ngForm" style="margin-top: 10px">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
           <input matInput [(ngModel)]="page.clientDetails.fullName" name="fullName" [required]="false">
@@ -29,6 +29,13 @@
           <mat-label>SA ID number</mat-label> <mat-icon matSuffix>infor</mat-icon>
         </mat-form-field><small class="poppins padding-0_75em">
           You must be 16 years or older</small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.clientDetails.contacts" name="contacts" placeholder="0628107203" [required]="false">
+          <mat-label>Email address</mat-label> <mat-icon matSuffix>infor</mat-icon>
+        </mat-form-field><small class="poppins padding-0_75em">
+          We will verify this email address by email</small>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
@@ -53,23 +60,23 @@
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div class="height-50px start-center flex border-blue">
-          <input type="file" class="margin-left-12px" title="Certified ID" [(ngModel)]="page.clientDetails.ID" required (change)="upload($event)" name="ID">
+          <input id="file" type="file" class="margin-left-12px" title="Certified ID" (change)="fileUpload($event, 0)" required>
         </div><small class="poppins padding-0_75em">
           Certified ID document </small>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div class="start-center flex height-50px border-blue">
-          <input type="file" class="margin-left-12px" title="Proof of residence" [(ngModel)]="page.clientDetails.proog" required (change)="upload($event)" name="proof">
+          <input type="file" id="file1" class="margin-left-12px" title="Proof of residence" (change)="fileUpload1($event, 0)" required>
         </div><small class="poppins padding-0_75em">
           Proof of residence must have your full name</small>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div class="start-center flex height-50px border-blue">
-          <input type="file" class="margin-left-12px" title="Client clear picture" [(ngModel)]="page.clientDetails.picture" required (change)="upload($event)" name="picture">
+          <input type="file" id="file3" class="margin-left-12px" title="Client clear picture" (change)="fileUpload2($event, 0)" required>
         </div><small class="poppins padding-0_75em">
           Unfiltered client clear picture</small>
       </div>
-      <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/prepare_for_selfie" class="bg-blue color-w get-started-btn" (click)="submit(creacteAccount)">Continue</button></div>
+      <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/prepare_for_selfie" class="bg-blue color-w get-started-btn" (click)="submit(form)">Continue</button></div>
       <div class="text-center poppins no-margin">
         Your personal information is safe with us</div>
     </form>

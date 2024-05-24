@@ -10,13 +10,13 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
 //append_imports_end
 
 @Component({
-  selector: 'bh-info',
-  templateUrl: './info.template.html',
+  selector: 'bh-infor',
+  templateUrl: './infor.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class infoComponent {
+export class inforComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -55,7 +55,7 @@ export class infoComponent {
     }
   }
 
-  //appendnew_flow_infoComponent_start
+  //appendnew_flow_inforComponent_start
 
   sd_omIICq40oMRY6cz0(bh) {
     try {
@@ -82,5 +82,5 @@ export class infoComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_infoComponent_Catch
+  //appendnew_flow_inforComponent_Catch
 }

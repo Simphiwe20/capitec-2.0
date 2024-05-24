@@ -175,8 +175,28 @@
                 {
                     "path": "loan",
                     "component": "loanComponent"
+                },
+                {
+                    "path": "set_temporary_limit",
+                    "component": "set_temporary_limitsComponent"
+                },
+                {
+                    "path": "update_permanent",
+                    "component": "update_temporary_limitsComponent"
+                },
+                {
+                    "path": "stop_card",
+                    "component": "stop_cardComponent"
+                },
+                {
+                    "path": "taps_to_pay",
+                    "component": "tap_to_payComponent"
                 }
             ]
+        },
+        {
+            "path": "remote_pin",
+            "component": "remote_app_pinComponent"
         },
         {
             "path": "''",

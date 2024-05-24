@@ -108,9 +108,6 @@ export class verify_identityComponent {
         idNum: '',
         pin: '',
         confirmPin: '',
-        id: '',
-        proof: '',
-        picture: '',
       };
       //appendnew_next_sd_vh3M7aFNa9ZH2tRe
       return bh;
@@ -121,7 +118,7 @@ export class verify_identityComponent {
 
   sd_MzwQKtXGUbXHRXL7(bh) {
     try {
-      console.log(new Date().toLocaleTimeString(), bh);
+      console.log(new Date().toLocaleTimeString(), this.page);
       //appendnew_next_sd_MzwQKtXGUbXHRXL7
       return bh;
     } catch (e) {

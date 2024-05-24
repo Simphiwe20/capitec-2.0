@@ -1,7 +1,7 @@
 <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
   <div fxLayout="column wrap" class="standard-width footer bg-white" fxLayoutAlign="center stretch" [fxShow]="true">
     <div fxLayout="row wrap" class="full-height" fxLayoutGap="0.3em" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="column wrap" class="pointer" fxFlex="19" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let menu of page.menuItems, let indx = index" [routerLink]="menu.routes"><img [src]="menu.image" [ngClass]="{&apos;footer-card&apos;: indx !== 2 }">
+      <div fxLayout="column wrap" class="pointer" fxFlex="18" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let menu of page.menuItems, let indx = index" [routerLink]="menu.routes"><img [src]="menu.image" [ngClass]="{&apos;footer-card&apos;: indx !== 2 }">
         <div class="color-b poppins">
           {{menu.menuName}}
         </div>

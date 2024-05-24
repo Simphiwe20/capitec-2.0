@@ -52,5 +52,58 @@
         "generateNext": false,
         "serviceName": "set_temporary_limitsComponent",
         "generated": true
+    },
+    {
+        "id": "sd_lrSazY4fn1uhibmj",
+        "type": "PageStart",
+        "z": "sd_Z01bDNWjSgQXKl70",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "el",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sd_lrSazY4fn1uhibmj",
+        "category": "General",
+        "x": 45,
+        "y": 160,
+        "wires": [
+            [
+                "sd_po2FqxldVy7WklLJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_po2FqxldVy7WklLJ",
+        "type": "Script",
+        "z": "sd_Z01bDNWjSgQXKl70",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.el)",
+        "functionName": "sd_po2FqxldVy7WklLJ",
+        "category": "Function",
+        "x": 200,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
     }
 ]

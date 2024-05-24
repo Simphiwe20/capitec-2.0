@@ -8,7 +8,7 @@ import { FormBuilder } from '@angular/forms'; //_splitter_
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
-import { infoComponent } from 'app/components/auth/activate_app/info.component'; //_splitter_
+import { inforComponent } from 'app/components/auth/activate_app/infor.component'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -105,9 +105,9 @@ export class saving_accountComponent {
 
   sd_FdMXZfSbe5SjG4as(bh) {
     try {
-      const infoDialog = this.__page_injector__.get(MatDialog);
-      const infoDialogRef = infoDialog.open(infoComponent, {});
-      infoDialogRef.afterOpened().subscribe((event) => {
+      const inforDialog = this.__page_injector__.get(MatDialog);
+      const inforDialogRef = inforDialog.open(inforComponent, {});
+      inforDialogRef.afterOpened().subscribe((event) => {
         this.sd_OIoq9DOR6k6WJW9v(bh);
       });
 
@@ -196,11 +196,19 @@ export class saving_accountComponent {
   sd_25qbmaWtCWioINyk(bh) {
     try {
       const page = this.page;
+      console.log(bh.result);
       bh.user = bh.result.find(
         (user: any) => user.accountNumber == page.accNo.accNo
       );
+
       console.log(bh.user);
 
+      console.log(page.accNo.accNo);
+      if (bh.user.accountNumber == page.accNo.accNo) {
+        console.log('Account numbers match ');
+      } else {
+        console.log("Doesn't match");
+      }
       //  if(!bh.user) {
       //           alert("user does not exist!");
       //           return
@@ -267,12 +275,10 @@ export class saving_accountComponent {
   async sd_7CE8g6QtNrkyHw08(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/remote-app-pin');
+        this.sdService.getPathAndQParamsObj('/enter_remote_pin');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       //appendnew_next_sd_7CE8g6QtNrkyHw08
       return bh;
     } catch (e) {

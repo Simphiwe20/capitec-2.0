@@ -16,8 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
-//CORE_REFERENCE_IMPORT-infoComponent
-import { infoComponent } from '../components/auth/activate_app/info.component';
+//CORE_REFERENCE_IMPORT-inforComponent
+import { inforComponent } from '../components/auth/activate_app/infor.component';
 //CORE_REFERENCE_IMPORT-scan_to_payComponent
 import { scan_to_payComponent } from '../components/more/scan_to_pay.component';
 //CORE_REFERENCE_IMPORT-choose_banksComponent
@@ -170,8 +170,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-infoComponent
-  infoComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-inforComponent
+  inforComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-scan_to_payComponent
   scan_to_payComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-choose_banksComponent
@@ -370,8 +370,13 @@ export const appRoutes = [
       { path: 'credit', component: creditComponent },
       { path: 'get_estimate', component: get_estimateComponent },
       { path: 'loan', component: loanComponent },
+      { path: 'set_temporary_limit', component: set_temporary_limitsComponent },
+      { path: 'update_permanent', component: update_temporary_limitsComponent },
+      { path: 'stop_card', component: stop_cardComponent },
+      { path: 'taps_to_pay', component: tap_to_payComponent },
     ],
   },
+  { path: 'remote_pin', component: remote_app_pinComponent },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
