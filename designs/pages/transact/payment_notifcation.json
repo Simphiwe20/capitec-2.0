@@ -1,39 +1,39 @@
 [
     {
-        "id": "sd_3nhBfYjas7SuF8oh",
+        "id": "sd_FbgaRwmoBHVBbCeW",
         "type": "tab",
-        "createdDate": "2024-05-17T10:31:50.640Z",
-        "label": "update_temporary_limits",
+        "createdDate": "2024-05-25T20:58:20.987Z",
+        "label": "payment_notifcation",
         "disabled": false,
         "info": "",
         "functionSeq": 0,
         "generateNext": true,
-        "serviceName": "update_temporary_limitsComponent"
+        "serviceName": "payment_notifcationComponent"
     },
     {
-        "id": "sd_e5d9j9lIQPJBSF2E",
+        "id": "sd_t5bAuPmHMOq5BI8c",
         "type": "OnInit",
-        "z": "sd_3nhBfYjas7SuF8oh",
+        "z": "sd_FbgaRwmoBHVBbCeW",
         "viewType": "common",
         "nodeType": "start",
         "name": "",
-        "functionName": "sd_e5d9j9lIQPJBSF2E",
+        "functionName": "sd_t5bAuPmHMOq5BI8c",
         "category": "Lifecycle Events",
         "x": 30,
         "y": 30,
         "wires": [
             [
-                "sd_t2XWjCAryqWgGiTF"
+                "sd_XCm9ixnAbQYVDQZK"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "update_temporary_limitsComponent"
+        "serviceName": "payment_notifcationComponent"
     },
     {
-        "id": "sd_t2XWjCAryqWgGiTF",
+        "id": "sd_XCm9ixnAbQYVDQZK",
         "type": "PageVariables",
-        "z": "sd_3nhBfYjas7SuF8oh",
+        "z": "sd_FbgaRwmoBHVBbCeW",
         "viewType": "pages",
         "nodeType": "flow",
         "name": "",
@@ -41,7 +41,7 @@
         "outputs": 1,
         "operation": "set",
         "globalVariables": [],
-        "functionName": "sd_t2XWjCAryqWgGiTF",
+        "functionName": "sd_XCm9ixnAbQYVDQZK",
         "category": "Function",
         "x": 180,
         "y": 30,
@@ -50,7 +50,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "serviceName": "update_temporary_limitsComponent",
+        "serviceName": "payment_notifcationComponent",
         "generated": true
     }
 ]

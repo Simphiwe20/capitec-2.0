@@ -13,13 +13,13 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
 //append_imports_end
 
 @Component({
-  selector: 'bh-set_temporary_limits',
-  templateUrl: './set_temporary_limits.template.html',
+  selector: 'bh-update_permanent_limits',
+  templateUrl: './update_permanent_limits.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class set_temporary_limitsComponent {
+export class update_permanent_limitsComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -37,7 +37,7 @@ export class set_temporary_limitsComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_7sPVVw4tcW7QPwdl(bh);
+      this.sd_bfApQau7rm5BSggd(bh);
     }
   }
 
@@ -49,32 +49,17 @@ export class set_temporary_limitsComponent {
     //append_listeners
   }
 
-  sd_7sPVVw4tcW7QPwdl(bh) {
+  sd_bfApQau7rm5BSggd(bh) {
     try {
-      bh = this.sd_ioJMVOwHjtQSgVUe(bh);
-      //appendnew_next_sd_7sPVVw4tcW7QPwdl
+      bh = this.sd_McqC2bcbekB3X9qo(bh);
+      //appendnew_next_sd_bfApQau7rm5BSggd
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_7sPVVw4tcW7QPwdl');
+      return this.errorHandler(bh, e, 'sd_bfApQau7rm5BSggd');
     }
   }
 
-  show(...others) {
-    let bh: any = {};
-    try {
-      bh = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.input = {};
-      bh.local = {};
-      bh = this.sd_OfVIsOQkcApx8mWl(bh);
-      //appendnew_next_show
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_63L2pNyaQbb1Sb9e');
-    }
-  }
-
-  updateTemp(form: any = undefined, ...others) {
+  updatePerm(form: any = undefined, ...others) {
     let bh: any = {};
     try {
       bh = this.__page_injector__
@@ -82,94 +67,82 @@ export class set_temporary_limitsComponent {
         .constructFlowObject(this);
       bh.input = { form };
       bh.local = {};
-      bh = this.sd_9cyqnKXfeH43fGTT(bh);
-      //appendnew_next_updateTemp
+      bh = this.sd_UoR3N2LOezVoGzZT(bh);
+      //appendnew_next_updatePerm
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_OL1JHClmEc7zRrBV');
+      return this.errorHandler(bh, e, 'sd_9KZv2RncQO2OEjVt');
     }
   }
-  //appendnew_flow_set_temporary_limitsComponent_start
+  //appendnew_flow_update_permanent_limitsComponent_start
 
-  sd_ioJMVOwHjtQSgVUe(bh) {
+  sd_McqC2bcbekB3X9qo(bh) {
     try {
-      this.page.submitted = false;
+      this.page.submitted = undefined;
       this.page.user = undefined;
-      this.page.temp = undefined;
-      this.page.isChecked = false;
-      this.page.isTicked = false;
-      this.page.isCorrect = false;
-      bh = this.sd_8wWf3PwuMClpKDm3(bh);
-      //appendnew_next_sd_ioJMVOwHjtQSgVUe
+      this.page.perm = undefined;
+      bh = this.sd_eOQWbhnv1HXUlxyQ(bh);
+      //appendnew_next_sd_McqC2bcbekB3X9qo
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ioJMVOwHjtQSgVUe');
+      return this.errorHandler(bh, e, 'sd_McqC2bcbekB3X9qo');
     }
   }
 
-  sd_8wWf3PwuMClpKDm3(bh) {
+  sd_eOQWbhnv1HXUlxyQ(bh) {
     try {
       const page = this.page;
       page.user = bh.result;
       console.log(page.user);
 
-      page.temp = {
-        cash_withdrawals: '',
-        card_machine: '',
-        online_scan: '',
+      page.perm = {
+        cash_withdrawals_perm: '',
+        card_machine_perm: '',
+        online_scan_perm: '',
       };
-      bh = this.sd_BKdOnjphYG3nUyRL(bh);
-      //appendnew_next_sd_8wWf3PwuMClpKDm3
+      bh = this.sd_mitctppfkplUIjOk(bh);
+      //appendnew_next_sd_eOQWbhnv1HXUlxyQ
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_8wWf3PwuMClpKDm3');
+      return this.errorHandler(bh, e, 'sd_eOQWbhnv1HXUlxyQ');
     }
   }
 
-  sd_BKdOnjphYG3nUyRL(bh) {
+  sd_mitctppfkplUIjOk(bh) {
     try {
       bh.result = JSON.parse(sessionStorage.getItem('accNo'));
-      bh = this.sd_w2tEWoBB2xSJ0F5l(bh);
-      //appendnew_next_sd_BKdOnjphYG3nUyRL
+      bh = this.sd_TERta0VjKJRaWevk(bh);
+      //appendnew_next_sd_mitctppfkplUIjOk
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_BKdOnjphYG3nUyRL');
+      return this.errorHandler(bh, e, 'sd_mitctppfkplUIjOk');
     }
   }
 
-  sd_w2tEWoBB2xSJ0F5l(bh) {
+  sd_TERta0VjKJRaWevk(bh) {
     try {
       const page = this.page;
       page.user = bh.result;
       console.log(page.user);
-      //appendnew_next_sd_w2tEWoBB2xSJ0F5l
+      //appendnew_next_sd_TERta0VjKJRaWevk
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_w2tEWoBB2xSJ0F5l');
+      return this.errorHandler(bh, e, 'sd_TERta0VjKJRaWevk');
     }
   }
 
-  sd_OfVIsOQkcApx8mWl(bh) {
-    try {
-      //appendnew_next_sd_OfVIsOQkcApx8mWl
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_OfVIsOQkcApx8mWl');
-    }
-  }
-
-  sd_9cyqnKXfeH43fGTT(bh) {
+  sd_UoR3N2LOezVoGzZT(bh) {
     try {
       const page = this.page;
       page.submitted = true;
-      bh = this.sd_Olc1II6X8cQXbS64(bh);
-      //appendnew_next_sd_9cyqnKXfeH43fGTT
+      bh = this.sd_oUPQxZ4v5f7zDtxA(bh);
+      //appendnew_next_sd_UoR3N2LOezVoGzZT
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_9cyqnKXfeH43fGTT');
+      return this.errorHandler(bh, e, 'sd_UoR3N2LOezVoGzZT');
     }
   }
 
-  async sd_Olc1II6X8cQXbS64(bh) {
+  async sd_oUPQxZ4v5f7zDtxA(bh) {
     try {
       if (
         this.sdService.operators['true'](
@@ -179,18 +152,18 @@ export class set_temporary_limitsComponent {
           undefined
         )
       ) {
-        bh = this.sd_Awg3KLbNOUcax2mZ(bh);
+        bh = this.sd_rpMjXzTczUyYzXm0(bh);
       } else {
-        bh = await this.sd_o3ymNwIG0iANYxHj(bh);
+        bh = await this.sd_wdTQmhnvrX0bNhwe(bh);
       }
 
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Olc1II6X8cQXbS64');
+      return this.errorHandler(bh, e, 'sd_oUPQxZ4v5f7zDtxA');
     }
   }
 
-  sd_Awg3KLbNOUcax2mZ(bh) {
+  sd_rpMjXzTczUyYzXm0(bh) {
     try {
       this.__page_injector__.get(MatSnackBar).open('Ke yona', 'OK', {
         duration: 3000,
@@ -198,59 +171,55 @@ export class set_temporary_limitsComponent {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
       });
-      bh = this.sd_8Zbrp0jCGt4Vq3Dz(bh);
-      //appendnew_next_sd_Awg3KLbNOUcax2mZ
+      bh = this.sd_s4QRNu9yVPZAuHsK(bh);
+      //appendnew_next_sd_rpMjXzTczUyYzXm0
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Awg3KLbNOUcax2mZ');
+      return this.errorHandler(bh, e, 'sd_rpMjXzTczUyYzXm0');
     }
   }
 
-  sd_8Zbrp0jCGt4Vq3Dz(bh) {
+  sd_s4QRNu9yVPZAuHsK(bh) {
     try {
       const page = this.page;
-      // page.temp.online_scan
-      // page.temp.card_machine
-      // page.temp.cash_withdrawals
-
-      page.user.cash_withdrawal_limit_temp = page.temp.cash_withdrawals;
-      page.user.card_purchases_limit_temp = page.temp.card_machine;
-      page.user.online_scan_to_pay_phone_temp = page.temp.online_scan;
+      page.user.cash_withdrawal_limit = page.perm.cash_withdrawals_perm;
+      page.user.card_purchases_limit = page.perm.card_machine_perm;
+      page.user.online_scan_to_pay_phone = page.perm.online_scan_perm;
 
       console.log(page.user);
-      bh = this.sd_ki72vvtB5kK5AtwY(bh);
-      //appendnew_next_sd_8Zbrp0jCGt4Vq3Dz
+      bh = this.sd_1k50Gxk7T11n99Y8(bh);
+      //appendnew_next_sd_s4QRNu9yVPZAuHsK
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_8Zbrp0jCGt4Vq3Dz');
+      return this.errorHandler(bh, e, 'sd_s4QRNu9yVPZAuHsK');
     }
   }
 
-  sd_ki72vvtB5kK5AtwY(bh) {
+  sd_1k50Gxk7T11n99Y8(bh) {
     try {
       this.page.ssdUrl = bh.system.environment.properties.ssdURL;
-      bh = this.sd_F8FLyGenPnI7JNRo(bh);
-      //appendnew_next_sd_ki72vvtB5kK5AtwY
+      bh = this.sd_7j7Wcpx8CSu9qsVu(bh);
+      //appendnew_next_sd_1k50Gxk7T11n99Y8
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ki72vvtB5kK5AtwY');
+      return this.errorHandler(bh, e, 'sd_1k50Gxk7T11n99Y8');
     }
   }
 
-  sd_F8FLyGenPnI7JNRo(bh) {
+  sd_7j7Wcpx8CSu9qsVu(bh) {
     try {
       const page = this.page;
       bh.url = page.ssdUrl + 'update';
 
-      bh = this.sd_E1csG2yqYNo355nw(bh);
-      //appendnew_next_sd_F8FLyGenPnI7JNRo
+      bh = this.sd_L4sN7rUf0h2gM5aS(bh);
+      //appendnew_next_sd_7j7Wcpx8CSu9qsVu
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_F8FLyGenPnI7JNRo');
+      return this.errorHandler(bh, e, 'sd_7j7Wcpx8CSu9qsVu');
     }
   }
 
-  async sd_E1csG2yqYNo355nw(bh) {
+  async sd_L4sN7rUf0h2gM5aS(bh) {
     try {
       let requestOptions = {
         url: bh.url,
@@ -261,26 +230,26 @@ export class set_temporary_limitsComponent {
         body: this.page.user,
       };
       this.page.results = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_RuRvmvAAaLF3I9iG(bh);
-      //appendnew_next_sd_E1csG2yqYNo355nw
+      bh = this.sd_8QlAMX8VeX4GeJHB(bh);
+      //appendnew_next_sd_L4sN7rUf0h2gM5aS
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_E1csG2yqYNo355nw');
+      return this.errorHandler(bh, e, 'sd_L4sN7rUf0h2gM5aS');
     }
   }
 
-  sd_RuRvmvAAaLF3I9iG(bh) {
+  sd_8QlAMX8VeX4GeJHB(bh) {
     try {
       sessionStorage.setItem('accNo', JSON.stringify(bh.body));
-      bh = this.sd_HkdUHoOyrV7dkEya(bh);
-      //appendnew_next_sd_RuRvmvAAaLF3I9iG
+      bh = this.sd_8uZb38vuLLK0xDm4(bh);
+      //appendnew_next_sd_8QlAMX8VeX4GeJHB
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_RuRvmvAAaLF3I9iG');
+      return this.errorHandler(bh, e, 'sd_8QlAMX8VeX4GeJHB');
     }
   }
 
-  async sd_HkdUHoOyrV7dkEya(bh) {
+  async sd_8uZb38vuLLK0xDm4(bh) {
     try {
       const { paramObj: qprm, path: path } =
         this.sdService.getPathAndQParamsObj('/cards');
@@ -289,32 +258,43 @@ export class set_temporary_limitsComponent {
         .navigate([this.sdService.formatPathWithParams(path, undefined)], {
           queryParams: Object.assign(qprm, ''),
         });
-      bh = this.sd_3pSe9lC8E3ISnjO4(bh);
-      //appendnew_next_sd_HkdUHoOyrV7dkEya
+      bh = this.sd_gMbfVjlrqDYY9614(bh);
+      //appendnew_next_sd_8uZb38vuLLK0xDm4
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_HkdUHoOyrV7dkEya');
+      return this.errorHandler(bh, e, 'sd_8uZb38vuLLK0xDm4');
     }
   }
 
-  sd_3pSe9lC8E3ISnjO4(bh) {
+  sd_gMbfVjlrqDYY9614(bh) {
     try {
       this.__page_injector__
         .get(MatSnackBar)
-        .open('Temporary limits successfully updated', 'OK', {
+        .open('Permanent limits successfully updated', 'OK', {
           duration: 3000,
           direction: 'ltr',
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
         });
-      //appendnew_next_sd_3pSe9lC8E3ISnjO4
+      bh = this.sd_8RWqVLz5KshcM2Bq(bh);
+      //appendnew_next_sd_gMbfVjlrqDYY9614
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_3pSe9lC8E3ISnjO4');
+      return this.errorHandler(bh, e, 'sd_gMbfVjlrqDYY9614');
     }
   }
 
-  sd_o3ymNwIG0iANYxHj(bh) {
+  sd_8RWqVLz5KshcM2Bq(bh) {
+    try {
+      sessionStorage.setItem('accNo', JSON.stringify(this.page.user));
+      //appendnew_next_sd_8RWqVLz5KshcM2Bq
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_8RWqVLz5KshcM2Bq');
+    }
+  }
+
+  sd_wdTQmhnvrX0bNhwe(bh) {
     try {
       this.__page_injector__.get(MatSnackBar).open('No Limits Set', 'OK', {
         duration: 3000,
@@ -322,10 +302,10 @@ export class set_temporary_limitsComponent {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
       });
-      //appendnew_next_sd_o3ymNwIG0iANYxHj
+      //appendnew_next_sd_wdTQmhnvrX0bNhwe
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_o3ymNwIG0iANYxHj');
+      return this.errorHandler(bh, e, 'sd_wdTQmhnvrX0bNhwe');
     }
   }
 
@@ -345,5 +325,5 @@ export class set_temporary_limitsComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_set_temporary_limitsComponent_Catch
+  //appendnew_flow_update_permanent_limitsComponent_Catch
 }

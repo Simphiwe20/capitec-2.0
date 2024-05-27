@@ -10,13 +10,13 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
 //append_imports_end
 
 @Component({
-  selector: 'bh-update_temporary_limits',
-  templateUrl: './update_temporary_limits.template.html',
+  selector: 'bh-payment_notifcation',
+  templateUrl: './payment_notifcation.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class update_temporary_limitsComponent {
+export class payment_notifcationComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -33,7 +33,7 @@ export class update_temporary_limitsComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_e5d9j9lIQPJBSF2E(bh);
+      this.sd_t5bAuPmHMOq5BI8c(bh);
     }
   }
 
@@ -45,24 +45,24 @@ export class update_temporary_limitsComponent {
     //append_listeners
   }
 
-  sd_e5d9j9lIQPJBSF2E(bh) {
+  sd_t5bAuPmHMOq5BI8c(bh) {
     try {
-      bh = this.sd_t2XWjCAryqWgGiTF(bh);
-      //appendnew_next_sd_e5d9j9lIQPJBSF2E
+      bh = this.sd_XCm9ixnAbQYVDQZK(bh);
+      //appendnew_next_sd_t5bAuPmHMOq5BI8c
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_e5d9j9lIQPJBSF2E');
+      return this.errorHandler(bh, e, 'sd_t5bAuPmHMOq5BI8c');
     }
   }
 
-  //appendnew_flow_update_temporary_limitsComponent_start
+  //appendnew_flow_payment_notifcationComponent_start
 
-  sd_t2XWjCAryqWgGiTF(bh) {
+  sd_XCm9ixnAbQYVDQZK(bh) {
     try {
-      //appendnew_next_sd_t2XWjCAryqWgGiTF
+      //appendnew_next_sd_XCm9ixnAbQYVDQZK
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_t2XWjCAryqWgGiTF');
+      return this.errorHandler(bh, e, 'sd_XCm9ixnAbQYVDQZK');
     }
   }
 
@@ -82,5 +82,5 @@ export class update_temporary_limitsComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_update_temporary_limitsComponent_Catch
+  //appendnew_flow_payment_notifcationComponent_Catch
 }

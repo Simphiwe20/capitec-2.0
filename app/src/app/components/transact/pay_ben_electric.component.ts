@@ -10,13 +10,13 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
 //append_imports_end
 
 @Component({
-  selector: 'bh-buy_electricity',
-  templateUrl: './buy_electricity.template.html',
+  selector: 'bh-pay_ben_electric',
+  templateUrl: './pay_ben_electric.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class buy_electricityComponent {
+export class pay_ben_electricComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -33,7 +33,7 @@ export class buy_electricityComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_RhetJNiooF2SX7DS(bh);
+      this.sd_xf7t8X9Ye6lM7YIS(bh);
     }
   }
 
@@ -45,17 +45,17 @@ export class buy_electricityComponent {
     //append_listeners
   }
 
-  sd_RhetJNiooF2SX7DS(bh) {
+  sd_xf7t8X9Ye6lM7YIS(bh) {
     try {
-      bh = this.sd_GnFOuCY1M8rEoqSR(bh);
-      //appendnew_next_sd_RhetJNiooF2SX7DS
+      bh = this.sd_IWl8M6oJAKBcyY6N(bh);
+      //appendnew_next_sd_xf7t8X9Ye6lM7YIS
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_RhetJNiooF2SX7DS');
+      return this.errorHandler(bh, e, 'sd_xf7t8X9Ye6lM7YIS');
     }
   }
 
-  sd_0aJD3XniKPm4UEzK(Index: any = undefined, ...others) {
+  pay(Index: any = undefined, ...others) {
     let bh: any = {};
     try {
       bh = this.__page_injector__
@@ -63,65 +63,65 @@ export class buy_electricityComponent {
         .constructFlowObject(this);
       bh.input = { Index };
       bh.local = {};
-      bh = this.sd_6HiFRhzbHYhSN1Be(bh);
-      //appendnew_next_sd_0aJD3XniKPm4UEzK
+      bh = this.sd_fdywoKIQ7rD6pDeH(bh);
+      //appendnew_next_pay
       return bh.input.Index;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_0aJD3XniKPm4UEzK');
+      return this.errorHandler(bh, e, 'sd_imxRlcjMb6AzDfsg');
     }
   }
-  //appendnew_flow_buy_electricityComponent_start
+  //appendnew_flow_pay_ben_electricComponent_start
 
-  sd_GnFOuCY1M8rEoqSR(bh) {
+  sd_IWl8M6oJAKBcyY6N(bh) {
     try {
       this.page.user = undefined;
       this.page.benArray = undefined;
       this.page.selected = undefined;
-      bh = this.sd_gSJD88CnfKGvEozs(bh);
-      //appendnew_next_sd_GnFOuCY1M8rEoqSR
+      bh = this.sd_UqSs5cRIzT53bSy2(bh);
+      //appendnew_next_sd_IWl8M6oJAKBcyY6N
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_GnFOuCY1M8rEoqSR');
+      return this.errorHandler(bh, e, 'sd_IWl8M6oJAKBcyY6N');
     }
   }
 
-  sd_gSJD88CnfKGvEozs(bh) {
+  sd_UqSs5cRIzT53bSy2(bh) {
     try {
       this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
-      bh = this.sd_LJP7U07GCLQChPnj(bh);
-      //appendnew_next_sd_gSJD88CnfKGvEozs
+      bh = this.sd_j6BmzFZsyKTZNyJU(bh);
+      //appendnew_next_sd_UqSs5cRIzT53bSy2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_gSJD88CnfKGvEozs');
+      return this.errorHandler(bh, e, 'sd_UqSs5cRIzT53bSy2');
     }
   }
 
-  sd_LJP7U07GCLQChPnj(bh) {
+  sd_j6BmzFZsyKTZNyJU(bh) {
     try {
       this.page.ssdurl = bh.system.environment.properties.ssdURL;
-      bh = this.sd_Rno4OEhQVlCORiaL(bh);
-      //appendnew_next_sd_LJP7U07GCLQChPnj
+      bh = this.sd_6bU6IPM2y6cpEn2r(bh);
+      //appendnew_next_sd_j6BmzFZsyKTZNyJU
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_LJP7U07GCLQChPnj');
+      return this.errorHandler(bh, e, 'sd_j6BmzFZsyKTZNyJU');
     }
   }
 
-  sd_Rno4OEhQVlCORiaL(bh) {
+  sd_6bU6IPM2y6cpEn2r(bh) {
     try {
       const page = this.page;
       bh.url = page.ssdurl + 'get-beneficiary-electricity';
       page.collection = 'beneficiary-electricity';
 
-      bh = this.sd_Gbgac9bKVClCx6yH(bh);
-      //appendnew_next_sd_Rno4OEhQVlCORiaL
+      bh = this.sd_ndxvOY5zJnissX0D(bh);
+      //appendnew_next_sd_6bU6IPM2y6cpEn2r
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Rno4OEhQVlCORiaL');
+      return this.errorHandler(bh, e, 'sd_6bU6IPM2y6cpEn2r');
     }
   }
 
-  async sd_Gbgac9bKVClCx6yH(bh) {
+  async sd_ndxvOY5zJnissX0D(bh) {
     try {
       let requestOptions = {
         url: bh.url,
@@ -132,15 +132,15 @@ export class buy_electricityComponent {
         body: this.page.collection,
       };
       this.page.results = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_dNY8MfPEYD17kDAG(bh);
-      //appendnew_next_sd_Gbgac9bKVClCx6yH
+      bh = this.sd_geeTXGYJtFb3Ef1M(bh);
+      //appendnew_next_sd_ndxvOY5zJnissX0D
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Gbgac9bKVClCx6yH');
+      return this.errorHandler(bh, e, 'sd_ndxvOY5zJnissX0D');
     }
   }
 
-  sd_dNY8MfPEYD17kDAG(bh) {
+  sd_geeTXGYJtFb3Ef1M(bh) {
     try {
       const page = this.page;
       bh.beneficiaries = page.results.filter((user: any) => {
@@ -149,34 +149,34 @@ export class buy_electricityComponent {
       page.benArray = bh.beneficiaries;
 
       console.log(bh.beneficiaries);
-      //appendnew_next_sd_dNY8MfPEYD17kDAG
+      //appendnew_next_sd_geeTXGYJtFb3Ef1M
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_dNY8MfPEYD17kDAG');
+      return this.errorHandler(bh, e, 'sd_geeTXGYJtFb3Ef1M');
     }
   }
 
-  sd_6HiFRhzbHYhSN1Be(bh) {
+  sd_fdywoKIQ7rD6pDeH(bh) {
     try {
       const page = this.page;
       page.selected = bh.input.Index;
       console.log(page.selected);
 
-      bh = this.sd_n7gHGsIp9RCqVyuj(bh);
-      //appendnew_next_sd_6HiFRhzbHYhSN1Be
+      bh = this.sd_EjSuXhjTOYlGmLHM(bh);
+      //appendnew_next_sd_fdywoKIQ7rD6pDeH
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_6HiFRhzbHYhSN1Be');
+      return this.errorHandler(bh, e, 'sd_fdywoKIQ7rD6pDeH');
     }
   }
 
-  sd_n7gHGsIp9RCqVyuj(bh) {
+  sd_EjSuXhjTOYlGmLHM(bh) {
     try {
       sessionStorage.setItem('electricBen', JSON.stringify(this.page.selected));
-      //appendnew_next_sd_n7gHGsIp9RCqVyuj
+      //appendnew_next_sd_EjSuXhjTOYlGmLHM
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_n7gHGsIp9RCqVyuj');
+      return this.errorHandler(bh, e, 'sd_EjSuXhjTOYlGmLHM');
     }
   }
 
@@ -196,5 +196,5 @@ export class buy_electricityComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_buy_electricityComponent_Catch
+  //appendnew_flow_pay_ben_electricComponent_Catch
 }

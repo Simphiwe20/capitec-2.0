@@ -430,7 +430,9 @@
                     },
                     {
                         "_key": "class",
-                        "_value": [],
+                        "_value": [
+                            "tab-btn"
+                        ],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -647,9 +649,10 @@
                             },
                             {
                                 "_key": "dynamicTab",
-                                "_value": "false",
+                                "_value": "static",
                                 "_type": "dav",
-                                "_attrDef": "p"
+                                "_attrDef": "p",
+                                "_customAttributeFlag": "customInput"
                             },
                             {
                                 "_key": "tabDatasource",

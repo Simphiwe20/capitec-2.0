@@ -1,8 +1,8 @@
 [
     {
-        "id": "sd_Z01bDNWjSgQXKl70",
+        "id": "sd_DhseKfbPmhEGFeC0",
         "type": "tab",
-        "createdDate": "2024-05-17T10:30:48.715Z",
+        "createdDate": "2024-05-15T12:11:16.201Z",
         "label": "set_temporary_limits",
         "disabled": false,
         "info": "",
@@ -11,19 +11,19 @@
         "serviceName": "set_temporary_limitsComponent"
     },
     {
-        "id": "sd_2YRXm4Tbe0pjaOyS",
+        "id": "sd_7sPVVw4tcW7QPwdl",
         "type": "OnInit",
-        "z": "sd_Z01bDNWjSgQXKl70",
+        "z": "sd_DhseKfbPmhEGFeC0",
         "viewType": "common",
         "nodeType": "start",
         "name": "",
-        "functionName": "sd_2YRXm4Tbe0pjaOyS",
+        "functionName": "sd_7sPVVw4tcW7QPwdl",
         "category": "Lifecycle Events",
         "x": 30,
         "y": 30,
         "wires": [
             [
-                "sd_RAdaP8970VHkaTqq"
+                "sd_ioJMVOwHjtQSgVUe"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -31,20 +31,109 @@
         "serviceName": "set_temporary_limitsComponent"
     },
     {
-        "id": "sd_RAdaP8970VHkaTqq",
+        "id": "sd_ioJMVOwHjtQSgVUe",
         "type": "PageVariables",
-        "z": "sd_Z01bDNWjSgQXKl70",
+        "z": "sd_DhseKfbPmhEGFeC0",
         "viewType": "pages",
         "nodeType": "flow",
         "name": "",
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
-        "functionName": "sd_RAdaP8970VHkaTqq",
+        "globalVariables": [
+            {
+                "textIp": "submitted",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "temp",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "isChecked",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "isTicked",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "isCorrect",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            }
+        ],
+        "functionName": "sd_ioJMVOwHjtQSgVUe",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            [
+                "sd_8wWf3PwuMClpKDm3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_63L2pNyaQbb1Sb9e",
+        "type": "PageStart",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "show",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "show",
+        "category": "General",
+        "x": 60,
+        "y": 160,
+        "wires": [
+            [
+                "sd_OfVIsOQkcApx8mWl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_OfVIsOQkcApx8mWl",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "",
+        "functionName": "sd_OfVIsOQkcApx8mWl",
+        "category": "Function",
+        "x": 205,
+        "y": 160,
         "wires": [
             []
         ],
@@ -54,16 +143,16 @@
         "generated": true
     },
     {
-        "id": "sd_lrSazY4fn1uhibmj",
+        "id": "sd_OL1JHClmEc7zRrBV",
         "type": "PageStart",
-        "z": "sd_Z01bDNWjSgQXKl70",
+        "z": "sd_DhseKfbPmhEGFeC0",
         "viewType": "pages",
         "nodeType": "start",
-        "name": "",
+        "name": "update-temp",
         "outputs": 1,
         "inputVariables": [
             {
-                "key": "el",
+                "key": "form",
                 "defaultValue": {
                     "type": "any",
                     "value": ""
@@ -73,13 +162,13 @@
         ],
         "localVariables": [],
         "flow_type": "sync",
-        "functionName": "sd_lrSazY4fn1uhibmj",
+        "functionName": "updateTemp",
         "category": "General",
-        "x": 45,
-        "y": 160,
+        "x": 80,
+        "y": 280,
         "wires": [
             [
-                "sd_po2FqxldVy7WklLJ"
+                "sd_9cyqnKXfeH43fGTT"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -87,19 +176,467 @@
         "serviceName": "set_temporary_limitsComponent"
     },
     {
-        "id": "sd_po2FqxldVy7WklLJ",
+        "id": "sd_BKdOnjphYG3nUyRL",
+        "type": "Storage",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh",
+            "value": "result"
+        },
+        "functionName": "sd_BKdOnjphYG3nUyRL",
+        "category": "Storage",
+        "x": 365,
+        "y": 20,
+        "wires": [
+            [
+                "sd_w2tEWoBB2xSJ0F5l"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_w2tEWoBB2xSJ0F5l",
         "type": "Script",
-        "z": "sd_Z01bDNWjSgQXKl70",
+        "z": "sd_DhseKfbPmhEGFeC0",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.input.el)",
-        "functionName": "sd_po2FqxldVy7WklLJ",
+        "script": "page.user = bh.result\nconsole.log(page.user)",
+        "functionName": "sd_w2tEWoBB2xSJ0F5l",
         "category": "Function",
-        "x": 200,
-        "y": 160,
+        "x": 485,
+        "y": 40,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9cyqnKXfeH43fGTT",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true",
+        "functionName": "sd_9cyqnKXfeH43fGTT",
+        "category": "Function",
+        "x": 220,
+        "y": 280,
+        "wires": [
+            [
+                "sd_Olc1II6X8cQXbS64"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Olc1II6X8cQXbS64",
+        "type": "PageSwitch",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "form.valid",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.form.valid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_Olc1II6X8cQXbS64",
+        "category": "Function",
+        "x": 345,
+        "y": 280,
+        "wires": [
+            [
+                "sd_Awg3KLbNOUcax2mZ"
+            ],
+            [
+                "sd_o3ymNwIG0iANYxHj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_o3ymNwIG0iANYxHj",
+        "type": "SnackBar",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "No Limits Set"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_o3ymNwIG0iANYxHj",
+        "category": "General",
+        "x": 450,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Awg3KLbNOUcax2mZ",
+        "type": "SnackBar",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Ke yona"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_Awg3KLbNOUcax2mZ",
+        "category": "General",
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "sd_8Zbrp0jCGt4Vq3Dz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8wWf3PwuMClpKDm3",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.user = bh.result\nconsole.log(page.user)\n\npage.temp = {\n    cash_withdrawals: \"\",\n    card_machine:\"\",\n    online_scan:\"\"\n}",
+        "functionName": "sd_8wWf3PwuMClpKDm3",
+        "category": "Function",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            [
+                "sd_BKdOnjphYG3nUyRL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KiCYp5dxbXPF8M3P",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.temp.cash_withdrawals = page.user.cash_withdrawal_limit_temp;\npage.temp.card_machine = page.user.card_purchases_limit_temp;\npage.temp.online_scan = page.user.online_scan_to_pay_phone_temp;\n\nbh.body = page.user\nconsole.log(page.temp)\n\n\n\n",
+        "functionName": "sd_KiCYp5dxbXPF8M3P",
+        "category": "Function",
+        "x": 65,
+        "y": 520,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_ki72vvtB5kK5AtwY",
+        "type": "Environment",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_ki72vvtB5kK5AtwY",
+        "category": "General",
+        "x": 665,
+        "y": 220,
+        "wires": [
+            [
+                "sd_F8FLyGenPnI7JNRo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_F8FLyGenPnI7JNRo",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdUrl + \"update\"\n\n\n",
+        "functionName": "sd_F8FLyGenPnI7JNRo",
+        "category": "Function",
+        "x": 765,
+        "y": 220,
+        "wires": [
+            [
+                "sd_E1csG2yqYNo355nw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_E1csG2yqYNo355nw",
+        "type": "HttpRequest",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.user",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "user"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_E1csG2yqYNo355nw",
+        "category": "HTTP",
+        "x": 865,
+        "y": 227.1354217529297,
+        "wires": [
+            [
+                "sd_RuRvmvAAaLF3I9iG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HkdUHoOyrV7dkEya",
+        "type": "Navigation",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/cards",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_HkdUHoOyrV7dkEya",
+        "category": "Navigation",
+        "x": 1085,
+        "y": 220,
+        "wires": [
+            [
+                "sd_3pSe9lC8E3ISnjO4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3pSe9lC8E3ISnjO4",
+        "type": "SnackBar",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Temporary limits successfully updated"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_3pSe9lC8E3ISnjO4",
+        "category": "General",
+        "x": 1185,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_RuRvmvAAaLF3I9iG",
+        "type": "Storage",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {
+            "type": "bh",
+            "value": "body"
+        },
+        "resultMapping": {},
+        "functionName": "sd_RuRvmvAAaLF3I9iG",
+        "category": "Storage",
+        "x": 965,
+        "y": 220,
+        "wires": [
+            [
+                "sd_HkdUHoOyrV7dkEya"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8Zbrp0jCGt4Vq3Dz",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n// page.temp.online_scan\n// page.temp.card_machine\n// page.temp.cash_withdrawals\n\npage.user.cash_withdrawal_limit_temp = page.temp.cash_withdrawals\npage.user.card_purchases_limit_temp = page.temp.card_machine \npage.user.online_scan_to_pay_phone_temp = page.temp.online_scan\n\nconsole.log(page.user)",
+        "functionName": "sd_8Zbrp0jCGt4Vq3Dz",
+        "category": "Function",
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "sd_ki72vvtB5kK5AtwY"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

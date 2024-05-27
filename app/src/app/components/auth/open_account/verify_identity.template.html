@@ -1,5 +1,5 @@
 <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
-  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page.uploadedImage" #image hidden>
     <div fxLayout="row wrap" class="border-btm-cyan-b bg-blue height-50px" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="color-w">arrow_back</mat-icon>
       <div fxLayout="column wrap" class="color-w poppins" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
         <p class="poppins no-margin">
@@ -8,7 +8,7 @@
     </div>
     <div fxLayout="column wrap" class="height-50px bg-blue" fxLayoutAlign="center center" [fxShow]="true">
       <div class="poppins color-w">
-        <small>Verify your identity</small>
+        <small class="poppins">Verify your identity</small>
       </div>
     </div>
     <div fxLayout="column wrap" class="bg-white" fxLayoutGap="0.5em" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="./Web/Images/id-pic.png" style="width: 130px; height: 140px">
@@ -33,9 +33,9 @@
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
           <input matInput [(ngModel)]="page.clientDetails.contacts" name="contacts" placeholder="0628107203" [required]="false">
-          <mat-label>Email address</mat-label> <mat-icon matSuffix>infor</mat-icon>
+          <mat-label>Cellphone number</mat-label> <mat-icon matSuffix>infor</mat-icon>
         </mat-form-field><small class="poppins padding-0_75em">
-          We will verify this email address by email</small>
+          We will verify this phone number by SMS</small>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
@@ -60,23 +60,23 @@
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div class="height-50px start-center flex border-blue">
-          <input id="file" type="file" class="margin-left-12px" title="Certified ID" (change)="fileUpload($event, 0)" required>
+          <input id="file" type="file" class="margin-left-12px" title="Certified ID" (change)="fileUpload($event)" [(ngModel)]="page.clientDetails.ID_doc" name="ID_doc" required>
         </div><small class="poppins padding-0_75em">
           Certified ID document </small>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div class="start-center flex height-50px border-blue">
-          <input type="file" id="file1" class="margin-left-12px" title="Proof of residence" (change)="fileUpload1($event, 0)" required>
+          <input type="file" id="file1" class="margin-left-12px" title="Proof of residence" (change)="fileUpload1($event)" [(ngModel)]="page.clientDetails.proof_of_res" name="proof_of_res" required>
         </div><small class="poppins padding-0_75em">
           Proof of residence must have your full name</small>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div class="start-center flex height-50px border-blue">
-          <input type="file" id="file3" class="margin-left-12px" title="Client clear picture" (change)="fileUpload2($event, 0)" required>
+          <input type="file" id="file3" class="margin-left-12px" title="Client clear picture" (change)="fileUpload2($event)" [(ngModel)]="page.clientDetails.picture" name="picture" required>
         </div><small class="poppins padding-0_75em">
           Unfiltered client clear picture</small>
       </div>
-      <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/prepare_for_selfie" class="bg-blue color-w get-started-btn" (click)="submit(form)">Continue</button></div>
+      <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="bg-blue color-w get-started-btn" (click)="submit(form)">Continue</button></div>
       <div class="text-center poppins no-margin">
         Your personal information is safe with us</div>
     </form>

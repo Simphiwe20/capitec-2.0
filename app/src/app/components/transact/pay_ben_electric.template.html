@@ -1,0 +1,27 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="space-between center" [fxShow]="true" routerLink="/add-electricity-ben">
+          <p class="padding-left">
+            Add beneficiary</p><mat-icon style="padding-right:10px;" class="blue-color">add_circle</mat-icon>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <h3 style="margin-bottom: 10px;" class="m-b-0 padding-left">
+              All</h3>
+            <div fxLayout="row wrap" style="height:60px;margin-bottom:1em;" class="white-bg" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let ben of page.benArray" (click)="pay( ben)" routerLink="/buy-electricity/ele">
+              <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="padding-left blue-color">home</mat-icon></div>
+                <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    {{ben.benName}}
+                  </p>
+                </div>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon style="padding-right:10px;" class="blue-color">chevron_right</mat-icon></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

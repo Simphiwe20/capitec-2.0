@@ -1,5 +1,5 @@
-<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
-  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="row wrap" style="height:60px;" class="bg-blue" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="pointer color-w" routerLink="/logged_in_landing/home">arrow_back</mat-icon>
         <h3 class="no-margin poppins color-w">
@@ -7,9 +7,9 @@
       </div>
     </div>
     <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true" routerLink="/add-beneficiary">
+      <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true">
         <p class="poppins padding-left">
-          Add beneficiary</p><mat-icon style="padding-right:10px;" class="color-b">add_circle</mat-icon>
+          Add beneficiary</p><mat-icon style="padding-right:10px;" class="pointer color-b" routerLink="/logged_in_landing/add_beneficiary">add_circle</mat-icon>
       </div>
       <div fxLayout="column wrap" class="bg-white" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="poppins search-input" fxLayoutAlign="start center" [fxShow]="true">

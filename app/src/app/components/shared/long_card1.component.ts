@@ -105,8 +105,14 @@ export class long_card1Component {
           card_Container: {
             title: 'Manage daily limits',
             cards: [
-              { name: 'Update permanent limits' },
-              { name: 'Set temporary limits' },
+              {
+                name: 'Update permanent limits',
+                routes: '/logged_in_landing/update_permanent_limit',
+              },
+              {
+                name: 'Set temporary limits',
+                routes: '/logged_in_landing/update_temporary_limit',
+              },
             ],
           },
         },

@@ -93,7 +93,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "    const data = JSON.stringify(bh.input.action.data.value[0].value)\n    const parsed = JSON.parse(data)\n    console.log(JSON.parse(parsed))\n  ",
+        "script": "if(bh.input.action) {\n    const data = JSON.stringify(bh.input.action.data.value[0].value)\n    const parsed = JSON.parse(data)\n    console.log(JSON.parse(parsed))\n}   \n  ",
         "functionName": "sd_iDWBGrb7ZN7K6OJV",
         "category": "Function",
         "x": 180,

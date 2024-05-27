@@ -123,6 +123,86 @@
                     "_attrDef": "p"
                 }
             ],
+            "142e76fd-638e-852f-a2b7-4c7204aee83f": {
+                "paletteKey": "NG-image",
+                "parentEditorKey": "f347d7c8-58fa-e433-fde0-039851a6c748",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Image",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "imgSrc",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "alt",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[src]",
+                        "_value": "page.uploadedImage",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "imgSecure",
+                        "_value": "",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "width",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "srcset",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "sizes",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "#image",
+                        "_value": "#image",
+                        "_type": "a",
+                        "_attrDef": "c"
+                    },
+                    {
+                        "_key": "hidden",
+                        "_value": "hidden",
+                        "_type": "a",
+                        "_attrDef": "c"
+                    }
+                ]
+            },
             "4f9c30b5-d610-24d9-7f8a-2f42a4d03d00": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "f347d7c8-58fa-e433-fde0-039851a6c748",
@@ -785,7 +865,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "<small>Verify your identity</small>",
+                                "_value": "<small class=\"poppins\">Verify your identity</small>",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }
@@ -2288,7 +2368,7 @@
                             },
                             {
                                 "_key": "Label",
-                                "_value": "Email address",
+                                "_value": "Cellphone number",
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_visibility": true
@@ -2548,7 +2628,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "We will verify this email address by email",
+                                    "_value": "We will verify this phone number by SMS",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -4185,7 +4265,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<input id=\"file\" type=\"file\" class=\"margin-left-12px\" title=\"Certified ID\"  (change)=\"fileUpload($event, 0)\" required/>",
+                                    "_value": "<input id=\"file\" type=\"file\" class=\"margin-left-12px\" title=\"Certified ID\"  (change)=\"fileUpload($event)\" [(ngModel)]=\"page.clientDetails.ID_doc\" name=\"ID_doc\" required/>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -4684,7 +4764,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<input type=\"file\" id=\"file1\" class=\"margin-left-12px\" title=\"Proof of residence\"  (change)=\"fileUpload1($event, 0)\" required />",
+                                    "_value": "<input type=\"file\" id=\"file1\" class=\"margin-left-12px\" title=\"Proof of residence\"  (change)=\"fileUpload1($event)\" [(ngModel)]=\"page.clientDetails.proof_of_res\" name=\"proof_of_res\" required />",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -5183,7 +5263,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<input type=\"file\" id=\"file3\" class=\"margin-left-12px\" title=\"Client clear picture\"  (change)=\"fileUpload2($event, 0)\" required />",
+                                    "_value": "<input type=\"file\" id=\"file3\" class=\"margin-left-12px\" title=\"Client clear picture\"  (change)=\"fileUpload2($event)\" [(ngModel)]=\"page.clientDetails.picture\" name=\"picture\" required />",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -5542,7 +5622,7 @@
                             },
                             {
                                 "_key": "routerLink",
-                                "_value": "/prepare_for_selfie",
+                                "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             }

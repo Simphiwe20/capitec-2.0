@@ -1,19 +1,14 @@
-<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
-    <div fxLayout="column wrap" style="height: 20%" class="relative" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="column wrap" style="height: 40%;" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon style="    width: 100%;     height: 100%;     color: whitesmoke;     z-index: 1;position: absolute;     top: 11px;     bottom: 5px;     left: 4px;     font-size: 33px;">arrow_back</mat-icon><img imgSrc="/Web/Images/Hello.PNG" style="position:absolute;" class="full-height full-width"></div>
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="height-90" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="relative height-150px" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="./Web/Images/Hello1.PNG" class="full-height full-width"><mat-icon class="color-w left-top-10px absolute">arrow_back</mat-icon></div>
+      <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="password" [required]="false">
+        <mat-label>Remote App PIN</mat-label> <mat-icon matSuffix>infor</mat-icon> <mat-icon matPrefix>lock</mat-icon>
+      </mat-form-field>
+      <div fxLayout="column wrap" class="margin-top-20px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/confirm_app_activation" class="color-w">Continue</button></div>
     </div>
-    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-      <form #pinForm="ngForm" style="height:20%;">
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="row wrap" class="padding-6" fxLayoutAlign="center center" [fxShow]="true">
-            <mat-form-field class="white-bg full-width" [appearance]="'legacy'" [floatLabel]="'auto'" [hideRequiredMarker]="false">
-              <input matInput [(ngModel)]="page.remotePin.pin" name="pin" type="password" placeholder="Remote App PIN" [required]="true">
-              <mat-icon matSuffix>visibility_off</mat-icon> <mat-icon matPrefix>lock</mat-icon>
-            </mat-form-field>
-          </div>
-          <div fxLayout="row wrap" class="padding-10" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="white blue-bg full-width" (click)="pin(pinForm)">Continue</button></div>
-        </div>
-      </form>
-    </div><bh-footer style="position: absolute;     bottom: 0;" class="text-center"></bh-footer>
+    <div fxLayout="column wrap" class="x-small" fxLayoutAlign="start stretch" [fxShow]="true"><small class="text-center poppins">
+        Capitec Bank is an authorised financial services provider(FSP 46668) and registered credit provider(NCRCP13). Capitec Bank Limited Reg No. 1980/003695/06</small></div>
   </div>
-  
+</div>

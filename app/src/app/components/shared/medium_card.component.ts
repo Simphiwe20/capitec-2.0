@@ -113,8 +113,54 @@ export class medium_cardComponent {
       });
 
       console.log(cards);
-
-      page.cardsInfor = cards;
+      if (!cards.length) {
+        page.cardsInfor = [
+          {
+            cards: [
+              {
+                image: '../../../assets/Web/Images/pay_beneficiary.jpeg',
+                name: 'Pay beneficiary',
+                routes: '/logged_in_landing/pay_beneficiary',
+              },
+              {
+                image: '../../../assets/Web/Images/payshap.jpeg',
+                name: 'PayShap',
+                routes: '/logged_in_landing/pay_shap',
+              },
+            ],
+          },
+          {
+            cards: [
+              {
+                image: '../../../assets/Web/Images/pay_bills.jpeg',
+                name: 'Pay bills',
+                routes: '/logged_in_landing/pay_bills',
+              },
+              {
+                image: '../../../assets/Web/Images/international_payment.jpeg',
+                name: 'International payments',
+                routes: '/logged_in_landing/intrenational_payment',
+              },
+            ],
+          },
+          {
+            cards: [
+              {
+                image: '../../../assets/Web/Images/mobile_prepaid.jpg',
+                name: 'Buy prepaid mobile',
+                routes: '/logged_in_landing/buy_prepaid_mobile',
+              },
+              {
+                image: '../../../assets/Web/Images/electricity.jpg',
+                name: 'Buy electricity',
+                routes: '/logged_in_landing/buy_electricity',
+              },
+            ],
+          },
+        ];
+      } else {
+        page.cardsInfor = cards;
+      }
       //appendnew_next_sd_dwviufaEUSxef65M
       return bh;
     } catch (e) {

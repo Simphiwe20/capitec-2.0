@@ -16,6 +16,14 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-update_permanent_limitsComponent
+import { update_permanent_limitsComponent } from '../components/cards/physical/update_permanent_limits.component';
+//CORE_REFERENCE_IMPORT-payment_notifcationComponent
+import { payment_notifcationComponent } from '../components/transact/payment_notifcation.component';
+//CORE_REFERENCE_IMPORT-pay_ben_electricComponent
+import { pay_ben_electricComponent } from '../components/transact/pay_ben_electric.component';
+//CORE_REFERENCE_IMPORT-electricityComponent
+import { electricityComponent } from '../components/transact/electricity.component';
 //CORE_REFERENCE_IMPORT-inforComponent
 import { inforComponent } from '../components/auth/activate_app/infor.component';
 //CORE_REFERENCE_IMPORT-scan_to_payComponent
@@ -130,8 +138,6 @@ import { stepperComponent } from '../components/shared/stepper.component';
 import { landingComponent } from '../components/landings/landing.component';
 //CORE_REFERENCE_IMPORT-ft_landingComponent
 import { ft_landingComponent } from '../components/landings/ft_landing.component';
-//CORE_REFERENCE_IMPORT-update_temporary_limitsComponent
-import { update_temporary_limitsComponent } from '../components/cards/physical/update_temporary_limits.component';
 //CORE_REFERENCE_IMPORT-stop_cardComponent
 import { stop_cardComponent } from '../components/cards/physical/stop_card.component';
 //CORE_REFERENCE_IMPORT-tap_to_payComponent
@@ -170,6 +176,14 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_permanent_limitsComponent
+  update_permanent_limitsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-payment_notifcationComponent
+  payment_notifcationComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pay_ben_electricComponent
+  pay_ben_electricComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-electricityComponent
+  electricityComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-inforComponent
   inforComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-scan_to_payComponent
@@ -284,8 +298,6 @@ export const appDeclarations = [
   landingComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-ft_landingComponent
   ft_landingComponent,
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_temporary_limitsComponent
-  update_temporary_limitsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-stop_cardComponent
   stop_cardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tap_to_payComponent
@@ -327,7 +339,7 @@ export const appRoutes = [
   { path: 'basic_details', component: verify_identityComponent },
   { path: 'prepare_for_selfie', component: prepare_for_selfieComponent },
   { path: 'account_number', component: saving_accountComponent },
-  { path: 'enter_remote_pin', component: enter_remote_pinComponent },
+  { path: 'remote_app_pin', component: remote_app_pinComponent },
   {
     path: 'confirm_app_activation',
     component: confirm_app_activationComponent,
@@ -354,29 +366,27 @@ export const appRoutes = [
       { path: 'explore', component: exploreComponent },
       { path: 'favourites', component: favouritesComponent },
       { path: 'savings_account', component: savingsComponent },
-      { path: 'transfer_money', component: transfer_moneyComponent },
-      { path: 'send_cash', component: send_cashComponent },
-      { path: 'pay_user', component: pay_userComponent },
+      {
+        path: 'update_permanent_limit',
+        component: update_permanent_limitsComponent,
+      },
+      {
+        path: 'update_temporary_limit',
+        component: set_temporary_limitsComponent,
+      },
       { path: 'pay_beneficiary', component: pay_beneficiaryComponent },
-      { path: 'choose_bank', component: choose_banksComponent },
-      { path: 'cellphone', component: cellphoneComponent },
-      { path: 'buy_prepaid', component: buy_prepaidComponent },
-      { path: 'buy_prepaid_mobile', component: buy_prepaid_mobileComponent },
-      { path: 'buy_electricity', component: buy_electricityComponent },
-      { path: 'bank_account', component: bank_accountComponent },
-      { path: 'add_electricity_ben', component: add_electricity_benComponent },
       { path: 'add_beneficiary', component: add_beneficiaryComponent },
-      { path: 'scan_to_pay', component: scan_to_payComponent },
-      { path: 'credit', component: creditComponent },
-      { path: 'get_estimate', component: get_estimateComponent },
-      { path: 'loan', component: loanComponent },
-      { path: 'set_temporary_limit', component: set_temporary_limitsComponent },
-      { path: 'update_permanent', component: update_temporary_limitsComponent },
-      { path: 'stop_card', component: stop_cardComponent },
-      { path: 'taps_to_pay', component: tap_to_payComponent },
     ],
   },
-  { path: 'remote_pin', component: remote_app_pinComponent },
+  { path: 'enter_remote_pin', component: enter_remote_pinComponent },
+  { path: 'landing', component: landingComponent },
+  { path: 'create_remote_pin', component: create_remote_pinComponent },
+  { path: 'scan_to_pay', component: scan_to_payComponent },
+  { path: 'update_temporary_limit', component: set_temporary_limitsComponent },
+  {
+    path: 'update_permanent_limit',
+    component: update_permanent_limitsComponent,
+  },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

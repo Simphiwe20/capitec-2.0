@@ -1,9 +1,11 @@
 <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
-  <div fxLayout="row wrap" style="height:60px; " class="padding-0px-15px poppins color-w bg-blue full-width" fxLayoutGap="22%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: 28px;" class="white">arrow_back</mat-icon>
-    <h3 class="white">
-      Set Temporary Limits</h3>
+  <div fxLayout="row wrap" style="height:60px; " class="fixed z-index half-width padding-0px-15px poppins color-w bg-blue" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: 28px;" class="white">arrow_back</mat-icon>
+    <div fxLayout="column wrap" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+      <h3 class="no-margin white">
+        Set Temporary Limits</h3>
+    </div>
   </div>
-  <div fxLayout="column wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" class="margin-t-50px full-width" fxLayoutAlign="start stretch" [fxShow]="true">
     <form>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <p style="margin-bottom:10px; padding-left:10px;" class="poppins">
@@ -46,9 +48,9 @@
                 </p>
               </div>
             </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false"></mat-checkbox></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false" #input1></mat-checkbox></div>
           </div>
-          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input1._checked">
             <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
               <input matInput [required]="false">
               <mat-label>Amount (max R1 000 000)</mat-label>
@@ -68,9 +70,9 @@
                 </p>
               </div>
             </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false"></mat-checkbox></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false" #input2></mat-checkbox></div>
           </div>
-          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input2._checked">
             <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
               <input matInput [required]="false">
               <mat-label>Amount (max R1 000 000)</mat-label>

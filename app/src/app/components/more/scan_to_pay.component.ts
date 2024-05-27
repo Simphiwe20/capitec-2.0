@@ -83,9 +83,11 @@ export class scan_to_payComponent {
   sd_iDWBGrb7ZN7K6OJV(bh) {
     try {
       const page = this.page;
-      const data = JSON.stringify(bh.input.action.data.value[0].value);
-      const parsed = JSON.parse(data);
-      console.log(JSON.parse(parsed));
+      if (bh.input.action) {
+        const data = JSON.stringify(bh.input.action.data.value[0].value);
+        const parsed = JSON.parse(data);
+        console.log(JSON.parse(parsed));
+      }
 
       //appendnew_next_sd_iDWBGrb7ZN7K6OJV
       return bh;

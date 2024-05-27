@@ -5,6 +5,7 @@
 
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { FormBuilder } from '@angular/forms'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -57,14 +58,179 @@ export class add_electricity_benComponent {
     }
   }
 
+  addBeneficiary(form: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { form };
+      bh.local = {};
+      bh = this.sd_caQLY02q6nk65Ws7(bh);
+      //appendnew_next_addBeneficiary
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_wGSCmU9uNxGGykSE');
+    }
+  }
   //appendnew_flow_add_electricity_benComponent_start
 
   sd_VL1zlaote2UI4k8Y(bh) {
     try {
+      this.page.electric = this.page.electric;
+      this.page.user = undefined;
+      this.page.submitted = false;
+      bh = this.sd_NoX1CtqIGZCLH1i5(bh);
       //appendnew_next_sd_VL1zlaote2UI4k8Y
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_VL1zlaote2UI4k8Y');
+    }
+  }
+
+  sd_NoX1CtqIGZCLH1i5(bh) {
+    try {
+      this.page.result = JSON.parse(sessionStorage.getItem('accNo'));
+      bh = this.sd_lZn42Dc2ZX4U6P4q(bh);
+      //appendnew_next_sd_NoX1CtqIGZCLH1i5
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_NoX1CtqIGZCLH1i5');
+    }
+  }
+
+  sd_lZn42Dc2ZX4U6P4q(bh) {
+    try {
+      const page = this.page;
+      page.electric = {
+        meterNumber: '',
+        benName: '',
+        accountNumber: page.result.accountNumber,
+      };
+
+      console.log(page.electric);
+      //appendnew_next_sd_lZn42Dc2ZX4U6P4q
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lZn42Dc2ZX4U6P4q');
+    }
+  }
+
+  sd_caQLY02q6nk65Ws7(bh) {
+    try {
+      const page = this.page;
+      page.submitted = true;
+      bh = this.sd_ZulLOSXrNMHmQzky(bh);
+      //appendnew_next_sd_caQLY02q6nk65Ws7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_caQLY02q6nk65Ws7');
+    }
+  }
+
+  async sd_ZulLOSXrNMHmQzky(bh) {
+    try {
+      if (
+        this.sdService.operators['true'](
+          bh.input.form.valid,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_eTM5HEadG8mluSeT(bh);
+      } else {
+        bh = await this.sd_GKVxOWd4q4y2a21K(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ZulLOSXrNMHmQzky');
+    }
+  }
+
+  sd_eTM5HEadG8mluSeT(bh) {
+    try {
+      this.__page_injector__.get(MatSnackBar).open('Ke yona', 'OK', {
+        duration: 3000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
+      bh = this.sd_kfifbo2sIFGm5kl9(bh);
+      //appendnew_next_sd_eTM5HEadG8mluSeT
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_eTM5HEadG8mluSeT');
+    }
+  }
+
+  sd_kfifbo2sIFGm5kl9(bh) {
+    try {
+      this.page.ssdUrl = bh.system.environment.properties.ssdURL;
+      bh = this.sd_LCL8IPnUcbpewMH1(bh);
+      //appendnew_next_sd_kfifbo2sIFGm5kl9
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_kfifbo2sIFGm5kl9');
+    }
+  }
+
+  sd_LCL8IPnUcbpewMH1(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdUrl + 'add-beneficiary-electricity';
+      bh.body = page.electric;
+
+      console.log(bh.body);
+      bh = this.sd_YhPqqvVDcXPL2FM5(bh);
+      //appendnew_next_sd_LCL8IPnUcbpewMH1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_LCL8IPnUcbpewMH1');
+    }
+  }
+
+  async sd_YhPqqvVDcXPL2FM5(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.body,
+      };
+      this.page.results = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_tSlfBZSatBw89xp7(bh);
+      //appendnew_next_sd_YhPqqvVDcXPL2FM5
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_YhPqqvVDcXPL2FM5');
+    }
+  }
+
+  sd_tSlfBZSatBw89xp7(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.results);
+      //appendnew_next_sd_tSlfBZSatBw89xp7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_tSlfBZSatBw89xp7');
+    }
+  }
+
+  sd_GKVxOWd4q4y2a21K(bh) {
+    try {
+      this.__page_injector__.get(MatSnackBar).open('Never', 'OK', {
+        duration: 3000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
+      //appendnew_next_sd_GKVxOWd4q4y2a21K
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_GKVxOWd4q4y2a21K');
     }
   }
 

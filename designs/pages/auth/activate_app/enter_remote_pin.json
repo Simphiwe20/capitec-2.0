@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_5cKyaJCV93nGwrsf",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 65,
+        "y": 40,
         "wires": [
             [
                 "sd_5c33W7dZR9yPhak3"
@@ -43,8 +43,8 @@
         "globalVariables": [],
         "functionName": "sd_5c33W7dZR9yPhak3",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 40,
         "wires": [
             []
         ],
@@ -183,7 +183,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "get",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -191,10 +190,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -210,11 +207,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_R5hkVDoYsSgECEJa",
         "category": "HTTP",
@@ -313,9 +308,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -355,9 +348,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -383,13 +374,6 @@
         "nodeType": "flow",
         "name": "",
         "path": "/enter_remote_pin",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
         "functionName": "sd_SlCBuWhheXfzmxWs",
         "category": "Navigation",
         "x": 1025,
