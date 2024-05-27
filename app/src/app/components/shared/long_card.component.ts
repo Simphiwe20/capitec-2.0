@@ -126,7 +126,7 @@ export class long_cardComponent {
           image: '../../../assets/Web/Images/credit.png',
           name: 'Credit',
           name1: 'Credit Card, Facility & Loan',
-          routes: '/logged_in_landing/savings_account',
+          routes: '/logged_in_landing/credit',
         },
       ];
       bh = this.sd_YqOri42kYUCjimZE(bh);

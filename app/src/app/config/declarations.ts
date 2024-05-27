@@ -16,6 +16,48 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-update_permanent_limitsComponent
+import { update_permanent_limitsComponent } from '../components/cards/physical/update_permanent_limits.component';
+//CORE_REFERENCE_IMPORT-payment_notifcationComponent
+import { payment_notifcationComponent } from '../components/transact/payment_notifcation.component';
+//CORE_REFERENCE_IMPORT-pay_ben_electricComponent
+import { pay_ben_electricComponent } from '../components/transact/pay_ben_electric.component';
+//CORE_REFERENCE_IMPORT-electricityComponent
+import { electricityComponent } from '../components/transact/electricity.component';
+//CORE_REFERENCE_IMPORT-inforComponent
+import { inforComponent } from '../components/auth/activate_app/infor.component';
+//CORE_REFERENCE_IMPORT-scan_to_payComponent
+import { scan_to_payComponent } from '../components/more/scan_to_pay.component';
+//CORE_REFERENCE_IMPORT-choose_banksComponent
+import { choose_banksComponent } from '../components/transact/choose_banks.component';
+//CORE_REFERENCE_IMPORT-bank_accountComponent
+import { bank_accountComponent } from '../components/transact/bank_account.component';
+//CORE_REFERENCE_IMPORT-buy_prepaid_mobileComponent
+import { buy_prepaid_mobileComponent } from '../components/transact/buy_prepaid_mobile.component';
+//CORE_REFERENCE_IMPORT-creditComponent
+import { creditComponent } from '../components/explore/credit.component';
+//CORE_REFERENCE_IMPORT-loanComponent
+import { loanComponent } from '../components/explore/loan.component';
+//CORE_REFERENCE_IMPORT-get_estimateComponent
+import { get_estimateComponent } from '../components/explore/get_estimate.component';
+//CORE_REFERENCE_IMPORT-add_beneficiaryComponent
+import { add_beneficiaryComponent } from '../components/transact/add_beneficiary.component';
+//CORE_REFERENCE_IMPORT-add_electricity_benComponent
+import { add_electricity_benComponent } from '../components/transact/add_electricity_ben.component';
+//CORE_REFERENCE_IMPORT-buy_electricityComponent
+import { buy_electricityComponent } from '../components/transact/buy_electricity.component';
+//CORE_REFERENCE_IMPORT-buy_prepaidComponent
+import { buy_prepaidComponent } from '../components/transact/buy_prepaid.component';
+//CORE_REFERENCE_IMPORT-cellphoneComponent
+import { cellphoneComponent } from '../components/transact/cellphone.component';
+//CORE_REFERENCE_IMPORT-pay_userComponent
+import { pay_userComponent } from '../components/transact/pay_user.component';
+//CORE_REFERENCE_IMPORT-pay_beneficiaryComponent
+import { pay_beneficiaryComponent } from '../components/transact/pay_beneficiary.component';
+//CORE_REFERENCE_IMPORT-send_cashComponent
+import { send_cashComponent } from '../components/transact/send_cash.component';
+//CORE_REFERENCE_IMPORT-transfer_moneyComponent
+import { transfer_moneyComponent } from '../components/transact/transfer_money.component';
 //CORE_REFERENCE_IMPORT-savingsComponent
 import { savingsComponent } from '../components/savings/savings.component';
 //CORE_REFERENCE_IMPORT-tailor_made_cardComponent
@@ -96,8 +138,6 @@ import { stepperComponent } from '../components/shared/stepper.component';
 import { landingComponent } from '../components/landings/landing.component';
 //CORE_REFERENCE_IMPORT-ft_landingComponent
 import { ft_landingComponent } from '../components/landings/ft_landing.component';
-//CORE_REFERENCE_IMPORT-update_temporary_limitsComponent
-import { update_temporary_limitsComponent } from '../components/cards/physical/update_temporary_limits.component';
 //CORE_REFERENCE_IMPORT-stop_cardComponent
 import { stop_cardComponent } from '../components/cards/physical/stop_card.component';
 //CORE_REFERENCE_IMPORT-tap_to_payComponent
@@ -136,6 +176,48 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_permanent_limitsComponent
+  update_permanent_limitsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-payment_notifcationComponent
+  payment_notifcationComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pay_ben_electricComponent
+  pay_ben_electricComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-electricityComponent
+  electricityComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-inforComponent
+  inforComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-scan_to_payComponent
+  scan_to_payComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-choose_banksComponent
+  choose_banksComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-bank_accountComponent
+  bank_accountComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_prepaid_mobileComponent
+  buy_prepaid_mobileComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-creditComponent
+  creditComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loanComponent
+  loanComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-get_estimateComponent
+  get_estimateComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-add_beneficiaryComponent
+  add_beneficiaryComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-add_electricity_benComponent
+  add_electricity_benComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_electricityComponent
+  buy_electricityComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_prepaidComponent
+  buy_prepaidComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-cellphoneComponent
+  cellphoneComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pay_userComponent
+  pay_userComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pay_beneficiaryComponent
+  pay_beneficiaryComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-send_cashComponent
+  send_cashComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-transfer_moneyComponent
+  transfer_moneyComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-savingsComponent
   savingsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tailor_made_cardComponent
@@ -216,8 +298,6 @@ export const appDeclarations = [
   landingComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-ft_landingComponent
   ft_landingComponent,
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_temporary_limitsComponent
-  update_temporary_limitsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-stop_cardComponent
   stop_cardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tap_to_payComponent
@@ -259,7 +339,7 @@ export const appRoutes = [
   { path: 'basic_details', component: verify_identityComponent },
   { path: 'prepare_for_selfie', component: prepare_for_selfieComponent },
   { path: 'account_number', component: saving_accountComponent },
-  { path: 'enter_remote_pin', component: enter_remote_pinComponent },
+  { path: 'remote_app_pin', component: remote_app_pinComponent },
   {
     path: 'confirm_app_activation',
     component: confirm_app_activationComponent,
@@ -286,7 +366,26 @@ export const appRoutes = [
       { path: 'explore', component: exploreComponent },
       { path: 'favourites', component: favouritesComponent },
       { path: 'savings_account', component: savingsComponent },
+      {
+        path: 'update_permanent_limit',
+        component: update_permanent_limitsComponent,
+      },
+      {
+        path: 'update_temporary_limit',
+        component: set_temporary_limitsComponent,
+      },
+      { path: 'pay_beneficiary', component: pay_beneficiaryComponent },
+      { path: 'add_beneficiary', component: add_beneficiaryComponent },
     ],
+  },
+  { path: 'enter_remote_pin', component: enter_remote_pinComponent },
+  { path: 'landing', component: landingComponent },
+  { path: 'create_remote_pin', component: create_remote_pinComponent },
+  { path: 'scan_to_pay', component: scan_to_payComponent },
+  { path: 'update_temporary_limit', component: set_temporary_limitsComponent },
+  {
+    path: 'update_permanent_limit',
+    component: update_permanent_limitsComponent,
   },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

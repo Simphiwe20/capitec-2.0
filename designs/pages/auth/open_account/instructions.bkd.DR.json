@@ -205,6 +205,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "pointer",
                                 "color-w"
                             ],
                             "_type": "dav",
@@ -228,6 +229,12 @@
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "/sign_up_stepper",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ]
                 },
@@ -591,7 +598,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width: 190px; height: 170px",
+                            "_value": "width: 190px; height: 150px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1151,7 +1158,6 @@
                 "88491f92-661d-62f8-e613-2bc4f899b19f": {
                     "paletteKey": "NG-RaisedButton",
                     "parentEditorKey": "37f4d67b-5f6b-e245-2e16-f26fd0f68f97",
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {

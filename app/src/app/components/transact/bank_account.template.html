@@ -1,0 +1,63 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="height:60px; border-bottom:1px solid darkgrey;" class="blue-bg" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="white">arrow_back</mat-icon>
+          <h3 class="white">
+            Add beneficiary</h3>
+        </div>
+        <div fxLayout="column wrap" style="height:90px;" class="white blue-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+          <p class="text-center">
+            Ensure you enter the correct details. Only Capitec<br>account numbers are verified against the actual<br>account holder</p>
+        </div>
+      </div>
+      <div fxLayout="column wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+        <form>
+          <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey; padding-right:10px;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="padding-left" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput type="text" placeholder="Beneficary name" [required]="false">
+  
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey; padding-right:10px;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field class="padding-left" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput type="number" placeholder="Account number" [required]="false">
+  
+                </mat-form-field>
+              </div>
+              <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey; height:65px;" class="white-bg" fxLayoutAlign="space-between center" [fxShow]="true" routerLink="/choose-banks">
+                <p class="padding-left">
+                  Choose bank</p><mat-icon style="padding-right:10px;" class="blue-color">chevron_right</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey; padding-right:10px;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="padding-left" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput type="text" placeholder="Branch code" [required]="false">
+  
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey; padding-right:10px;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="padding-left" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput type="text" placeholder="Beneficary reference" value="L MATHOTO" [required]="false">
+  
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <h3 class="padding-left">
+                  Payment notification</h3>
+              </div>
+              <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/payment-notification">
+                <mat-form-field style="padding-right:10px;" class="padding-left" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput placeholder="Choose notification type" value="None" [required]="false">
+                  <mat-icon matSuffix>chevron_right</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="column wrap" class="padding-10" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="white blue-bg">Add</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

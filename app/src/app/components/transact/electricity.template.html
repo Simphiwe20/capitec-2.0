@@ -1,0 +1,60 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" style="height:90px;" class="text-center blue-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h3 style="margin-bottom:10px;" class="m-b-0 white whi">
+            {{page.selected.benName}}
+          </h3>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div class="no-margin white">
+            {{page.selected.meterNumber}}
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h3 style="margin-bottom:10px;" class="padding-left">
+          From</h3>
+        <div fxLayout="row wrap" style="height: 60px;border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutGap=".5em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/transact.PNG" class="padding-left"></div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <h4 class="no-margin">
+                    Savings</h4>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p class="no-margin">
+                    <small>Available balance</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  R20.123</p>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="blue-color">more_vert</mat-icon></div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column wrap" style="margin-top:15px;" fxLayoutAlign="start stretch" [fxShow]="true">
+          <form #payElectricForm="ngForm">
+            <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field class="padding-left" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.electricForm.amount" name="amount" placeholder="Amount " [required]="true">
+  
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" class="padding-10" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="white blue-bg" (click)="buyElectric(payElectricForm)">Buy</button><button mat-raised-button style="border: 2px solid #0f9ddf;" class="blue-color">View History</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

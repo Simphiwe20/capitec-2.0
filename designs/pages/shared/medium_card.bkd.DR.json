@@ -213,6 +213,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "pointer",
                                 "small-card"
                             ],
                             "_type": "dav",
@@ -227,6 +228,12 @@
                         {
                             "_key": "*ngFor",
                             "_value": "let card of cardInfor.cards ",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "{{card.routes}}",
                             "_type": "kv",
                             "_attrDef": "c"
                         }

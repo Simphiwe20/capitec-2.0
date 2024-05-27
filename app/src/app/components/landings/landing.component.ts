@@ -33,7 +33,7 @@ export class landingComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_Y19bJwTwrt5jRraC(bh);
+      this.sd_GshVIoKNmdvI93fw(bh);
     }
   }
 
@@ -45,24 +45,62 @@ export class landingComponent {
     //append_listeners
   }
 
-  sd_Y19bJwTwrt5jRraC(bh) {
+  sd_GshVIoKNmdvI93fw(bh) {
     try {
-      bh = this.sd_ZjMQpurnSF7c62ki(bh);
-      //appendnew_next_sd_Y19bJwTwrt5jRraC
+      bh = this.sd_xV0StEqkp7VzwxqT(bh);
+      //appendnew_next_sd_GshVIoKNmdvI93fw
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Y19bJwTwrt5jRraC');
+      return this.errorHandler(bh, e, 'sd_GshVIoKNmdvI93fw');
     }
   }
 
   //appendnew_flow_landingComponent_start
 
-  sd_ZjMQpurnSF7c62ki(bh) {
+  sd_xV0StEqkp7VzwxqT(bh) {
     try {
-      //appendnew_next_sd_ZjMQpurnSF7c62ki
+      this.page.user = { fullName: 'Simphiwe' };
+      bh = this.sd_hSXkVqbQP8cTtYzI(bh);
+      //appendnew_next_sd_xV0StEqkp7VzwxqT
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ZjMQpurnSF7c62ki');
+      return this.errorHandler(bh, e, 'sd_xV0StEqkp7VzwxqT');
+    }
+  }
+
+  sd_hSXkVqbQP8cTtYzI(bh) {
+    try {
+      localStorage.setItem('accNo', JSON.stringify(this.page.user));
+      bh = this.sd_bUfMVskuDy7DcZDk(bh);
+      //appendnew_next_sd_hSXkVqbQP8cTtYzI
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_hSXkVqbQP8cTtYzI');
+    }
+  }
+
+  sd_bUfMVskuDy7DcZDk(bh) {
+    try {
+      this.page.result = JSON.parse(localStorage.getItem('accNo'));
+      bh = this.sd_hI3gfhVm39WC4LqQ(bh);
+      //appendnew_next_sd_bUfMVskuDy7DcZDk
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_bUfMVskuDy7DcZDk');
+    }
+  }
+
+  sd_hI3gfhVm39WC4LqQ(bh) {
+    try {
+      const page = this.page;
+      console.log(typeof page.result);
+      page.user = page.result.fullName;
+      console.log(page.user);
+
+      //appendnew_next_sd_hI3gfhVm39WC4LqQ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_hI3gfhVm39WC4LqQ');
     }
   }
 

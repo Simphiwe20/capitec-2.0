@@ -173,6 +173,10 @@ body {
     color: $navy-blue;
 }
 
+.color-navy {
+    color: $navy-blue;
+}
+
 .color-purple {
     color: $purple;
 }
@@ -219,6 +223,17 @@ body {
 
 .opacity {
     opacity: 0.7;
+}
+
+.landing-bg-img {
+    background-image: url('../../app/src/assets/Web/Images/background.PNG');
+}
+
+.hello-bg-img {
+    background-image: url('../../app/src/assets/Web/Images/hello-landing.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 // Text styles
@@ -271,6 +286,10 @@ body {
 
 .no-margin {
     margin: 0;
+}
+
+.no-margin-top {
+    margin-top: 0;
 }
 
 .margin-left-20px {
@@ -440,6 +459,43 @@ hr {
     border-color: $blue-ish;
 }
 
+.radio-input {
+    .mat-radio-button{
+        width: 17px;
+    }
+    .mat-radio-outer-circle {
+        height:  15px;  
+        width: 15px;
+
+    }
+}
+
+.tab-btn {
+    .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+        display: none;
+    }
+}
+
+.blue-border-input {
+    border: 3px solid $blue;
+    .mat-form-field-underline {
+        width: 0;
+    }
+}
+
+.scan-vid {
+    video {
+        height: 100%;
+    }
+}
+
+.search-input {
+    input.mat-input-element {
+            height: 30px;
+            padding-left: 10px
+    }
+}
+
 .get-started-btn {
     .mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
         background-color: $blue;
@@ -473,6 +529,10 @@ hr {
 
 .btn-shadow-grey {
     box-shadow: 0 20px 8px 0 rgba(0, 0, 0, 0.2),  ;
+}
+
+.scan-to-pay {
+    box-shadow: 0 -4px 7px 0 lightgrey
 }
 
 .video {
@@ -509,7 +569,7 @@ hr {
 .small-card {
     align-content: center;
     width: 49%;
-    height: 100px;
+    height: 80px;
 }
 
 .align-content-center {
@@ -559,6 +619,10 @@ hr {
 
 .mat-tab-body-wrapper, bh-cards_landing, .mat-tab-group, bh-home, bh-transact, bh-favourites{
    @extend %shared-full-height
+}
+
+bh-set_temporary_limits, bh-update_permanent_limits {
+    width: 50%;
 }
 
 @media screen and(max-width: 1024px) {

@@ -41,8 +41,8 @@
             "component": "saving_accountComponent"
         },
         {
-            "path": "enter_remote_pin",
-            "component": "enter_remote_pinComponent"
+            "path": "remote_app_pin",
+            "component": "remote_app_pinComponent"
         },
         {
             "path": "confirm_app_activation",
@@ -111,8 +111,48 @@
                 {
                     "path": "savings_account",
                     "component": "savingsComponent"
+                },
+                {
+                    "path": "update_permanent_limit",
+                    "component": "update_permanent_limitsComponent"
+                },
+                {
+                    "path": "update_temporary_limit",
+                    "component": "set_temporary_limitsComponent"
+                },
+                {
+                    "path": "pay_beneficiary",
+                    "component": "pay_beneficiaryComponent"
+                },
+                {
+                    "path": "add_beneficiary",
+                    "component": "add_beneficiaryComponent"
                 }
             ]
+        },
+        {
+            "path": "enter_remote_pin",
+            "component": "enter_remote_pinComponent"
+        },
+        {
+            "path": "landing",
+            "component": "landingComponent"
+        },
+        {
+            "path": "create_remote_pin",
+            "component": "create_remote_pinComponent"
+        },
+        {
+            "path": "scan_to_pay",
+            "component": "scan_to_payComponent"
+        },
+        {
+            "path": "update_temporary_limit",
+            "component": "set_temporary_limitsComponent"
+        },
+        {
+            "path": "update_permanent_limit",
+            "component": "update_permanent_limitsComponent"
         },
         {
             "path": "''",
