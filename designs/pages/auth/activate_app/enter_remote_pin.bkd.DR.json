@@ -908,6 +908,12 @@
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "#pinForm",
+                            "_value": "ngForm",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
                     "c681e438-054a-84b3-c281-79d9d45bf6c0": {
@@ -1522,7 +1528,7 @@
                                 },
                                 {
                                     "_key": "[(ngModel)]",
-                                    "_value": "",
+                                    "_value": "page.userPin.pin",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1534,7 +1540,7 @@
                                 },
                                 {
                                     "_key": "name",
-                                    "_value": "",
+                                    "_value": "userPin",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1745,9 +1751,18 @@
                                 },
                                 {
                                     "_key": "(click)",
-                                    "_value": "",
+                                    "_value": "submitPin(pinForm)",
                                     "_type": "kv",
-                                    "_attrDef": "p"
+                                    "_attrDef": "p",
+                                    "objValue": {
+                                        "nodeID": "sd_lLXz6zQ1hfHKK2hx",
+                                        "functionName": "submitPin",
+                                        "activeTree": "pages",
+                                        "z": "sd_VWX1Hs56TGV1AkWp",
+                                        "input": [
+                                            "pinForm"
+                                        ]
+                                    }
                                 },
                                 {
                                     "_key": "[disabled]",

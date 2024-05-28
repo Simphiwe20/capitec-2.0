@@ -1859,13 +1859,15 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [
+                                "square-50px"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "imgSrc",
-                            "_value": "./Web/Images/myphoto.jpg",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1877,7 +1879,7 @@
                         },
                         {
                             "_key": "[src]",
-                            "_value": "",
+                            "_value": "page.routeData.img",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1904,12 +1906,6 @@
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
-                        },
-                        {
-                            "_key": "hidden",
-                            "_value": "hidden",
-                            "_type": "a",
-                            "_attrDef": "c"
                         },
                         {
                             "_key": "#queryImage",

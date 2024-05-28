@@ -275,7 +275,7 @@ export class saving_accountComponent {
   async sd_7CE8g6QtNrkyHw08(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/enter_remote_pin');
+        this.sdService.getPathAndQParamsObj('/remote_app_pin');
       await this.__page_injector__
         .get(Router)
         .navigate([this.sdService.formatPathWithParams(path, undefined)]);

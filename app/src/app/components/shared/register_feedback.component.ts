@@ -4,20 +4,19 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
-import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-feedback',
-  templateUrl: './feedback.template.html',
+  selector: 'bh-register_feedback',
+  templateUrl: './register_feedback.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class feedbackComponent {
+export class register_feedbackComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -34,7 +33,7 @@ export class feedbackComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_yOBgvrXlC4puiKfw(bh);
+      this.sd_mqB74TINubkIjsNP(bh);
     }
   }
 
@@ -46,49 +45,24 @@ export class feedbackComponent {
     //append_listeners
   }
 
-  sd_yOBgvrXlC4puiKfw(bh) {
+  sd_mqB74TINubkIjsNP(bh) {
     try {
-      bh = this.sd_0HtxUpSOPR8PcW02(bh);
-      //appendnew_next_sd_yOBgvrXlC4puiKfw
+      bh = this.sd_ZDIikGmLSDFIbWN2(bh);
+      //appendnew_next_sd_mqB74TINubkIjsNP
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_yOBgvrXlC4puiKfw');
+      return this.errorHandler(bh, e, 'sd_mqB74TINubkIjsNP');
     }
   }
 
-  //appendnew_flow_feedbackComponent_start
+  //appendnew_flow_register_feedbackComponent_start
 
-  sd_0HtxUpSOPR8PcW02(bh) {
+  sd_ZDIikGmLSDFIbWN2(bh) {
     try {
-      this.page.router = this.__page_injector__.get(Router);
-      bh = this.sd_ZgsogB7G2DX0hHzg(bh);
-      //appendnew_next_sd_0HtxUpSOPR8PcW02
+      //appendnew_next_sd_ZDIikGmLSDFIbWN2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_0HtxUpSOPR8PcW02');
-    }
-  }
-
-  sd_ZgsogB7G2DX0hHzg(bh) {
-    try {
-      bh = this.sd_Eb5bIzVkHhjIKQTo(bh);
-      //appendnew_next_sd_ZgsogB7G2DX0hHzg
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ZgsogB7G2DX0hHzg');
-    }
-  }
-
-  sd_Eb5bIzVkHhjIKQTo(bh) {
-    try {
-      const page = this.page;
-      setTimeout(() => {
-        page.router.navigate(['/landing']);
-      }, 4000);
-      //appendnew_next_sd_Eb5bIzVkHhjIKQTo
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Eb5bIzVkHhjIKQTo');
+      return this.errorHandler(bh, e, 'sd_ZDIikGmLSDFIbWN2');
     }
   }
 
@@ -108,5 +82,5 @@ export class feedbackComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_feedbackComponent_Catch
+  //appendnew_flow_register_feedbackComponent_Catch
 }

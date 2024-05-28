@@ -13,7 +13,7 @@
       </h1>
     </div>
     <div fxLayout="column wrap" style="padding:15px;" fxLayoutAlign="start stretch" [fxShow]="true">
-      <form class="padding-10">
+      <form #pinForm="ngForm" class="padding-10">
         <div fxLayout="row wrap" style="    margin-bottom: 10px;" class="poppins" fxLayoutAlign="space-between space-between" [fxShow]="true">
           <p class="no-margin">
             <b>Enter Remote PIN</b>
@@ -24,11 +24,11 @@
         </div>
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <mat-form-field class="blue-border-input full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput type="password" [required]="false">
+            <input matInput [(ngModel)]="page.userPin.pin" name="userPin" type="password" [required]="false">
 
           </mat-form-field>
         </div>
-        <div fxLayout="column wrap" class="margin-top-16px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w">Submit</button></div>
+        <div fxLayout="column wrap" class="margin-top-16px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="submitPin(pinForm)">Submit</button></div>
       </form>
     </div><bh-footer style="position: absolute;     bottom: 0;" class="text-center"></bh-footer>
   </div>

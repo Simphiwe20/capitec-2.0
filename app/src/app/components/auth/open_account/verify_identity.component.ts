@@ -216,6 +216,8 @@ export class verify_identityComponent implements AfterViewInit {
       this.page.file1 = undefined;
       this.page.file2 = undefined;
       this.page.uploadedImage = undefined;
+      this.page.detected = undefined;
+      this.page.showLoader = false;
       bh = this.sd_vh3M7aFNa9ZH2tRe(bh);
       //appendnew_next_sd_iqcHnNX7jsgHG1KD
       return bh;
@@ -258,16 +260,16 @@ export class verify_identityComponent implements AfterViewInit {
   async sd_YodjhkqTxOcyF5ze(bh) {
     try {
       if (
-        this.sdService.operators['true'](
+        this.sdService.operators['false'](
           bh.input.form.valid,
           undefined,
           undefined,
           undefined
         )
       ) {
-        bh = this.sd_YPjEtWNF1391B6dR(bh);
+        bh = this.sd_lQdnzsA3YV6TT5Kt(bh);
       } else {
-        bh = await this.sd_lQdnzsA3YV6TT5Kt(bh);
+        bh = await this.sd_YPjEtWNF1391B6dR(bh);
       }
 
       return bh;
@@ -280,17 +282,63 @@ export class verify_identityComponent implements AfterViewInit {
     try {
       const page = this.page;
       bh.url = page.ssdUrl + 'registration';
+      // page.showLoader = true
 
-      // delete page.clientDetails.picture
-      // delete page.clientDetails.proof_of_res
-      // delete page.clientDetails.ID_doc
-      // delete page.clientDetails.confirmPin
-
-      bh = this.sd_trI7dpLHV8CdnvOf(bh);
+      bh = this.sd_PjmN4y2bUvDZKoe7(bh);
       //appendnew_next_sd_YPjEtWNF1391B6dR
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_YPjEtWNF1391B6dR');
+    }
+  }
+
+  sd_PjmN4y2bUvDZKoe7(bh) {
+    try {
+      let outputVariables = this.detectFace();
+
+      bh = this.sd_Vqwl6KW5osLETFZH(bh);
+      //appendnew_next_sd_PjmN4y2bUvDZKoe7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_PjmN4y2bUvDZKoe7');
+    }
+  }
+
+  async sd_Vqwl6KW5osLETFZH(bh) {
+    try {
+      if (
+        this.sdService.operators['true'](
+          this.page.detected,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_qi7thJp7eJAp0VNG(bh);
+      } else {
+        bh = await this.sd_PPDdfTlAlE3mv3QQ(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Vqwl6KW5osLETFZH');
+    }
+  }
+
+  sd_qi7thJp7eJAp0VNG(bh) {
+    try {
+      const page = this.page;
+      page.showLoader = true;
+
+      delete page.clientDetails.picture;
+      delete page.clientDetails.proof_of_res;
+      delete page.clientDetails.ID_doc;
+      delete page.clientDetails.confirmPin;
+      bh = this.sd_trI7dpLHV8CdnvOf(bh);
+      //appendnew_next_sd_qi7thJp7eJAp0VNG
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_qi7thJp7eJAp0VNG');
     }
   }
 
@@ -341,7 +389,7 @@ export class verify_identityComponent implements AfterViewInit {
     try {
       let outputVariables = this.upload2();
 
-      bh = this.sd_nbtlvw4orbrSDrLj(bh);
+      bh = this.sd_cMRjItrAz1TfAlWt(bh);
       //appendnew_next_sd_I8UIvSuF16EFAFgd
       return bh;
     } catch (e) {
@@ -349,21 +397,16 @@ export class verify_identityComponent implements AfterViewInit {
     }
   }
 
-  sd_nbtlvw4orbrSDrLj(bh) {
+  sd_cMRjItrAz1TfAlWt(bh) {
     try {
-      this.__page_injector__
-        .get(MatSnackBar)
-        .open('You have successfully registered', 'OK', {
-          duration: 1000,
-          direction: 'ltr',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        });
+      const page = this.page;
+      page.showLoader = false;
+      bh.routeData = { img: page.uploadedImage, isRegister: true };
       bh = this.sd_8Szscxq0EVjTBYiF(bh);
-      //appendnew_next_sd_nbtlvw4orbrSDrLj
+      //appendnew_next_sd_cMRjItrAz1TfAlWt
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_nbtlvw4orbrSDrLj');
+      return this.errorHandler(bh, e, 'sd_cMRjItrAz1TfAlWt');
     }
   }
 
@@ -374,12 +417,47 @@ export class verify_identityComponent implements AfterViewInit {
       await this.__page_injector__
         .get(Router)
         .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
+          queryParams: Object.assign(qprm, bh.routeData),
         });
       //appendnew_next_sd_8Szscxq0EVjTBYiF
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8Szscxq0EVjTBYiF');
+    }
+  }
+
+  sd_PPDdfTlAlE3mv3QQ(bh) {
+    try {
+      const page = this.page;
+      page.showLoader = false;
+      console.log(page.detected);
+
+      bh = this.sd_cJuyaqglzE84MFAO(bh);
+      //appendnew_next_sd_PPDdfTlAlE3mv3QQ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_PPDdfTlAlE3mv3QQ');
+    }
+  }
+
+  sd_cJuyaqglzE84MFAO(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open(
+          'The face on your picture is not detectable, please upload a picture with a clear face',
+          'OK',
+          {
+            duration: 2000,
+            direction: 'ltr',
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom',
+          }
+        );
+      //appendnew_next_sd_cJuyaqglzE84MFAO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cJuyaqglzE84MFAO');
     }
   }
 
@@ -410,8 +488,6 @@ export class verify_identityComponent implements AfterViewInit {
       } else {
         console.log('The is no file uploaded');
       }
-
-      console.log(page.file);
       //appendnew_next_sd_ghCy4D8XsVpSIUTz
       return bh;
     } catch (e) {
@@ -429,8 +505,6 @@ export class verify_identityComponent implements AfterViewInit {
       } else {
         console.log('The is no file uploaded');
       }
-
-      console.log(page.file);
       //appendnew_next_sd_oBFkdjb8Ql3rh59x
       return bh;
     } catch (e) {
@@ -448,14 +522,13 @@ export class verify_identityComponent implements AfterViewInit {
         let fileType = page.file2['type'].split('/')[0];
         if (fileType != 'image') {
           alert('Please select an image');
+          delete page.clientDetails.picture;
           return;
         }
       } else {
         console.log('The is no file uploaded');
         return;
       }
-
-      console.log(page.file);
 
       let fileReader = new FileReader();
       fileReader.readAsDataURL(page.file2);
@@ -660,15 +733,25 @@ export class verify_identityComponent implements AfterViewInit {
     try {
       const page = this.page;
       let queryImage = bh.pageViews.image.nativeElement;
-      let detectqueryImage = await faceapi
-        .detectSingleFace(queryImage, new faceapi.TinyFaceDetectorOptions())
-        .withFaceLandmarks()
-        .withFaceExpressions()
-        .withFaceDescriptor();
+      console.log(queryImage);
+      let detectqueryImage = await faceapi.detectSingleFace(
+        queryImage,
+        new faceapi.TinyFaceDetectorOptions()
+      );
+      // .withFaceLandmarks().withFaceExpressions().withFaceDescriptor()
 
       if (!detectqueryImage) {
-        console.log('The picture uploaded is now an image');
+        page.detected = false;
+      } else {
+        page.detected = true;
       }
+      // if(!detectqueryImage) {
+      //     console.log('The picture uploaded is not an image')
+      //     console.log(detectqueryImage)
+      // }else {
+      //     console.log(detectqueryImage)
+      //     console.log('Picture is detected')
+      // }
       //appendnew_next_sd_SV7LEu4ccRmnkN59
       return bh;
     } catch (e) {

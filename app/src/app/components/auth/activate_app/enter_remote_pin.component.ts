@@ -73,14 +73,41 @@ export class enter_remote_pinComponent {
       return this.errorHandler(bh, e, 'sd_GVLEUzjjfPPMksom');
     }
   }
+
+  submitPin(form: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { form };
+      bh.local = {};
+      bh = this.sd_Nf75GrS4D61HJC0W(bh);
+      //appendnew_next_submitPin
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lLXz6zQ1hfHKK2hx');
+    }
+  }
   //appendnew_flow_enter_remote_pinComponent_start
 
   sd_5c33W7dZR9yPhak3(bh) {
     try {
+      this.page.userPin = { pin: '' };
+      bh = this.sd_jQVRzlhoKtGmrsn6(bh);
       //appendnew_next_sd_5c33W7dZR9yPhak3
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_5c33W7dZR9yPhak3');
+    }
+  }
+
+  sd_jQVRzlhoKtGmrsn6(bh) {
+    try {
+      this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
+      //appendnew_next_sd_jQVRzlhoKtGmrsn6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_jQVRzlhoKtGmrsn6');
     }
   }
 
@@ -152,18 +179,16 @@ export class enter_remote_pinComponent {
     try {
       const page = this.page;
       console.log(bh.result);
-      bh.user = bh.result.find(
-        (user: any) => user.accountNumber == page.accNo.accNo
-      );
+      bh.user = bh.result.find((user: any) => user.re == page.userPin.pin);
 
       console.log(bh.user);
 
-      console.log(page.accNo.accNo);
-      if (bh.user.accountNumber == page.accNo.accNo) {
-        console.log('Account numbers match ');
-      } else {
-        console.log("Doesn't match");
-      }
+      // console.log(page.accNo.accNo)
+      // if( bh.user.accountNumber == page.accNo.accNo) {
+      //     console.log('Account numbers match ')
+      // }else {
+      //     console.log('Doesn\'t match')
+      // }
       //  if(!bh.user) {
       //           alert("user does not exist!");
       //           return
@@ -230,7 +255,7 @@ export class enter_remote_pinComponent {
   async sd_SlCBuWhheXfzmxWs(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/enter_remote_pin');
+        this.sdService.getPathAndQParamsObj('/logged_in_landing/home');
       await this.__page_injector__
         .get(Router)
         .navigate([this.sdService.formatPathWithParams(path, undefined)]);
@@ -253,6 +278,78 @@ export class enter_remote_pinComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_GCNmDBEuuIF3BVXL');
+    }
+  }
+
+  sd_Nf75GrS4D61HJC0W(bh) {
+    try {
+      if (
+        this.sdService.operators['true'](
+          bh.input.form.valid,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_l6W1niEA0hfqyxb4(bh);
+      } else {
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Nf75GrS4D61HJC0W');
+    }
+  }
+
+  async sd_l6W1niEA0hfqyxb4(bh) {
+    try {
+      if (
+        this.sdService.operators['eq'](
+          this.page.userPin.pin,
+          this.page.user.remotePin,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_9zp4ZRHxnodeedeB(bh);
+      } else {
+        bh = await this.sd_4lIXJ2ZUSZ86YYd8(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_l6W1niEA0hfqyxb4');
+    }
+  }
+
+  async sd_9zp4ZRHxnodeedeB(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/logged_in_landing/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+      //appendnew_next_sd_9zp4ZRHxnodeedeB
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_9zp4ZRHxnodeedeB');
+    }
+  }
+
+  sd_4lIXJ2ZUSZ86YYd8(bh) {
+    try {
+      this.__page_injector__.get(MatSnackBar).open('Pin does not match', 'ok', {
+        duration: 3000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
+      //appendnew_next_sd_4lIXJ2ZUSZ86YYd8
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4lIXJ2ZUSZ86YYd8');
     }
   }
 

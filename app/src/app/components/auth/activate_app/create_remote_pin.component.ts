@@ -258,12 +258,10 @@ export class create_remote_pinComponent {
   async sd_c0s5mAXh7MXGuw9z(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/enter-remote-pin');
+        this.sdService.getPathAndQParamsObj('/enter_remote_pin');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       bh = this.sd_HNRCFPczWHckqSv1(bh);
       //appendnew_next_sd_c0s5mAXh7MXGuw9z
       return bh;
