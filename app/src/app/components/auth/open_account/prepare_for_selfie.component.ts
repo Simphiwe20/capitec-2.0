@@ -4,7 +4,7 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
-import { ActivatedRoute } from '@angular/router'; //_splitter_
+import { ActivatedRoute, Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -56,6 +56,20 @@ export class prepare_for_selfieComponent {
     }
   }
 
+  takePic(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_kMV0n7791fndSeuo(bh);
+      //appendnew_next_takePic
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_9tIddj3O6b4z2LUS');
+    }
+  }
   //appendnew_flow_prepare_for_selfieComponent_start
 
   sd_xZjYdCKi3oyssZVv(bh) {
@@ -88,6 +102,22 @@ export class prepare_for_selfieComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_M6mt3noUsGlCB4E8');
+    }
+  }
+
+  async sd_kMV0n7791fndSeuo(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/take_selfie');
+      this.page.result = await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, this.page.routeData),
+        });
+      //appendnew_next_sd_kMV0n7791fndSeuo
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_kMV0n7791fndSeuo');
     }
   }
 

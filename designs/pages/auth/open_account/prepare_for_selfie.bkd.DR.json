@@ -1644,9 +1644,16 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "",
+                            "_value": "takePic()",
                             "_type": "kv",
-                            "_attrDef": "p"
+                            "_attrDef": "p",
+                            "objValue": {
+                                "nodeID": "sd_9tIddj3O6b4z2LUS",
+                                "functionName": "takePic",
+                                "activeTree": "pages",
+                                "z": "sd_mYxr32GISpPtd8BG",
+                                "input": []
+                            }
                         },
                         {
                             "_key": "[disabled]",
@@ -1668,7 +1675,7 @@
                         },
                         {
                             "_key": "routerLink",
-                            "_value": "/take_selfie",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         }

@@ -82,6 +82,13 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "routeData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_KWg4ptS7NlnGR7eG",
@@ -89,7 +96,9 @@
         "x": 445,
         "y": 40,
         "wires": [
-            []
+            [
+                "sd_DvoqaNOvHalcTn3Y"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -262,6 +271,7 @@
         "serviceImportPath": "./",
         "startName": "fetchModels",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_zdutScQeAYqmLzib",
         "category": "General",
@@ -502,6 +512,7 @@
         "serviceImportPath": "./",
         "startName": "detectFace",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_kxpmd5c4f2S05N4B",
         "category": "General",
@@ -546,13 +557,15 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let video = page.video.nativeElement;\nlet queryImage = bh.pageViews.queryImage.nativeElement\n\nlet detectqueryImage = await faceapi.detectSingleFace(queryImage, new  faceapi.TinyFaceDetectorOptions())\n                            .withFaceLandmarks().withFaceExpressions().withFaceDescriptor()\n\npage.detectVideoFace.forEach((singleFace: any) => {\n    let distance = faceapi.euclideanDistance(singleFace.descriptor, detectqueryImage.descriptor)\n    if(distance < page.similiarityValue) {\n        //clearInterval(page.intervalID)\n        console.log('You are Simphiwe')\n        page.router.navigate(['/feedback'])\n    }else {\n        // page.clearInterval(page.intervalID)\n        console.log('You are not Simphiwe')        \n        page.router.navigate(['/unable_to_capture'])\n\n    }\nclearInterval(page.intervalID)\n})\nnavigator.mediaDevices.getUserMedia({video: {}, audio: false})\n        .then((mediaStream) => {\n            mediaStream.getTracks().forEach(stream => {\n                console.log(stream)\n                stream.stop()\n            })\n            console.log(page.videoStream)\n            page.videoStream.srcObject = null\n            page.videoStream.stop()\n            console.log(mediaStream)\n        })",
+        "script": "let video = page.video.nativeElement;\nlet queryImage = bh.pageViews.queryImage.nativeElement\n\nlet detectqueryImage = await faceapi.detectSingleFace(queryImage, new  faceapi.TinyFaceDetectorOptions())\n                            .withFaceLandmarks().withFaceExpressions().withFaceDescriptor()\n\npage.detectVideoFace.forEach((singleFace: any) => {\n    let distance = faceapi.euclideanDistance(singleFace.descriptor, detectqueryImage.descriptor)\n    if(distance < page.similiarityValue) {\n        //clearInterval(page.intervalID)\n        console.log('You are Simphiwe')\n        if(page.routeData.isRegister) {\n            page.router.navigate(['/register_feedback'])\n        }else {\n            page.router.navigate(['/feedback'])\n        }\n    }else {\n        // page.clearInterval(page.intervalID)\n        console.log('You are not Simphiwe')        \n        page.router.navigate(['/unable_to_capture'], { queryParams: page.routeData })\n\n    }\nclearInterval(page.intervalID)\n})\n\n// navigator.mediaDevices.getUserMedia({video: {}, audio: false})\n//         .then((mediaStream) => {\n//             mediaStream.getTracks().forEach(stream => {\n//                 console.log(stream)\n//                 stream.stop()\n//             })\n//             console.log(page.videoStream)\n//             page.videoStream.srcObject = null\n//             page.videoStream.stop()\n//             console.log(mediaStream)\n//         })",
         "functionName": "sd_SYRWXoozvB0Z6fFv",
         "category": "Function",
         "x": 245,
         "y": 540,
         "wires": [
-            []
+            [
+                "sd_79bZT161xRBVxp5e"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -626,6 +639,166 @@
                 "sd_CL6VBcskCuJZ0KdU"
             ]
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_AntJDG0ZCQQX8RQN",
+        "type": "PageStart",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "stopCamera",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "stopCamera",
+        "category": "General",
+        "x": 65,
+        "y": 660,
+        "wires": [
+            [
+                "sd_ObfLetUp8jofTRXL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "take_selfieComponent"
+    },
+    {
+        "id": "sd_JFgGkJDrgBJUr08x",
+        "type": "Script",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let video = bh.pageViews.video.nativeElement\n// Get streams\nlet streams = video.srcObject\n// Get all tracks\nlet tracks = streams.getTracks()\n// Closing each track\ntracks.forEach((track) => {\n  track.stop()\n})\n// console.log('Interval ID: ', page.intervalID)\n// clearInterval(page.intervalID)\n",
+        "functionName": "sd_JFgGkJDrgBJUr08x",
+        "category": "Function",
+        "x": 285,
+        "y": 660,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ObfLetUp8jofTRXL",
+        "type": "ViewPicker",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "str",
+                    "value": "canva"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            },
+            {
+                "key": {
+                    "type": "str",
+                    "value": "video"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_ObfLetUp8jofTRXL",
+        "category": "Function",
+        "x": 165,
+        "y": 660,
+        "wires": [
+            [
+                "sd_JFgGkJDrgBJUr08x"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_79bZT161xRBVxp5e",
+        "type": "PageCallService",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_G1lYK36VLiHR1778",
+            "type": "tab",
+            "createdDate": "2024-05-19T09:35:43.592Z",
+            "label": "take_selfie",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_AntJDG0ZCQQX8RQN",
+            "flowName": "stopCamera"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "stopCamera",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_79bZT161xRBVxp5e",
+        "category": "General",
+        "x": 340,
+        "y": 540,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "take_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_DvoqaNOvHalcTn3Y",
+        "type": "NavigationData",
+        "z": "sd_G1lYK36VLiHR1778",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "queryParams",
+        "operation": "keys",
+        "key": "bh",
+        "resultMapping": "this.page.routeData",
+        "functionName": "sd_DvoqaNOvHalcTn3Y",
+        "category": "Navigation",
+        "x": 560,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "key": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "routeData",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "take_selfieComponent",

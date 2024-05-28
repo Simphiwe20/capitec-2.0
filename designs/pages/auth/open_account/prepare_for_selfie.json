@@ -19,7 +19,7 @@
         "name": "",
         "functionName": "sd_8xFIzc0OwxYZJ3QY",
         "category": "Lifecycle Events",
-        "x": 25,
+        "x": 45,
         "y": 40,
         "wires": [
             [
@@ -111,8 +111,8 @@
         "logObject": "this.page.routeData",
         "functionName": "sd_M6mt3noUsGlCB4E8",
         "category": "General",
-        "x": 420,
-        "y": 160,
+        "x": 445,
+        "y": 40,
         "wires": [],
         "__ssdTypeInputs__": {
             "logObject": {
@@ -121,6 +121,58 @@
                 "constant": false
             }
         },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepare_for_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9tIddj3O6b4z2LUS",
+        "type": "PageStart",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "takePic",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "takePic",
+        "category": "General",
+        "x": 45,
+        "y": 180,
+        "wires": [
+            [
+                "sd_kMV0n7791fndSeuo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepare_for_selfieComponent"
+    },
+    {
+        "id": "sd_kMV0n7791fndSeuo",
+        "type": "Navigation",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/take_selfie",
+        "qparamsMap": {
+            "type": "this.page",
+            "value": "routeData"
+        },
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_kMV0n7791fndSeuo",
+        "category": "Navigation",
+        "x": 165,
+        "y": 180,
+        "wires": [
+            []
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "prepare_for_selfieComponent",

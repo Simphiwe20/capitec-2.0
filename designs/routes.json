@@ -127,6 +127,18 @@
                 {
                     "path": "add_beneficiary",
                     "component": "add_beneficiaryComponent"
+                },
+                {
+                    "path": "credit",
+                    "component": "creditComponent"
+                },
+                {
+                    "path": "loan",
+                    "component": "loanComponent"
+                },
+                {
+                    "path": "get_estimate",
+                    "component": "get_estimateComponent"
                 }
             ]
         },
@@ -153,6 +165,10 @@
         {
             "path": "update_permanent_limit",
             "component": "update_permanent_limitsComponent"
+        },
+        {
+            "path": "register_feedback",
+            "component": "register_feedbackComponent"
         },
         {
             "path": "''",

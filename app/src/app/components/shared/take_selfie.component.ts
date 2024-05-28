@@ -4,7 +4,7 @@
 //append_imports_start
 
 import { AfterViewInit, Component, Injector, ViewChild } from '@angular/core'; //_splitter_
-import { Router } from '@angular/router'; //_splitter_
+import { ActivatedRoute, Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -23,6 +23,8 @@ export class take_selfieComponent implements AfterViewInit {
   public video: any = null;
   @ViewChild('queryImage')
   public queryImage: any = null;
+  @ViewChild('canva')
+  public canva: any = null;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -132,6 +134,21 @@ export class take_selfieComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_lsTYvhNsCCWlQsxb');
     }
   }
+
+  stopCamera(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_ObfLetUp8jofTRXL(bh);
+      //appendnew_next_stopCamera
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_AntJDG0ZCQQX8RQN');
+    }
+  }
   //appendnew_flow_take_selfieComponent_start
 
   sd_yM7Cfi5ZuBP6isnN(bh) {
@@ -174,10 +191,23 @@ export class take_selfieComponent implements AfterViewInit {
       this.page.detected = false;
       this.page.intervalID = undefined;
       this.page.videoStream = undefined;
+      this.page.routeData = undefined;
+      bh = this.sd_DvoqaNOvHalcTn3Y(bh);
       //appendnew_next_sd_KWg4ptS7NlnGR7eG
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_KWg4ptS7NlnGR7eG');
+    }
+  }
+
+  sd_DvoqaNOvHalcTn3Y(bh) {
+    try {
+      const route = this.__page_injector__.get(ActivatedRoute);
+      this.page.routeData = route.snapshot.queryParams;
+      //appendnew_next_sd_DvoqaNOvHalcTn3Y
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_DvoqaNOvHalcTn3Y');
     }
   }
 
@@ -334,30 +364,84 @@ export class take_selfieComponent implements AfterViewInit {
         if (distance < page.similiarityValue) {
           //clearInterval(page.intervalID)
           console.log('You are Simphiwe');
-          page.router.navigate(['/feedback']);
+          if (page.routeData.isRegister) {
+            page.router.navigate(['/register_feedback']);
+          } else {
+            page.router.navigate(['/feedback']);
+          }
         } else {
           // page.clearInterval(page.intervalID)
           console.log('You are not Simphiwe');
-          page.router.navigate(['/unable_to_capture']);
+          page.router.navigate(['/unable_to_capture'], {
+            queryParams: page.routeData,
+          });
         }
         clearInterval(page.intervalID);
       });
-      navigator.mediaDevices
-        .getUserMedia({ video: {}, audio: false })
-        .then((mediaStream) => {
-          mediaStream.getTracks().forEach((stream) => {
-            console.log(stream);
-            stream.stop();
-          });
-          console.log(page.videoStream);
-          page.videoStream.srcObject = null;
-          page.videoStream.stop();
-          console.log(mediaStream);
-        });
+
+      // navigator.mediaDevices.getUserMedia({video: {}, audio: false})
+      //         .then((mediaStream) => {
+      //             mediaStream.getTracks().forEach(stream => {
+      //                 console.log(stream)
+      //                 stream.stop()
+      //             })
+      //             console.log(page.videoStream)
+      //             page.videoStream.srcObject = null
+      //             page.videoStream.stop()
+      //             console.log(mediaStream)
+      //         })
+      bh = this.sd_79bZT161xRBVxp5e(bh);
       //appendnew_next_sd_SYRWXoozvB0Z6fFv
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SYRWXoozvB0Z6fFv');
+    }
+  }
+
+  sd_79bZT161xRBVxp5e(bh) {
+    try {
+      let outputVariables = this.stopCamera();
+
+      //appendnew_next_sd_79bZT161xRBVxp5e
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_79bZT161xRBVxp5e');
+    }
+  }
+
+  sd_ObfLetUp8jofTRXL(bh) {
+    try {
+      bh.pageViews = Object.assign(bh.pageViews || {}, {
+        canva: this.canva,
+        video: this.video,
+      });
+      bh = this.sd_JFgGkJDrgBJUr08x(bh);
+      //appendnew_next_sd_ObfLetUp8jofTRXL
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ObfLetUp8jofTRXL');
+    }
+  }
+
+  sd_JFgGkJDrgBJUr08x(bh) {
+    try {
+      const page = this.page;
+      let video = bh.pageViews.video.nativeElement;
+      // Get streams
+      let streams = video.srcObject;
+      // Get all tracks
+      let tracks = streams.getTracks();
+      // Closing each track
+      tracks.forEach((track) => {
+        track.stop();
+      });
+      // console.log('Interval ID: ', page.intervalID)
+      // clearInterval(page.intervalID)
+
+      //appendnew_next_sd_JFgGkJDrgBJUr08x
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_JFgGkJDrgBJUr08x');
     }
   }
 

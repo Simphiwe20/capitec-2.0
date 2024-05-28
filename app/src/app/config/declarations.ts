@@ -16,6 +16,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-register_feedbackComponent
+import { register_feedbackComponent } from '../components/shared/register_feedback.component';
+//CORE_REFERENCE_IMPORT-api_service
+import { api_service } from '../sd-services/api_service';
 //CORE_REFERENCE_IMPORT-update_permanent_limitsComponent
 import { update_permanent_limitsComponent } from '../components/cards/physical/update_permanent_limits.component';
 //CORE_REFERENCE_IMPORT-payment_notifcationComponent
@@ -176,6 +180,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-register_feedbackComponent
+  register_feedbackComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_permanent_limitsComponent
   update_permanent_limitsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-payment_notifcationComponent
@@ -321,6 +327,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-api_service
+  api_service,
 ];
 
 /**
@@ -376,6 +384,9 @@ export const appRoutes = [
       },
       { path: 'pay_beneficiary', component: pay_beneficiaryComponent },
       { path: 'add_beneficiary', component: add_beneficiaryComponent },
+      { path: 'credit', component: creditComponent },
+      { path: 'loan', component: loanComponent },
+      { path: 'get_estimate', component: get_estimateComponent },
     ],
   },
   { path: 'enter_remote_pin', component: enter_remote_pinComponent },
@@ -387,6 +398,7 @@ export const appRoutes = [
     path: 'update_permanent_limit',
     component: update_permanent_limitsComponent,
   },
+  { path: 'register_feedback', component: register_feedbackComponent },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

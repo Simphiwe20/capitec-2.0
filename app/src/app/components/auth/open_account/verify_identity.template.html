@@ -1,5 +1,10 @@
 <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
-  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page.uploadedImage" #image hidden>
+  <div fxLayout="column wrap" class="z-index over" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.showLoader">
+    <div>
+      <span class="loader"></span>
+    </div>
+  </div>
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page.uploadedImage" #image hidden class="square-50px">
     <div fxLayout="row wrap" class="border-btm-cyan-b bg-blue height-50px" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="color-w">arrow_back</mat-icon>
       <div fxLayout="column wrap" class="color-w poppins" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
         <p class="poppins no-margin">
