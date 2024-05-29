@@ -139,6 +139,22 @@
                 {
                     "path": "get_estimate",
                     "component": "get_estimateComponent"
+                },
+                {
+                    "path": "buy_prepaid_mobile",
+                    "component": "buy_prepaid_mobileComponent"
+                },
+                {
+                    "path": "bank-account",
+                    "component": "bank_accountComponent"
+                },
+                {
+                    "path": "choose-banks",
+                    "component": "choose_banksComponent"
+                },
+                {
+                    "path": "pay-user",
+                    "component": "pay_userComponent"
                 }
             ]
         },
@@ -169,6 +185,14 @@
         {
             "path": "register_feedback",
             "component": "register_feedbackComponent"
+        },
+        {
+            "path": "buy_airtime",
+            "component": "buy_airtimeComponent"
+        },
+        {
+            "path": "cellphone",
+            "component": "cellphoneComponent"
         },
         {
             "path": "''",
