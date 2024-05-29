@@ -171,6 +171,18 @@
             "component": "register_feedbackComponent"
         },
         {
+            "path": "email",
+            "component": "EmailComponent"
+        },
+        {
+            "path": "my-tax-details",
+            "component": "My_tax_detailsComponent"
+        },
+        {
+            "component": "Our_privacy_centerComponent",
+            "path": "privacy"
+        },
+        {
             "path": "''",
             "redirectTo": "/ft-landing",
             "pathMatch": "full",

@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_uOdKLlacr6B0xNpV",
+        "type": "tab",
+        "createdDate": "2024-05-29T14:21:15.547Z",
+        "label": "sidenav",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "sidenavComponent"
+    },
+    {
+        "id": "sd_hUQJoYwJ8Ud8WmJG",
+        "type": "OnInit",
+        "z": "sd_uOdKLlacr6B0xNpV",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_hUQJoYwJ8Ud8WmJG",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_WbOLyqJjjxmYNadg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sidenavComponent"
+    },
+    {
+        "id": "sd_WbOLyqJjjxmYNadg",
+        "type": "PageVariables",
+        "z": "sd_uOdKLlacr6B0xNpV",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_WbOLyqJjjxmYNadg",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    }
+]

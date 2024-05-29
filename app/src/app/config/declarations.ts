@@ -16,6 +16,14 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-Our_privacy_centerComponent
+import { Our_privacy_centerComponent } from '../components/more/Our_privacy_center.component';
+//CORE_REFERENCE_IMPORT-My_tax_detailsComponent
+import { My_tax_detailsComponent } from '../components/more/My_tax_details.component';
+//CORE_REFERENCE_IMPORT-EmailComponent
+import { EmailComponent } from '../components/more/Email.component';
+//CORE_REFERENCE_IMPORT-sidenavComponent
+import { sidenavComponent } from '../components/home/sidenav.component';
 //CORE_REFERENCE_IMPORT-register_feedbackComponent
 import { register_feedbackComponent } from '../components/shared/register_feedback.component';
 //CORE_REFERENCE_IMPORT-api_service
@@ -180,6 +188,14 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-Our_privacy_centerComponent
+  Our_privacy_centerComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-My_tax_detailsComponent
+  My_tax_detailsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-EmailComponent
+  EmailComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-sidenavComponent
+  sidenavComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-register_feedbackComponent
   register_feedbackComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_permanent_limitsComponent
@@ -399,6 +415,9 @@ export const appRoutes = [
     component: update_permanent_limitsComponent,
   },
   { path: 'register_feedback', component: register_feedbackComponent },
+  { path: 'email', component: EmailComponent },
+  { path: 'my-tax-details', component: My_tax_detailsComponent },
+  { path: 'privacy', component: Our_privacy_centerComponent },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
