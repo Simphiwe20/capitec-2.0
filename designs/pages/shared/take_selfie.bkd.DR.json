@@ -1867,7 +1867,7 @@
                         },
                         {
                             "_key": "imgSrc",
-                            "_value": "./Web/Images/queryImage.jpg",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1879,7 +1879,7 @@
                         },
                         {
                             "_key": "[src]",
-                            "_value": "",
+                            "_value": "page.routeData.img",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1910,6 +1910,12 @@
                         {
                             "_key": "#queryImage",
                             "_value": "#queryImage",
+                            "_type": "a",
+                            "_attrDef": "c"
+                        },
+                        {
+                            "_key": "hidden",
+                            "_value": "hidden",
                             "_type": "a",
                             "_attrDef": "c"
                         }

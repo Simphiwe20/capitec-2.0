@@ -278,7 +278,9 @@ export class saving_accountComponent {
         this.sdService.getPathAndQParamsObj('/remote_app_pin');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_7CE8g6QtNrkyHw08
       return bh;
     } catch (e) {

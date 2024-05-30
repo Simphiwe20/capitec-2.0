@@ -354,6 +354,7 @@ export class verify_identityComponent implements AfterViewInit {
       };
       this.page.result = await this.sdService.nHttpRequest(requestOptions);
       bh = this.sd_ty5aqWnWbYQOAsji(bh);
+      this.sd_6JXYSh0xOM4Cvmne(bh);
       //appendnew_next_sd_trI7dpLHV8CdnvOf
       return bh;
     } catch (e) {
@@ -423,6 +424,16 @@ export class verify_identityComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8Szscxq0EVjTBYiF');
+    }
+  }
+
+  sd_6JXYSh0xOM4Cvmne(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.result);
+      //appendnew_next_sd_6JXYSh0xOM4Cvmne
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6JXYSh0xOM4Cvmne');
     }
   }
 
