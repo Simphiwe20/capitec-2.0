@@ -133,7 +133,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.clientDetails = {fullName: '', email: '', idNum: '', pin: '', confirmPin: '', ID_doc: '', proof_of_res: '', picture: ''}",
+        "script": "page.clientDetails = {fullName: '', email: '', idNum: '', remotePin: '', confirmRemotePin: '', ID_doc: '', proof_of_res: '', picture: ''}",
         "functionName": "sd_vh3M7aFNa9ZH2tRe",
         "category": "Function",
         "x": 345,
@@ -621,6 +621,7 @@
         "serviceImportPath": "./",
         "startName": "upload",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_ty5aqWnWbYQOAsji",
         "category": "General",
@@ -1057,6 +1058,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -1064,8 +1066,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -1081,9 +1085,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_trI7dpLHV8CdnvOf",
         "category": "HTTP",
@@ -1301,10 +1307,16 @@
         "nodeType": "flow",
         "name": "",
         "path": "/prepare_for_selfie",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
         "qparamsMap": {
             "type": "bh",
             "value": "routeData"
         },
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_8Szscxq0EVjTBYiF",
         "category": "Navigation",
         "x": 1265,
@@ -1471,7 +1483,9 @@
             "value": "2000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -1496,7 +1510,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.showLoader = true\n\ndelete page.clientDetails.picture\ndelete page.clientDetails.proof_of_res\ndelete page.clientDetails.ID_doc\ndelete page.clientDetails.confirmPin",
+        "script": "page.showLoader = true\n\ndelete page.clientDetails.picture\ndelete page.clientDetails.proof_of_res\ndelete page.clientDetails.ID_doc\ndelete page.clientDetails.confirmRemotePin",
         "functionName": "sd_qi7thJp7eJAp0VNG",
         "category": "Function",
         "x": 605,
@@ -1575,7 +1589,9 @@
             "value": "1000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""

@@ -233,8 +233,8 @@ export class verify_identityComponent implements AfterViewInit {
         fullName: '',
         email: '',
         idNum: '',
-        pin: '',
-        confirmPin: '',
+        remotePin: '',
+        confirmRemotePin: '',
         ID_doc: '',
         proof_of_res: '',
         picture: '',
@@ -333,7 +333,7 @@ export class verify_identityComponent implements AfterViewInit {
       delete page.clientDetails.picture;
       delete page.clientDetails.proof_of_res;
       delete page.clientDetails.ID_doc;
-      delete page.clientDetails.confirmPin;
+      delete page.clientDetails.confirmRemotePin;
       bh = this.sd_trI7dpLHV8CdnvOf(bh);
       //appendnew_next_sd_qi7thJp7eJAp0VNG
       return bh;

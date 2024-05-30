@@ -51,14 +51,14 @@
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="page.clientDetails.pin" name="pin" [required]="false">
+          <input matInput [(ngModel)]="page.clientDetails.remotePin" name="pin" [required]="false">
           <mat-label>Pin</mat-label> <mat-icon matSuffix>infor</mat-icon>
         </mat-form-field><small class="poppins padding-0_75em">
           Pin should have atleast 5 characters</small>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="page.clientDetails.confirmPin" name="confirmPin" [required]="false">
+          <input matInput [(ngModel)]="page.clientDetails.confirmRemotePin" name="confirmPin" [required]="false">
           <mat-label>Confirm password</mat-label> <mat-icon matSuffix>infor</mat-icon>
         </mat-form-field><small class="poppins padding-0_75em">
           Confirm password should match with a pin</small>
