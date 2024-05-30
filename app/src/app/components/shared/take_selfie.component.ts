@@ -318,12 +318,15 @@ export class take_selfieComponent implements AfterViewInit {
           .withFaceDescriptors();
         if (!page.detectVideoFace.length) {
           page.detected = false;
+          console.log('Not detected');
         } else {
           page.detected = true;
           console.log(page.detectVideoFace);
+          clearInterval(page.intervalID);
           this.compare();
+          // this.stopCamera()
         }
-      }, 100);
+      }, 10);
       //appendnew_next_sd_LXXiYoy52SuuzbIg
       return bh;
     } catch (e) {
@@ -361,6 +364,8 @@ export class take_selfieComponent implements AfterViewInit {
           singleFace.descriptor,
           detectqueryImage.descriptor
         );
+        console.log(distance);
+
         if (distance < page.similiarityValue) {
           //clearInterval(page.intervalID)
           console.log('You are Simphiwe');
@@ -376,7 +381,7 @@ export class take_selfieComponent implements AfterViewInit {
             queryParams: page.routeData,
           });
         }
-        clearInterval(page.intervalID);
+        // clearInterval(page.intervalID)
       });
 
       // navigator.mediaDevices.getUserMedia({video: {}, audio: false})
