@@ -57,14 +57,114 @@ export class pay_beneficiaryComponent {
     }
   }
 
+  sd_dvCdE5EBo2c2KQYq(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_rIP8bFIQoUGBhzm6(bh);
+      //appendnew_next_sd_dvCdE5EBo2c2KQYq
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_dvCdE5EBo2c2KQYq');
+    }
+  }
   //appendnew_flow_pay_beneficiaryComponent_start
 
   sd_BFDXUB2w6y8MwKRS(bh) {
     try {
+      this.page.submitted = false;
+      this.page.benArray = undefined;
+      this.page.selected = undefined;
+      bh = this.sd_qh9tBIQUgkhopSB6(bh);
       //appendnew_next_sd_BFDXUB2w6y8MwKRS
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_BFDXUB2w6y8MwKRS');
+    }
+  }
+
+  sd_qh9tBIQUgkhopSB6(bh) {
+    try {
+      this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
+      bh = this.sd_I6wltKb6FtHkz2j9(bh);
+      //appendnew_next_sd_qh9tBIQUgkhopSB6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_qh9tBIQUgkhopSB6');
+    }
+  }
+
+  sd_I6wltKb6FtHkz2j9(bh) {
+    try {
+      this.page.ssdurl = bh.system.environment.properties.ssdURL;
+      bh = this.sd_z6eWW0IN9Q7mDw8a(bh);
+      //appendnew_next_sd_I6wltKb6FtHkz2j9
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_I6wltKb6FtHkz2j9');
+    }
+  }
+
+  sd_z6eWW0IN9Q7mDw8a(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdurl + 'get-beneficiary-electricity';
+      page.collection = 'beneficiary-electricity';
+
+      bh = this.sd_hnfzP0Iqa4LcfxLb(bh);
+      //appendnew_next_sd_z6eWW0IN9Q7mDw8a
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_z6eWW0IN9Q7mDw8a');
+    }
+  }
+
+  async sd_hnfzP0Iqa4LcfxLb(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: this.page.collection,
+      };
+      this.page.results = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_rWFN0DYYxNqG3wOk(bh);
+      //appendnew_next_sd_hnfzP0Iqa4LcfxLb
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_hnfzP0Iqa4LcfxLb');
+    }
+  }
+
+  sd_rWFN0DYYxNqG3wOk(bh) {
+    try {
+      const page = this.page;
+      bh.beneficiaries = page.results.filter((user: any) => {
+        return user.accountNumber == page.user.accountNumber;
+      });
+      page.benArray = bh.beneficiaries;
+
+      console.log(bh.beneficiaries);
+      //appendnew_next_sd_rWFN0DYYxNqG3wOk
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_rWFN0DYYxNqG3wOk');
+    }
+  }
+
+  sd_rIP8bFIQoUGBhzm6(bh) {
+    try {
+      const page = this.page;
+      page.submitted = true;
+      //appendnew_next_sd_rIP8bFIQoUGBhzm6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_rIP8bFIQoUGBhzm6');
     }
   }
 

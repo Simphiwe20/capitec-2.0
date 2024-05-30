@@ -40,11 +40,240 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "submitted",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "benArray",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "selected",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_BFDXUB2w6y8MwKRS",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            [
+                "sd_qh9tBIQUgkhopSB6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pay_beneficiaryComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_I6wltKb6FtHkz2j9",
+        "type": "Environment",
+        "z": "sd_GQmuxyo1s3hYvxKZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdurl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_I6wltKb6FtHkz2j9",
+        "category": "General",
+        "x": 405,
+        "y": 40,
+        "wires": [
+            [
+                "sd_z6eWW0IN9Q7mDw8a"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pay_beneficiaryComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_z6eWW0IN9Q7mDw8a",
+        "type": "Script",
+        "z": "sd_GQmuxyo1s3hYvxKZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdurl + \"get-beneficiary-electricity\";\npage.collection = \"beneficiary-electricity\";\n\n",
+        "functionName": "sd_z6eWW0IN9Q7mDw8a",
+        "category": "Function",
+        "x": 540,
+        "y": 40,
+        "wires": [
+            [
+                "sd_hnfzP0Iqa4LcfxLb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pay_beneficiaryComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hnfzP0Iqa4LcfxLb",
+        "type": "HttpRequest",
+        "z": "sd_GQmuxyo1s3hYvxKZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.collection",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "collection"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_hnfzP0Iqa4LcfxLb",
+        "category": "HTTP",
+        "x": 640,
+        "y": 40,
+        "wires": [
+            [
+                "sd_rWFN0DYYxNqG3wOk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pay_beneficiaryComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_rWFN0DYYxNqG3wOk",
+        "type": "Script",
+        "z": "sd_GQmuxyo1s3hYvxKZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.beneficiaries = page.results.filter((user:any) => {\n  return  user.accountNumber == page.user.accountNumber;\n})\npage.benArray = bh.beneficiaries\n\nconsole.log(bh.beneficiaries)",
+        "functionName": "sd_rWFN0DYYxNqG3wOk",
+        "category": "Function",
+        "x": 760,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pay_beneficiaryComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_qh9tBIQUgkhopSB6",
+        "type": "Storage",
+        "z": "sd_GQmuxyo1s3hYvxKZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_qh9tBIQUgkhopSB6",
+        "category": "Storage",
+        "x": 320,
+        "y": 40,
+        "wires": [
+            [
+                "sd_I6wltKb6FtHkz2j9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pay_beneficiaryComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dvCdE5EBo2c2KQYq",
+        "type": "PageStart",
+        "z": "sd_GQmuxyo1s3hYvxKZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sd_dvCdE5EBo2c2KQYq",
+        "category": "General",
+        "x": 60,
+        "y": 200,
+        "wires": [
+            [
+                "sd_rIP8bFIQoUGBhzm6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "pay_beneficiaryComponent"
+    },
+    {
+        "id": "sd_rIP8bFIQoUGBhzm6",
+        "type": "Script",
+        "z": "sd_GQmuxyo1s3hYvxKZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true",
+        "functionName": "sd_rIP8bFIQoUGBhzm6",
+        "category": "Function",
+        "x": 165,
+        "y": 200,
         "wires": [
             []
         ],
