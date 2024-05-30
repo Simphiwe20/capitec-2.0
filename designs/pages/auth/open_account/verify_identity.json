@@ -621,7 +621,6 @@
         "serviceImportPath": "./",
         "startName": "upload",
         "inputParams": [],
-        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_ty5aqWnWbYQOAsji",
         "category": "General",
@@ -1058,7 +1057,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -1066,10 +1064,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -1085,11 +1081,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_trI7dpLHV8CdnvOf",
         "category": "HTTP",
@@ -1097,7 +1091,8 @@
         "y": 760,
         "wires": [
             [
-                "sd_ty5aqWnWbYQOAsji"
+                "sd_ty5aqWnWbYQOAsji",
+                "sd_6JXYSh0xOM4Cvmne"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1476,9 +1471,7 @@
             "value": "2000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -1582,9 +1575,7 @@
             "value": "1000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -1600,5 +1591,31 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "verify_identityComponent"
+    },
+    {
+        "id": "sd_6JXYSh0xOM4Cvmne",
+        "type": "Log",
+        "z": "sd_XxBbYAdU1GgX4xX5",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.result",
+        "functionName": "sd_6JXYSh0xOM4Cvmne",
+        "category": "General",
+        "x": 805,
+        "y": 880,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "verify_identityComponent",
+        "generated": true
     }
 ]
