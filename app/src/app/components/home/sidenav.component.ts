@@ -33,7 +33,7 @@ export class sidenavComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_hUQJoYwJ8Ud8WmJG(bh);
+      this.sd_uSUAwfJihRMS2q65(bh);
     }
   }
 
@@ -45,24 +45,66 @@ export class sidenavComponent {
     //append_listeners
   }
 
-  sd_hUQJoYwJ8Ud8WmJG(bh) {
+  sd_uSUAwfJihRMS2q65(bh) {
     try {
-      bh = this.sd_WbOLyqJjjxmYNadg(bh);
-      //appendnew_next_sd_hUQJoYwJ8Ud8WmJG
+      bh = this.sd_FAH1XmFgVHncNH1v(bh);
+      //appendnew_next_sd_uSUAwfJihRMS2q65
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_hUQJoYwJ8Ud8WmJG');
+      return this.errorHandler(bh, e, 'sd_uSUAwfJihRMS2q65');
     }
   }
 
   //appendnew_flow_sidenavComponent_start
 
-  sd_WbOLyqJjjxmYNadg(bh) {
+  sd_FAH1XmFgVHncNH1v(bh) {
     try {
-      //appendnew_next_sd_WbOLyqJjjxmYNadg
+      this.page.sidenav = [
+        { icon: 'my-detail-icon.png', text: 'My details', link: '/my-details' },
+        {
+          icon: 'email-update-icon.png',
+          text: 'My email address',
+          link: '/email',
+        },
+        { icon: 'tax-icon.png', text: 'My tax details', link: '/tax' },
+        { icon: 'agreement-icon.png', text: 'My agreement & disclamers' },
+        {
+          icon: 'privacy-icon.png',
+          text: 'Our Primary Center',
+          link: '/policy',
+        },
+      ];
+      bh = this.sd_NKQqvVY91Ly5IvkE(bh);
+      //appendnew_next_sd_FAH1XmFgVHncNH1v
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_WbOLyqJjjxmYNadg');
+      return this.errorHandler(bh, e, 'sd_FAH1XmFgVHncNH1v');
+    }
+  }
+
+  sd_NKQqvVY91Ly5IvkE(bh) {
+    try {
+      const page = this.page;
+      [
+        { icon: 'my-detail-icon.png', text: 'My details', link: '/my-details' },
+        {
+          icon: 'email-update-icon.png',
+          text: 'My email address',
+          link: '/email',
+        },
+        { icon: 'tax-icon.png', text: 'My tax details', link: '/tax' },
+        { icon: 'agreement-icon.png', text: 'My agreement & disclamers' },
+        {
+          icon: 'privacy-icon.png',
+          text: 'Our Primary Center',
+          link: '/policy',
+        },
+      ];
+
+      //appendnew_next_sd_NKQqvVY91Ly5IvkE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_NKQqvVY91Ly5IvkE');
     }
   }
 

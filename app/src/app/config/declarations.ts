@@ -418,6 +418,7 @@ export const appRoutes = [
   { path: 'email', component: EmailComponent },
   { path: 'my-tax-details', component: My_tax_detailsComponent },
   { path: 'privacy', component: Our_privacy_centerComponent },
+  { path: 'sidenav', component: sidenavComponent },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

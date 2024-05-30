@@ -59,10 +59,23 @@ export class EmailComponent {
 
   sd_bXamP2fsESvyedSq(bh) {
     try {
+      this.page.email = undefined;
+      bh = this.sd_6D89pOuVkddz2SOz(bh);
       //appendnew_next_sd_bXamP2fsESvyedSq
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_bXamP2fsESvyedSq');
+    }
+  }
+
+  sd_6D89pOuVkddz2SOz(bh) {
+    try {
+      const page = this.page;
+      page.email = 'angel@gmail.com';
+      //appendnew_next_sd_6D89pOuVkddz2SOz
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6D89pOuVkddz2SOz');
     }
   }
 

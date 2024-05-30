@@ -183,6 +183,10 @@
             "path": "privacy"
         },
         {
+            "path": "sidenav",
+            "component": "sidenavComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/ft-landing",
             "pathMatch": "full",
