@@ -16,6 +16,12 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-coming_soonComponent
+import { coming_soonComponent } from '../components/shared/coming_soon.component';
+//CORE_REFERENCE_IMPORT-buy_prepaid_mobile_add_benComponent
+import { buy_prepaid_mobile_add_benComponent } from '../components/transact/buy_prepaid_mobile_add_ben.component';
+//CORE_REFERENCE_IMPORT-buy_airtimeComponent
+import { buy_airtimeComponent } from '../components/transact/buy_airtime.component';
 //CORE_REFERENCE_IMPORT-register_feedbackComponent
 import { register_feedbackComponent } from '../components/shared/register_feedback.component';
 //CORE_REFERENCE_IMPORT-api_service
@@ -180,6 +186,12 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-coming_soonComponent
+  coming_soonComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_prepaid_mobile_add_benComponent
+  buy_prepaid_mobile_add_benComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_airtimeComponent
+  buy_airtimeComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-register_feedbackComponent
   register_feedbackComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_permanent_limitsComponent
@@ -387,6 +399,10 @@ export const appRoutes = [
       { path: 'credit', component: creditComponent },
       { path: 'loan', component: loanComponent },
       { path: 'get_estimate', component: get_estimateComponent },
+      { path: 'buy_prepaid_mobile', component: buy_prepaid_mobileComponent },
+      { path: 'bank-account', component: bank_accountComponent },
+      { path: 'choose-banks', component: choose_banksComponent },
+      { path: 'pay-user', component: pay_userComponent },
     ],
   },
   { path: 'enter_remote_pin', component: enter_remote_pinComponent },
@@ -399,6 +415,8 @@ export const appRoutes = [
     component: update_permanent_limitsComponent,
   },
   { path: 'register_feedback', component: register_feedbackComponent },
+  { path: 'buy_airtime', component: buy_airtimeComponent },
+  { path: 'cellphone', component: cellphoneComponent },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

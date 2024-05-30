@@ -19,7 +19,7 @@
             {
                 "_key": "class",
                 "_value": [
-                    "standard-width"
+                    "poppins"
                 ],
                 "_type": "dav",
                 "_attrDef": "p"
@@ -50,7 +50,7 @@
             },
             {
                 "_key": "pLayoutAlign",
-                "_value": "stretch",
+                "_value": "center",
                 "_type": "a",
                 "_attrDef": "p"
             },
@@ -81,7 +81,9 @@
                 },
                 {
                     "_key": "class",
-                    "_value": "",
+                    "_value": [
+                        "standard-width"
+                    ],
                     "_type": "dav",
                     "_attrDef": "p"
                 },
@@ -142,7 +144,7 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "",
+                        "_value": [],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -197,14 +199,18 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "height:60px; border-bottom:1px solid darkgrey;",
+                            "_value": "border-bottom:1px solid darkgrey;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "class",
                             "_value": [
-                                "blue-bg"
+                                "z-index",
+                                "fixed-width",
+                                "fixed",
+                                "bg-blue",
+                                "height-50px"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
@@ -260,7 +266,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "white"
+                                    "color-w"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -301,7 +307,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "white"
+                                    "color-w"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -524,6 +530,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "margin-t-50px",
                                 "white",
                                 "blue-bg"
                             ],
@@ -1062,7 +1069,7 @@
                                     },
                                     {
                                         "_key": "[appearance]",
-                                        "_value": "'legacy'",
+                                        "_value": "'fill'",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -1358,7 +1365,7 @@
                                         },
                                         {
                                             "_key": "[appearance]",
-                                            "_value": "'legacy'",
+                                            "_value": "'fill'",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         },
@@ -1559,7 +1566,7 @@
                                     },
                                     {
                                         "_key": "routerLink",
-                                        "_value": "/choose-banks",
+                                        "_value": "/logged_in_landing/choose-banks",
                                         "_type": "kv",
                                         "_attrDef": "c"
                                     }
@@ -1920,7 +1927,7 @@
                                     },
                                     {
                                         "_key": "[appearance]",
-                                        "_value": "'legacy'",
+                                        "_value": "'fill'",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -2155,7 +2162,7 @@
                                     },
                                     {
                                         "_key": "[appearance]",
-                                        "_value": "'legacy'",
+                                        "_value": "'fill'",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -2735,7 +2742,7 @@
                                         },
                                         {
                                             "_key": "[appearance]",
-                                            "_value": "'legacy'",
+                                            "_value": "'fill'",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         },
@@ -2894,7 +2901,7 @@
                                 {
                                     "_key": "class",
                                     "_value": [
-                                        "padding-10"
+                                        "get-started-btn"
                                     ],
                                     "_type": "dav",
                                     "_attrDef": "p"
@@ -2950,8 +2957,7 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "white",
-                                            "blue-bg"
+                                            "color-w"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
