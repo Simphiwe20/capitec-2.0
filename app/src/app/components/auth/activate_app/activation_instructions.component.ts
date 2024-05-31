@@ -145,7 +145,7 @@ export class activation_instructionsComponent {
         (image: any) => image.email === page.user.email
       );
 
-      console.log(bh.image);
+      console.log(typeof bh.image);
       bh = this.sd_c6h43zBXSTxakxqZ(bh);
       //appendnew_next_sd_15SaZE9ShGJGpxcH
       return bh;
@@ -172,11 +172,13 @@ export class activation_instructionsComponent {
       // }
 
       let fileReader = new FileReader();
-      fileReader.readAsDataURL(page.pic);
+      fileReader.readAsDataURL(bh.image);
       fileReader.onload = () => {
         let result = fileReader.result;
         page.userImage = result;
       };
+
+      console.log(page.userImage);
 
       //appendnew_next_sd_c6h43zBXSTxakxqZ
       return bh;
