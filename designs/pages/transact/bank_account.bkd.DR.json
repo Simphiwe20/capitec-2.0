@@ -204,7 +204,8 @@
                         {
                             "_key": "class",
                             "_value": [
-                                "blue-bg"
+                                "color-w",
+                                "bg-blue"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
@@ -524,8 +525,9 @@
                         {
                             "_key": "class",
                             "_value": [
-                                "white",
-                                "blue-bg"
+                                "text-center",
+                                "color-w",
+                                "bg-blue"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
@@ -978,7 +980,7 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "border-bottom:1px solid lightgrey; padding-right:10px;",
+                                    "_value": "border-bottom:1px solid lightgrey; ",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1031,6 +1033,7 @@
                                 "paletteKey": "NG-Input",
                                 "parentEditorKey": "fa7500b1-7301-b48e-d05d-5a04f128dda2",
                                 "isAdvancedComponent": true,
+                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -1042,7 +1045,8 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "padding-left"
+                                            "bg-white",
+                                            "full-width"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
@@ -1062,7 +1066,7 @@
                                     },
                                     {
                                         "_key": "[appearance]",
-                                        "_value": "'legacy'",
+                                        "_value": "'fill'",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -1274,7 +1278,7 @@
                                     },
                                     {
                                         "_key": "style",
-                                        "_value": "border-bottom:1px solid lightgrey; padding-right:10px;",
+                                        "_value": "border-bottom:1px solid lightgrey;",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -1338,7 +1342,8 @@
                                         {
                                             "_key": "class",
                                             "_value": [
-                                                "padding-left"
+                                                "bg-white",
+                                                "full-width"
                                             ],
                                             "_type": "dav",
                                             "_attrDef": "p"
@@ -1358,7 +1363,7 @@
                                         },
                                         {
                                             "_key": "[appearance]",
-                                            "_value": "'legacy'",
+                                            "_value": "'fill'",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         },
@@ -1516,7 +1521,7 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "white-bg"
+                                            "bg-white"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
@@ -1559,7 +1564,7 @@
                                     },
                                     {
                                         "_key": "routerLink",
-                                        "_value": "/choose-banks",
+                                        "_value": "/logged_in_landing/choose_banks",
                                         "_type": "kv",
                                         "_attrDef": "c"
                                     }
@@ -1787,14 +1792,14 @@
                                     "designerReference": [
                                         {
                                             "_key": "style",
-                                            "_value": "padding-right:10px;",
+                                            "_value": "",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },
                                         {
                                             "_key": "class",
                                             "_value": [
-                                                "blue-color"
+                                                "color-b"
                                             ],
                                             "_type": "dav",
                                             "_attrDef": "p"
@@ -1836,7 +1841,7 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "border-bottom:1px solid lightgrey; padding-right:10px;",
+                                    "_value": "border-bottom:1px solid lightgrey;",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1900,7 +1905,8 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "padding-left"
+                                            "bg-white",
+                                            "full-width"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
@@ -1920,7 +1926,7 @@
                                     },
                                     {
                                         "_key": "[appearance]",
-                                        "_value": "'legacy'",
+                                        "_value": "'fill'",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -2071,7 +2077,7 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "border-bottom:1px solid lightgrey; padding-right:10px;",
+                                    "_value": "border-bottom:1px solid lightgrey;",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2124,6 +2130,7 @@
                                 "paletteKey": "NG-Input",
                                 "parentEditorKey": "683b3756-b735-ae34-a515-708dcef645f8",
                                 "isAdvancedComponent": true,
+                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -2135,7 +2142,8 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "padding-left"
+                                            "bg-white",
+                                            "full-width"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
@@ -2155,7 +2163,7 @@
                                     },
                                     {
                                         "_key": "[appearance]",
-                                        "_value": "'legacy'",
+                                        "_value": "'fill'",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -2708,14 +2716,15 @@
                                     "designerReference": [
                                         {
                                             "_key": "style",
-                                            "_value": "padding-right:10px;",
+                                            "_value": "",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },
                                         {
                                             "_key": "class",
                                             "_value": [
-                                                "padding-left"
+                                                "bg-white",
+                                                "full-width"
                                             ],
                                             "_type": "dav",
                                             "_attrDef": "p"
@@ -2735,7 +2744,7 @@
                                         },
                                         {
                                             "_key": "[appearance]",
-                                            "_value": "'legacy'",
+                                            "_value": "'fill'",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         },
@@ -2950,8 +2959,8 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "white",
-                                            "blue-bg"
+                                            "bg-blue",
+                                            "color-w"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"

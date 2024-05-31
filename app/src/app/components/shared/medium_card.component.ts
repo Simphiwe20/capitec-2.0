@@ -153,7 +153,7 @@ export class medium_cardComponent {
               {
                 image: '../../../assets/Web/Images/electricity.jpg',
                 name: 'Buy electricity',
-                routes: '/logged_in_landing/buy_electricity',
+                routes: '/logged_in_landing/buy_electricity/pay_ben_electric',
               },
             ],
           },

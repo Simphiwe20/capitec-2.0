@@ -18,9 +18,7 @@
             },
             {
                 "_key": "class",
-                "_value": [
-                    "standard-width"
-                ],
+                "_value": [],
                 "_type": "dav",
                 "_attrDef": "p"
             },
@@ -50,7 +48,7 @@
             },
             {
                 "_key": "pLayoutAlign",
-                "_value": "stretch",
+                "_value": "center",
                 "_type": "a",
                 "_attrDef": "p"
             },
@@ -81,7 +79,9 @@
                 },
                 {
                     "_key": "class",
-                    "_value": "",
+                    "_value": [
+                        "standard-width"
+                    ],
                     "_type": "dav",
                     "_attrDef": "p"
                 },
@@ -197,14 +197,15 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "height:60px;",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "class",
                             "_value": [
-                                "blue-bg"
+                                "bg-blue",
+                                "height-50px"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
@@ -260,7 +261,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "white"
+                                    "color-w"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -301,7 +302,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "white"
+                                    "color-w"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -516,7 +517,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "white"
+                                    "color-w"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -626,7 +627,8 @@
                         {
                             "_key": "class",
                             "_value": [
-                                "white-bg"
+                                "padding-0px-15px",
+                                "bg-white"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
@@ -906,7 +908,8 @@
                         {
                             "_key": "class",
                             "_value": [
-                                "white-bg"
+                                "padding-0px-15px",
+                                "bg-white"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
@@ -1186,7 +1189,8 @@
                         {
                             "_key": "class",
                             "_value": [
-                                "white-bg"
+                                "padding-0px-15px",
+                                "bg-white"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
@@ -1466,7 +1470,8 @@
                         {
                             "_key": "class",
                             "_value": [
-                                "white-bg"
+                                "padding-0px-15px",
+                                "bg-white"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
@@ -1746,7 +1751,8 @@
                         {
                             "_key": "class",
                             "_value": [
-                                "white-bg"
+                                "padding-0px-15px",
+                                "bg-white"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"

@@ -122,6 +122,101 @@
                     "_attrDef": "p"
                 }
             ],
+            "a2b64a4b-0a1d-e8a3-56d0-9e91da8b3a5f": {
+                "paletteKey": "FlexLayoutCol",
+                "parentEditorKey": "55a23585-2b50-b2d9-e492-f507fdd320e1",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Column",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxLayoutGap",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "wrap",
+                        "_value": "wrap",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "start",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "pLayoutAlign",
+                        "_value": "stretch",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxShow]",
+                        "_value": "true",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ],
+                "a6a1475d-80d0-26ef-ae9e-a11cfad9323e": {
+                    "paletteKey": "NEUTRINOS_VIEW_sidenav",
+                    "parentEditorKey": "a2b64a4b-0a1d-e8a3-56d0-9e91da8b3a5f",
+                    "isCommented": "true",
+                    "commentid": "1717144412498",
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "sidenav",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngIf",
+                            "_value": "!page.hidesidenav",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                }
+            },
             "302bcc0f-fe02-7bb9-64c8-13d2a0327773": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "55a23585-2b50-b2d9-e492-f507fdd320e1",
@@ -321,6 +416,19 @@
                                 "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "showsidenav()",
+                                "_type": "kv",
+                                "_attrDef": "c",
+                                "objValue": {
+                                    "nodeID": "sd_FKSyQSUP8DiZ3iht",
+                                    "functionName": "showsidenav",
+                                    "activeTree": "pages",
+                                    "z": "sd_fUkCGY1L0VBmLNIy",
+                                    "input": []
+                                }
                             }
                         ]
                     }

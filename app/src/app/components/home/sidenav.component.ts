@@ -59,7 +59,7 @@ export class sidenavComponent {
 
   sd_FAH1XmFgVHncNH1v(bh) {
     try {
-      this.page.sidenav = [
+      this.page.profile = [
         { icon: 'my-detail-icon.png', text: 'My details', link: '/my-details' },
         {
           icon: 'email-update-icon.png',
@@ -74,37 +74,10 @@ export class sidenavComponent {
           link: '/policy',
         },
       ];
-      bh = this.sd_NKQqvVY91Ly5IvkE(bh);
       //appendnew_next_sd_FAH1XmFgVHncNH1v
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_FAH1XmFgVHncNH1v');
-    }
-  }
-
-  sd_NKQqvVY91Ly5IvkE(bh) {
-    try {
-      const page = this.page;
-      [
-        { icon: 'my-detail-icon.png', text: 'My details', link: '/my-details' },
-        {
-          icon: 'email-update-icon.png',
-          text: 'My email address',
-          link: '/email',
-        },
-        { icon: 'tax-icon.png', text: 'My tax details', link: '/tax' },
-        { icon: 'agreement-icon.png', text: 'My agreement & disclamers' },
-        {
-          icon: 'privacy-icon.png',
-          text: 'Our Primary Center',
-          link: '/policy',
-        },
-      ];
-
-      //appendnew_next_sd_NKQqvVY91Ly5IvkE
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_NKQqvVY91Ly5IvkE');
     }
   }
 

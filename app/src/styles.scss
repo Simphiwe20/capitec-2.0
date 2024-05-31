@@ -33,6 +33,7 @@ $red: #e61414;
 
 body {
     background-color: $ghostwhite;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .standard-width {
@@ -219,6 +220,10 @@ body {
 
 .bg-green {
     background-color: $green;
+}
+
+.bg-dark-blue {
+    background-color: $dark-blue;
 }
 
 .opacity {
@@ -625,8 +630,12 @@ bh-set_temporary_limits, bh-update_permanent_limits {
     width: 50%;
 }
 
+bh-bank_account, bh-pay_user {
+    width: 100%
+}
+
 @media screen and(max-width: 1024px) {
-    .standard-width, .title, .fixed-width,  bh-update_permanent_limits, bh-set_temporary_limits {
+    .standard-width, .title, .fixed-width,  bh-update_permanent_limits, bh-set_temporary_limits, bh-bank_account {
         width: 100%;
     }
     .video {

@@ -635,6 +635,12 @@
                             "_value": "true",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "/logged_in_landing/add_beneficiary",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
                     "f912861c-65b0-8559-12f7-fcd3480a9031": {
@@ -892,12 +898,6 @@
                                 "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
-                            },
-                            {
-                                "_key": "routerLink",
-                                "_value": "/logged_in_landing/add_beneficiary",
-                                "_type": "kv",
-                                "_attrDef": "c"
                             }
                         ]
                     }
@@ -1331,7 +1331,7 @@
                             },
                             {
                                 "_key": "routerLink",
-                                "_value": "/pay-user",
+                                "_value": "/logged_in_landing/pay_user",
                                 "_type": "kv",
                                 "_attrDef": "c"
                             }

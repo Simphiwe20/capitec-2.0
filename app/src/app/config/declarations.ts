@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-profileComponent
+import { profileComponent } from '../components/more/profile.component';
 //CORE_REFERENCE_IMPORT-Our_privacy_centerComponent
 import { Our_privacy_centerComponent } from '../components/more/Our_privacy_center.component';
 //CORE_REFERENCE_IMPORT-My_tax_detailsComponent
@@ -24,6 +26,12 @@ import { My_tax_detailsComponent } from '../components/more/My_tax_details.compo
 import { EmailComponent } from '../components/more/Email.component';
 //CORE_REFERENCE_IMPORT-sidenavComponent
 import { sidenavComponent } from '../components/home/sidenav.component';
+//CORE_REFERENCE_IMPORT-coming_soonComponent
+import { coming_soonComponent } from '../components/shared/coming_soon.component';
+//CORE_REFERENCE_IMPORT-buy_prepaid_mobile_add_benComponent
+import { buy_prepaid_mobile_add_benComponent } from '../components/transact/buy_prepaid_mobile_add_ben.component';
+//CORE_REFERENCE_IMPORT-buy_airtimeComponent
+import { buy_airtimeComponent } from '../components/transact/buy_airtime.component';
 //CORE_REFERENCE_IMPORT-register_feedbackComponent
 import { register_feedbackComponent } from '../components/shared/register_feedback.component';
 //CORE_REFERENCE_IMPORT-api_service
@@ -188,6 +196,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-profileComponent
+  profileComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-Our_privacy_centerComponent
   Our_privacy_centerComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-My_tax_detailsComponent
@@ -196,6 +206,12 @@ export const appDeclarations = [
   EmailComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-sidenavComponent
   sidenavComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-coming_soonComponent
+  coming_soonComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_prepaid_mobile_add_benComponent
+  buy_prepaid_mobile_add_benComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_airtimeComponent
+  buy_airtimeComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-register_feedbackComponent
   register_feedbackComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-update_permanent_limitsComponent
@@ -403,6 +419,21 @@ export const appRoutes = [
       { path: 'credit', component: creditComponent },
       { path: 'loan', component: loanComponent },
       { path: 'get_estimate', component: get_estimateComponent },
+      { path: 'buy_prepaid_mobile', component: buy_prepaid_mobileComponent },
+      { path: 'bank_account', component: bank_accountComponent },
+      { path: 'choose_banks', component: choose_banksComponent },
+      { path: 'pay_user', component: pay_userComponent },
+      {
+        path: 'buy_electricity',
+        component: buy_electricityComponent,
+        children: [
+          { path: 'pay_ben_electric', component: pay_ben_electricComponent },
+          { path: 'ele', component: electricityComponent },
+        ],
+      },
+      { path: 'add_electricity_ben', component: add_electricity_benComponent },
+      { path: 'transfer_money', component: transfer_moneyComponent },
+      { path: 'send_cash', component: send_cashComponent },
     ],
   },
   { path: 'enter_remote_pin', component: enter_remote_pinComponent },
@@ -419,6 +450,14 @@ export const appRoutes = [
   { path: 'my-tax-details', component: My_tax_detailsComponent },
   { path: 'privacy', component: Our_privacy_centerComponent },
   { path: 'sidenav', component: sidenavComponent },
+  { path: 'buy_airtime', component: buy_airtimeComponent },
+  { path: 'cellphone', component: cellphoneComponent },
+  { path: 'transfer_money', component: transfer_moneyComponent },
+  {
+    path: 'buy_prepaid_mobile',
+    component: buy_prepaid_mobile_add_benComponent,
+  },
+  { path: 'buy_prepaid', component: buy_prepaidComponent },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
