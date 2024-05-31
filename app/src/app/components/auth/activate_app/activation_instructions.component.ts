@@ -48,7 +48,7 @@ export class activation_instructionsComponent {
 
   sd_HMDPIUvK8uKVkIqB(bh) {
     try {
-      bh = this.sd_HPtLA5FT2M4iizJr(bh);
+      bh = this.sd_mUeabtoqMQt5Okk4(bh);
       //appendnew_next_sd_HMDPIUvK8uKVkIqB
       return bh;
     } catch (e) {
@@ -72,13 +72,116 @@ export class activation_instructionsComponent {
   }
   //appendnew_flow_activation_instructionsComponent_start
 
+  sd_mUeabtoqMQt5Okk4(bh) {
+    try {
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_HPtLA5FT2M4iizJr(bh);
+      //appendnew_next_sd_mUeabtoqMQt5Okk4
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_mUeabtoqMQt5Okk4');
+    }
+  }
+
   sd_HPtLA5FT2M4iizJr(bh) {
     try {
       this.page.routeData = undefined;
+      this.page.pic = undefined;
+      bh = this.sd_WAPZpjYffdime62W(bh);
       //appendnew_next_sd_HPtLA5FT2M4iizJr
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_HPtLA5FT2M4iizJr');
+    }
+  }
+
+  sd_WAPZpjYffdime62W(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdURL + 'get-picture';
+      console.log(bh.url);
+      bh = this.sd_epX4M9GQYUC2uVor(bh);
+      //appendnew_next_sd_WAPZpjYffdime62W
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_WAPZpjYffdime62W');
+    }
+  }
+
+  async sd_epX4M9GQYUC2uVor(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_NMSKSPBLkevcHnu2(bh);
+      //appendnew_next_sd_epX4M9GQYUC2uVor
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_epX4M9GQYUC2uVor');
+    }
+  }
+
+  sd_NMSKSPBLkevcHnu2(bh) {
+    try {
+      this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
+      bh = this.sd_15SaZE9ShGJGpxcH(bh);
+      //appendnew_next_sd_NMSKSPBLkevcHnu2
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_NMSKSPBLkevcHnu2');
+    }
+  }
+
+  sd_15SaZE9ShGJGpxcH(bh) {
+    try {
+      const page = this.page;
+      bh.image = page.result.find(
+        (image: any) => image.email === page.user.email
+      );
+
+      console.log(bh.image);
+      bh = this.sd_c6h43zBXSTxakxqZ(bh);
+      //appendnew_next_sd_15SaZE9ShGJGpxcH
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_15SaZE9ShGJGpxcH');
+    }
+  }
+
+  sd_c6h43zBXSTxakxqZ(bh) {
+    try {
+      const page = this.page; // let file: File
+      // if(bh.input.event) {
+      //     file = bh.input.event.target.files
+      //     page.file2 = file[0]
+      //     let fileType =   page.file2['type'].split('/')[0]
+      //     if(fileType != 'image') {
+      //         alert("Please select an image")
+      //         delete page.clientDetails.picture
+      //         return
+      //     }
+      // }else {
+      //     console.log('The is no file uploaded')
+      //     return
+      // }
+
+      let fileReader = new FileReader();
+      fileReader.readAsDataURL(page.pic);
+      fileReader.onload = () => {
+        let result = fileReader.result;
+        page.userImage = result;
+      };
+
+      //appendnew_next_sd_c6h43zBXSTxakxqZ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_c6h43zBXSTxakxqZ');
     }
   }
 

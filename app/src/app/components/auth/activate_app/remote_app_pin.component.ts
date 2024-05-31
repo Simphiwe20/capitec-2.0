@@ -194,12 +194,10 @@ export class remote_app_pinComponent {
   async sd_IcdPwFJiZPNPz0nT(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/activate-new-app');
+        this.sdService.getPathAndQParamsObj('/app_activation_instructions');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       //appendnew_next_sd_IcdPwFJiZPNPz0nT
       return bh;
     } catch (e) {

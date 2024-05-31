@@ -694,7 +694,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + 'upload-picture'\nconsole.log(page.file)\npage.email = {email: page.clientDetails.email}\n\npage.formData2 = new FormData()\npage.formData2.append('pictures', page.file)\nconsole.log('Pictures: ', page.formData2)",
+        "script": "bh.url = page.ssdUrl + 'upload-picture'\nconsole.log(page.file2)\npage.email = {email: page.clientDetails.email}\n\npage.formData2 = new FormData()\npage.formData2.append('pictures', page.file2)\nconsole.log('Pictures: ', page.formData2)",
         "functionName": "sd_E8DzeQlntR6MgXpw",
         "category": "Function",
         "x": 645,
@@ -748,7 +748,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -756,10 +755,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -773,8 +770,6 @@
             "mapVarType": "this.page",
             "mapVarValue": "pic"
         },
-        "headers": [],
-        "headersObj": {},
         "headerMapping": "this.page.email",
         "headerMappingObj": {
             "mapVarType": "this.page",
@@ -782,7 +777,6 @@
         },
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_P1mrdIw6zytIle2B",
         "category": "HTTP",
@@ -855,7 +849,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + 'upload-proof'\nconsole.log(page.file)\npage.email = {email: page.clientDetails.email}\n\npage.formData1 = new FormData()\npage.formData1.append('proof_of_residence', page.file)\nconsole.log('Proof: ',page.formData1)",
+        "script": "bh.url = page.ssdUrl + 'upload-proof'\nconsole.log(page.file1)\npage.email = {email: page.clientDetails.email}\n\npage.formData1 = new FormData()\npage.formData1.append('proof_of_residence', page.file1)\nconsole.log('Proof: ',page.formData1)",
         "functionName": "sd_GDm1BhSk7k93dxmO",
         "category": "Function",
         "x": 645,
@@ -909,7 +903,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -917,10 +910,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -934,15 +925,11 @@
             "mapVarType": "this.page",
             "mapVarValue": "proofOfRes"
         },
-        "headers": [],
-        "headersObj": {},
         "headerMapping": "this.page.email",
         "headerMappingObj": {
             "mapVarType": "this.page",
             "mapVarValue": "email"
         },
-        "params": [],
-        "paramsObj": {},
         "paramMapping": "this.page.email",
         "paramMappingObj": {
             "mapVarType": "this.page",

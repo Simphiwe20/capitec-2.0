@@ -628,11 +628,11 @@ export class verify_identityComponent implements AfterViewInit {
     try {
       const page = this.page;
       bh.url = page.ssdUrl + 'upload-picture';
-      console.log(page.file);
+      console.log(page.file2);
       page.email = { email: page.clientDetails.email };
 
       page.formData2 = new FormData();
-      page.formData2.append('pictures', page.file);
+      page.formData2.append('pictures', page.file2);
       console.log('Pictures: ', page.formData2);
       bh = this.sd_P1mrdIw6zytIle2B(bh);
       //appendnew_next_sd_E8DzeQlntR6MgXpw
@@ -686,11 +686,11 @@ export class verify_identityComponent implements AfterViewInit {
     try {
       const page = this.page;
       bh.url = page.ssdUrl + 'upload-proof';
-      console.log(page.file);
+      console.log(page.file1);
       page.email = { email: page.clientDetails.email };
 
       page.formData1 = new FormData();
-      page.formData1.append('proof_of_residence', page.file);
+      page.formData1.append('proof_of_residence', page.file1);
       console.log('Proof: ', page.formData1);
       bh = this.sd_qkwU4mGrPepSNHo6(bh);
       //appendnew_next_sd_GDm1BhSk7k93dxmO
