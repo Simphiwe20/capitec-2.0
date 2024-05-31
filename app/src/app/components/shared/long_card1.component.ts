@@ -156,7 +156,7 @@ export class long_card1Component {
               {
                 image: '../../../assets/Web/Images/electricity.jpg',
                 name: 'Buy electricity',
-                routes: '/logged_in_landing/buy_elecricity',
+                routes: '/logged_in_landing/buy_electricity/pay_ben_electric',
               },
               {
                 image: '../../../assets/Web/Images/lotto.jpeg',

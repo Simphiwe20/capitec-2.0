@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_QJlpQ5J1qA6fC96v",
+        "type": "tab",
+        "createdDate": "2024-05-23T07:51:25.574Z",
+        "label": "My_tax_details",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "My_tax_detailsComponent"
+    },
+    {
+        "id": "sd_fAuSRz4NYVBWFC8I",
+        "type": "OnInit",
+        "z": "sd_QJlpQ5J1qA6fC96v",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_fAuSRz4NYVBWFC8I",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_rqecVWnvHdsCFSLV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "My_tax_detailsComponent"
+    },
+    {
+        "id": "sd_rqecVWnvHdsCFSLV",
+        "type": "PageVariables",
+        "z": "sd_QJlpQ5J1qA6fC96v",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_rqecVWnvHdsCFSLV",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "My_tax_detailsComponent",
+        "generated": true
+    }
+]

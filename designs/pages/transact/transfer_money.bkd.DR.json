@@ -142,9 +142,7 @@
                     },
                     {
                         "_key": "class",
-                        "_value": [
-                            "poppins"
-                        ],
+                        "_value": "",
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -206,6 +204,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "color-w",
                                 "bg-blue"
                             ],
                             "_type": "dav",
@@ -262,7 +261,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "color-w"
+                                    "white"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -285,12 +284,6 @@
                                 "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
-                            },
-                            {
-                                "_key": "routerLink",
-                                "_value": "/logged_in_landing/home",
-                                "_type": "kv",
-                                "_attrDef": "c"
                             }
                         ]
                     },
@@ -309,7 +302,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "color-w"
+                                    "white"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -642,15 +635,14 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "margin-bottom:10px;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "padding-0px-15px",
-                                    "poppins"
+                                    "padding-left"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -865,18 +857,14 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "height: 70px;border-bottom:1px solid lightgrey;",
+                                "_value": "height: 60px;border-bottom:1px solid lightgrey;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "box-shadow-grey",
-                                    "bg-white",
-                                    "padding-0px-15px",
-                                    "poppins",
-                                    "white-bg"
+                                    "bg-white"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -1121,7 +1109,9 @@
                                             },
                                             {
                                                 "_key": "class",
-                                                "_value": [],
+                                                "_value": [
+                                                    "padding-left"
+                                                ],
                                                 "_type": "dav",
                                                 "_attrDef": "p"
                                             },
@@ -2363,15 +2353,14 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "margin-bottom:10px;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "padding-0px-15px",
-                                    "poppins"
+                                    "padding-left"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -2586,18 +2575,14 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "height: 70px;border-bottom:1px solid lightgrey;",
+                                "_value": "height: 60px;border-bottom:1px solid lightgrey;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "box-shadow-grey",
-                                    "padding-0px-15px",
-                                    "bg-white",
-                                    "poppins",
-                                    "white-bg"
+                                    "bg-white"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -2850,7 +2835,7 @@
                                             },
                                             {
                                                 "_key": "imgSrc",
-                                                "_value": "/Web/Images/account1.PNG",
+                                                "_value": "/Web/Images/saving_plan.jpg",
                                                 "_type": "kv",
                                                 "_attrDef": "p"
                                             },
@@ -3986,8 +3971,7 @@
                                             {
                                                 "_key": "class",
                                                 "_value": [
-                                                    "color-b",
-                                                    "blue-color"
+                                                    "color-b"
                                                 ],
                                                 "_type": "dav",
                                                 "_attrDef": "p"
@@ -4155,6 +4139,7 @@
                                 {
                                     "_key": "class",
                                     "_value": [
+                                        "full-width",
                                         "white-bg"
                                     ],
                                     "_type": "dav",
@@ -4212,14 +4197,15 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "padding-left"
+                                            "full-width",
+                                            "bg-white"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
                                     },
                                     {
                                         "_key": "placeholder",
-                                        "_value": "",
+                                        "_value": "Amount",
                                         "_type": "kv",
                                         "_attrDef": "p",
                                         "_useAsLabel": true
@@ -4319,7 +4305,7 @@
                                     },
                                     {
                                         "_key": "Label",
-                                        "_value": "Amount",
+                                        "_value": "",
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
@@ -4447,7 +4433,8 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "padding-left"
+                                            "bg-white",
+                                            "full-width"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
@@ -4682,7 +4669,8 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "padding-left"
+                                            "bg-white",
+                                            "full-width"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
@@ -4860,7 +4848,7 @@
                                 {
                                     "_key": "class",
                                     "_value": [
-                                        "get-started-btn"
+                                        "padding-10"
                                     ],
                                     "_type": "dav",
                                     "_attrDef": "p"
@@ -4916,7 +4904,9 @@
                                     {
                                         "_key": "class",
                                         "_value": [
-                                            "color-w"
+                                            "color-w",
+                                            "bg-blue",
+                                            "full-width"
                                         ],
                                         "_type": "dav",
                                         "_attrDef": "p"
