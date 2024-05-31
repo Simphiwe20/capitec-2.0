@@ -145,16 +145,42 @@
                     "component": "buy_prepaid_mobileComponent"
                 },
                 {
-                    "path": "bank-account",
+                    "path": "bank_account",
                     "component": "bank_accountComponent"
                 },
                 {
-                    "path": "choose-banks",
+                    "path": "choose_banks",
                     "component": "choose_banksComponent"
                 },
                 {
-                    "path": "pay-user",
+                    "path": "pay_user",
                     "component": "pay_userComponent"
+                },
+                {
+                    "path": "buy_electricity",
+                    "component": "buy_electricityComponent",
+                    "children": [
+                        {
+                            "path": "pay_ben_electric",
+                            "component": "pay_ben_electricComponent"
+                        },
+                        {
+                            "path": "ele",
+                            "component": "electricityComponent"
+                        }
+                    ]
+                },
+                {
+                    "path": "add_electricity_ben",
+                    "component": "add_electricity_benComponent"
+                },
+                {
+                    "path": "transfer_money",
+                    "component": "transfer_moneyComponent"
+                },
+                {
+                    "path": "send_cash",
+                    "component": "send_cashComponent"
                 }
             ]
         },
@@ -187,12 +213,40 @@
             "component": "register_feedbackComponent"
         },
         {
+            "path": "email",
+            "component": "EmailComponent"
+        },
+        {
+            "path": "my-tax-details",
+            "component": "My_tax_detailsComponent"
+        },
+        {
+            "component": "Our_privacy_centerComponent",
+            "path": "privacy"
+        },
+        {
+            "path": "sidenav",
+            "component": "sidenavComponent"
+        },
+        {
             "path": "buy_airtime",
             "component": "buy_airtimeComponent"
         },
         {
             "path": "cellphone",
             "component": "cellphoneComponent"
+        },
+        {
+            "path": "transfer_money",
+            "component": "transfer_moneyComponent"
+        },
+        {
+            "path": "buy_prepaid_mobile",
+            "component": "buy_prepaid_mobile_add_benComponent"
+        },
+        {
+            "path": "buy_prepaid",
+            "component": "buy_prepaidComponent"
         },
         {
             "path": "''",

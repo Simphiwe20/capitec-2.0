@@ -785,7 +785,143 @@
                                 "_attrDef": "p",
                                 "_visibility": false
                             }
-                        ]
+                        ],
+                        "c68ff755-2ebc-4b79-3767-5aa6cb1fac81": {
+                            "paletteKey": "FlexLayoutCol",
+                            "parentEditorKey": "6cf607c9-206d-55fb-da4a-e2ee09c7619c",
+                            "commentid": null,
+                            "designerReference": [
+                                {
+                                    "_key": "componentLabel",
+                                    "_value": "Column",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": [],
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "fxFlex",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "fxLayoutGap",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "wrap",
+                                    "_value": "wrap",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "layoutAlign",
+                                    "_value": "center",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "pLayoutAlign",
+                                    "_value": "center",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[fxShow]",
+                                    "_value": "true",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "fxFill",
+                                    "_value": "fxFill",
+                                    "_type": "a",
+                                    "_attrDef": "c"
+                                }
+                            ],
+                            "1c8b4fee-2d7b-951a-463d-7f865c4dabaa": {
+                                "paletteKey": "NG-image",
+                                "parentEditorKey": "c68ff755-2ebc-4b79-3767-5aa6cb1fac81",
+                                "commentid": null,
+                                "designerReference": [
+                                    {
+                                        "_key": "componentLabel",
+                                        "_value": "Image",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_useAsLabel": true
+                                    },
+                                    {
+                                        "_key": "style",
+                                        "_value": "    width: 96%;",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "class",
+                                        "_value": [],
+                                        "_type": "dav",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "imgSrc",
+                                        "_value": "/Web/Images/construction.svg",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "alt",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "[src]",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "imgSecure",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "width",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "srcset",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "sizes",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    }
+                                ]
+                            }
+                        }
                     },
                     "9cc16afa-7276-8cb1-c716-d829bea66213": {
                         "paletteKey": "ng-tab-content",

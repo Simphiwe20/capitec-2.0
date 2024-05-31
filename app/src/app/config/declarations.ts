@@ -16,6 +16,16 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-profileComponent
+import { profileComponent } from '../components/more/profile.component';
+//CORE_REFERENCE_IMPORT-Our_privacy_centerComponent
+import { Our_privacy_centerComponent } from '../components/more/Our_privacy_center.component';
+//CORE_REFERENCE_IMPORT-My_tax_detailsComponent
+import { My_tax_detailsComponent } from '../components/more/My_tax_details.component';
+//CORE_REFERENCE_IMPORT-EmailComponent
+import { EmailComponent } from '../components/more/Email.component';
+//CORE_REFERENCE_IMPORT-sidenavComponent
+import { sidenavComponent } from '../components/home/sidenav.component';
 //CORE_REFERENCE_IMPORT-coming_soonComponent
 import { coming_soonComponent } from '../components/shared/coming_soon.component';
 //CORE_REFERENCE_IMPORT-buy_prepaid_mobile_add_benComponent
@@ -186,6 +196,16 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-profileComponent
+  profileComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-Our_privacy_centerComponent
+  Our_privacy_centerComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-My_tax_detailsComponent
+  My_tax_detailsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-EmailComponent
+  EmailComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-sidenavComponent
+  sidenavComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-coming_soonComponent
   coming_soonComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-buy_prepaid_mobile_add_benComponent
@@ -400,9 +420,20 @@ export const appRoutes = [
       { path: 'loan', component: loanComponent },
       { path: 'get_estimate', component: get_estimateComponent },
       { path: 'buy_prepaid_mobile', component: buy_prepaid_mobileComponent },
-      { path: 'bank-account', component: bank_accountComponent },
-      { path: 'choose-banks', component: choose_banksComponent },
-      { path: 'pay-user', component: pay_userComponent },
+      { path: 'bank_account', component: bank_accountComponent },
+      { path: 'choose_banks', component: choose_banksComponent },
+      { path: 'pay_user', component: pay_userComponent },
+      {
+        path: 'buy_electricity',
+        component: buy_electricityComponent,
+        children: [
+          { path: 'pay_ben_electric', component: pay_ben_electricComponent },
+          { path: 'ele', component: electricityComponent },
+        ],
+      },
+      { path: 'add_electricity_ben', component: add_electricity_benComponent },
+      { path: 'transfer_money', component: transfer_moneyComponent },
+      { path: 'send_cash', component: send_cashComponent },
     ],
   },
   { path: 'enter_remote_pin', component: enter_remote_pinComponent },
@@ -415,8 +446,18 @@ export const appRoutes = [
     component: update_permanent_limitsComponent,
   },
   { path: 'register_feedback', component: register_feedbackComponent },
+  { path: 'email', component: EmailComponent },
+  { path: 'my-tax-details', component: My_tax_detailsComponent },
+  { path: 'privacy', component: Our_privacy_centerComponent },
+  { path: 'sidenav', component: sidenavComponent },
   { path: 'buy_airtime', component: buy_airtimeComponent },
   { path: 'cellphone', component: cellphoneComponent },
+  { path: 'transfer_money', component: transfer_moneyComponent },
+  {
+    path: 'buy_prepaid_mobile',
+    component: buy_prepaid_mobile_add_benComponent,
+  },
+  { path: 'buy_prepaid', component: buy_prepaidComponent },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
