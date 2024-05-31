@@ -53,4 +53,4 @@ jobs:
           app-name: 'neutricap'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7AD10BD1F14C465BA9E8EDBFDFA3F287 }}
-          package: .
+          package: D:\a\capitec-2.0\capitec-2.0\app\package.json
