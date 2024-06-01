@@ -1,0 +1,23 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-toolbar class="blue">
+      <div fxLayout="row wrap" class="full-width" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="row wrap" style="height: 60px;    width: 54%;" fxLayoutGap="30%" fxLayoutAlign="space-between center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="pointer blue-color" routerLink="/home">arrow_back</mat-icon>
+          <p style="    width: 27%;     height: 50%;     border-radius: 16px;     display: flex;     align-items: center;     justify-content: center;" class="blue-bg white">
+            <b>profile</b>
+          </p>
+        </div>
+      </div>
+    </mat-toolbar>
+    <div fxLayout="column wrap" style="background:white;" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="row wrap" style="  width: 95%; height: 64px; border-bottom:1px solid black; width:" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let item of page.profile" [routerLink]="item.link">
+        <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/image/profile-icon/{{item.icon}}" style="    width: 29px;"></div>
+          <div>
+            {{item.text}}
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="text-color-blue"><span class="material-symbols-outlined"> chevron_right </span></mat-icon></div>
+      </div>
+    </div>
+  </div>
+</div>

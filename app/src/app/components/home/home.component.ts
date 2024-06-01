@@ -55,14 +55,40 @@ export class homeComponent {
     }
   }
 
+  showsidenav(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_tXB6bokoTStU4Y6i(bh);
+      //appendnew_next_showsidenav
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_FKSyQSUP8DiZ3iht');
+    }
+  }
   //appendnew_flow_homeComponent_start
 
   sd_azLtfGiZyWrylVhT(bh) {
     try {
+      this.page.hidesideNav = true;
       //appendnew_next_sd_azLtfGiZyWrylVhT
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_azLtfGiZyWrylVhT');
+    }
+  }
+
+  sd_tXB6bokoTStU4Y6i(bh) {
+    try {
+      const page = this.page;
+      page.hidesidenav = !page.hidesidenav;
+      //appendnew_next_sd_tXB6bokoTStU4Y6i
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_tXB6bokoTStU4Y6i');
     }
   }
 
