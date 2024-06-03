@@ -188,6 +188,10 @@ export class savingsComponent {
       page.trans = bh.payedBen.concat(bh.payedAirtime);
       console.log('Before sort', page.trans);
 
+      page.trans = page.trans.filter(
+        (trans) => trans.accountNumber === page.user.accountNumber
+      );
+
       console.log('after sort', page.trans);
 
       page.trans.map((trans: any) => {

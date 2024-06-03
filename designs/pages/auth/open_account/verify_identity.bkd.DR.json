@@ -1651,7 +1651,7 @@
                             },
                             {
                                 "_key": "placeholder",
-                                "_value": "",
+                                "_value": "Simphiwe Nene",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
@@ -1670,7 +1670,7 @@
                             },
                             {
                                 "_key": "[required]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1815,8 +1815,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "poppins",
-                                    "padding-0_75em"
+                                    "poppins"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -2011,7 +2010,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "First and last name as they appear to your ID",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['fullName']?.touched) && form.controls['fullName']?.errors?.required\">First and last name as they appear to your ID</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['fullName']?.touched) && form.controls['fullName']?.errors?.required\">Required field</span>\r\n",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -2103,7 +2102,7 @@
                             },
                             {
                                 "_key": "placeholder",
-                                "_value": "",
+                                "_value": "0008095758083",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
@@ -2122,7 +2121,7 @@
                             },
                             {
                                 "_key": "[required]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -2463,7 +2462,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "You must be 16 years or older",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['idNum']?.touched) && form.controls['idNum']?.errors?.required\">You must be 16 years or older</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['idNum']?.touched) && form.controls['idNum']?.errors?.required\">Required field</span>\r\n",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -2574,7 +2573,7 @@
                             },
                             {
                                 "_key": "[required]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -2701,6 +2700,12 @@
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_visibility": true
+                            },
+                            {
+                                "_key": "oninput",
+                                "_value": "\"this.value = this.value.replace(/[^\\d]/g, '')\"",
+                                "_type": "kv",
+                                "_attrDef": "c"
                             }
                         ]
                     },
@@ -2915,7 +2920,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "We will verify this phone number by SMS",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['contacts']?.touched) && form.controls['contacts']?.errors?.required\">We will verify this phone number by SMS</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['contacts']?.touched) && form.controls['contacts']?.errors?.required\">Required field</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -3026,7 +3031,7 @@
                             },
                             {
                                 "_key": "[required]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -3367,7 +3372,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "We will verify this email address by email",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['email']?.touched) && form.controls['email']?.errors?.required\">We will verify this email address by email</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['email']?.touched) && form.controls['email']?.errors?.required\">Required field</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -3478,7 +3483,7 @@
                             },
                             {
                                 "_key": "[required]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -3819,7 +3824,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Pin should have atleast 5 characters",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['pin']?.touched) && form.controls['pin']?.errors?.required\">Remote pin to be used on the app</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['pin']?.touched) && form.controls['pin']?.errors?.required\">Required field</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -3930,7 +3935,7 @@
                             },
                             {
                                 "_key": "[required]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -3948,7 +3953,7 @@
                             },
                             {
                                 "_key": "name",
-                                "_value": "confirmPin",
+                                "_value": "confirmRemotePin",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -4271,7 +4276,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Confirm password should match with a pin",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['confirmRemotePin']?.touched) && form.controls['confirmRemotePin']?.errors?.required\">Confirm Remote pin to be used on the app</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['confirmRemotePin']?.touched) && form.controls['confirmRemotePin']?.errors?.required\">Required field</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -4770,7 +4775,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Certified ID document ",
+                                    "_value": "\r\n<span *ngIf=\"!(page.submitted || form.controls['ID_doc']?.touched) && form.controls['ID_doc']?.errors?.required\">Certified ID document </span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['ID_doc']?.touched) && form.controls['ID_doc']?.errors?.required\">Required field</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -5269,7 +5274,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Proof of residence must have your full name",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['proof_of_res']?.touched) && form.controls['proof_of_res']?.errors?.required\">Proof of residence must have your full name</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['proof_of_res']?.touched) && form.controls['proof_of_res']?.errors?.required\">Required field</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -5353,10 +5358,10 @@
                             {
                                 "_key": "class",
                                 "_value": [
+                                    "border-blue",
                                     "start-center",
                                     "flex",
-                                    "height-50px",
-                                    "border-blue"
+                                    "height-50px"
                                 ],
                                 "_type": "dav",
                                 "_attrDef": "p"
@@ -5528,6 +5533,12 @@
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_visibility": false
+                            },
+                            {
+                                "_key": "ngClass",
+                                "_value": "{'border-red-2px': (page.submitted || form.controls['picture']?.touched) && form.controls['picture']?.errors?.required, 'border-blue': !(page.submitted || form.controls['picture']?.touched) && form.controls['picture']?.errors?.required}",
+                                "_type": "kv",
+                                "_attrDef": "c"
                             }
                         ],
                         "d7bb3c07-0fbd-1675-a4ee-2bdf7c029f5d": {
@@ -5768,7 +5779,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Unfiltered client clear picture",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['picture']?.touched) && form.controls['picture']?.errors?.required\">Unfiltered client clear picture</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['picture']?.touched) && form.controls['picture']?.errors?.required\">Required field</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }

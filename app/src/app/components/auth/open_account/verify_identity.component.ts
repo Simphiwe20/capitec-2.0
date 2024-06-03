@@ -70,7 +70,7 @@ export class verify_identityComponent implements AfterViewInit {
         .constructFlowObject(this);
       bh.input = { form };
       bh.local = {};
-      bh = this.sd_cshorPjbVvQz583z(bh);
+      bh = this.sd_iy0k1URc5RBDtesS(bh);
       //appendnew_next_submit
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_r8Re82cZT1k3uHjb');
@@ -218,6 +218,7 @@ export class verify_identityComponent implements AfterViewInit {
       this.page.uploadedImage = undefined;
       this.page.detected = undefined;
       this.page.showLoader = false;
+      this.page.submitted = false;
       bh = this.sd_vh3M7aFNa9ZH2tRe(bh);
       //appendnew_next_sd_iqcHnNX7jsgHG1KD
       return bh;
@@ -243,6 +244,18 @@ export class verify_identityComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_vh3M7aFNa9ZH2tRe');
+    }
+  }
+
+  sd_iy0k1URc5RBDtesS(bh) {
+    try {
+      const page = this.page;
+      page.submitted = true;
+      bh = this.sd_cshorPjbVvQz583z(bh);
+      //appendnew_next_sd_iy0k1URc5RBDtesS
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_iy0k1URc5RBDtesS');
     }
   }
 
@@ -593,7 +606,7 @@ export class verify_identityComponent implements AfterViewInit {
         method: 'post',
         responseType: 'json',
         headers: this.page.email,
-        params: undefined,
+        params: [],
         body: this.page.formData,
       };
       this.page.idResult = await this.sdService.nHttpRequest(requestOptions);

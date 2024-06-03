@@ -336,7 +336,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.payedBen)\nconsole.log(bh.payedAirtime)\n\npage.trans = bh.payedBen.concat(bh.payedAirtime)\nconsole.log('Before sort', page.trans)\n\nconsole.log('after sort', page.trans)\n\npage.trans.map((trans: any) => {\n    if(new Date(trans.transDate).getDate() == new Date().getDate() - 1){\n        trans.day = 'Yesterday'\n    }else if(new Date(trans.transDate).getDate() == new Date().getDate()) {\n        trans.day = 'Today'\n    }else {\n        trans.day = trans.transDate\n    } \n}\n)\n\nconsole.log(page.trans)",
+        "script": "console.log(bh.payedBen)\nconsole.log(bh.payedAirtime)\n\npage.trans = bh.payedBen.concat(bh.payedAirtime)\nconsole.log('Before sort', page.trans)\n\npage.trans = page.trans.filter(trans => trans.accountNumber === page.user.accountNumber)\n\nconsole.log('after sort', page.trans)\n\npage.trans.map((trans: any) => {\n    if(new Date(trans.transDate).getDate() == new Date().getDate() - 1){\n        trans.day = 'Yesterday'\n    }else if(new Date(trans.transDate).getDate() == new Date().getDate()) {\n        trans.day = 'Today'\n    }else {\n        trans.day = trans.transDate\n    } \n}\n)\n\nconsole.log(page.trans)",
         "functionName": "sd_rftktp2UPREHp7RO",
         "category": "Function",
         "x": 1105,
