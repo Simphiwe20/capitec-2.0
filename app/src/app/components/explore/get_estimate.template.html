@@ -15,18 +15,18 @@
         <h3>
           Enter loan amount</h3>
       </div>
-      <form>
+      <form #loanForm="ngForm">
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="padding-left white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field class="full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput type="number" value="R0" [required]="false">
+              <input matInput [(ngModel)]="page.loanForm.amount" name="amount" type="number" value="R0" [required]="true">
               <mat-label>Amount required (Max R500 000)</mat-label>
             </mat-form-field>
           </div>
           <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
             <div fxLayout="column wrap" class="padding-left" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
               <mat-form-field class="full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                <input matInput type="number" [required]="false">
+                <input matInput [(ngModel)]="page.loanForm.months" name="months" type="number" [required]="false">
                 <mat-label>Months to repay loan</mat-label>
               </mat-form-field>
             </div>
@@ -37,12 +37,22 @@
                 What do you need credit for?</h3>
             </div>
             <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-              <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey; height:65px;" class="poppins bg-white" fxLayoutAlign="space-between center" [fxShow]="true">
-                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                  <p class="padding-left">
-                    Choose reason for credit </p>
+              <div fxLayout="column wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.loanForm.reason" name="reason" type="text" [required]="true">
+                  <mat-label>What do you need credit for</mat-label>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.loanForm.salary" name="salary" type="text" [required]="true">
+                  <mat-label>Gross salary</mat-label>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div>
+                  <input type="file">
                 </div>
-                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">chevron_right</mat-icon></div>
               </div>
             </div>
           </div>
@@ -60,22 +70,8 @@
                   Capitec Bank may use my personal details to do a credit bureau check and contact me.</p>
               </div>
             </div>
-            <div fxLayout="row wrap" class="height-50px padding-0px-15px" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div fxLayout="column wrap" class="padding-left" fxFlex="7" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox [required]="false"></mat-checkbox></div>
-              <div fxLayout="column wrap" style="padding-right:10px;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true">
-                <p style="   width: 300px;">
-                  Capitec Bank may use my personal details to do a credit bureau check and contact me.</p>
-              </div>
-            </div>
-            <div fxLayout="row wrap" class="padding-0px-15px" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div fxLayout="column wrap" class="padding-left" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox [required]="false"></mat-checkbox></div>
-              <div fxLayout="column wrap" style="padding-right:10px;" fxLayoutAlign="start stretch" [fxShow]="true">
-                <p style="    width: 300px;">
-                  Capitec Bank may use my personal details to do a credit bureau check and contact me.</p>
-              </div>
-            </div>
           </div>
-          <div fxLayout="column wrap" class="margin-top-16px get-started-btn padding-10" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w">Next</button></div>
+          <div fxLayout="column wrap" class="margin-top-16px get-started-btn padding-10" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="addBalance()">Send</button></div>
         </div>
       </form>
     </div>
