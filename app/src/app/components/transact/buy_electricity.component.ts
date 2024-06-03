@@ -147,8 +147,6 @@ export class buy_electricityComponent {
         return user.accountNumber == page.user.accountNumber;
       });
       page.benArray = bh.beneficiaries;
-
-      console.log(bh.beneficiaries);
       //appendnew_next_sd_dNY8MfPEYD17kDAG
       return bh;
     } catch (e) {
@@ -160,7 +158,6 @@ export class buy_electricityComponent {
     try {
       const page = this.page;
       page.selected = bh.input.Index;
-      console.log(page.selected);
 
       bh = this.sd_n7gHGsIp9RCqVyuj(bh);
       //appendnew_next_sd_6HiFRhzbHYhSN1Be

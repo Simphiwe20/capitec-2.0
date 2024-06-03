@@ -105,9 +105,9 @@ export class add_electricity_benComponent {
         meterNumber: '',
         benName: '',
         accountNumber: page.result.accountNumber,
+        cellPhone: '',
       };
 
-      console.log(page.electric);
       //appendnew_next_sd_lZn42Dc2ZX4U6P4q
       return bh;
     } catch (e) {
@@ -180,7 +180,6 @@ export class add_electricity_benComponent {
       const page = this.page;
       bh.url = page.ssdUrl + 'add-beneficiary-electricity';
       bh.body = page.electric;
-
       console.log(bh.body);
       bh = this.sd_YhPqqvVDcXPL2FM5(bh);
       //appendnew_next_sd_LCL8IPnUcbpewMH1
@@ -201,21 +200,10 @@ export class add_electricity_benComponent {
         body: bh.body,
       };
       this.page.results = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_tSlfBZSatBw89xp7(bh);
       //appendnew_next_sd_YhPqqvVDcXPL2FM5
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_YhPqqvVDcXPL2FM5');
-    }
-  }
-
-  sd_tSlfBZSatBw89xp7(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.results);
-      //appendnew_next_sd_tSlfBZSatBw89xp7
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_tSlfBZSatBw89xp7');
     }
   }
 

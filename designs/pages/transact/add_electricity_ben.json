@@ -84,7 +84,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.electric = {\n    meterNumber : \"\",\n    benName: \"\",\n    accountNumber: page.result.accountNumber\n}\n\nconsole.log(page.electric)",
+        "script": "page.electric = {\n    meterNumber : \"\",\n    benName: \"\",\n    accountNumber: page.result.accountNumber,\n    cellPhone: \"\",\n}\n",
         "functionName": "sd_lZn42Dc2ZX4U6P4q",
         "category": "Function",
         "x": 405,
@@ -243,9 +243,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -285,9 +283,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -343,7 +339,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + \"add-beneficiary-electricity\";\nbh.body = page.electric\n\nconsole.log(bh.body)",
+        "script": "bh.url = page.ssdUrl + \"add-beneficiary-electricity\";\nbh.body = page.electric\nconsole.log(bh.body)",
         "functionName": "sd_LCL8IPnUcbpewMH1",
         "category": "Function",
         "x": 740,
@@ -404,36 +400,8 @@
         "x": 885,
         "y": 160,
         "wires": [
-            [
-                "sd_tSlfBZSatBw89xp7"
-            ]
+            []
         ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "add_electricity_benComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_tSlfBZSatBw89xp7",
-        "type": "Log",
-        "z": "sd_D1hMzChH8qZpINvk",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "this.page.results",
-        "functionName": "sd_tSlfBZSatBw89xp7",
-        "category": "General",
-        "x": 1000,
-        "y": 160,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "this.page",
-                "value": "results",
-                "constant": false
-            }
-        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "add_electricity_benComponent",

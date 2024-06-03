@@ -46,7 +46,9 @@
         "x": 180,
         "y": 30,
         "wires": [
-            []
+            [
+                "sd_X1SJJgzmSEpUaVyB"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -93,11 +95,458 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "if(bh.input.action) {\n    const data = JSON.stringify(bh.input.action.data.value[0].value)\n    const parsed = JSON.parse(data)\n    console.log(JSON.parse(parsed))\n}   \n  ",
+        "script": "if(bh.input.action) {\n    const data = JSON.stringify(bh.input.action.data.value[0].value)\n    const parsed = JSON.parse(data)\n    bh.scanned = JSON.parse(parsed)\n    bh.scanned.accountNumber = page.user.accountNumber\n    bh.scanned.transDate = new Date()\n    bh.scanned.transType = \"scan_to_pay\"\n}\n\nbh.userEmail = {\n    collection : \"users\"\n}\n  ",
         "functionName": "sd_iDWBGrb7ZN7K6OJV",
         "category": "Function",
         "x": 180,
         "y": 160,
+        "wires": [
+            [
+                "sd_PyKIvgf5KrzauESS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_X1SJJgzmSEpUaVyB",
+        "type": "Storage",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_X1SJJgzmSEpUaVyB",
+        "category": "Storage",
+        "x": 285,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PyKIvgf5KrzauESS",
+        "type": "Environment",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_PyKIvgf5KrzauESS",
+        "category": "General",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "sd_y7ZFKYoAHH0A5PQC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_y7ZFKYoAHH0A5PQC",
+        "type": "PageSwitch",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.available_balance",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.user.available_balance",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "scanned.amount",
+                "vt": "bh",
+                "gv": "bh.scanned.amount"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_y7ZFKYoAHH0A5PQC",
+        "category": "Function",
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "sd_joqKwNT4ZT8rNFeF"
+            ],
+            [
+                "sd_654F5tvgLuk8O2PK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_654F5tvgLuk8O2PK",
+        "type": "SnackBar",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "INSUFICIENT FUNDS FOR TRANSACTION"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_654F5tvgLuk8O2PK",
+        "category": "General",
+        "x": 460,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_joqKwNT4ZT8rNFeF",
+        "type": "Script",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdUrl + \"scan\"\nbh.url_scan = page.ssdUrl + \"update\"\nbh.newUser = page.ssdUrl + \"find-one-user\"\nbh.difference = page.user.available_balance - bh.scanned.amount\n\nbh.body = {\n    email: page.user.email,\n    available_balance : page.user.available_balance - bh.scanned.amount\n}",
+        "functionName": "sd_joqKwNT4ZT8rNFeF",
+        "category": "Function",
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "sd_yEx1YWKthP8tTcpk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yEx1YWKthP8tTcpk",
+        "type": "HttpRequest",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.scanned",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "scanned"
+        },
+        "resultMapping": "bh.results",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_yEx1YWKthP8tTcpk",
+        "category": "HTTP",
+        "x": 560,
+        "y": 120,
+        "wires": [
+            [
+                "sd_GrzMCJ2i4qDJOSGK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GrzMCJ2i4qDJOSGK",
+        "type": "HttpRequest",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "update balance",
+        "method": "put",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_scan",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_scan"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.results_balance",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "results_balance"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "updateBalance",
+        "category": "HTTP",
+        "x": 645,
+        "y": 120,
+        "wires": [
+            [
+                "sd_IHGho6068fKiY9et"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_IHGho6068fKiY9et",
+        "type": "HttpRequest",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "get user",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.newUser",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "newUser"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.userEmail",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "userEmail"
+        },
+        "resultMapping": "bh.updated",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "updated"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "getUser",
+        "category": "HTTP",
+        "x": 725,
+        "y": 120,
+        "wires": [
+            [
+                "sd_GkY3lk6BOBdhULHo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_sYrXDVqjwrsm9xwD",
+        "type": "Storage",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {
+            "type": "bh",
+            "value": "newBalance"
+        },
+        "resultMapping": {},
+        "functionName": "sd_sYrXDVqjwrsm9xwD",
+        "category": "Storage",
+        "x": 885,
+        "y": 120,
+        "wires": [
+            [
+                "sd_2v1ZO0yayUcVMDFb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GkY3lk6BOBdhULHo",
+        "type": "Script",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.newBalance = bh.updated.find((user:any) =>{\n    return user.email = page.user.email\n})\n",
+        "functionName": "sd_GkY3lk6BOBdhULHo",
+        "category": "Function",
+        "x": 805,
+        "y": 120,
+        "wires": [
+            [
+                "sd_sYrXDVqjwrsm9xwD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_2v1ZO0yayUcVMDFb",
+        "type": "Navigation",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/transact",
+        "functionName": "sd_2v1ZO0yayUcVMDFb",
+        "category": "Navigation",
+        "x": 960,
+        "y": 120,
+        "wires": [
+            [
+                "sd_xIpocRFFjVFYzgon"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scan_to_payComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xIpocRFFjVFYzgon",
+        "type": "SnackBar",
+        "z": "sd_GQZet17bHn1eur3Q",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "SCAN TO  PAY SUCCESS"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "6000"
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_xIpocRFFjVFYzgon",
+        "category": "General",
+        "x": 1025,
+        "y": 220,
         "wires": [
             []
         ],
