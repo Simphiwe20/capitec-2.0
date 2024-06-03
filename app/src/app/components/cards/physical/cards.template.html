@@ -1,8 +1,18 @@
 <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
   <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="column wrap" class="padding-20px height-60" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="column wrap" class="height-90" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="./Web/Images/be_a_hero.PNG" style="width: 200px" class="height-90"><small class="x-small text-center poppins color-b no-margin">
-          Show Card Details</small></div>
+      <div fxLayout="column wrap" style="position:" class="height-90" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.hide ===  true">
+          <div style="color: #d3b77f;position: absolute;bottom: 64%;left: 97px;z-index:1;">
+            {{page.user.fullName}}
+          </div>
+          <div style="color: #d3b77f;position: absolute;bottom: 59%;left: 97px;z-index:1;">
+            {{page.user.accountNumber}}
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="./Web/Images/front_capitec.jpg" style="width: 200px; position:relative !important;  " *ngIf="page.hide === true" class="height-90"><img imgSrc="/Web/Images/card_back.PNG" *ngIf="!page.hide"></div><small (click)="hideCard()" class="x-small text-center poppins color-b no-margin">
+          Show Card Details</small>
+      </div>
     </div><bh-long_card1></bh-long_card1>
   </div>
 </div>

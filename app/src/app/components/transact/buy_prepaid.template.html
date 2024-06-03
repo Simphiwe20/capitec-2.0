@@ -5,7 +5,7 @@
         <h3 class="white">
           Add Beneficiary</h3>
       </div>
-    </div>
+    </div><mat-menu #menu="matMenu"><button mat-menu-item *ngFor="let menu of page.menu"> {{menu}} </button></mat-menu>
     <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
       <form #addPrepaidBen="ngForm">
         <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">

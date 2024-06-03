@@ -9,7 +9,7 @@
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <h3 style="margin-bottom: 10px;" class="m-b-0 padding-left">
             All</h3>
-          <div fxLayout="row wrap" style="height:60px;margin-bottom:1em;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let ben of page.benArray" (click)="pay( ben)" routerLink="/buy-electricity/ele">
+          <div fxLayout="row wrap" style="height:60px;margin-bottom:1em;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let ben of page.benArray" (click)="pay( ben)">
             <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
               <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">home</mat-icon></div>
               <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">

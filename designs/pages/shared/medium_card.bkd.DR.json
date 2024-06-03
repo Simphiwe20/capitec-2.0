@@ -232,10 +232,11 @@
                             "_attrDef": "c"
                         },
                         {
-                            "_key": "routerLink",
-                            "_value": "{{card.routes}}",
+                            "_key": "(click)",
+                            "_value": "openDialog(card.routes)",
                             "_type": "kv",
-                            "_attrDef": "c"
+                            "_attrDef": "c",
+                            "_customAttributeFlag": "customInput"
                         }
                     ],
                     "32a96a53-5bea-6195-3532-aca1c2e315fd": {

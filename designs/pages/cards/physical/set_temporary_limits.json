@@ -472,7 +472,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "put",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -480,10 +479,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -499,11 +496,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_E1csG2yqYNo355nw",
         "category": "HTTP",
@@ -512,35 +507,6 @@
         "wires": [
             [
                 "sd_RuRvmvAAaLF3I9iG"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "set_temporary_limitsComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_HkdUHoOyrV7dkEya",
-        "type": "Navigation",
-        "z": "sd_DhseKfbPmhEGFeC0",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "path": "/cards",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
-        "functionName": "sd_HkdUHoOyrV7dkEya",
-        "category": "Navigation",
-        "x": 1085,
-        "y": 220,
-        "wires": [
-            [
-                "sd_3pSe9lC8E3ISnjO4"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -578,10 +544,12 @@
         "direction": "ltr",
         "functionName": "sd_3pSe9lC8E3ISnjO4",
         "category": "General",
-        "x": 1185,
+        "x": 1125,
         "y": 220,
         "wires": [
-            []
+            [
+                "sd_GIj0TG1GvPEruGXZ"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -613,7 +581,7 @@
         "y": 220,
         "wires": [
             [
-                "sd_HkdUHoOyrV7dkEya"
+                "sd_3pSe9lC8E3ISnjO4"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -637,6 +605,59 @@
             [
                 "sd_ki72vvtB5kK5AtwY"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GIj0TG1GvPEruGXZ",
+        "type": "Storage",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "resultMapping": {},
+        "functionName": "sd_GIj0TG1GvPEruGXZ",
+        "category": "Storage",
+        "x": 1265,
+        "y": 220,
+        "wires": [
+            [
+                "sd_OsjCzfqUSqdXgzkp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_OsjCzfqUSqdXgzkp",
+        "type": "Navigation",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/update_temporary_limit",
+        "functionName": "sd_OsjCzfqUSqdXgzkp",
+        "category": "Navigation",
+        "x": 1405,
+        "y": 220,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

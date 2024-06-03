@@ -4,6 +4,9 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { MatDialog } from '@angular/material/dialog'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
+import { sign_inComponent } from 'app/components/PopUps/sign_in.component'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -47,7 +50,7 @@ export class medium_cardComponent {
 
   sd_zH9yRGJhq9fOVEcJ(bh) {
     try {
-      bh = this.sd_TqDatvZrTQgXaayj(bh);
+      bh = this.sd_JVuwiufKCahYP4tp(bh);
       //appendnew_next_sd_zH9yRGJhq9fOVEcJ
       return bh;
     } catch (e) {
@@ -55,11 +58,37 @@ export class medium_cardComponent {
     }
   }
 
+  openDialog(routes: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { routes };
+      bh.local = {};
+      bh = this.sd_wAQWWGn1bkfScgYs(bh);
+      //appendnew_next_openDialog
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_js6IzSjvVrYbObgA');
+    }
+  }
   //appendnew_flow_medium_cardComponent_start
+
+  sd_JVuwiufKCahYP4tp(bh) {
+    try {
+      this.page.router = this.__page_injector__.get(Router);
+      bh = this.sd_TqDatvZrTQgXaayj(bh);
+      //appendnew_next_sd_JVuwiufKCahYP4tp
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_JVuwiufKCahYP4tp');
+    }
+  }
 
   sd_TqDatvZrTQgXaayj(bh) {
     try {
       this.page.cardsInfor = undefined;
+      this.page.isLanding = false;
       bh = this.sd_W30lVBTItkzfqGjd(bh);
       //appendnew_next_sd_TqDatvZrTQgXaayj
       return bh;
@@ -82,6 +111,11 @@ export class medium_cardComponent {
   sd_dwviufaEUSxef65M(bh) {
     try {
       const page = this.page;
+      console.log(page.router.url);
+      if (page.router.url === '/landing') {
+        page.isLanding = true;
+      }
+
       let card = { cards: [] };
       let cards = [];
       page.cardsInfor = page.cardsInfor?.forEach((_card: any, i: number) => {
@@ -165,6 +199,54 @@ export class medium_cardComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_dwviufaEUSxef65M');
+    }
+  }
+
+  async sd_wAQWWGn1bkfScgYs(bh) {
+    try {
+      if (
+        this.sdService.operators['true'](
+          this.page.isLanding,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_OnHdsQHSTs5zbViV(bh);
+      } else {
+        bh = await this.sd_5aXVOIOXPEgYEsp6(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_wAQWWGn1bkfScgYs');
+    }
+  }
+
+  sd_OnHdsQHSTs5zbViV(bh) {
+    try {
+      const sign_inDialog = this.__page_injector__.get(MatDialog);
+      const sign_inDialogRef = sign_inDialog.open(sign_inComponent, {
+        width: '100%',
+      });
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_OnHdsQHSTs5zbViV');
+    }
+  }
+
+  async sd_5aXVOIOXPEgYEsp6(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj(bh.input.routes);
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_5aXVOIOXPEgYEsp6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_5aXVOIOXPEgYEsp6');
     }
   }
 

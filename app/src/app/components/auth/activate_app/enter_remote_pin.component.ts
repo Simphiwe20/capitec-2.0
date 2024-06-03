@@ -92,7 +92,7 @@ export class enter_remote_pinComponent {
 
   sd_5c33W7dZR9yPhak3(bh) {
     try {
-      this.page.userPin = { pin: '' };
+      this.page.userPin = { remotePin: '' };
       bh = this.sd_jQVRzlhoKtGmrsn6(bh);
       //appendnew_next_sd_5c33W7dZR9yPhak3
       return bh;
@@ -104,10 +104,22 @@ export class enter_remote_pinComponent {
   sd_jQVRzlhoKtGmrsn6(bh) {
     try {
       this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
+      bh = this.sd_BZnOgOMxDE9ftF4f(bh);
       //appendnew_next_sd_jQVRzlhoKtGmrsn6
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_jQVRzlhoKtGmrsn6');
+    }
+  }
+
+  sd_BZnOgOMxDE9ftF4f(bh) {
+    try {
+      const page = this.page;
+      console.log('check ==>', page.user[0].remotePin);
+      //appendnew_next_sd_BZnOgOMxDE9ftF4f
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_BZnOgOMxDE9ftF4f');
     }
   }
 
@@ -179,7 +191,9 @@ export class enter_remote_pinComponent {
     try {
       const page = this.page;
       console.log(bh.result);
-      bh.user = bh.result.find((user: any) => user.re == page.userPin.pin);
+      bh.user = bh.result.find(
+        (user: any) => user.re == page.userPin.remotePin
+      );
 
       console.log(bh.user);
 
@@ -208,7 +222,7 @@ export class enter_remote_pinComponent {
     try {
       if (
         this.sdService.operators['eq'](
-          bh.user.pin,
+          bh.user.remotePin,
           this.page.pin.pin,
           undefined,
           undefined
@@ -258,7 +272,9 @@ export class enter_remote_pinComponent {
         this.sdService.getPathAndQParamsObj('/logged_in_landing/home');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_SlCBuWhheXfzmxWs
       return bh;
     } catch (e) {
@@ -306,7 +322,7 @@ export class enter_remote_pinComponent {
       if (
         this.sdService.operators['eq'](
           this.page.userPin.pin,
-          this.page.user.remotePin,
+          this.page.user[0].remotePin,
           undefined,
           undefined
         )

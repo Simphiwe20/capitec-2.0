@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_2Z167GCwTiVxajnR",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 85,
+        "y": 40,
         "wires": [
             [
                 "sd_NcxYGB4Zjw58EuAK"
@@ -68,12 +68,19 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "trans",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_NcxYGB4Zjw58EuAK",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 40,
         "wires": [
             [
                 "sd_ws3eRWrAAi88Wt29"
@@ -124,7 +131,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.user = bh.result;",
+        "script": "page.user = bh.result;\n\npage.available_balance = Math.round(page.user['available balance'] * 100) /100\n",
         "functionName": "sd_HLVusWP0adg7ObT2",
         "category": "Function",
         "x": 380,
@@ -184,7 +191,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_QN2SXvK1d8FAsrrm"
+                "sd_dbRonqrl7ouRNVMj"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -193,7 +200,157 @@
         "generated": true
     },
     {
-        "id": "sd_QN2SXvK1d8FAsrrm",
+        "id": "sd_dbRonqrl7ouRNVMj",
+        "type": "Script",
+        "z": "sd_zdHwUt4VD3FKSWQV",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n// bh.array = bh.results.filter((user: any) => {\n//   return user.to == page.user[0].accountNumber;\n// });\n\n// page.array = bh.array\n// console.log(\"answer\", page.array);\n\n// bh.out = bh.results.filter((user:any) => {\n//   return user.from == page.user[0].accountNumber\n// })\n\n// page.moneyOut = bh.out\n// console.log(\"moneyOut\", page.moneyOut)",
+        "functionName": "sd_dbRonqrl7ouRNVMj",
+        "category": "Function",
+        "x": 780,
+        "y": 40,
+        "wires": [
+            [
+                "sd_tApvDAUUnwH1pPm6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savingsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_tApvDAUUnwH1pPm6",
+        "type": "PageCallService",
+        "z": "sd_zdHwUt4VD3FKSWQV",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_U9E2STombQQOmX4D",
+            "flowName": "getPayedBen"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "payedBen",
+                "valueType": "bh",
+                "value": "payedBen",
+                "mapVarName": "payedBen",
+                "localVar": "bh.payedBen"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "getPayedBen",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_tApvDAUUnwH1pPm6",
+        "category": "General",
+        "x": 885,
+        "y": 40,
+        "wires": [
+            [
+                "sd_P5xS9Qryy2MqhKQm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savingsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_P5xS9Qryy2MqhKQm",
+        "type": "PageCallService",
+        "z": "sd_zdHwUt4VD3FKSWQV",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_z3d2TsvKo6PdcZbg",
+            "flowName": "getPayedAirtime"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "payedAirtime",
+                "valueType": "bh",
+                "value": "payedAirtime",
+                "mapVarName": "payedAirtime",
+                "localVar": "bh.payedAirtime"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "getPayedAirtime",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_P5xS9Qryy2MqhKQm",
+        "category": "General",
+        "x": 1005,
+        "y": 40,
+        "wires": [
+            [
+                "sd_rftktp2UPREHp7RO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savingsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_rftktp2UPREHp7RO",
+        "type": "Script",
+        "z": "sd_zdHwUt4VD3FKSWQV",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.payedBen)\nconsole.log(bh.payedAirtime)\n\npage.trans = bh.payedBen.concat(bh.payedAirtime)\nconsole.log('Before sort', page.trans)\n\npage.trans = page.trans.filter(trans => trans.accountNumber === page.user.accountNumber)\n\nconsole.log('after sort', page.trans)\n\npage.trans.map((trans: any) => {\n    if(new Date(trans.transDate).getDate() == new Date().getDate() - 1){\n        trans.day = 'Yesterday'\n    }else if(new Date(trans.transDate).getDate() == new Date().getDate()) {\n        trans.day = 'Today'\n    }else {\n        trans.day = trans.transDate\n    } \n}\n)\n\nconsole.log(page.trans)",
+        "functionName": "sd_rftktp2UPREHp7RO",
+        "category": "Function",
+        "x": 1105,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savingsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_13UF8k1s3DBqPXpA",
         "type": "HttpRequest",
         "z": "sd_zdHwUt4VD3FKSWQV",
         "viewType": "client-pages",
@@ -233,38 +390,15 @@
         "paramsObj": [],
         "paramMapping": "",
         "paramMappingObj": {},
-        "functionName": "sd_QN2SXvK1d8FAsrrm",
+        "functionName": "sd_13UF8k1s3DBqPXpA",
         "category": "HTTP",
-        "x": 680,
-        "y": 40,
-        "wires": [
-            [
-                "sd_dbRonqrl7ouRNVMj"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "savingsComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_dbRonqrl7ouRNVMj",
-        "type": "Script",
-        "z": "sd_zdHwUt4VD3FKSWQV",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "\nbh.array = bh.results.filter((user: any) => {\n  return user.to == page.user[0].accountNumber;\n});\n\npage.array = bh.array\nconsole.log(\"answer\", page.array);\n\nbh.out = bh.results.filter((user:any) => {\n  return user.from == page.user[0].accountNumber\n})\n\npage.moneyOut = bh.out\nconsole.log(\"moneyOut\", page.moneyOut)\n\n",
-        "functionName": "sd_dbRonqrl7ouRNVMj",
-        "category": "Function",
-        "x": 780,
-        "y": 40,
+        "x": 685,
+        "y": 160,
         "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "savingsComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "savingsComponent"
     }
 ]

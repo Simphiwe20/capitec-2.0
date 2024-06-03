@@ -313,7 +313,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "put",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -321,10 +320,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -340,11 +337,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_L4sN7rUf0h2gM5aS",
         "category": "HTTP",
@@ -353,35 +348,6 @@
         "wires": [
             [
                 "sd_8QlAMX8VeX4GeJHB"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "update_permanent_limitsComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_8uZb38vuLLK0xDm4",
-        "type": "Navigation",
-        "z": "sd_rLF456OWW1fgT21u",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "path": "/cards",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
-        "functionName": "sd_8uZb38vuLLK0xDm4",
-        "category": "Navigation",
-        "x": 1050,
-        "y": 220,
-        "wires": [
-            [
-                "sd_gMbfVjlrqDYY9614"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -419,7 +385,7 @@
         "direction": "ltr",
         "functionName": "sd_gMbfVjlrqDYY9614",
         "category": "General",
-        "x": 1150,
+        "x": 1065,
         "y": 220,
         "wires": [
             [
@@ -456,7 +422,7 @@
         "y": 220,
         "wires": [
             [
-                "sd_8uZb38vuLLK0xDm4"
+                "sd_gMbfVjlrqDYY9614"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -582,7 +548,29 @@
         "resultMapping": {},
         "functionName": "sd_8RWqVLz5KshcM2Bq",
         "category": "Storage",
-        "x": 1265,
+        "x": 1205,
+        "y": 220,
+        "wires": [
+            [
+                "sd_IMDUZzue6kLKwj5O"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_permanent_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_IMDUZzue6kLKwj5O",
+        "type": "Navigation",
+        "z": "sd_rLF456OWW1fgT21u",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/home",
+        "functionName": "sd_IMDUZzue6kLKwj5O",
+        "category": "Navigation",
+        "x": 1325,
         "y": 220,
         "wires": [
             []

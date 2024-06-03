@@ -4,6 +4,7 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -65,7 +66,6 @@ export class pay_ben_electricComponent {
       bh.local = {};
       bh = this.sd_fdywoKIQ7rD6pDeH(bh);
       //appendnew_next_pay
-      return bh.input.Index;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_imxRlcjMb6AzDfsg');
     }
@@ -147,8 +147,6 @@ export class pay_ben_electricComponent {
         return user.accountNumber == page.user.accountNumber;
       });
       page.benArray = bh.beneficiaries;
-
-      console.log(bh.beneficiaries);
       //appendnew_next_sd_geeTXGYJtFb3Ef1M
       return bh;
     } catch (e) {
@@ -160,7 +158,6 @@ export class pay_ben_electricComponent {
     try {
       const page = this.page;
       page.selected = bh.input.Index;
-      console.log(page.selected);
 
       bh = this.sd_EjSuXhjTOYlGmLHM(bh);
       //appendnew_next_sd_fdywoKIQ7rD6pDeH
@@ -173,10 +170,29 @@ export class pay_ben_electricComponent {
   sd_EjSuXhjTOYlGmLHM(bh) {
     try {
       sessionStorage.setItem('electricBen', JSON.stringify(this.page.selected));
+      bh = this.sd_CVmkNnZnDdXTqukU(bh);
       //appendnew_next_sd_EjSuXhjTOYlGmLHM
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_EjSuXhjTOYlGmLHM');
+    }
+  }
+
+  async sd_CVmkNnZnDdXTqukU(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj(
+          '/logged_in_landing/buy_electricity/ele'
+        );
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+      //appendnew_next_sd_CVmkNnZnDdXTqukU
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_CVmkNnZnDdXTqukU');
     }
   }
 

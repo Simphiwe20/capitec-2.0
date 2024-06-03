@@ -1753,6 +1753,7 @@
                                                 "paletteKey": "html-editor",
                                                 "parentEditorKey": "4f136042-8275-2431-f9e6-69031c136219",
                                                 "isAdvancedChildComponent": true,
+                                                "isCommented": "false",
                                                 "commentid": null,
                                                 "designerReference": [
                                                     {
@@ -2170,7 +2171,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "R20.123",
+                                                    "_value": "R{{page.user.available_balance}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -3888,7 +3889,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "R4.59",
+                                                    "_value": "R{{page.user.savings_balance}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -4055,6 +4056,12 @@
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "#transferForm",
+                            "_value": "ngForm",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
                     "41862b26-eabc-d095-d265-d2d0c5429f35": {
@@ -4224,13 +4231,13 @@
                                     },
                                     {
                                         "_key": "[required]",
-                                        "_value": "false",
+                                        "_value": "true",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "",
+                                        "_value": "page.transferForm.amount",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4242,7 +4249,7 @@
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "",
+                                        "_value": "amount",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4496,7 +4503,7 @@
                                     },
                                     {
                                         "_key": "readonly",
-                                        "_value": "",
+                                        "_value": "true",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4696,13 +4703,13 @@
                                     },
                                     {
                                         "_key": "[required]",
-                                        "_value": "false",
+                                        "_value": "true",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "",
+                                        "_value": "page.transferForm.description",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4714,7 +4721,7 @@
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "",
+                                        "_value": "description",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4926,9 +4933,18 @@
                                     },
                                     {
                                         "_key": "(click)",
-                                        "_value": "",
+                                        "_value": "sd_oFn7om6tiYRaFEeB(transferForm)",
                                         "_type": "kv",
-                                        "_attrDef": "p"
+                                        "_attrDef": "p",
+                                        "objValue": {
+                                            "nodeID": "sd_oFn7om6tiYRaFEeB",
+                                            "functionName": "sd_oFn7om6tiYRaFEeB",
+                                            "activeTree": "pages",
+                                            "z": "sd_fcSYuUZ7W7jbO4T4",
+                                            "input": [
+                                                "transferForm"
+                                            ]
+                                        }
                                     },
                                     {
                                         "_key": "[disabled]",

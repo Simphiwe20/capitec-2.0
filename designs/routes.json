@@ -255,10 +255,17 @@
         {
             "path": "my-details",
             "component": "my_detailsComponent"
+        },{
+            "path": "capitec",
+            "component": "loaderComponent"
+        },
+        {
+            "path": "sucess",
+            "component": "sucessComponent"
         },
         {
             "path": "''",
-            "redirectTo": "/ft-landing",
+            "redirectTo": "/capitec",
             "pathMatch": "full",
             "default": true
         },

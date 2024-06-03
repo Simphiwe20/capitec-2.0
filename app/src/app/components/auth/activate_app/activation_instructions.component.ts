@@ -48,7 +48,7 @@ export class activation_instructionsComponent {
 
   sd_HMDPIUvK8uKVkIqB(bh) {
     try {
-      bh = this.sd_HPtLA5FT2M4iizJr(bh);
+      bh = this.sd_mUeabtoqMQt5Okk4(bh);
       //appendnew_next_sd_HMDPIUvK8uKVkIqB
       return bh;
     } catch (e) {
@@ -72,9 +72,22 @@ export class activation_instructionsComponent {
   }
   //appendnew_flow_activation_instructionsComponent_start
 
+  sd_mUeabtoqMQt5Okk4(bh) {
+    try {
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_HPtLA5FT2M4iizJr(bh);
+      //appendnew_next_sd_mUeabtoqMQt5Okk4
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_mUeabtoqMQt5Okk4');
+    }
+  }
+
   sd_HPtLA5FT2M4iizJr(bh) {
     try {
       this.page.routeData = undefined;
+      this.page.pic = undefined;
+      bh = this.sd_SmWsaGEK94MTZ2T7(bh);
       //appendnew_next_sd_HPtLA5FT2M4iizJr
       return bh;
     } catch (e) {
@@ -82,10 +95,91 @@ export class activation_instructionsComponent {
     }
   }
 
+  sd_SmWsaGEK94MTZ2T7(bh) {
+    try {
+      this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
+      bh = this.sd_HVPXsnCuTMzDvfhr(bh);
+      //appendnew_next_sd_SmWsaGEK94MTZ2T7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_SmWsaGEK94MTZ2T7');
+    }
+  }
+
+  sd_HVPXsnCuTMzDvfhr(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdURL + `download-picture/${page.user.email}`;
+      console.log(bh.url);
+      bh = this.sd_epX4M9GQYUC2uVor(bh);
+      //appendnew_next_sd_HVPXsnCuTMzDvfhr
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_HVPXsnCuTMzDvfhr');
+    }
+  }
+
+  async sd_epX4M9GQYUC2uVor(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'arraybuffer',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_c6h43zBXSTxakxqZ(bh);
+      this.sd_ft5oWvCsb53A7o6n(bh);
+      //appendnew_next_sd_epX4M9GQYUC2uVor
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_epX4M9GQYUC2uVor');
+    }
+  }
+
+  sd_c6h43zBXSTxakxqZ(bh) {
+    try {
+      const page = this.page;
+      console.log(page.result);
+
+      page.userImage = new Uint8Array(page.result);
+      console.log('Uint8Array: ', page.userImage);
+      let blob = new Blob([page.userImage], { type: 'image/png' });
+      page.userImage = URL.createObjectURL(blob);
+      // let buffer = Buffer.from(page.userImage)
+      // console.log('Buffer: ', buffer)
+
+      // page.userImage = 'data:image/png;base64,' + buffer.toString('base64')
+      console.log('Blob: ', page.userImage);
+
+      // page.userImage = page.userImage.getReader().read()
+
+      // console.log("User image: ", page.userImage.getReader().read())
+
+      //appendnew_next_sd_c6h43zBXSTxakxqZ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_c6h43zBXSTxakxqZ');
+    }
+  }
+
+  sd_ft5oWvCsb53A7o6n(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.result);
+      //appendnew_next_sd_ft5oWvCsb53A7o6n
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ft5oWvCsb53A7o6n');
+    }
+  }
+
   sd_numKQxnBkjmM5McI(bh) {
     try {
       const page = this.page;
-      page.routeData = { data: 'activate_app' };
+      page.routeData = { img: page.userImage, data: 'activate_app' };
+      console.log(page.routeData);
       bh = this.sd_cumKsxX0Tfg64LaQ(bh);
       //appendnew_next_sd_numKQxnBkjmM5McI
       return bh;
@@ -98,15 +192,26 @@ export class activation_instructionsComponent {
     try {
       const { paramObj: qprm, path: path } =
         this.sdService.getPathAndQParamsObj('/prepare_for_selfie');
-      await this.__page_injector__
+      this.page.result = await this.__page_injector__
         .get(Router)
         .navigate([this.sdService.formatPathWithParams(path, undefined)], {
           queryParams: Object.assign(qprm, this.page.routeData),
         });
+      this.sd_79eYPp7Sgy7wbE4V(bh);
       //appendnew_next_sd_cumKsxX0Tfg64LaQ
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_cumKsxX0Tfg64LaQ');
+    }
+  }
+
+  sd_79eYPp7Sgy7wbE4V(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.result);
+      //appendnew_next_sd_79eYPp7Sgy7wbE4V
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_79eYPp7Sgy7wbE4V');
     }
   }
 

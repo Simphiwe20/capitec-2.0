@@ -4,6 +4,7 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { FormBuilder } from '@angular/forms'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -25,6 +26,7 @@ export class buy_prepaid_mobileComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
+    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -67,6 +69,50 @@ export class buy_prepaid_mobileComponent {
       //appendnew_next_sd_tyTSmuGEA6EKXtaG
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_tyTSmuGEA6EKXtaG');
+    }
+  }
+
+  searchIcon(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_0Ct7dmfPYMXcuphE(bh);
+      //appendnew_next_searchIcon
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_uk6RJdIu7C50FR4n');
+    }
+  }
+
+  search(event: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { event };
+      bh.local = {};
+      bh = this.sd_pxG4KZvD7AL6q1VD(bh);
+      //appendnew_next_search
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_n1WFvnA4UkXxjabM');
+    }
+  }
+
+  getBen(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      //appendnew_next_getBen
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ZCH8kQC6lnwQGocB');
     }
   }
   //appendnew_flow_buy_prepaid_mobileComponent_start
@@ -175,6 +221,33 @@ export class buy_prepaid_mobileComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8W3ZdWWMtGkJy0Tt');
+    }
+  }
+
+  sd_0Ct7dmfPYMXcuphE(bh) {
+    try {
+      const page = this.page;
+      page.isSearch = true;
+      //appendnew_next_sd_0Ct7dmfPYMXcuphE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0Ct7dmfPYMXcuphE');
+    }
+  }
+
+  sd_pxG4KZvD7AL6q1VD(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.input.event.key);
+      console.log(bh.input.event);
+
+      page.airArray = page.airArray.filter((arr) =>
+        arr.benName.includes(bh.input.event.key)
+      );
+      //appendnew_next_sd_pxG4KZvD7AL6q1VD
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pxG4KZvD7AL6q1VD');
     }
   }
 

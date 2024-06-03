@@ -1522,13 +1522,13 @@
                                 },
                                 {
                                     "_key": "[required]",
-                                    "_value": "false",
+                                    "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "[(ngModel)]",
-                                    "_value": "page.userPin.pin",
+                                    "_value": "page.userPin.remotePin",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1540,7 +1540,7 @@
                                 },
                                 {
                                     "_key": "name",
-                                    "_value": "userPin",
+                                    "_value": "pin",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },

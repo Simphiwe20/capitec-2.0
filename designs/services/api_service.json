@@ -1,15 +1,414 @@
 [
     {
-        "type": "tab",
         "id": "sd_54PzYAXeeWhXZO4M",
+        "type": "tab",
+        "createdDate": "2024-05-27T20:36:06.680Z",
+        "label": "api_service",
         "disabled": false,
         "info": "",
-        "label": "api_service",
-        "createdDate": "2024-05-27T20:36:06.680Z",
         "functionSeq": 0,
         "tabType": "client",
         "generateNext": true,
         "serviceName": "api_service",
         "relativeParentPath": ""
+    },
+    {
+        "id": "sd_GHNnLx5QMLnF7xNy",
+        "type": "Start",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getCustomers",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "customers",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getCustomers",
+        "category": "General",
+        "x": 80,
+        "y": 80,
+        "wires": [
+            [
+                "sd_fqxLeQ5rHACesUM2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "api_service"
+    },
+    {
+        "id": "sd_fqxLeQ5rHACesUM2",
+        "type": "Environment",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_fqxLeQ5rHACesUM2",
+        "category": "General",
+        "x": 185,
+        "y": 80,
+        "wires": [
+            [
+                "sd_K9HpgYmNHUAnzuV9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_K9HpgYmNHUAnzuV9",
+        "type": "Script",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.url = bh.ssdURL + 'get-customers'",
+        "functionName": "sd_K9HpgYmNHUAnzuV9",
+        "category": "Function",
+        "x": 285,
+        "y": 80,
+        "wires": [
+            [
+                "sd_bJxLJyh43MwXgsKU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_bJxLJyh43MwXgsKU",
+        "type": "HttpRequest",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.customers",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "customers"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_bJxLJyh43MwXgsKU",
+        "category": "HTTP",
+        "x": 405,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_U9E2STombQQOmX4D",
+        "type": "Start",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getPayedBen",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "payedBen",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getPayedBen",
+        "category": "General",
+        "x": 85,
+        "y": 180,
+        "wires": [
+            [
+                "sd_KfcYzuEVjig0V1w9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "api_service"
+    },
+    {
+        "id": "sd_KfcYzuEVjig0V1w9",
+        "type": "Environment",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_KfcYzuEVjig0V1w9",
+        "category": "General",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "sd_vtyH8nH6k9Oatibb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_vtyH8nH6k9Oatibb",
+        "type": "Script",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.url = bh.ssdURL + 'get-payed-ben'",
+        "functionName": "sd_vtyH8nH6k9Oatibb",
+        "category": "Function",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "sd_WBaewLCC4fUpIakC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_WBaewLCC4fUpIakC",
+        "type": "HttpRequest",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.payedBen",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "payedBen"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_WBaewLCC4fUpIakC",
+        "category": "HTTP",
+        "x": 410,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_z3d2TsvKo6PdcZbg",
+        "type": "Start",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getPayedAirtime",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "payedAirtime",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getPayedAirtime",
+        "category": "General",
+        "x": 85,
+        "y": 300,
+        "wires": [
+            [
+                "sd_e9aqPsbpJ0aXFGqb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "api_service"
+    },
+    {
+        "id": "sd_e9aqPsbpJ0aXFGqb",
+        "type": "Environment",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_e9aqPsbpJ0aXFGqb",
+        "category": "General",
+        "x": 190,
+        "y": 300,
+        "wires": [
+            [
+                "sd_J0zqCHdVWB3AUklC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_J0zqCHdVWB3AUklC",
+        "type": "Script",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.url = bh.ssdURL + 'get-airtime'",
+        "functionName": "sd_J0zqCHdVWB3AUklC",
+        "category": "Function",
+        "x": 290,
+        "y": 300,
+        "wires": [
+            [
+                "sd_o3DabrmHYg5twdEs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_o3DabrmHYg5twdEs",
+        "type": "HttpRequest",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.payedAirtime",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "payedAirtime"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_o3DabrmHYg5twdEs",
+        "category": "HTTP",
+        "x": 410,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
     }
 ]

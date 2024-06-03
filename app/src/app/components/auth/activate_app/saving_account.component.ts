@@ -234,7 +234,7 @@ export class saving_accountComponent {
           undefined
         )
       ) {
-        bh = this.sd_dpfEG0Bo23PRXjww(bh);
+        bh = this.sd_w2oSYlhAmBXWr25j(bh);
       } else {
         bh = await this.sd_k9bjPiuJWb7fSK3t(bh);
       }
@@ -242,22 +242,6 @@ export class saving_accountComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_JLl3W05a99SJC5mK');
-    }
-  }
-
-  sd_dpfEG0Bo23PRXjww(bh) {
-    try {
-      this.__page_injector__.get(MatSnackBar).open('true', 'OK', {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-      });
-      bh = this.sd_w2oSYlhAmBXWr25j(bh);
-      //appendnew_next_sd_dpfEG0Bo23PRXjww
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_dpfEG0Bo23PRXjww');
     }
   }
 

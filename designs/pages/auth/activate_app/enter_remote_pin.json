@@ -45,7 +45,7 @@
                 "textIp": "userPin",
                 "typedIpValue": {
                     "type": "literal",
-                    "value": "{pin : ''}"
+                    "value": "{remotePin : ''}"
                 }
             }
         ],
@@ -193,6 +193,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -200,8 +201,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -217,9 +220,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_R5hkVDoYsSgECEJa",
         "category": "HTTP",
@@ -242,7 +247,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.result)\nbh.user = bh.result.find((user:any) => user.re == page.userPin.pin)\n\n\nconsole.log(bh.user)\n\n\n// console.log(page.accNo.accNo)\n// if( bh.user.accountNumber == page.accNo.accNo) {\n//     console.log('Account numbers match ')\n// }else {\n//     console.log('Doesn\\'t match')\n// }\n//  if(!bh.user) {\n//           alert(\"user does not exist!\");\n//           return\n//         } else {\n//           alert(\"hi\")\n//           console.log(bh.user)\n//         }",
+        "script": "console.log(bh.result)\nbh.user = bh.result.find((user:any) => user.re == page.userPin.remotePin)\n\n\nconsole.log(bh.user)\n\n\n// console.log(page.accNo.accNo)\n// if( bh.user.accountNumber == page.accNo.accNo) {\n//     console.log('Account numbers match ')\n// }else {\n//     console.log('Doesn\\'t match')\n// }\n//  if(!bh.user) {\n//           alert(\"user does not exist!\");\n//           return\n//         } else {\n//           alert(\"hi\")\n//           console.log(bh.user)\n//         }",
         "functionName": "sd_qaie8aKatWjdRniB",
         "category": "Function",
         "x": 605,
@@ -264,9 +269,9 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "property": "user.pin",
+        "property": "user.remotePin",
         "propertyType": "bh",
-        "propertyGv": "bh.user.pin",
+        "propertyGv": "bh.user.remotePin",
         "rules": [
             {
                 "t": "eq",
@@ -318,7 +323,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -358,7 +365,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -384,6 +393,13 @@
         "nodeType": "flow",
         "name": "",
         "path": "/logged_in_landing/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_SlCBuWhheXfzmxWs",
         "category": "Navigation",
         "x": 1025,
@@ -522,7 +538,9 @@
         "x": 285,
         "y": 40,
         "wires": [
-            []
+            [
+                "sd_BZnOgOMxDE9ftF4f"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -542,9 +560,9 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "user.remotePin",
+                "v": "user[0].remotePin",
                 "vt": "this.page",
-                "gv": "this.page.user.remotePin"
+                "gv": "this.page.user[0].remotePin"
             },
             {
                 "t": "else"
@@ -617,7 +635,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -627,6 +647,26 @@
         "category": "General",
         "x": 445,
         "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_BZnOgOMxDE9ftF4f",
+        "type": "Script",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"check ==>\",page.user[0].remotePin)",
+        "functionName": "sd_BZnOgOMxDE9ftF4f",
+        "category": "Function",
+        "x": 385,
+        "y": 40,
         "wires": [
             []
         ],

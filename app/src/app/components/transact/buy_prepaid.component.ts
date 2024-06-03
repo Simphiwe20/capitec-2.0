@@ -79,6 +79,7 @@ export class buy_prepaidComponent {
       this.page.submitted = false;
       this.page.user = undefined;
       this.page.prepaid = this.page.prepaid;
+      this.page.menu = undefined;
       bh = this.sd_YkqQWirAUoZD8L7O(bh);
       //appendnew_next_sd_eRPEZf3wmpsSG7xX
       return bh;
@@ -108,6 +109,8 @@ export class buy_prepaidComponent {
       };
 
       console.log(page.result);
+
+      page.menu = ['Cell C', 'Vodacom', 'MTN', 'Telkom Network', ''];
       //appendnew_next_sd_M53KjF9stPfYauYD
       return bh;
     } catch (e) {

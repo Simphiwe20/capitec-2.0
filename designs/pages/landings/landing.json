@@ -70,7 +70,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(typeof page.result)\npage.user = page.result.fullName \nconsole.log(page.user)\n",
+        "script": "\npage.user = page.result.fullName.split(' ')[0]\nconsole.log(page.user)\nconsole.log(page.result.fullName.split(' '))",
         "functionName": "sd_hI3gfhVm39WC4LqQ",
         "category": "Function",
         "x": 465,
@@ -84,14 +84,14 @@
         "generated": true
     },
     {
-        "id": "sd_bUfMVskuDy7DcZDk",
+        "id": "sd_hSXkVqbQP8cTtYzI",
         "type": "Storage",
         "z": "sd_MG6qnpt25Kl9pKRj",
         "viewType": "client-pages",
         "nodeType": "flow",
         "name": "",
         "operationType": "getItem",
-        "storageType": "localStorage",
+        "storageType": "sessionStorage",
         "outputs": 1,
         "key": {
             "type": "str",
@@ -102,46 +102,13 @@
             "type": "this.page",
             "value": "result"
         },
-        "functionName": "sd_bUfMVskuDy7DcZDk",
-        "category": "Storage",
-        "x": 365,
-        "y": 40,
-        "wires": [
-            [
-                "sd_hI3gfhVm39WC4LqQ"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "landingComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_hSXkVqbQP8cTtYzI",
-        "type": "Storage",
-        "z": "sd_MG6qnpt25Kl9pKRj",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "operationType": "setItem",
-        "storageType": "localStorage",
-        "outputs": 1,
-        "key": {
-            "type": "str",
-            "value": "accNo"
-        },
-        "value": {
-            "type": "this.page",
-            "value": "user"
-        },
-        "resultMapping": {},
         "functionName": "sd_hSXkVqbQP8cTtYzI",
         "category": "Storage",
         "x": 285,
         "y": 40,
         "wires": [
             [
-                "sd_bUfMVskuDy7DcZDk"
+                "sd_hI3gfhVm39WC4LqQ"
             ]
         ],
         "__n_excludedFromValidation__": {},

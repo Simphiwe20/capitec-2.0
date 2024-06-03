@@ -6,7 +6,7 @@
     </div>
   </div>
   <div fxLayout="column wrap" class="margin-t-50px full-width" fxLayoutAlign="start stretch" [fxShow]="true">
-    <form>
+    <form #updateTempForm="ngForm">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <p style="margin-bottom:10px; padding-left:10px;" class="poppins">
           <b>Debit daily limits</b>
@@ -26,11 +26,11 @@
                 </p>
               </div>
             </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" (change)="sd_lrSazY4fn1uhibmj(input)" [required]="false" #input></mat-checkbox></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false" #input></mat-checkbox></div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input._checked">
             <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput [required]="false">
+              <input matInput [(ngModel)]="page.temp.cash_withdrawals" name="cash_withdrawals" [required]="false">
               <mat-label>Amount (max R10 000)</mat-label>
             </mat-form-field>
           </div>
@@ -48,11 +48,11 @@
                 </p>
               </div>
             </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false" #input1></mat-checkbox></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" (change)="show()" [required]="false" #input1></mat-checkbox></div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input1._checked">
             <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput [required]="false">
+              <input matInput [(ngModel)]="page.temp.card_machine" name="card_machine" [required]="false">
               <mat-label>Amount (max R1 000 000)</mat-label>
             </mat-form-field>
           </div>
@@ -74,12 +74,12 @@
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input2._checked">
             <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput [required]="false">
+              <input matInput [(ngModel)]="page.temp.online_scan" name="online_scan" [required]="false">
               <mat-label>Amount (max R1 000 000)</mat-label>
             </mat-form-field>
           </div>
         </div>
-        <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w">Set</button></div>
+        <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="updateTemp(updateTempForm)">Set</button></div>
       </div>
     </form>
   </div>
