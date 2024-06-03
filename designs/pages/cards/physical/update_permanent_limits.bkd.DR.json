@@ -1295,6 +1295,12 @@
                         "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
+                    },
+                    {
+                        "_key": "#permLimits",
+                        "_value": "ngForm",
+                        "_type": "kv",
+                        "_attrDef": "c"
                     }
                 ],
                 "b2c7f065-e0a0-4619-97a0-95efa8752bc8": {
@@ -1804,7 +1810,7 @@
                                     },
                                     {
                                         "_key": "[required]",
-                                        "_value": "false",
+                                        "_value": "true",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -3191,9 +3197,18 @@
                                 },
                                 {
                                     "_key": "(click)",
-                                    "_value": "",
+                                    "_value": "updatePerm(permLimits)",
                                     "_type": "kv",
-                                    "_attrDef": "p"
+                                    "_attrDef": "p",
+                                    "objValue": {
+                                        "nodeID": "sd_9KZv2RncQO2OEjVt",
+                                        "functionName": "updatePerm",
+                                        "activeTree": "pages",
+                                        "z": "sd_rLF456OWW1fgT21u",
+                                        "input": [
+                                            "permLimits"
+                                        ]
+                                    }
                                 },
                                 {
                                     "_key": "[disabled]",

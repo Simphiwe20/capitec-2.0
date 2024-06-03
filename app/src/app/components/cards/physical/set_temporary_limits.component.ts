@@ -272,28 +272,11 @@ export class set_temporary_limitsComponent {
   sd_RuRvmvAAaLF3I9iG(bh) {
     try {
       sessionStorage.setItem('accNo', JSON.stringify(bh.body));
-      bh = this.sd_HkdUHoOyrV7dkEya(bh);
+      bh = this.sd_3pSe9lC8E3ISnjO4(bh);
       //appendnew_next_sd_RuRvmvAAaLF3I9iG
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_RuRvmvAAaLF3I9iG');
-    }
-  }
-
-  async sd_HkdUHoOyrV7dkEya(bh) {
-    try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/cards');
-      await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
-      bh = this.sd_3pSe9lC8E3ISnjO4(bh);
-      //appendnew_next_sd_HkdUHoOyrV7dkEya
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_HkdUHoOyrV7dkEya');
     }
   }
 
@@ -307,10 +290,36 @@ export class set_temporary_limitsComponent {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
         });
+      bh = this.sd_GIj0TG1GvPEruGXZ(bh);
       //appendnew_next_sd_3pSe9lC8E3ISnjO4
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_3pSe9lC8E3ISnjO4');
+    }
+  }
+
+  sd_GIj0TG1GvPEruGXZ(bh) {
+    try {
+      sessionStorage.setItem('accNo', JSON.stringify(this.page.user));
+      bh = this.sd_OsjCzfqUSqdXgzkp(bh);
+      //appendnew_next_sd_GIj0TG1GvPEruGXZ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_GIj0TG1GvPEruGXZ');
+    }
+  }
+
+  async sd_OsjCzfqUSqdXgzkp(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/update_temporary_limit');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_OsjCzfqUSqdXgzkp
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_OsjCzfqUSqdXgzkp');
     }
   }
 

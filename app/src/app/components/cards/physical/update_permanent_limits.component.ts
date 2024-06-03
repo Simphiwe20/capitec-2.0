@@ -241,28 +241,11 @@ export class update_permanent_limitsComponent {
   sd_8QlAMX8VeX4GeJHB(bh) {
     try {
       sessionStorage.setItem('accNo', JSON.stringify(bh.body));
-      bh = this.sd_8uZb38vuLLK0xDm4(bh);
+      bh = this.sd_gMbfVjlrqDYY9614(bh);
       //appendnew_next_sd_8QlAMX8VeX4GeJHB
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8QlAMX8VeX4GeJHB');
-    }
-  }
-
-  async sd_8uZb38vuLLK0xDm4(bh) {
-    try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/cards');
-      await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
-      bh = this.sd_gMbfVjlrqDYY9614(bh);
-      //appendnew_next_sd_8uZb38vuLLK0xDm4
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_8uZb38vuLLK0xDm4');
     }
   }
 
@@ -287,10 +270,25 @@ export class update_permanent_limitsComponent {
   sd_8RWqVLz5KshcM2Bq(bh) {
     try {
       sessionStorage.setItem('accNo', JSON.stringify(this.page.user));
+      bh = this.sd_IMDUZzue6kLKwj5O(bh);
       //appendnew_next_sd_8RWqVLz5KshcM2Bq
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8RWqVLz5KshcM2Bq');
+    }
+  }
+
+  async sd_IMDUZzue6kLKwj5O(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/logged_in_landing/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_IMDUZzue6kLKwj5O
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_IMDUZzue6kLKwj5O');
     }
   }
 
