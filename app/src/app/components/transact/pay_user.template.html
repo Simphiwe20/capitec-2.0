@@ -11,11 +11,13 @@
     <div fxLayout="column wrap" style="height:90px;" class="margin-t-50px bg-blue text-center" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <h3 style="margin-bottom:10px;" class="no-margin color-w m-b-0 whi">
-          Nicholas</h3>
+          {{page.routeData.benName}}
+        </h3>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div class="color-w no-margin">
-          0812345678</div>
+          {{page.routeData.benNumber}}
+        </div>
       </div>
     </div><mat-tab-group mat-align-tabs="start" mat-stretch-tabs><mat-tab label="Payment">
         <div fxLayout="column wrap" class="poppins" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -42,50 +44,57 @@
               <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
                 <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                   <p>
-                    R20.123</p>
+                    R{{page.available_balance}}</p>
                 </div>
                 <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">more_vert</mat-icon></div>
               </div>
             </div>
           </div>
           <div fxLayout="column wrap" style="margin-top:15px;" fxLayoutAlign="start stretch" [fxShow]="true">
-            <form>
+            <form #form="ngForm">
               <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
                   <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                    <input matInput placeholder="Amount " [required]="false">
+                    <input matInput [(ngModel)]="page.payBen.amount" name="amount" placeholder="Amount " [required]="false" #amount="ngModel">
 
-                  </mat-form-field>
+                  </mat-form-field><small *ngIf="(page.submitted || form.controls[&apos;amount&apos;]?.touched) &amp;&amp; form.controls[&apos;amount&apos;].errors?.required" class="x-small color-red poppins">
+                    Required</small>
+                  <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput type="text" value="{{page.benInitials}}" [required]="false" [disabled]="true">
+                      <mat-label>Verified accountholder</mat-label>
+                    </mat-form-field>
+                  </div>
                 </div>
                 <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
                   <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                    <input matInput type="number" placeholder="Verified accountholder" value="Miss Angel" [required]="false">
-
-                  </mat-form-field>
-                </div>
-                <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
-                  <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                    <input matInput type="number" placeholder="Payment type" value="Just once" [required]="false">
-
+                    <input matInput [(ngModel)]="page.payBen.paymentType" name="paymentType" type="text" placeholder="Payment type" value="Just once" [required]="false" [disabled]="true">
+                    <mat-label>Payment type</mat-label>
                   </mat-form-field>
                 </div>
                 <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                   <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
                     <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput type="number" placeholder="Beneficiary reference" value="L Mathoto" [required]="false">
-
+                      <input matInput [(ngModel)]="page.payBen.benRef" name="benRef" type="text" value="{{page.userInitials}}" [required]="false" [disabled]="true">
+                      <mat-label>Beneficiary reference</mat-label>
                     </mat-form-field>
                   </div>
                   <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
                     <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput type="number" placeholder="My statement description" value="Nicholas" [required]="false">
-
+                      <input matInput [(ngModel)]="page.payBen.statement" name="statement" type="text" value="{{page.routeData.benName}}" [required]="false" [disabled]="true">
+                      <mat-label>My statement description</mat-label>
                     </mat-form-field>
                   </div>
                 </div>
-                <h3 style="margin-bottom:10px;" class="padding-0px-15px">
+                <h3 style="margin-bottom:10px;" class="no-margin padding-0px-15px">
                   Payment Notification</h3>
-                <div fxLayout="column wrap" class="margin-b-10px get-started-btn padding-0px-15px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w">Pay</button></div>
+                <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput type="text" value="None" [required]="false" [disabled]="true">
+                    <mat-icon matSuffix>chevron_right</mat-icon>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="column wrap" class="margin-b-10px get-started-btn padding-0px-15px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="pay(form)">Pay</button></div>
               </div>
             </form>
           </div>

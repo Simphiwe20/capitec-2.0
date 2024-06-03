@@ -92,7 +92,7 @@ export class enter_remote_pinComponent {
 
   sd_5c33W7dZR9yPhak3(bh) {
     try {
-      this.page.userPin = { pin: '' };
+      this.page.userPin = { remotePin: '' };
       bh = this.sd_jQVRzlhoKtGmrsn6(bh);
       //appendnew_next_sd_5c33W7dZR9yPhak3
       return bh;
@@ -191,7 +191,9 @@ export class enter_remote_pinComponent {
     try {
       const page = this.page;
       console.log(bh.result);
-      bh.user = bh.result.find((user: any) => user.re == page.userPin.pin);
+      bh.user = bh.result.find(
+        (user: any) => user.re == page.userPin.remotePin
+      );
 
       console.log(bh.user);
 
@@ -220,7 +222,7 @@ export class enter_remote_pinComponent {
     try {
       if (
         this.sdService.operators['eq'](
-          bh.user.pin,
+          bh.user.remotePin,
           this.page.pin.pin,
           undefined,
           undefined

@@ -5,6 +5,7 @@
 
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { FormBuilder } from '@angular/forms'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -57,28 +58,26 @@ export class pay_beneficiaryComponent {
     }
   }
 
-  sd_dvCdE5EBo2c2KQYq(...others) {
+  routeBen(ben: any = undefined, ...others) {
     let bh: any = {};
     try {
       bh = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = {};
+      bh.input = { ben };
       bh.local = {};
-      bh = this.sd_rIP8bFIQoUGBhzm6(bh);
-      //appendnew_next_sd_dvCdE5EBo2c2KQYq
+      bh = this.sd_CdrNSks9iMQacITh(bh);
+      //appendnew_next_routeBen
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_dvCdE5EBo2c2KQYq');
+      return this.errorHandler(bh, e, 'sd_o6RbSsgtTWfOb8I9');
     }
   }
   //appendnew_flow_pay_beneficiaryComponent_start
 
   sd_BFDXUB2w6y8MwKRS(bh) {
     try {
-      this.page.submitted = false;
-      this.page.benArray = undefined;
-      this.page.selected = undefined;
-      bh = this.sd_qh9tBIQUgkhopSB6(bh);
+      this.page.initials = undefined;
+      bh = this.sd_l94TVFVFgSBTzcn6(bh);
       //appendnew_next_sd_BFDXUB2w6y8MwKRS
       return bh;
     } catch (e) {
@@ -86,43 +85,30 @@ export class pay_beneficiaryComponent {
     }
   }
 
-  sd_qh9tBIQUgkhopSB6(bh) {
+  sd_l94TVFVFgSBTzcn6(bh) {
     try {
-      this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
-      bh = this.sd_I6wltKb6FtHkz2j9(bh);
-      //appendnew_next_sd_qh9tBIQUgkhopSB6
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_PsVSDHNsPlUgPjxX(bh);
+      //appendnew_next_sd_l94TVFVFgSBTzcn6
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_qh9tBIQUgkhopSB6');
+      return this.errorHandler(bh, e, 'sd_l94TVFVFgSBTzcn6');
     }
   }
 
-  sd_I6wltKb6FtHkz2j9(bh) {
-    try {
-      this.page.ssdurl = bh.system.environment.properties.ssdURL;
-      bh = this.sd_z6eWW0IN9Q7mDw8a(bh);
-      //appendnew_next_sd_I6wltKb6FtHkz2j9
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_I6wltKb6FtHkz2j9');
-    }
-  }
-
-  sd_z6eWW0IN9Q7mDw8a(bh) {
+  sd_PsVSDHNsPlUgPjxX(bh) {
     try {
       const page = this.page;
-      bh.url = page.ssdurl + 'get-beneficiary-electricity';
-      page.collection = 'beneficiary-electricity';
-
-      bh = this.sd_hnfzP0Iqa4LcfxLb(bh);
-      //appendnew_next_sd_z6eWW0IN9Q7mDw8a
+      bh.url = page.ssdURL + 'get-beneficiary-money';
+      bh = this.sd_aLFfNrtl2AkPwbMV(bh);
+      //appendnew_next_sd_PsVSDHNsPlUgPjxX
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_z6eWW0IN9Q7mDw8a');
+      return this.errorHandler(bh, e, 'sd_PsVSDHNsPlUgPjxX');
     }
   }
 
-  async sd_hnfzP0Iqa4LcfxLb(bh) {
+  async sd_aLFfNrtl2AkPwbMV(bh) {
     try {
       let requestOptions = {
         url: bh.url,
@@ -130,41 +116,41 @@ export class pay_beneficiaryComponent {
         responseType: 'json',
         headers: {},
         params: {},
-        body: this.page.collection,
+        body: undefined,
       };
-      this.page.results = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_rWFN0DYYxNqG3wOk(bh);
-      //appendnew_next_sd_hnfzP0Iqa4LcfxLb
+      this.page.ben = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_aLFfNrtl2AkPwbMV
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_hnfzP0Iqa4LcfxLb');
+      return this.errorHandler(bh, e, 'sd_aLFfNrtl2AkPwbMV');
     }
   }
 
-  sd_rWFN0DYYxNqG3wOk(bh) {
+  sd_CdrNSks9iMQacITh(bh) {
     try {
       const page = this.page;
-      bh.beneficiaries = page.results.filter((user: any) => {
-        return user.accountNumber == page.user.accountNumber;
-      });
-      page.benArray = bh.beneficiaries;
-
-      console.log(bh.beneficiaries);
-      //appendnew_next_sd_rWFN0DYYxNqG3wOk
+      page.routeData = { routeData: JSON.stringify(bh.input.ben) };
+      bh = this.sd_RujuLoAQ4WQmDoWC(bh);
+      //appendnew_next_sd_CdrNSks9iMQacITh
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_rWFN0DYYxNqG3wOk');
+      return this.errorHandler(bh, e, 'sd_CdrNSks9iMQacITh');
     }
   }
 
-  sd_rIP8bFIQoUGBhzm6(bh) {
+  async sd_RujuLoAQ4WQmDoWC(bh) {
     try {
-      const page = this.page;
-      page.submitted = true;
-      //appendnew_next_sd_rIP8bFIQoUGBhzm6
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/logged_in_landing/pay_user');
+      this.page.result = await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, this.page.routeData),
+        });
+      //appendnew_next_sd_RujuLoAQ4WQmDoWC
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_rIP8bFIQoUGBhzm6');
+      return this.errorHandler(bh, e, 'sd_RujuLoAQ4WQmDoWC');
     }
   }
 

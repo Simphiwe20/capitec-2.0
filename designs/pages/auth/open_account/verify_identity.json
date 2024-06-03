@@ -110,6 +110,13 @@
                     "type": "literal",
                     "value": "false"
                 }
+            },
+            {
+                "textIp": "submitted",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
             }
         ],
         "functionName": "sd_iqcHnNX7jsgHG1KD",
@@ -133,7 +140,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.clientDetails = {fullName: '', email: '', idNum: '', pin: '', confirmPin: '', ID_doc: '', proof_of_res: '', picture: ''}",
+        "script": "page.clientDetails = {fullName: '', email: '', idNum: '', remotePin: '', confirmRemotePin: '', ID_doc: '', proof_of_res: '', picture: ''}",
         "functionName": "sd_vh3M7aFNa9ZH2tRe",
         "category": "Function",
         "x": 345,
@@ -172,7 +179,7 @@
         "y": 920,
         "wires": [
             [
-                "sd_cshorPjbVvQz583z"
+                "sd_iy0k1URc5RBDtesS"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -336,7 +343,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let file: File\nif(bh.input.event) {\n    file = bh.input.event.target.files\n    page.file1 = file[0]\n}else {\n    console.log('The is no file uploaded')\n}",
+        "script": "let file: File\nif(bh.input.event) {\n    file = bh.input.event.target.files\n    page.file1 = file[0]\n}else {\n    console.log('The is no file uploaded')\n}\n\nconsole.log('Upload proof: ', page.file1)",
         "functionName": "sd_oBFkdjb8Ql3rh59x",
         "category": "Function",
         "x": 145,
@@ -433,7 +440,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + 'upload-ID'\nconsole.log(page.file)\npage.email = {email: page.clientDetails.email}\n\npage.formData = new FormData()\npage.formData.append('ID', page.file)\nconsole.log('ID', page.formData)",
+        "script": "bh.url = page.ssdUrl + 'upload-ID'\nconsole.log(page.file)\npage.email = {email: page.clientDetails.email}\n\npage.formData = new FormData()\npage.formData.append('name', page.file)\nconsole.log('ID file name: ', page.formData.get('filename'))",
         "functionName": "sd_OWfazeZy1TTRJC7Z",
         "category": "Function",
         "x": 645,
@@ -467,7 +474,7 @@
         ],
         "functionName": "sd_cshorPjbVvQz583z",
         "category": "General",
-        "x": 160,
+        "x": 185,
         "y": 920,
         "wires": [
             [
@@ -621,10 +628,11 @@
         "serviceImportPath": "./",
         "startName": "upload",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_ty5aqWnWbYQOAsji",
         "category": "General",
-        "x": 805,
+        "x": 685,
         "y": 760,
         "wires": [
             [
@@ -693,7 +701,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + 'upload-picture'\nconsole.log(page.file)\npage.email = {email: page.clientDetails.email}\n\npage.formData2 = new FormData()\npage.formData2.append('pictures', page.file)\nconsole.log('Pictures: ', page.formData2)",
+        "script": "bh.url = page.ssdUrl + 'upload-picture'\nconsole.log('File 2 filename: ', page.file2.filename)\npage.email = {email: page.clientDetails.email}\n\npage.formData2 = new FormData()\npage.formData2.append('name', page.file2)\nconsole.log('Pictures: ', page.formData2)",
         "functionName": "sd_E8DzeQlntR6MgXpw",
         "category": "Function",
         "x": 645,
@@ -854,7 +862,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + 'upload-proof'\nconsole.log(page.file)\npage.email = {email: page.clientDetails.email}\n\npage.formData1 = new FormData()\npage.formData1.append('proof_of_residence', page.file)\nconsole.log('Proof: ',page.formData1)",
+        "script": "bh.url = page.ssdUrl + 'upload-proof'\nconsole.log(page.file1)\npage.email = {email: page.clientDetails.email}\n\npage.formData1 = new FormData()\npage.formData1.append('name', page.file1)\nconsole.log('Proof: ',page.formData1.filename)",
         "functionName": "sd_GDm1BhSk7k93dxmO",
         "category": "Function",
         "x": 645,
@@ -993,7 +1001,7 @@
         "accept_csd": false,
         "functionName": "sd_LexQ4t2N1P8VU9mC",
         "category": "General",
-        "x": 885,
+        "x": 785,
         "y": 760,
         "wires": [
             [
@@ -1037,11 +1045,11 @@
         "accept_csd": false,
         "functionName": "sd_I8UIvSuF16EFAFgd",
         "category": "General",
-        "x": 985,
+        "x": 885,
         "y": 760,
         "wires": [
             [
-                "sd_cMRjItrAz1TfAlWt"
+                "sd_trI7dpLHV8CdnvOf"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1057,6 +1065,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -1064,8 +1073,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -1081,18 +1092,20 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_trI7dpLHV8CdnvOf",
         "category": "HTTP",
-        "x": 705,
+        "x": 1025,
         "y": 760,
         "wires": [
             [
-                "sd_ty5aqWnWbYQOAsji",
-                "sd_6JXYSh0xOM4Cvmne"
+                "sd_6JXYSh0xOM4Cvmne",
+                "sd_cMRjItrAz1TfAlWt"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1301,10 +1314,16 @@
         "nodeType": "flow",
         "name": "",
         "path": "/prepare_for_selfie",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
         "qparamsMap": {
             "type": "bh",
             "value": "routeData"
         },
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_8Szscxq0EVjTBYiF",
         "category": "Navigation",
         "x": 1265,
@@ -1471,7 +1490,9 @@
             "value": "2000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -1496,14 +1517,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.showLoader = true\n\ndelete page.clientDetails.picture\ndelete page.clientDetails.proof_of_res\ndelete page.clientDetails.ID_doc\ndelete page.clientDetails.confirmPin",
+        "script": "page.showLoader = true\n\ndelete page.clientDetails.ID_doc\ndelete page.clientDetails.proof_of_res\ndelete page.clientDetails.picture\ndelete page.clientDetails.confirmRemotePin ",
         "functionName": "sd_qi7thJp7eJAp0VNG",
         "category": "Function",
         "x": 605,
         "y": 760,
         "wires": [
             [
-                "sd_trI7dpLHV8CdnvOf"
+                "sd_ty5aqWnWbYQOAsji"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1575,7 +1596,9 @@
             "value": "1000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -1583,7 +1606,7 @@
         "direction": "ltr",
         "functionName": "sd_a0P3jaHg44tcxyRy",
         "category": "General",
-        "x": 1045,
+        "x": 1025,
         "y": 900,
         "wires": [
             []
@@ -1603,8 +1626,8 @@
         "logObject": "this.page.result",
         "functionName": "sd_6JXYSh0xOM4Cvmne",
         "category": "General",
-        "x": 805,
-        "y": 880,
+        "x": 1145,
+        "y": 860,
         "wires": [],
         "__ssdTypeInputs__": {
             "logObject": {
@@ -1613,6 +1636,28 @@
                 "constant": false
             }
         },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "verify_identityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iy0k1URc5RBDtesS",
+        "type": "Script",
+        "z": "sd_XxBbYAdU1GgX4xX5",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true",
+        "functionName": "sd_iy0k1URc5RBDtesS",
+        "category": "Function",
+        "x": 120,
+        "y": 920,
+        "wires": [
+            [
+                "sd_cshorPjbVvQz583z"
+            ]
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "verify_identityComponent",

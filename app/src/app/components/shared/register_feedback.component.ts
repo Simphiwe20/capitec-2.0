@@ -4,6 +4,7 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -47,7 +48,7 @@ export class register_feedbackComponent {
 
   sd_mqB74TINubkIjsNP(bh) {
     try {
-      bh = this.sd_ZDIikGmLSDFIbWN2(bh);
+      bh = this.sd_AObngPNXEtHAZ99j(bh);
       //appendnew_next_sd_mqB74TINubkIjsNP
       return bh;
     } catch (e) {
@@ -57,12 +58,37 @@ export class register_feedbackComponent {
 
   //appendnew_flow_register_feedbackComponent_start
 
+  sd_AObngPNXEtHAZ99j(bh) {
+    try {
+      this.page.router = this.__page_injector__.get(Router);
+      bh = this.sd_ZDIikGmLSDFIbWN2(bh);
+      //appendnew_next_sd_AObngPNXEtHAZ99j
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_AObngPNXEtHAZ99j');
+    }
+  }
+
   sd_ZDIikGmLSDFIbWN2(bh) {
     try {
+      bh = this.sd_Huxs80G68vogfx2W(bh);
       //appendnew_next_sd_ZDIikGmLSDFIbWN2
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ZDIikGmLSDFIbWN2');
+    }
+  }
+
+  sd_Huxs80G68vogfx2W(bh) {
+    try {
+      const page = this.page;
+      setTimeout(() => {
+        page.router.navigate(['/ft-landing']);
+      }, 5000);
+      //appendnew_next_sd_Huxs80G68vogfx2W
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Huxs80G68vogfx2W');
     }
   }
 

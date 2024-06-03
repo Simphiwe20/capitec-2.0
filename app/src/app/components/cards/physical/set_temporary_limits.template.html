@@ -26,7 +26,7 @@
                 </p>
               </div>
             </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" (change)="sd_lrSazY4fn1uhibmj(input)" [required]="false" #input></mat-checkbox></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false" #input></mat-checkbox></div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input._checked">
             <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
@@ -48,7 +48,7 @@
                 </p>
               </div>
             </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false" #input1></mat-checkbox></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" (change)="show()" [required]="false" #input1></mat-checkbox></div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input1._checked">
             <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">

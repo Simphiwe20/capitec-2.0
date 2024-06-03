@@ -7,6 +7,7 @@ import { Component, Injector } from '@angular/core'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
+import { api_service } from 'app/sd-services/api_service'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -63,6 +64,7 @@ export class savingsComponent {
       this.page.message = this.page.message;
       this.page.array = undefined;
       this.page.moneyOut = undefined;
+      this.page.trans = undefined;
       bh = this.sd_ws3eRWrAAi88Wt29(bh);
       //appendnew_next_sd_NcxYGB4Zjw58EuAK
       return bh;
@@ -86,6 +88,9 @@ export class savingsComponent {
     try {
       const page = this.page;
       page.user = bh.result;
+
+      page.available_balance =
+        Math.round(page.user['available balance'] * 100) / 100;
       bh = this.sd_42Smhw76ZRjv0MtI(bh);
       //appendnew_next_sd_HLVusWP0adg7ObT2
       return bh;
@@ -110,7 +115,7 @@ export class savingsComponent {
       const page = this.page;
       bh.url = page.ssdUrl + 'get-transfers';
       bh.collection = 'money-transfer';
-      bh = this.sd_QN2SXvK1d8FAsrrm(bh);
+      bh = this.sd_dbRonqrl7ouRNVMj(bh);
       //appendnew_next_sd_D19pftqT303eqcka
       return bh;
     } catch (e) {
@@ -118,46 +123,94 @@ export class savingsComponent {
     }
   }
 
-  async sd_QN2SXvK1d8FAsrrm(bh) {
-    try {
-      let requestOptions = {
-        url: bh.url,
-        method: 'get',
-        responseType: 'json',
-        headers: {},
-        params: {},
-        body: undefined,
-      };
-      bh.results = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_dbRonqrl7ouRNVMj(bh);
-      //appendnew_next_sd_QN2SXvK1d8FAsrrm
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_QN2SXvK1d8FAsrrm');
-    }
-  }
-
   sd_dbRonqrl7ouRNVMj(bh) {
     try {
       const page = this.page;
-      bh.array = bh.results.filter((user: any) => {
-        return user.to == page.user[0].accountNumber;
-      });
+      // bh.array = bh.results.filter((user: any) => {
+      //   return user.to == page.user[0].accountNumber;
+      // });
 
-      page.array = bh.array;
-      console.log('answer', page.array);
+      // page.array = bh.array
+      // console.log("answer", page.array);
 
-      bh.out = bh.results.filter((user: any) => {
-        return user.from == page.user[0].accountNumber;
-      });
+      // bh.out = bh.results.filter((user:any) => {
+      //   return user.from == page.user[0].accountNumber
+      // })
 
-      page.moneyOut = bh.out;
-      console.log('moneyOut', page.moneyOut);
-
+      // page.moneyOut = bh.out
+      // console.log("moneyOut", page.moneyOut)
+      bh = this.sd_tApvDAUUnwH1pPm6(bh);
       //appendnew_next_sd_dbRonqrl7ouRNVMj
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_dbRonqrl7ouRNVMj');
+    }
+  }
+
+  async sd_tApvDAUUnwH1pPm6(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.getPayedBen();
+      bh.payedBen = outputVariables.local.payedBen;
+
+      bh = this.sd_P5xS9Qryy2MqhKQm(bh);
+      //appendnew_next_sd_tApvDAUUnwH1pPm6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_tApvDAUUnwH1pPm6');
+    }
+  }
+
+  async sd_P5xS9Qryy2MqhKQm(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.getPayedAirtime();
+      bh.payedAirtime = outputVariables.local.payedAirtime;
+
+      bh = this.sd_rftktp2UPREHp7RO(bh);
+      //appendnew_next_sd_P5xS9Qryy2MqhKQm
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_P5xS9Qryy2MqhKQm');
+    }
+  }
+
+  sd_rftktp2UPREHp7RO(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.payedBen);
+      console.log(bh.payedAirtime);
+
+      page.trans = bh.payedBen.concat(bh.payedAirtime);
+      console.log('Before sort', page.trans);
+
+      page.trans = page.trans.filter(
+        (trans) => trans.accountNumber === page.user.accountNumber
+      );
+
+      console.log('after sort', page.trans);
+
+      page.trans.map((trans: any) => {
+        if (new Date(trans.transDate).getDate() == new Date().getDate() - 1) {
+          trans.day = 'Yesterday';
+        } else if (
+          new Date(trans.transDate).getDate() == new Date().getDate()
+        ) {
+          trans.day = 'Today';
+        } else {
+          trans.day = trans.transDate;
+        }
+      });
+
+      console.log(page.trans);
+      //appendnew_next_sd_rftktp2UPREHp7RO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_rftktp2UPREHp7RO');
     }
   }
 
