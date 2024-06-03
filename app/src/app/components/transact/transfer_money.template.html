@@ -31,7 +31,7 @@
             <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <p>
-                  R20.123</p>
+                  R{{page.user.available_balance}}</p>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">more_vert</mat-icon></div>
             </div>
@@ -62,34 +62,34 @@
             <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <p>
-                  R4.59</p>
+                  R{{page.user.savings_balance}}</p>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">more_vert</mat-icon></div>
             </div>
           </div>
         </div>
       </div>
-      <form>
+      <form #transferForm="ngForm">
         <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
           <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="full-width white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field class="full-width bg-white" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput placeholder="Amount" [required]="false">
+              <input matInput [(ngModel)]="page.transferForm.amount" name="amount" placeholder="Amount" [required]="true">
 
             </mat-form-field>
           </div>
           <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput placeholder="Transfer type" value="Just once" [required]="false">
+              <input matInput placeholder="Transfer type" value="Just once" [required]="false" readonly="true">
               <mat-icon matSuffix>more_vert</mat-icon>
             </mat-form-field>
           </div>
           <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput placeholder="My statement description" [required]="false">
+              <input matInput [(ngModel)]="page.transferForm.description" name="description" placeholder="My statement description" [required]="true">
 
             </mat-form-field>
           </div>
-          <div fxLayout="column wrap" class="padding-10" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w bg-blue full-width">Transfer</button></div>
+          <div fxLayout="column wrap" class="padding-10" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w bg-blue full-width" (click)="sd_oFn7om6tiYRaFEeB(transferForm)">Transfer</button></div>
         </div>
       </form>
     </div>

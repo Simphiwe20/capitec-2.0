@@ -192,7 +192,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nbh.beneficiaries = page.results.filter((user:any) => {\n  return  user.accountNumber == page.user.accountNumber;\n})\npage.benArray = bh.beneficiaries\n\nconsole.log(bh.beneficiaries)",
+        "script": "\nbh.beneficiaries = page.results.filter((user:any) => {\n  return  user.accountNumber == page.user.accountNumber;\n})\npage.benArray = bh.beneficiaries",
         "functionName": "sd_geeTXGYJtFb3Ef1M",
         "category": "Function",
         "x": 715,
@@ -253,7 +253,7 @@
                     "type": "any",
                     "value": ""
                 },
-                "output": true
+                "output": false
             }
         ],
         "localVariables": [],
@@ -278,7 +278,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\npage.selected = bh.input.Index\nconsole.log(page.selected)\n",
+        "script": "\npage.selected = bh.input.Index\n",
         "functionName": "sd_fdywoKIQ7rD6pDeH",
         "category": "Function",
         "x": 210,
@@ -315,6 +315,35 @@
         "functionName": "sd_EjSuXhjTOYlGmLHM",
         "category": "Storage",
         "x": 310,
+        "y": 200,
+        "wires": [
+            [
+                "sd_CVmkNnZnDdXTqukU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pay_ben_electricComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_CVmkNnZnDdXTqukU",
+        "type": "Navigation",
+        "z": "sd_PlC8Hna0mq9eQZzs",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/buy_electricity/ele",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_CVmkNnZnDdXTqukU",
+        "category": "Navigation",
+        "x": 405,
         "y": 200,
         "wires": [
             []

@@ -40,11 +40,623 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "transferForm",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "submitted",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "found",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_HVeLHK8Jw8RAoyMc",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            [
+                "sd_GtGQJ09XVou8ScNK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GtGQJ09XVou8ScNK",
+        "type": "Storage",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_GtGQJ09XVou8ScNK",
+        "category": "Storage",
+        "x": 300,
+        "y": 40,
+        "wires": [
+            [
+                "sd_1OTz7K2n2bDliLbt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1OTz7K2n2bDliLbt",
+        "type": "Script",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.transferForm = {\n    amount: 0,\n    description: \"\",\n    transDate: new Date(),\n    transType: \"Transfer Money\",\n    accountNumber: page.user.accountNumber\n}",
+        "functionName": "sd_1OTz7K2n2bDliLbt",
+        "category": "Function",
+        "x": 380,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oFn7om6tiYRaFEeB",
+        "type": "PageStart",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sd_oFn7om6tiYRaFEeB",
+        "category": "General",
+        "x": 45,
+        "y": 240,
+        "wires": [
+            [
+                "sd_BMV88bZZj1DeKUop"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "transfer_moneyComponent"
+    },
+    {
+        "id": "sd_BMV88bZZj1DeKUop",
+        "type": "Script",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true\nbh.current =   page.user.available_balance -  page.transferForm.amount\nbh.savings_new_balance = Number(page.user.savings_balance) + Number(page.transferForm.amount)\n\nbh.body = {\n   email: page.user.email,\n   available_balance : bh.current,\n   savings_balance : bh.savings_new_balance\n}\n",
+        "functionName": "sd_BMV88bZZj1DeKUop",
+        "category": "Function",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "sd_orK3dWItdBCRjg43"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_XFnvsIyNTTi09BGt",
+        "type": "PageSwitch",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "form.valid",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.form.valid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_XFnvsIyNTTi09BGt",
+        "category": "Function",
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "sd_8t6TIkQA3SVGWSxm"
+            ],
+            [
+                "sd_mnY0kuA5XYtcaIX4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_orK3dWItdBCRjg43",
+        "type": "Environment",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_orK3dWItdBCRjg43",
+        "category": "General",
+        "x": 225,
+        "y": 240,
+        "wires": [
+            [
+                "sd_XFnvsIyNTTi09BGt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_mnY0kuA5XYtcaIX4",
+        "type": "SnackBar",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "FILL IN ALL FIELDS"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_mnY0kuA5XYtcaIX4",
+        "category": "General",
+        "x": 410,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_mhQBu1ZVnbLTlm4V",
+        "type": "Script",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdURL + \"transfer-money\"\nbh.user = page.ssdURL + \"find-one-user\"\nbh.url_update = page.ssdURL + \"update\"\n\nbh.userEmail = {\n    collection : \"users\"\n}\n",
+        "functionName": "sd_mhQBu1ZVnbLTlm4V",
+        "category": "Function",
+        "x": 525,
+        "y": 120,
+        "wires": [
+            [
+                "sd_hf2yfoHNlBFDBfvS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hf2yfoHNlBFDBfvS",
+        "type": "HttpRequest",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "post",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.transferForm",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "transferForm"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "post",
+        "category": "HTTP",
+        "x": 605,
+        "y": 120,
+        "wires": [
+            [
+                "sd_XhuQ6ZkLo4BJkIvh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_XhuQ6ZkLo4BJkIvh",
+        "type": "HttpRequest",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "update",
+        "method": "put",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_update",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_update"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.results",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "update",
+        "category": "HTTP",
+        "x": 685,
+        "y": 120,
+        "wires": [
+            [
+                "sd_sx4hSbRoAe6nripd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_sx4hSbRoAe6nripd",
+        "type": "HttpRequest",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "GETT",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.user",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "user"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.userEmail",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "userEmail"
+        },
+        "resultMapping": "bh.results_get",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "results_get"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "gett",
+        "category": "HTTP",
+        "x": 765,
+        "y": 120,
+        "wires": [
+            [
+                "sd_mOQFojqKR0bBHB72"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_mOQFojqKR0bBHB72",
+        "type": "Script",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.newBalance = bh.results_get.filter((user:any) =>{\n    return user.accountNumber == page.user.accountNumber\n})\n\nbh.newUser = bh.newBalance[0]",
+        "functionName": "sd_mOQFojqKR0bBHB72",
+        "category": "Function",
+        "x": 840,
+        "y": 120,
+        "wires": [
+            [
+                "sd_EhCLbV6OexWFJtly"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EhCLbV6OexWFJtly",
+        "type": "Storage",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {
+            "type": "bh",
+            "value": "newUser"
+        },
+        "resultMapping": {},
+        "functionName": "sd_EhCLbV6OexWFJtly",
+        "category": "Storage",
+        "x": 925,
+        "y": 120,
+        "wires": [
+            [
+                "sd_Q1krDBj37a4s2o1o"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Q1krDBj37a4s2o1o",
+        "type": "Navigation",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/transact",
+        "functionName": "sd_Q1krDBj37a4s2o1o",
+        "category": "Navigation",
+        "x": 1000,
+        "y": 120,
+        "wires": [
+            [
+                "sd_EWqAqolyrOLHHIgU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8t6TIkQA3SVGWSxm",
+        "type": "PageSwitch",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.available_balance",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.user.available_balance",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "transferForm.amount",
+                "vt": "this.page",
+                "gv": "this.page.transferForm.amount"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_8t6TIkQA3SVGWSxm",
+        "category": "Function",
+        "x": 445,
+        "y": 200,
+        "wires": [
+            [
+                "sd_mhQBu1ZVnbLTlm4V"
+            ],
+            [
+                "sd_yMXFdv6cFDxX2Zn7"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yMXFdv6cFDxX2Zn7",
+        "type": "SnackBar",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "TRANSFER AMOUNT CAN'T BE MORE THAN CURRENT BALANCE"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_yMXFdv6cFDxX2Zn7",
+        "category": "General",
+        "x": 505,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "transfer_moneyComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EWqAqolyrOLHHIgU",
+        "type": "SnackBar",
+        "z": "sd_fcSYuUZ7W7jbO4T4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "TRANSFER SUCCESS"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_EWqAqolyrOLHHIgU",
+        "category": "General",
+        "x": 1070,
+        "y": 180,
         "wires": [
             []
         ],

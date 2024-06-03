@@ -7,17 +7,17 @@
       </div>
     </div>
     <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-      <form>
+      <form #electricForm="ngForm">
         <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
           <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="padding-left white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput [required]="false">
+              <input matInput [(ngModel)]="page.electric.benName" name="benName" type="text" [required]="true">
               <mat-label>Beneficiary name</mat-label>
             </mat-form-field>
           </div>
           <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="padding-left white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput [required]="false">
+              <input matInput [(ngModel)]="page.electric.meterNumber" name="meterNumber" type="number" [required]="true">
               <mat-label>Meter number</mat-label>
             </mat-form-field>
           </div>
@@ -29,12 +29,12 @@
           </div>
           <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="padding-left white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput placeholder="0765233256" [required]="false">
+              <input matInput [(ngModel)]="page.electric.cellPhone" name="cellPhone" type="number" placeholder="0765233256" [required]="true">
               <mat-label>Cellphone</mat-label>
             </mat-form-field>
           </div>
         </div>
-        <div fxLayout="column wrap" class="get-started-btn padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w">Add</button></div>
+        <div fxLayout="column wrap" class="get-started-btn padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="addBeneficiary(electricForm)">Add</button></div>
       </form>
     </div>
   </div>
