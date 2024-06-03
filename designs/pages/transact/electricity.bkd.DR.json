@@ -206,7 +206,10 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [
+                                "color-w",
+                                "bg-blue"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -2350,7 +2353,7 @@
                                             },
                                             {
                                                 "_key": "html",
-                                                "_value": "R20.123",
+                                                "_value": "R{{page.user.available_balance}}",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             }
@@ -2713,7 +2716,6 @@
                                     "paletteKey": "NG-Input",
                                     "parentEditorKey": "64ee9a3c-e105-57fd-5e99-0b45343b5ab6",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {
@@ -2775,7 +2777,7 @@
                                         },
                                         {
                                             "_key": "type",
-                                            "_value": "",
+                                            "_value": "number",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },

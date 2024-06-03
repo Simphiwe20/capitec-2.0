@@ -213,7 +213,9 @@ export class remote_app_pinComponent {
         this.sdService.getPathAndQParamsObj('/logged_in_landing/home');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_IcdPwFJiZPNPz0nT
       return bh;
     } catch (e) {

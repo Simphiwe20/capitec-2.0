@@ -22,7 +22,7 @@
     </div>
   </div>
   <div fxLayout="column wrap" class="poppins" fxLayoutAlign="start stretch" [fxShow]="true">
-    <form>
+    <form #permLimits="ngForm">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg full-width no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
           <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -31,7 +31,7 @@
           </div>
           <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field style="padding-left:10px;" class="full-width white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput [(ngModel)]="page.perm.cash_withdrawals_perm" name="cash_withdrawals_perm" value="R0.00" [required]="false">
+              <input matInput [(ngModel)]="page.perm.cash_withdrawals_perm" name="cash_withdrawals_perm" value="R0.00" [required]="true">
 
             </mat-form-field>
           </div>
@@ -60,7 +60,7 @@
             </mat-form-field>
           </div>
         </div>
-        <div fxLayout="column wrap" class="margin-t-b-16px padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w">Update</button></div>
+        <div fxLayout="column wrap" class="margin-t-b-16px padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="updatePerm(permLimits)">Update</button></div>
       </div>
     </form>
   </div>
