@@ -73,7 +73,7 @@ export class homeComponent {
 
   sd_azLtfGiZyWrylVhT(bh) {
     try {
-      this.page.hidesideNav = true;
+      this.page.hidesideNav = false;
       //appendnew_next_sd_azLtfGiZyWrylVhT
       return bh;
     } catch (e) {

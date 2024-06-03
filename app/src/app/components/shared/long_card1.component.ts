@@ -203,7 +203,7 @@ export class long_card1Component {
               {
                 image: '../../../assets/Web/Images/scan_to_pay.jpeg',
                 name: 'Scan to pay',
-                routes: '/logged_in_landing/scan_to_pay',
+                routes: '/scan_to_pay',
               },
               {
                 image: '../../../assets/Web/Images/pay_me.jpeg',

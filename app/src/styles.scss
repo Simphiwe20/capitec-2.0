@@ -22,7 +22,23 @@ $purple: #3b46b8;
 $dark-grey: #5d737e;
 $red: #e61414;
 
+// animation
 
+.right{
+    animation-name: slideRight;
+    animation-iteration-count: 1;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    animation-duration: 2s;
+}
+
+@keyframes slideRight{
+    to{ transform: translateX(300%)}
+}
+// sidenav angel
+bh.sidenav_home{
+    height: 100vh;
+}
 %shared-pic-height {
     height: 120px;
 }
@@ -30,12 +46,13 @@ $red: #e61414;
 %shared-full-height {
     height: 100%
 }
-
+.no-margin{
+    margin:0px
+}
 body {
     background-color: $ghostwhite;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
 .standard-width {
     width: 50%;
     min-width: 300px;
@@ -199,13 +216,15 @@ body {
 }
 
 .bg-blue {
-    background-color: $blue;
+    background-color: $blue !important;
 }
 
 .bg-n-v {
     background-color: $navy-blue;
 }
-
+.white-text {
+    color: $white !important;
+}
 .light-grey {
     color: $grey;
 }

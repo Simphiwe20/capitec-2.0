@@ -1,9 +1,9 @@
 [
     {
-        "id": "sd_j52eEW1i8ysmFbKk",
+        "id": "sd_knvlScIcaYQjwqZj",
         "type": "tab",
-        "createdDate": "2024-05-07T18:38:02.920Z",
-        "label": "sidenav",
+        "createdDate": "2024-05-23T18:34:47.741Z",
+        "label": "sidenav_home",
         "disabled": false,
         "info": "",
         "functionSeq": 0,
@@ -11,19 +11,23 @@
         "serviceName": "sidenavComponent"
     },
     {
-        "id": "sd_uSUAwfJihRMS2q65",
+        "id": "sd_9zi3ynftUbaH5N6S",
         "type": "OnInit",
-        "z": "sd_j52eEW1i8ysmFbKk",
+        "z": "sd_knvlScIcaYQjwqZj",
         "viewType": "common",
         "nodeType": "start",
         "name": "",
-        "functionName": "sd_uSUAwfJihRMS2q65",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_9zi3ynftUbaH5N6S",
         "category": "Lifecycle Events",
         "x": 30,
         "y": 30,
         "wires": [
             [
-                "sd_FAH1XmFgVHncNH1v"
+                "sd_o8U93aMFu8A74mwG"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -31,9 +35,9 @@
         "serviceName": "sidenavComponent"
     },
     {
-        "id": "sd_FAH1XmFgVHncNH1v",
+        "id": "sd_o8U93aMFu8A74mwG",
         "type": "PageVariables",
-        "z": "sd_j52eEW1i8ysmFbKk",
+        "z": "sd_knvlScIcaYQjwqZj",
         "viewType": "pages",
         "nodeType": "flow",
         "name": "",
@@ -42,17 +46,46 @@
         "operation": "set",
         "globalVariables": [
             {
-                "textIp": "profile",
+                "textIp": "name",
                 "typedIpValue": {
                     "type": "literal",
-                    "value": "  [{icon:'my-detail-icon.png',text:'My details' , link:'/my-details'},   {icon:'email-update-icon.png',text:'My email address' , link:'/email'},   {icon:'tax-icon.png',text:'My tax details' , link:'/tax'},   {icon:'agreement-icon.png',text:'My agreement & disclamers'},   {icon:'privacy-icon.png',text:'Our Primary Center' , link:'/policy'}]   "
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "sidenavOpen",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
                 }
             }
         ],
-        "functionName": "sd_FAH1XmFgVHncNH1v",
+        "functionName": "sd_o8U93aMFu8A74mwG",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_pFk4BIOonAcaIknb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_pFk4BIOonAcaIknb",
+        "type": "Script",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.name = 'angel'\n",
+        "functionName": "sd_pFk4BIOonAcaIknb",
+        "category": "Function",
+        "x": 300,
+        "y": 80,
         "wires": [
             []
         ],
@@ -62,22 +95,47 @@
         "generated": true
     },
     {
-        "id": "sd_NKQqvVY91Ly5IvkE",
-        "type": "Script",
-        "z": "sd_j52eEW1i8ysmFbKk",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "  [{icon:'my-detail-icon.png',text:'My details' , link:'/my-details'},\n  {icon:'email-update-icon.png',text:'My email address' , link:'/email'},\n  {icon:'tax-icon.png',text:'My tax details' , link:'/tax'},\n  {icon:'agreement-icon.png',text:'My agreement & disclamers'},\n  {icon:'privacy-icon.png',text:'Our Primary Center' , link:'/policy'}]\n  ",
-        "functionName": "sd_NKQqvVY91Ly5IvkE",
-        "category": "Function",
-        "x": 345,
-        "y": 20,
+        "id": "sd_r7O4zdl4qvAle9JE",
+        "type": "PageStart",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "sidenavshow",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sidenavshow",
+        "category": "General",
+        "x": 85,
+        "y": 220,
         "wires": [
-            []
+            [
+                "sd_DICsI6jwZThjABaz"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "sidenavComponent"
+    },
+    {
+        "id": "sd_DICsI6jwZThjABaz",
+        "type": "Script",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.sidenavOpen = false",
+        "functionName": "sd_DICsI6jwZThjABaz",
+        "category": "Function",
+        "x": 205,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
     }
 ]

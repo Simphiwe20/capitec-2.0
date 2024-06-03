@@ -3,6 +3,7 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
+import { Location } from '@angular/common'; //_splitter_
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
@@ -47,7 +48,7 @@ export class EmailComponent {
 
   sd_vySl4XHPSURg3BlS(bh) {
     try {
-      bh = this.sd_bXamP2fsESvyedSq(bh);
+      bh = this.sd_fxmTSabF36wkXmuB(bh);
       //appendnew_next_sd_vySl4XHPSURg3BlS
       return bh;
     } catch (e) {
@@ -55,11 +56,37 @@ export class EmailComponent {
     }
   }
 
+  back(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_o88c9YPHpsSqqy7v(bh);
+      //appendnew_next_back
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_oOc8vGRHP6aUBqEh');
+    }
+  }
   //appendnew_flow_EmailComponent_start
+
+  sd_fxmTSabF36wkXmuB(bh) {
+    try {
+      this.page.location = Location;
+      bh = this.sd_bXamP2fsESvyedSq(bh);
+      //appendnew_next_sd_fxmTSabF36wkXmuB
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_fxmTSabF36wkXmuB');
+    }
+  }
 
   sd_bXamP2fsESvyedSq(bh) {
     try {
       this.page.email = undefined;
+      this.page.location = undefined;
       bh = this.sd_6D89pOuVkddz2SOz(bh);
       //appendnew_next_sd_bXamP2fsESvyedSq
       return bh;
@@ -76,6 +103,17 @@ export class EmailComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_6D89pOuVkddz2SOz');
+    }
+  }
+
+  sd_o88c9YPHpsSqqy7v(bh) {
+    try {
+      const page = this.page;
+      page.location.back();
+      //appendnew_next_sd_o88c9YPHpsSqqy7v
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_o88c9YPHpsSqqy7v');
     }
   }
 

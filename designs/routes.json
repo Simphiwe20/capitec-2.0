@@ -222,11 +222,7 @@
         },
         {
             "component": "Our_privacy_centerComponent",
-            "path": "privacy"
-        },
-        {
-            "path": "sidenav",
-            "component": "sidenavComponent"
+            "path": "policy"
         },
         {
             "path": "buy_airtime",
@@ -247,6 +243,18 @@
         {
             "path": "buy_prepaid",
             "component": "buy_prepaidComponent"
+        },
+        {
+            "path": "sidenav",
+            "component": "sidenavComponent"
+        },
+        {
+            "path": "profile",
+            "component": "profileComponent"
+        },
+        {
+            "path": "my-details",
+            "component": "my_detailsComponent"
         },
         {
             "path": "''",

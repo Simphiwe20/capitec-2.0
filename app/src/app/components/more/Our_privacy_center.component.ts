@@ -3,6 +3,7 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
+import { Location } from '@angular/common'; //_splitter_
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
@@ -47,7 +48,7 @@ export class Our_privacy_centerComponent {
 
   sd_8IypCuKzEFLCsP0X(bh) {
     try {
-      bh = this.sd_eGgv1qrPtFxTDkOL(bh);
+      bh = this.sd_SKNs6snOKd5PrUHw(bh);
       //appendnew_next_sd_8IypCuKzEFLCsP0X
       return bh;
     } catch (e) {
@@ -55,14 +56,51 @@ export class Our_privacy_centerComponent {
     }
   }
 
+  back(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_e21NPAfpMwbtkZ9U(bh);
+      //appendnew_next_back
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_xQIauQuuLvB7bge3');
+    }
+  }
   //appendnew_flow_Our_privacy_centerComponent_start
+
+  sd_SKNs6snOKd5PrUHw(bh) {
+    try {
+      this.page.location = Location;
+      bh = this.sd_eGgv1qrPtFxTDkOL(bh);
+      //appendnew_next_sd_SKNs6snOKd5PrUHw
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_SKNs6snOKd5PrUHw');
+    }
+  }
 
   sd_eGgv1qrPtFxTDkOL(bh) {
     try {
+      this.page.location = undefined;
       //appendnew_next_sd_eGgv1qrPtFxTDkOL
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_eGgv1qrPtFxTDkOL');
+    }
+  }
+
+  sd_e21NPAfpMwbtkZ9U(bh) {
+    try {
+      const page = this.page;
+      page.location.back();
+      //appendnew_next_sd_e21NPAfpMwbtkZ9U
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_e21NPAfpMwbtkZ9U');
     }
   }
 

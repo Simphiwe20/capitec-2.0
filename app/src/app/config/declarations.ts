@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-my_detailsComponent
+import { my_detailsComponent } from '../components/more/my_details.component';
 //CORE_REFERENCE_IMPORT-profileComponent
 import { profileComponent } from '../components/more/profile.component';
 //CORE_REFERENCE_IMPORT-Our_privacy_centerComponent
@@ -196,6 +198,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-my_detailsComponent
+  my_detailsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-profileComponent
   profileComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-Our_privacy_centerComponent
@@ -448,8 +452,7 @@ export const appRoutes = [
   { path: 'register_feedback', component: register_feedbackComponent },
   { path: 'email', component: EmailComponent },
   { path: 'my-tax-details', component: My_tax_detailsComponent },
-  { path: 'privacy', component: Our_privacy_centerComponent },
-  { path: 'sidenav', component: sidenavComponent },
+  { path: 'policy', component: Our_privacy_centerComponent },
   { path: 'buy_airtime', component: buy_airtimeComponent },
   { path: 'cellphone', component: cellphoneComponent },
   { path: 'transfer_money', component: transfer_moneyComponent },
@@ -458,6 +461,9 @@ export const appRoutes = [
     component: buy_prepaid_mobile_add_benComponent,
   },
   { path: 'buy_prepaid', component: buy_prepaidComponent },
+  { path: 'sidenav', component: sidenavComponent },
+  { path: 'profile', component: profileComponent },
+  { path: 'my-details', component: my_detailsComponent },
   { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

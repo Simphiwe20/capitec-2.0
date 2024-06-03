@@ -1,10 +1,27 @@
-<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
-  <div fxLayout="column wrap" class="standard-width footer bg-white" fxLayoutAlign="center stretch" [fxShow]="true">
-    <div fxLayout="row wrap" class="full-height" fxLayoutGap="0.3em" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="column wrap" class="pointer" fxFlex="18" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let menu of page.menuItems, let indx = index" [routerLink]="menu.routes"><img [src]="menu.image" [ngClass]="{&apos;footer-card&apos;: indx !== 2 }">
-        <div class="color-b poppins">
-          {{menu.menuName}}
-        </div>
+<div fxLayout="column wrap" class="standard-width footer bg-white" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" style="width:90%;    align-items: center ! important; display:flex" fxLayoutAlign="space-between center" [fxShow]="true">
+    <div fxLayout="row wrap" style="    width: 34%;" fxLayoutGap="12px" fxLayoutAlign="center stretch" [fxShow]="true" routerLink="/logged_in_landing/cards">
+      <div fxLayout="column wrap" style="       width: 41px;" fxLayoutGap="3px" fxLayoutAlign="center center" [fxShow]="true" routeriInk="/logged_in_landing/home"><img imgSrc="Web/Images/home.PNG" style="height: 38px;" class="footer-card">
+        <p style="  font-size: 13px;" class="no-margin color-b poppins">
+          Home</p>
+      </div>
+      <div fxLayout="column wrap" style="     width: 41px;" fxLayoutGap="3px" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="/Web/Images/card.jpg" style="height: 38px;" class="footer-card">
+        <p style="font-size: 13px;" class="no-margin color-b poppins">
+          cards</p>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="  width:40px   gap: 4PX;  background:white;  position: absolute;         left: 154px;     bottom: 1px;     border-top: lightgrey;     border-radius: 12px 12px 0px 0px;   height: 89px;" fxLayoutAlign="center center" [fxShow]="true" routerLink="/logged_in_landing/transact"><img imgSrc="Web/Images/trans.jpg" style="width: 44px;     height: 53px;">
+      <p style="font-size: 13px;" class="no-margin color-b poppins">
+        Tansect</p>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="24px" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="column wrap" style="     width: 41px;" fxLayoutAlign="center center" [fxShow]="true" routerLink="/logged_in_landing/messages"><img imgSrc="Web/Images/message.png" style="height: 38px;" class="footer-card">
+        <p style="font-size: 13px;" class="no-margin color-b poppins">
+          Messages</p>
+      </div>
+      <div fxLayout="column wrap" style="       width: 41px;" fxLayoutAlign="center center" [fxShow]="true" routerLink="/logged_in_landing/explore"><img imgSrc="Web/Images/explore.jpg" style="height: 38px;" class="footer-card">
+        <p style="font-size: 13px;" class="no-margin color-b poppins">
+          Explore</p>
       </div>
     </div>
   </div>

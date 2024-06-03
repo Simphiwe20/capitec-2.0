@@ -59,6 +59,8 @@ export class home_footerComponent {
 
   sd_fPLi930HWZQSny6s(bh) {
     try {
+      this.page.menuItem1 = undefined;
+      this.page.menuItem2 = undefined;
       bh = this.sd_7gfjrecDpNKV8VUQ(bh);
       //appendnew_next_sd_fPLi930HWZQSny6s
       return bh;
@@ -70,7 +72,7 @@ export class home_footerComponent {
   sd_7gfjrecDpNKV8VUQ(bh) {
     try {
       const page = this.page;
-      page.menuItems = [
+      page.menuItem1 = [
         {
           image: '../../../assets/Web/Images/home.PNG',
           menuName: 'Home',
@@ -81,11 +83,14 @@ export class home_footerComponent {
           menuName: 'Cards',
           routes: '/logged_in_landing/cards',
         },
-        {
-          image: '../../../assets/Web/Images/trans.jpg',
-          menuName: 'Transact',
-          routes: '/logged_in_landing/transact',
-        },
+        // {image: '../../../assets/Web/Images/trans.jpg', menuName: 'Transact', routes: '/logged_in_landing/transact'},
+        // {image: '../../../assets/Web/Images/message.png', menuName: 'Messages', routes: '/logged_in_landing/messages'},
+        // {image: '../../../assets/Web/Images/explore.jpg', menuName: 'Explore', routes: '/logged_in_landing/explore'}
+      ];
+      page.menuItem2 = [
+        // {image: '../../../assets/Web/Images/home.PNG', menuName: 'Home', routes: '/logged_in_landing/home'},
+        // {image: '../../../assets/Web/Images/card.jpg', menuName: 'Cards', routes: '/logged_in_landing/cards'},
+        // {image: '../../../assets/Web/Images/trans.jpg', menuName: 'Transact', routes: '/logged_in_landing/transact'},
         {
           image: '../../../assets/Web/Images/message.png',
           menuName: 'Messages',
@@ -97,6 +102,7 @@ export class home_footerComponent {
           routes: '/logged_in_landing/explore',
         },
       ];
+
       //appendnew_next_sd_7gfjrecDpNKV8VUQ
       return bh;
     } catch (e) {

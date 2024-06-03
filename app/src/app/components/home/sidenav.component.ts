@@ -33,7 +33,7 @@ export class sidenavComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_uSUAwfJihRMS2q65(bh);
+      this.sd_9zi3ynftUbaH5N6S(bh);
     }
   }
 
@@ -45,39 +45,64 @@ export class sidenavComponent {
     //append_listeners
   }
 
-  sd_uSUAwfJihRMS2q65(bh) {
+  sd_9zi3ynftUbaH5N6S(bh) {
     try {
-      bh = this.sd_FAH1XmFgVHncNH1v(bh);
-      //appendnew_next_sd_uSUAwfJihRMS2q65
+      bh = this.sd_o8U93aMFu8A74mwG(bh);
+      //appendnew_next_sd_9zi3ynftUbaH5N6S
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uSUAwfJihRMS2q65');
+      return this.errorHandler(bh, e, 'sd_9zi3ynftUbaH5N6S');
     }
   }
 
+  sidenavshow(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_DICsI6jwZThjABaz(bh);
+      //appendnew_next_sidenavshow
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_r7O4zdl4qvAle9JE');
+    }
+  }
   //appendnew_flow_sidenavComponent_start
 
-  sd_FAH1XmFgVHncNH1v(bh) {
+  sd_o8U93aMFu8A74mwG(bh) {
     try {
-      this.page.profile = [
-        { icon: 'my-detail-icon.png', text: 'My details', link: '/my-details' },
-        {
-          icon: 'email-update-icon.png',
-          text: 'My email address',
-          link: '/email',
-        },
-        { icon: 'tax-icon.png', text: 'My tax details', link: '/tax' },
-        { icon: 'agreement-icon.png', text: 'My agreement & disclamers' },
-        {
-          icon: 'privacy-icon.png',
-          text: 'Our Primary Center',
-          link: '/policy',
-        },
-      ];
-      //appendnew_next_sd_FAH1XmFgVHncNH1v
+      this.page.name = undefined;
+      this.page.sidenavOpen = true;
+      bh = this.sd_pFk4BIOonAcaIknb(bh);
+      //appendnew_next_sd_o8U93aMFu8A74mwG
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_FAH1XmFgVHncNH1v');
+      return this.errorHandler(bh, e, 'sd_o8U93aMFu8A74mwG');
+    }
+  }
+
+  sd_pFk4BIOonAcaIknb(bh) {
+    try {
+      const page = this.page;
+      page.name = 'angel';
+
+      //appendnew_next_sd_pFk4BIOonAcaIknb
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pFk4BIOonAcaIknb');
+    }
+  }
+
+  sd_DICsI6jwZThjABaz(bh) {
+    try {
+      const page = this.page;
+      page.sidenavOpen = false;
+      //appendnew_next_sd_DICsI6jwZThjABaz
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_DICsI6jwZThjABaz');
     }
   }
 

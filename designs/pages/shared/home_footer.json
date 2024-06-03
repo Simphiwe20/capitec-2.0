@@ -40,7 +40,22 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "menuItem1",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "menuItem2",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_fPLi930HWZQSny6s",
         "category": "Function",
         "x": 180,
@@ -62,7 +77,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.menuItems = [\n        {image: '../../../assets/Web/Images/home.PNG', menuName: 'Home', routes: '/logged_in_landing/home'},\n        {image: '../../../assets/Web/Images/card.jpg', menuName: 'Cards', routes: '/logged_in_landing/cards'},\n        {image: '../../../assets/Web/Images/trans.jpg', menuName: 'Transact', routes: '/logged_in_landing/transact'},\n        {image: '../../../assets/Web/Images/message.png', menuName: 'Messages', routes: '/logged_in_landing/messages'},\n        {image: '../../../assets/Web/Images/explore.jpg', menuName: 'Explore', routes: '/logged_in_landing/explore'}\n\n]",
+        "script": "page.menuItem1 = [\n        {image: '../../../assets/Web/Images/home.PNG', menuName: 'Home', routes: '/logged_in_landing/home'},\n        {image: '../../../assets/Web/Images/card.jpg', menuName: 'Cards', routes: '/logged_in_landing/cards'},\n        // {image: '../../../assets/Web/Images/trans.jpg', menuName: 'Transact', routes: '/logged_in_landing/transact'},\n        // {image: '../../../assets/Web/Images/message.png', menuName: 'Messages', routes: '/logged_in_landing/messages'},\n        // {image: '../../../assets/Web/Images/explore.jpg', menuName: 'Explore', routes: '/logged_in_landing/explore'}\n\n];\npage.menuItem2 = [\n        // {image: '../../../assets/Web/Images/home.PNG', menuName: 'Home', routes: '/logged_in_landing/home'},\n        // {image: '../../../assets/Web/Images/card.jpg', menuName: 'Cards', routes: '/logged_in_landing/cards'},\n        // {image: '../../../assets/Web/Images/trans.jpg', menuName: 'Transact', routes: '/logged_in_landing/transact'},\n        {image: '../../../assets/Web/Images/message.png', menuName: 'Messages', routes: '/logged_in_landing/messages'},\n        {image: '../../../assets/Web/Images/explore.jpg', menuName: 'Explore', routes: '/logged_in_landing/explore'}\n\n]\n",
         "functionName": "sd_7gfjrecDpNKV8VUQ",
         "category": "Function",
         "x": 320,
