@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_9utjFzd17ucYPa7E",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 60,
         "wires": [
             [
                 "sd_OxfpvBF66qJL4jyU"
@@ -58,8 +58,8 @@
         ],
         "functionName": "sd_OxfpvBF66qJL4jyU",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 60,
         "wires": [
             []
         ],
@@ -82,7 +82,7 @@
         "functionName": "openInfo",
         "category": "General",
         "x": 285,
-        "y": 40,
+        "y": 60,
         "wires": [
             [
                 "sd_FdMXZfSbe5SjG4as"
@@ -129,7 +129,7 @@
         "functionName": "sd_FdMXZfSbe5SjG4as",
         "category": "Dialog",
         "x": 405,
-        "y": 40,
+        "y": 60,
         "wires": [
             [
                 "sd_OIoq9DOR6k6WJW9v"
@@ -510,7 +510,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""

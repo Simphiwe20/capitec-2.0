@@ -40,11 +40,128 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "hide",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
+            },
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_9br5SIlar8wPCTNp",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 125,
+        "y": 20,
+        "wires": [
+            [
+                "sd_Y7bPLTy1TTtvfVoY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cardsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_vZplwie72amkSdbv",
+        "type": "PageStart",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "hideCard",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "hideCard",
+        "category": "General",
+        "x": 80,
+        "y": 180,
+        "wires": [
+            [
+                "sd_64K6Av8icu4MUani"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cardsComponent"
+    },
+    {
+        "id": "sd_64K6Av8icu4MUani",
+        "type": "Script",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.hide = !page.hide",
+        "functionName": "sd_64K6Av8icu4MUani",
+        "category": "Function",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cardsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_csmP6Qpq4HgkSOej",
+        "type": "Log",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.user",
+        "functionName": "sd_csmP6Qpq4HgkSOej",
+        "category": "General",
+        "x": 360,
+        "y": 140,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "user",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cardsComponent"
+    },
+    {
+        "id": "sd_Y7bPLTy1TTtvfVoY",
+        "type": "Storage",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_Y7bPLTy1TTtvfVoY",
+        "category": "Storage",
+        "x": 385,
+        "y": 40,
         "wires": [
             []
         ],

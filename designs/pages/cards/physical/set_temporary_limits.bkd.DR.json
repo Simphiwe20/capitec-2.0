@@ -573,6 +573,12 @@
                         "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
+                    },
+                    {
+                        "_key": "#updateTempForm",
+                        "_value": "ngForm",
+                        "_type": "kv",
+                        "_attrDef": "c"
                     }
                 ],
                 "c6a8e2bb-34a2-a9f4-f361-149428751750": {
@@ -1956,7 +1962,7 @@
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "",
+                                        "_value": "page.temp.cash_withdrawals",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -1968,7 +1974,7 @@
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "",
+                                        "_value": "cash_withdrawals",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -3114,7 +3120,7 @@
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "",
+                                        "_value": "page.temp.card_machine",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -3126,7 +3132,7 @@
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "",
+                                        "_value": "card_machine",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4272,7 +4278,7 @@
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "",
+                                        "_value": "page.temp.online_scan",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4284,7 +4290,7 @@
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "",
+                                        "_value": "online_scan",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4496,9 +4502,18 @@
                                 },
                                 {
                                     "_key": "(click)",
-                                    "_value": "",
+                                    "_value": "updateTemp(updateTempForm)",
                                     "_type": "kv",
-                                    "_attrDef": "p"
+                                    "_attrDef": "p",
+                                    "objValue": {
+                                        "nodeID": "sd_OL1JHClmEc7zRrBV",
+                                        "functionName": "updateTemp",
+                                        "activeTree": "pages",
+                                        "z": "sd_DhseKfbPmhEGFeC0",
+                                        "input": [
+                                            "updateTempForm"
+                                        ]
+                                    }
                                 },
                                 {
                                     "_key": "[disabled]",
