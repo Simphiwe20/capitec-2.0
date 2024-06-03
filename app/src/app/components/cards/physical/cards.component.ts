@@ -55,14 +55,52 @@ export class cardsComponent {
     }
   }
 
+  hideCard(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_64K6Av8icu4MUani(bh);
+      //appendnew_next_hideCard
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_vZplwie72amkSdbv');
+    }
+  }
   //appendnew_flow_cardsComponent_start
 
   sd_9br5SIlar8wPCTNp(bh) {
     try {
+      this.page.hide = true;
+      this.page.user = undefined;
+      bh = this.sd_Y7bPLTy1TTtvfVoY(bh);
       //appendnew_next_sd_9br5SIlar8wPCTNp
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_9br5SIlar8wPCTNp');
+    }
+  }
+
+  sd_Y7bPLTy1TTtvfVoY(bh) {
+    try {
+      this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
+      //appendnew_next_sd_Y7bPLTy1TTtvfVoY
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Y7bPLTy1TTtvfVoY');
+    }
+  }
+
+  sd_64K6Av8icu4MUani(bh) {
+    try {
+      const page = this.page;
+      page.hide = !page.hide;
+      //appendnew_next_sd_64K6Av8icu4MUani
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_64K6Av8icu4MUani');
     }
   }
 
