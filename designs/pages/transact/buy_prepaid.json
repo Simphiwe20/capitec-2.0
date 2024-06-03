@@ -65,6 +65,13 @@
                     "type": "this.page",
                     "value": "prepaid"
                 }
+            },
+            {
+                "textIp": "menu",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_eRPEZf3wmpsSG7xX",
@@ -88,7 +95,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.prepaid = {\n    cellphone: \"\",\n    benName: \"\",\n    accountNumber: page.result.accountNumber\n}\n\nconsole.log(page.result)",
+        "script": "page.prepaid = {\n    cellphone: \"\",\n    benName: \"\",\n    accountNumber: page.result.accountNumber\n}\n\nconsole.log(page.result)\n\npage.menu = ['Cell C', 'Vodacom', 'MTN', 'Telkom Network', '']",
         "functionName": "sd_M53KjF9stPfYauYD",
         "category": "Function",
         "x": 445,

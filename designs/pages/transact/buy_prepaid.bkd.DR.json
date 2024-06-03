@@ -505,6 +505,118 @@
                     }
                 }
             },
+            "932a386c-b2a3-cfaa-3d02-295806c0e62a": {
+                "paletteKey": "NG-Menu",
+                "parentEditorKey": "c94bbdf3-1edf-5f02-d63b-cf9312c5b323",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Menu",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "xPosition",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "yPosition",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "matMenu",
+                        "_value": "menu",
+                        "_type": "vk",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "hasBackdrop",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "overlapTrigger",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(closed)",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "#menu",
+                        "_value": "matMenu",
+                        "_type": "kv",
+                        "_attrDef": "c"
+                    }
+                ],
+                "01ed8bec-9e0e-2a4e-b96b-3db68729ee1a": {
+                    "paletteKey": "NG-MenuItem",
+                    "parentEditorKey": "932a386c-b2a3-cfaa-3d02-295806c0e62a",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Menu Item",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "MenuItemName",
+                            "_value": "{{menu}}",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngFor",
+                            "_value": "let menu of page.menu",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                }
+            },
             "74ee8c71-39a0-c83a-dea5-e78de9b433f3": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "c94bbdf3-1edf-5f02-d63b-cf9312c5b323",
@@ -1116,7 +1228,6 @@
                                     "paletteKey": "NG-Input",
                                     "parentEditorKey": "eb4c59d5-c85b-e067-5b03-dfdf1de930fa",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {
@@ -1289,6 +1400,7 @@
                             "bbbbf810-5614-adda-7f46-1588f04ff82c": {
                                 "paletteKey": "FlexLayoutRow",
                                 "parentEditorKey": "11a5d7fe-bcb6-7f0c-4b2c-b0e995339e9c",
+                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -1353,6 +1465,7 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "bbbbf810-5614-adda-7f46-1588f04ff82c",
                                     "isAdvancedComponent": true,
+                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {
@@ -1542,6 +1655,7 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "0e9c5de1-9eee-d208-96fe-00a35e5d10ad",
                                         "isAdvancedChildComponent": true,
+                                        "isCommented": "false",
                                         "commentid": null,
                                         "designerReference": [
                                             {
@@ -1568,6 +1682,7 @@
                                 "73cb6509-37cb-184d-e9d9-012f2033e6cd": {
                                     "paletteKey": "NG-icon",
                                     "parentEditorKey": "bbbbf810-5614-adda-7f46-1588f04ff82c",
+                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {

@@ -5,7 +5,7 @@
       <form #accForm="ngForm">
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput [(ngModel)]="page.accNo.accNo" name="accNo" [required]="false">
+            <input matInput [(ngModel)]="page.accNo.accNo" name="accNo" [required]="true">
             <mat-label>Savings account number</mat-label> <mat-icon matSuffix (click)="openInfo()">info</mat-icon>
           </mat-form-field>
         </div>

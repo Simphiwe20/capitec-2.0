@@ -67,7 +67,7 @@ export class remote_app_pinComponent {
         .constructFlowObject(this);
       bh.input = { form };
       bh.local = {};
-      bh = this.sd_RsW8TtrHt9EABRdy(bh);
+      bh = this.sd_80PdDmMSYwVDdopq(bh);
       //appendnew_next_pin
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ZdqkxdhXTqJ4TWjp');
@@ -77,7 +77,7 @@ export class remote_app_pinComponent {
 
   sd_E5FBRc6XCm64szHy(bh) {
     try {
-      this.page.remotePin = { pin: '' };
+      this.page.remotePin = { remotePin: '', email: '' };
       this.page.submitted = false;
       //appendnew_next_sd_E5FBRc6XCm64szHy
       return bh;
@@ -86,11 +86,23 @@ export class remote_app_pinComponent {
     }
   }
 
+  sd_80PdDmMSYwVDdopq(bh) {
+    try {
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_RsW8TtrHt9EABRdy(bh);
+      //appendnew_next_sd_80PdDmMSYwVDdopq
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_80PdDmMSYwVDdopq');
+    }
+  }
+
   sd_RsW8TtrHt9EABRdy(bh) {
     try {
       const page = this.page;
       page.submitted = true;
 
+      bh.url = page.ssdURL + 'log-in';
       bh = this.sd_JCIuNp1gZCXcVizs(bh);
       //appendnew_next_sd_RsW8TtrHt9EABRdy
       return bh;
@@ -139,7 +151,7 @@ export class remote_app_pinComponent {
   sd_Feko1zRLdZWqtKqo(bh) {
     try {
       this.page.result = JSON.parse(sessionStorage.getItem('accNo'));
-      bh = this.sd_IQ6qeI6Y3x9bfN9X(bh);
+      bh = this.sd_Fp68ac5b072egagP(bh);
       //appendnew_next_sd_Feko1zRLdZWqtKqo
       return bh;
     } catch (e) {
@@ -147,31 +159,35 @@ export class remote_app_pinComponent {
     }
   }
 
-  sd_IQ6qeI6Y3x9bfN9X(bh) {
+  sd_Fp68ac5b072egagP(bh) {
     try {
-      if (
-        this.sdService.operators['eq'](
-          this.page.result.remotePin,
-          this.page.remotePin.pin,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_gQ0Ya5dqzjTlvsyW(bh);
-      } else if (
-        this.sdService.operators['sne'](
-          this.page.result.remotePin,
-          this.page.remotePin.pin,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_vPyILlID1nlonnZN(bh);
-      }
-
+      const page = this.page;
+      page.remotePin.email = page.result.email;
+      console.log('Body: ', page.remotePin);
+      bh = this.sd_7qPIn8fU06SiDPm0(bh);
+      //appendnew_next_sd_Fp68ac5b072egagP
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_IQ6qeI6Y3x9bfN9X');
+      return this.errorHandler(bh, e, 'sd_Fp68ac5b072egagP');
+    }
+  }
+
+  async sd_7qPIn8fU06SiDPm0(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: this.page.remotePin,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_gQ0Ya5dqzjTlvsyW(bh);
+      //appendnew_next_sd_7qPIn8fU06SiDPm0
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_7qPIn8fU06SiDPm0');
     }
   }
 
@@ -194,7 +210,7 @@ export class remote_app_pinComponent {
   async sd_IcdPwFJiZPNPz0nT(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/app_activation_instructions');
+        this.sdService.getPathAndQParamsObj('/logged_in_landing/home');
       await this.__page_injector__
         .get(Router)
         .navigate([this.sdService.formatPathWithParams(path, undefined)]);
@@ -202,21 +218,6 @@ export class remote_app_pinComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_IcdPwFJiZPNPz0nT');
-    }
-  }
-
-  sd_vPyILlID1nlonnZN(bh) {
-    try {
-      this.__page_injector__.get(MatSnackBar).open('INCORRECT PIN', 'OK', {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-      });
-      //appendnew_next_sd_vPyILlID1nlonnZN
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_vPyILlID1nlonnZN');
     }
   }
 

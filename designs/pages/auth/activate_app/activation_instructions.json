@@ -62,7 +62,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_WAPZpjYffdime62W"
+                "sd_SmWsaGEK94MTZ2T7"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -101,10 +101,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.routeData = {data: 'activate_app'}",
+        "script": "page.routeData = {img: page.userImage , data: 'activate_app'}\nconsole.log(page.routeData)",
         "functionName": "sd_numKQxnBkjmM5McI",
         "category": "Function",
-        "x": 185,
+        "x": 145,
         "y": 140,
         "wires": [
             [
@@ -133,13 +133,18 @@
             "value": "routeData"
         },
         "qparamsArray": "",
-        "resultMapping": "",
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
         "functionName": "sd_cumKsxX0Tfg64LaQ",
         "category": "Navigation",
         "x": 280,
         "y": 140,
         "wires": [
-            []
+            [
+                "sd_79eYPp7Sgy7wbE4V"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -160,7 +165,7 @@
             "mapVarType": "bh",
             "mapVarValue": "url"
         },
-        "ret": "json",
+        "ret": "arraybuffer",
         "retMappingObj": {},
         "observe": "",
         "observeMappingObj": {},
@@ -183,11 +188,12 @@
         "paramMappingObj": {},
         "functionName": "sd_epX4M9GQYUC2uVor",
         "category": "HTTP",
-        "x": 405,
+        "x": 545,
         "y": 40,
         "wires": [
             [
-                "sd_NMSKSPBLkevcHnu2"
+                "sd_c6h43zBXSTxakxqZ",
+                "sd_ft5oWvCsb53A7o6n"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -227,21 +233,19 @@
         "generated": true
     },
     {
-        "id": "sd_WAPZpjYffdime62W",
+        "id": "sd_c6h43zBXSTxakxqZ",
         "type": "Script",
         "z": "sd_GJ607pC0jhkE5y3s",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdURL + 'get-picture'\nconsole.log(bh.url)",
-        "functionName": "sd_WAPZpjYffdime62W",
+        "script": "\nconsole.log(page.result)\n\npage.userImage = new Uint8Array(page.result);\nconsole.log('Uint8Array: ',page.userImage)\nlet blob = new Blob([page.userImage], { type: 'image/png' })\npage.userImage = URL.createObjectURL(blob)\n// let buffer = Buffer.from(page.userImage)\n// console.log('Buffer: ', buffer)\n\n// page.userImage = 'data:image/png;base64,' + buffer.toString('base64') \nconsole.log('Blob: ', page.userImage)\n\n// page.userImage = page.userImage.getReader().read()\n\n\n// console.log(\"User image: \", page.userImage.getReader().read())\n\n",
+        "functionName": "sd_c6h43zBXSTxakxqZ",
         "category": "Function",
-        "x": 325,
+        "x": 685,
         "y": 40,
         "wires": [
-            [
-                "sd_epX4M9GQYUC2uVor"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -249,29 +253,7 @@
         "generated": true
     },
     {
-        "id": "sd_15SaZE9ShGJGpxcH",
-        "type": "Script",
-        "z": "sd_GJ607pC0jhkE5y3s",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "bh.image = page.result.find((image: any) => image.email === page.user.email)\n\nconsole.log(typeof bh.image)",
-        "functionName": "sd_15SaZE9ShGJGpxcH",
-        "category": "Function",
-        "x": 580,
-        "y": 40,
-        "wires": [
-            [
-                "sd_c6h43zBXSTxakxqZ"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "activation_instructionsComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_NMSKSPBLkevcHnu2",
+        "id": "sd_SmWsaGEK94MTZ2T7",
         "type": "Storage",
         "z": "sd_GJ607pC0jhkE5y3s",
         "viewType": "client-pages",
@@ -289,13 +271,13 @@
             "type": "this.page",
             "value": "user"
         },
-        "functionName": "sd_NMSKSPBLkevcHnu2",
+        "functionName": "sd_SmWsaGEK94MTZ2T7",
         "category": "Storage",
-        "x": 485,
+        "x": 345,
         "y": 40,
         "wires": [
             [
-                "sd_15SaZE9ShGJGpxcH"
+                "sd_HVPXsnCuTMzDvfhr"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -304,20 +286,74 @@
         "generated": true
     },
     {
-        "id": "sd_c6h43zBXSTxakxqZ",
+        "id": "sd_HVPXsnCuTMzDvfhr",
         "type": "Script",
         "z": "sd_GJ607pC0jhkE5y3s",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// let file: File\n// if(bh.input.event) {\n//     file = bh.input.event.target.files\n//     page.file2 = file[0]\n//     let fileType =   page.file2['type'].split('/')[0]\n//     if(fileType != 'image') {\n//         alert(\"Please select an image\")\n//         delete page.clientDetails.picture\n//         return\n//     }\n// }else {\n//     console.log('The is no file uploaded')\n//     return\n// }\n\nlet fileReader = new FileReader();\nfileReader.readAsDataURL(bh.image)\nfileReader.onload = () => {\n    let result = fileReader.result\n    page.userImage = result \n}\n\nconsole.log(page.userImage)\n\n",
-        "functionName": "sd_c6h43zBXSTxakxqZ",
+        "script": "bh.url = page.ssdURL + `download-picture/${page.user.email}`\nconsole.log(bh.url)",
+        "functionName": "sd_HVPXsnCuTMzDvfhr",
         "category": "Function",
-        "x": 685,
+        "x": 445,
         "y": 40,
         "wires": [
-            []
+            [
+                "sd_epX4M9GQYUC2uVor"
+            ]
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "activation_instructionsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_79eYPp7Sgy7wbE4V",
+        "type": "Log",
+        "z": "sd_GJ607pC0jhkE5y3s",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.result",
+        "functionName": "sd_79eYPp7Sgy7wbE4V",
+        "category": "General",
+        "x": 420,
+        "y": 140,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "activation_instructionsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ft5oWvCsb53A7o6n",
+        "type": "Log",
+        "z": "sd_GJ607pC0jhkE5y3s",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.result",
+        "functionName": "sd_ft5oWvCsb53A7o6n",
+        "category": "General",
+        "x": 640,
+        "y": 120,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "result",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "activation_instructionsComponent",

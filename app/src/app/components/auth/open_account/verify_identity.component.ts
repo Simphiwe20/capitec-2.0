@@ -330,35 +330,15 @@ export class verify_identityComponent implements AfterViewInit {
       const page = this.page;
       page.showLoader = true;
 
-      delete page.clientDetails.picture;
-      delete page.clientDetails.proof_of_res;
       delete page.clientDetails.ID_doc;
+      delete page.clientDetails.proof_of_res;
+      delete page.clientDetails.picture;
       delete page.clientDetails.confirmRemotePin;
-      bh = this.sd_trI7dpLHV8CdnvOf(bh);
+      bh = this.sd_ty5aqWnWbYQOAsji(bh);
       //appendnew_next_sd_qi7thJp7eJAp0VNG
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_qi7thJp7eJAp0VNG');
-    }
-  }
-
-  async sd_trI7dpLHV8CdnvOf(bh) {
-    try {
-      let requestOptions = {
-        url: bh.url,
-        method: 'post',
-        responseType: 'json',
-        headers: {},
-        params: {},
-        body: this.page.clientDetails,
-      };
-      this.page.result = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_ty5aqWnWbYQOAsji(bh);
-      this.sd_6JXYSh0xOM4Cvmne(bh);
-      //appendnew_next_sd_trI7dpLHV8CdnvOf
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_trI7dpLHV8CdnvOf');
     }
   }
 
@@ -390,11 +370,41 @@ export class verify_identityComponent implements AfterViewInit {
     try {
       let outputVariables = this.upload2();
 
-      bh = this.sd_cMRjItrAz1TfAlWt(bh);
+      bh = this.sd_trI7dpLHV8CdnvOf(bh);
       //appendnew_next_sd_I8UIvSuF16EFAFgd
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_I8UIvSuF16EFAFgd');
+    }
+  }
+
+  async sd_trI7dpLHV8CdnvOf(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: this.page.clientDetails,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_6JXYSh0xOM4Cvmne(bh);
+      bh = this.sd_cMRjItrAz1TfAlWt(bh);
+      //appendnew_next_sd_trI7dpLHV8CdnvOf
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_trI7dpLHV8CdnvOf');
+    }
+  }
+
+  sd_6JXYSh0xOM4Cvmne(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.result);
+      //appendnew_next_sd_6JXYSh0xOM4Cvmne
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6JXYSh0xOM4Cvmne');
     }
   }
 
@@ -424,16 +434,6 @@ export class verify_identityComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8Szscxq0EVjTBYiF');
-    }
-  }
-
-  sd_6JXYSh0xOM4Cvmne(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.result);
-      //appendnew_next_sd_6JXYSh0xOM4Cvmne
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_6JXYSh0xOM4Cvmne');
     }
   }
 
@@ -516,6 +516,8 @@ export class verify_identityComponent implements AfterViewInit {
       } else {
         console.log('The is no file uploaded');
       }
+
+      console.log('Upload proof: ', page.file1);
       //appendnew_next_sd_oBFkdjb8Ql3rh59x
       return bh;
     } catch (e) {
@@ -574,8 +576,8 @@ export class verify_identityComponent implements AfterViewInit {
       page.email = { email: page.clientDetails.email };
 
       page.formData = new FormData();
-      page.formData.append('ID', page.file);
-      console.log('ID', page.formData);
+      page.formData.append('name', page.file);
+      console.log('ID file name: ', page.formData.get('filename'));
       bh = this.sd_jDzfSGInPTSK1ja5(bh);
       //appendnew_next_sd_OWfazeZy1TTRJC7Z
       return bh;
@@ -591,7 +593,7 @@ export class verify_identityComponent implements AfterViewInit {
         method: 'post',
         responseType: 'json',
         headers: this.page.email,
-        params: [],
+        params: undefined,
         body: this.page.formData,
       };
       this.page.idResult = await this.sdService.nHttpRequest(requestOptions);
@@ -628,11 +630,11 @@ export class verify_identityComponent implements AfterViewInit {
     try {
       const page = this.page;
       bh.url = page.ssdUrl + 'upload-picture';
-      console.log(page.file2);
+      console.log('File 2 filename: ', page.file2.filename);
       page.email = { email: page.clientDetails.email };
 
       page.formData2 = new FormData();
-      page.formData2.append('pictures', page.file2);
+      page.formData2.append('name', page.file2);
       console.log('Pictures: ', page.formData2);
       bh = this.sd_P1mrdIw6zytIle2B(bh);
       //appendnew_next_sd_E8DzeQlntR6MgXpw
@@ -690,8 +692,8 @@ export class verify_identityComponent implements AfterViewInit {
       page.email = { email: page.clientDetails.email };
 
       page.formData1 = new FormData();
-      page.formData1.append('proof_of_residence', page.file1);
-      console.log('Proof: ', page.formData1);
+      page.formData1.append('name', page.file1);
+      console.log('Proof: ', page.formData1.filename);
       bh = this.sd_qkwU4mGrPepSNHo6(bh);
       //appendnew_next_sd_GDm1BhSk7k93dxmO
       return bh;

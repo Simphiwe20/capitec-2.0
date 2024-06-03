@@ -16,6 +16,14 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-confirmComponent
+import { confirmComponent } from '../components/PopUps/confirm.component';
+//CORE_REFERENCE_IMPORT-sucessComponent
+import { sucessComponent } from '../components/shared/sucess.component';
+//CORE_REFERENCE_IMPORT-sign_inComponent
+import { sign_inComponent } from '../components/PopUps/sign_in.component';
+//CORE_REFERENCE_IMPORT-loaderComponent
+import { loaderComponent } from '../components/shared/loader.component';
 //CORE_REFERENCE_IMPORT-profileComponent
 import { profileComponent } from '../components/more/profile.component';
 //CORE_REFERENCE_IMPORT-Our_privacy_centerComponent
@@ -196,6 +204,14 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-confirmComponent
+  confirmComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-sucessComponent
+  sucessComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-sign_inComponent
+  sign_inComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loaderComponent
+  loaderComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-profileComponent
   profileComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-Our_privacy_centerComponent
@@ -458,7 +474,9 @@ export const appRoutes = [
     component: buy_prepaid_mobile_add_benComponent,
   },
   { path: 'buy_prepaid', component: buy_prepaidComponent },
-  { path: '', redirectTo: '/ft-landing', pathMatch: 'full' },
+  { path: 'capitec', component: loaderComponent },
+  { path: 'sucess', component: sucessComponent },
+  { path: '', redirectTo: '/capitec', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END
