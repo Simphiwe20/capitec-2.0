@@ -1287,6 +1287,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
+                                    "height-50px",
                                     "bg-white",
                                     "padding-0px-15px"
                                 ],
@@ -1330,10 +1331,17 @@
                                 "_attrDef": "p"
                             },
                             {
-                                "_key": "routerLink",
-                                "_value": "/logged_in_landing/pay_user",
+                                "_key": "*ngFor",
+                                "_value": "let ben of page.ben",
                                 "_type": "kv",
                                 "_attrDef": "c"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "routeBen(ben)",
+                                "_type": "kv",
+                                "_attrDef": "c",
+                                "_customAttributeFlag": "customInput"
                             }
                         ],
                         "0237ab3d-e953-97d6-45ef-b77465eeede9": {
@@ -1465,47 +1473,6 @@
                                         "_attrDef": "p"
                                     }
                                 ],
-                                "c9507151-1ced-51e1-489f-19320645ccfa": {
-                                    "paletteKey": "NG-icon",
-                                    "parentEditorKey": "71c131bf-0ea8-e3d5-1893-896f82b44ca0",
-                                    "isCommented": "true",
-                                    "commentid": "1716493337236",
-                                    "designerReference": [
-                                        {
-                                            "_key": "style",
-                                            "_value": "",
-                                            "_type": "kv",
-                                            "_attrDef": "p"
-                                        },
-                                        {
-                                            "_key": "class",
-                                            "_value": [
-                                                "navy"
-                                            ],
-                                            "_type": "dav",
-                                            "_attrDef": "p"
-                                        },
-                                        {
-                                            "_key": "IconName",
-                                            "_value": "face",
-                                            "_type": "a",
-                                            "_attrDef": "p",
-                                            "_useAsLabel": true
-                                        },
-                                        {
-                                            "_key": "[inline]",
-                                            "_value": "",
-                                            "_type": "kv",
-                                            "_attrDef": "p"
-                                        },
-                                        {
-                                            "_key": "color",
-                                            "_value": "",
-                                            "_type": "kv",
-                                            "_attrDef": "p"
-                                        }
-                                    ]
-                                },
                                 "c547f3ad-96f8-0cbf-e971-85d79e37e003": {
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "71c131bf-0ea8-e3d5-1893-896f82b44ca0",
@@ -1715,7 +1682,7 @@
                                             },
                                             {
                                                 "_key": "html",
-                                                "_value": "N",
+                                                "_value": "{{ben.benName.split(\" \")[0][0]}}",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             }
@@ -2054,7 +2021,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "Nicholas",
+                                                    "_value": "{{ben.benName}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -2137,22 +2104,21 @@
                                             },
                                             {
                                                 "_key": "class",
-                                                "_value": [
-                                                    "no-margin-top"
-                                                ],
+                                                "_value": [],
                                                 "_type": "dav",
                                                 "_attrDef": "p"
                                             },
                                             {
                                                 "_key": "htmlElement",
-                                                "_value": "p",
+                                                "_value": "small",
                                                 "_type": "dav",
                                                 "_attrDef": "p",
-                                                "_useAsLabel": true
+                                                "_useAsLabel": true,
+                                                "_customAttributeFlag": "customInput"
                                             },
                                             {
                                                 "_key": "tagType",
-                                                "_value": "p",
+                                                "_value": "small",
                                                 "_type": "a",
                                                 "_attrDef": "p",
                                                 "_visibility": false
@@ -2332,7 +2298,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "<small>Last paid: 19 May 2023 17:09</small>",
+                                                    "_value": "{{ben.createdDate | date}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }

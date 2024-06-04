@@ -124,7 +124,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.electricForm = {\n    amount: \"\",\n    to: page.selected.meterNumber,\n    accountNumber: page.user.accountNumber,\n    transDate: new Date(),\n    transType: 'Electricity'\n}",
+        "script": "page.electricForm = {\n    amount: \"\",\n    to: page.selected.meterNumber,\n    accountNumber: page.user.accountNumber,\n    transDate: new Date(),\n    transType: 'Electricity'\n}\n\nconsole.log(\"balance ==>\" ,page.user.available_balance)",
         "functionName": "sd_5J3EDkMgd2lTTFEO",
         "category": "Function",
         "x": 490,
@@ -473,7 +473,9 @@
         "x": 1165,
         "y": 120,
         "wires": [
-            []
+            [
+                "sd_9b9Einc3AjLeOByW"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -541,7 +543,9 @@
             "value": "5000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -644,6 +648,7 @@
         "nodeType": "flow",
         "name": "update user",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.newUser",
         "urlMappingObj": {
@@ -651,8 +656,10 @@
             "mapVarValue": "newUser"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -668,9 +675,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "updateUser",
         "category": "HTTP",
@@ -713,6 +722,26 @@
             [
                 "sd_AYyH1xdjdWRd4Vis"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9b9Einc3AjLeOByW",
+        "type": "Navigation",
+        "z": "sd_oJk8mXNFSsJmDo7c",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/sucess",
+        "functionName": "sd_9b9Einc3AjLeOByW",
+        "category": "Navigation",
+        "x": 1220,
+        "y": 200,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

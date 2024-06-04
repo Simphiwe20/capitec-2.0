@@ -70,8 +70,8 @@ export class landingComponent {
 
   sd_hSXkVqbQP8cTtYzI(bh) {
     try {
-      localStorage.setItem('accNo', JSON.stringify(this.page.user));
-      bh = this.sd_bUfMVskuDy7DcZDk(bh);
+      this.page.result = JSON.parse(sessionStorage.getItem('accNo'));
+      bh = this.sd_hI3gfhVm39WC4LqQ(bh);
       //appendnew_next_sd_hSXkVqbQP8cTtYzI
       return bh;
     } catch (e) {
@@ -79,24 +79,12 @@ export class landingComponent {
     }
   }
 
-  sd_bUfMVskuDy7DcZDk(bh) {
-    try {
-      this.page.result = JSON.parse(localStorage.getItem('accNo'));
-      bh = this.sd_hI3gfhVm39WC4LqQ(bh);
-      //appendnew_next_sd_bUfMVskuDy7DcZDk
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_bUfMVskuDy7DcZDk');
-    }
-  }
-
   sd_hI3gfhVm39WC4LqQ(bh) {
     try {
       const page = this.page;
-      console.log(typeof page.result);
-      page.user = page.result.fullName;
+      page.user = page.result.fullName.split(' ')[0];
       console.log(page.user);
-
+      console.log(page.result.fullName.split(' '));
       //appendnew_next_sd_hI3gfhVm39WC4LqQ
       return bh;
     } catch (e) {

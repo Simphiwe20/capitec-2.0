@@ -121,6 +121,8 @@ export class electricityComponent {
         transDate: new Date(),
         transType: 'Electricity',
       };
+
+      console.log('balance ==>', page.user.available_balance);
       //appendnew_next_sd_5J3EDkMgd2lTTFEO
       return bh;
     } catch (e) {
@@ -334,10 +336,25 @@ export class electricityComponent {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
         });
+      bh = this.sd_9b9Einc3AjLeOByW(bh);
       //appendnew_next_sd_4UJL3Q7xrHDyFXo1
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_4UJL3Q7xrHDyFXo1');
+    }
+  }
+
+  async sd_9b9Einc3AjLeOByW(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/sucess');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_9b9Einc3AjLeOByW
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_9b9Einc3AjLeOByW');
     }
   }
 

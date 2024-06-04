@@ -20,22 +20,21 @@
         </div>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="bg-white padding-0px-15px" fxLayoutAlign="space-between center" [fxShow]="true" routerLink="/logged_in_landing/pay_user">
+        <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="height-50px bg-white padding-0px-15px" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let ben of page.ben" (click)="routeBen(ben)">
           <div fxLayout="row wrap" class="poppins" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
             <div fxLayout="column wrap" class="round square-30px bg-n-v padding-left" fxLayoutAlign="center center" [fxShow]="true">
               <div class="color-w">
-                N</div>
+                {{ben.benName.split(&quot; &quot;)[0][0]}}
+              </div>
             </div>
             <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
               <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <p class="no-margin">
-                  Nicholas</p>
-              </div>
-              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <p class="no-margin-top">
-                  <small>Last paid: 19 May 2023 17:09</small>
+                  {{ben.benName}}
                 </p>
               </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><small>
+                  {{ben.createdDate | date}}</small></div>
             </div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">chevron_right</mat-icon></div>

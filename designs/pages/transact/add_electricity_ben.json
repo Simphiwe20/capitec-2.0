@@ -243,7 +243,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -283,7 +285,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -398,6 +402,28 @@
         "functionName": "sd_YhPqqvVDcXPL2FM5",
         "category": "HTTP",
         "x": 885,
+        "y": 160,
+        "wires": [
+            [
+                "sd_2TVgBTSmMuYcgjkK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "add_electricity_benComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_2TVgBTSmMuYcgjkK",
+        "type": "Navigation",
+        "z": "sd_D1hMzChH8qZpINvk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/sucess",
+        "functionName": "sd_2TVgBTSmMuYcgjkK",
+        "category": "Navigation",
+        "x": 960,
         "y": 160,
         "wires": [
             []

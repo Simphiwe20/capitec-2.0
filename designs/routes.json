@@ -249,8 +249,16 @@
             "component": "buy_prepaidComponent"
         },
         {
+            "path": "capitec",
+            "component": "loaderComponent"
+        },
+        {
+            "path": "sucess",
+            "component": "sucessComponent"
+        },
+        {
             "path": "''",
-            "redirectTo": "/ft-landing",
+            "redirectTo": "/capitec",
             "pathMatch": "full",
             "default": true
         },

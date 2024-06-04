@@ -45,7 +45,7 @@
                 "textIp": "userPin",
                 "typedIpValue": {
                     "type": "literal",
-                    "value": "{pin : ''}"
+                    "value": "{remotePin : ''}"
                 }
             }
         ],
@@ -247,7 +247,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.result)\nbh.user = bh.result.find((user:any) => user.re == page.userPin.pin)\n\n\nconsole.log(bh.user)\n\n\n// console.log(page.accNo.accNo)\n// if( bh.user.accountNumber == page.accNo.accNo) {\n//     console.log('Account numbers match ')\n// }else {\n//     console.log('Doesn\\'t match')\n// }\n//  if(!bh.user) {\n//           alert(\"user does not exist!\");\n//           return\n//         } else {\n//           alert(\"hi\")\n//           console.log(bh.user)\n//         }",
+        "script": "console.log(bh.result)\nbh.user = bh.result.find((user:any) => user.re == page.userPin.remotePin)\n\n\nconsole.log(bh.user)\n\n\n// console.log(page.accNo.accNo)\n// if( bh.user.accountNumber == page.accNo.accNo) {\n//     console.log('Account numbers match ')\n// }else {\n//     console.log('Doesn\\'t match')\n// }\n//  if(!bh.user) {\n//           alert(\"user does not exist!\");\n//           return\n//         } else {\n//           alert(\"hi\")\n//           console.log(bh.user)\n//         }",
         "functionName": "sd_qaie8aKatWjdRniB",
         "category": "Function",
         "x": 605,
@@ -269,9 +269,9 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "property": "user.pin",
+        "property": "user.remotePin",
         "propertyType": "bh",
-        "propertyGv": "bh.user.pin",
+        "propertyGv": "bh.user.remotePin",
         "rules": [
             {
                 "t": "eq",
@@ -635,7 +635,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
