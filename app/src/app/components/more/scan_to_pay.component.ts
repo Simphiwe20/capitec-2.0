@@ -258,7 +258,9 @@ export class scan_to_payComponent {
         this.sdService.getPathAndQParamsObj('/logged_in_landing/transact');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       bh = this.sd_xIpocRFFjVFYzgon(bh);
       //appendnew_next_sd_2v1ZO0yayUcVMDFb
       return bh;

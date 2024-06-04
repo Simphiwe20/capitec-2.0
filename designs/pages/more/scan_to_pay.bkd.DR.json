@@ -1222,7 +1222,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<ngx-scanner-qrcode #action=\"scanner\" class=\"full-height\"></ngx-scanner-qrcode>\r\n\r\n<!-- Loading -->\r\n<p *ngIf=\"action.isLoading\">⌛ Loading...</p>\r\n\r\n<!-- start -->\r\n<button (click)=\"action.isStart ? action.stop() : action.start()\">{{action.isStart ? 'Stop' : 'Start'}}</button>",
+                                    "_value": "<ngx-scanner-qrcode #action=\"scanner\" class=\"full-height\"></ngx-scanner-qrcode>\r\n\r\n<!-- Loading -->\r\n<p *ngIf=\"action.isLoading\">⌛ Loading...</p>\r\n\r\n<!-- start -->\r\n<center>\r\n<button class=\"bg-blue margin-top-16px scan-button color-w\" mat-flat-button   (click)=\"action.isStart ? action.stop() : action.start()\">{{action.isStart ? 'Stop' : 'Start'}}</button>\r\n</center>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }

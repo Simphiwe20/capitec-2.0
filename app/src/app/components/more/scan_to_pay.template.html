@@ -19,7 +19,9 @@
           <p *ngIf="action.isLoading">&#x231B; Loading...</p>
 
           <!-- start -->
-          <button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? &apos;Stop&apos; : &apos;Start&apos;}}</button>
+          <center>
+            <button class="bg-blue margin-top-16px scan-button color-w" mat-flat-button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? &apos;Stop&apos; : &apos;Start&apos;}}</button>
+          </center>
         </div>
       </div>
     </div>

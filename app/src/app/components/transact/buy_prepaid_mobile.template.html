@@ -1,4 +1,12 @@
-<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true"><mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+    <mat-label></mat-label>
+    <mat-select placeholder="Select" [required]="false">
+      <ng-template ngFor let-option [ngForOf] let-i="index">
+        <mat-option [value]></mat-option>
+      </ng-template>
+    </mat-select>
+
+  </mat-form-field>
   <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="row wrap" style="height:60px;" class="padding-0px-15px poppins bg-blue" fxLayoutAlign="space-between center" [fxShow]="true"><mat-icon style="font-size: xx-large" class="color-w" routerLink="/logged_in_landing/home">arrow_back</mat-icon>

@@ -502,7 +502,7 @@ hr {
 
 .scan-vid {
     video {
-        height: 100%;
+        height: 100% !important;
     }
 }
 
@@ -632,6 +632,12 @@ hr {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.scan-button{
+    margin-top: 1em !important;
+    width: 80%;
+    font-size: xx-large;
 }
 
 .mat-tab-body-wrapper, bh-cards_landing, .mat-tab-group, bh-home, bh-transact, bh-favourites{

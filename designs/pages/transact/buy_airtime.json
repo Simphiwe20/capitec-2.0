@@ -130,7 +130,7 @@
         "functionName": "sd_QUUQx6qGjyX1roiE",
         "category": "General",
         "x": 405,
-        "y": 120,
+        "y": 140,
         "wires": [],
         "__ssdTypeInputs__": {
             "logObject": {
@@ -453,6 +453,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -460,8 +461,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -477,9 +480,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_KdGpmXUoMa47uI0L",
         "category": "HTTP",
