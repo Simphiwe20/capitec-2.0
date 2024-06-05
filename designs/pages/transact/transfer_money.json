@@ -281,7 +281,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -329,6 +331,7 @@
         "nodeType": "flow",
         "name": "post",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -336,8 +339,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -353,9 +358,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "post",
         "category": "HTTP",
@@ -379,6 +386,7 @@
         "nodeType": "flow",
         "name": "update",
         "method": "put",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url_update",
         "urlMappingObj": {
@@ -386,8 +394,10 @@
             "mapVarValue": "url_update"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -403,9 +413,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "update",
         "category": "HTTP",
@@ -429,6 +441,7 @@
         "nodeType": "flow",
         "name": "GETT",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.user",
         "urlMappingObj": {
@@ -436,8 +449,10 @@
             "mapVarValue": "user"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -453,9 +468,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "gett",
         "category": "HTTP",
@@ -533,7 +550,7 @@
         "viewType": "client-pages",
         "nodeType": "flow",
         "name": "",
-        "path": "/logged_in_landing/transact",
+        "path": "/sucess",
         "functionName": "sd_Q1krDBj37a4s2o1o",
         "category": "Navigation",
         "x": 1000,
@@ -609,7 +626,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -647,7 +666,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""

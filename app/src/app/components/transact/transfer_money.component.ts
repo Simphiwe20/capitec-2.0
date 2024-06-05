@@ -298,7 +298,7 @@ export class transfer_moneyComponent {
   async sd_Q1krDBj37a4s2o1o(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/logged_in_landing/transact');
+        this.sdService.getPathAndQParamsObj('/sucess');
       await this.__page_injector__
         .get(Router)
         .navigate([this.sdService.formatPathWithParams(path, undefined)]);
