@@ -2,7 +2,7 @@
   <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="column wrap" class="padding-20px height-60" fxLayoutAlign="center center" [fxShow]="true">
       <div fxLayout="column wrap" style="position:" class="height-90" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="column wrap" class="card-text z-index absolute" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.hide ===  true">
+        <div fxLayout="column wrap" class="relative card-text z-index" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.hide ===  true">
           <div>
             {{page.user.fullName}}
           </div>
