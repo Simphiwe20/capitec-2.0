@@ -1,0 +1,897 @@
+[
+    {
+        "id": "sd_DhseKfbPmhEGFeC0",
+        "type": "tab",
+        "createdDate": "2024-05-15T12:11:16.201Z",
+        "label": "set_temporary_limits",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_7sPVVw4tcW7QPwdl",
+        "type": "OnInit",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_7sPVVw4tcW7QPwdl",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_ioJMVOwHjtQSgVUe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_63L2pNyaQbb1Sb9e",
+        "type": "PageStart",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "show",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "show",
+        "category": "General",
+        "x": 60,
+        "y": 160,
+        "wires": [
+            [
+                "sd_OfVIsOQkcApx8mWl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_OfVIsOQkcApx8mWl",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "",
+        "functionName": "sd_OfVIsOQkcApx8mWl",
+        "category": "Function",
+        "x": 205,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KiCYp5dxbXPF8M3P",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.temp.cash_withdrawals = page.user.cash_withdrawal_limit_temp;\npage.temp.card_machine = page.user.card_purchases_limit_temp;\npage.temp.online_scan = page.user.online_scan_to_pay_phone_temp;\n\nbh.body = page.user\nconsole.log(page.temp)\n\n\n\n",
+        "functionName": "sd_KiCYp5dxbXPF8M3P",
+        "category": "Function",
+        "x": 85,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_z5VZ1Ag26oCf91Zt",
+        "type": "PageVariables",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "submitted",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "perm",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "cash_limit",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "online_limit",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "card_limit",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_z5VZ1Ag26oCf91Zt",
+        "category": "Function",
+        "x": 445,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_7U9OKnLQHGd6mCY1",
+        "type": "Storage",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh",
+            "value": "result"
+        },
+        "functionName": "sd_7U9OKnLQHGd6mCY1",
+        "category": "Storage",
+        "x": 465,
+        "y": 40,
+        "wires": [
+            [
+                "sd_8ol5ll5ShYS7BMqw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_VR4d1URNOLS3UqsQ",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('User ', bh.result)\npage.user = page.users.find(user => user.accountNumber === bh.result.accountNumber)\nconsole.log(page.user)\n\n\npage.temp = {\n    cash_withdrawals: `R${page.user.cash_withdrawal_limit_temp}`,\n    card_machine:`R${page.user.card_purchases_limit_temp}`,\n    online_scan:`R${page.user.online_scan_to_pay_phone_temp}`\n}",
+        "functionName": "sd_VR4d1URNOLS3UqsQ",
+        "category": "Function",
+        "x": 625,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_OYlyK2ys8A9o99Dd",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdURL + 'get-customers' \n\n",
+        "functionName": "sd_OYlyK2ys8A9o99Dd",
+        "category": "Function",
+        "x": 385,
+        "y": 40,
+        "wires": [
+            [
+                "sd_7U9OKnLQHGd6mCY1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dMrJhBcCfIBuRRfi",
+        "type": "Environment",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_dMrJhBcCfIBuRRfi",
+        "category": "General",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            [
+                "sd_OYlyK2ys8A9o99Dd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8ol5ll5ShYS7BMqw",
+        "type": "HttpRequest",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.users",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "users"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_8ol5ll5ShYS7BMqw",
+        "category": "HTTP",
+        "x": 545,
+        "y": 40,
+        "wires": [
+            [
+                "sd_VR4d1URNOLS3UqsQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ioJMVOwHjtQSgVUe",
+        "type": "PageVariables",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "submitted",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "temp",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "isChecked",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "isTicked",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "isCorrect",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "card_limit",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "online_limit",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "cash_limit",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_ioJMVOwHjtQSgVUe",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_dMrJhBcCfIBuRRfi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_O1NM9RhClYpeAYiB",
+        "type": "PageStart",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "updateTemp",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "updateTemp",
+        "category": "General",
+        "x": 185,
+        "y": 540,
+        "wires": [
+            [
+                "sd_fqrPUjJ70mAYPDBg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "set_temporary_limitsComponent"
+    },
+    {
+        "id": "sd_fqrPUjJ70mAYPDBg",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true",
+        "functionName": "sd_fqrPUjJ70mAYPDBg",
+        "category": "Function",
+        "x": 325,
+        "y": 540,
+        "wires": [
+            [
+                "sd_csL1XMRbiDyuag7E"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_csL1XMRbiDyuag7E",
+        "type": "PageSwitch",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "form.valid",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.form.valid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_csL1XMRbiDyuag7E",
+        "category": "Function",
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "sd_4TwAIW3MqzWl0pbg"
+            ],
+            [
+                "sd_8yuFYSRFd0h8SevV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8yuFYSRFd0h8SevV",
+        "type": "SnackBar",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "All fields are required"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_8yuFYSRFd0h8SevV",
+        "category": "General",
+        "x": 555,
+        "y": 600,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oDMPVmixFAb0I9po",
+        "type": "Environment",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_oDMPVmixFAb0I9po",
+        "category": "General",
+        "x": 1005,
+        "y": 420,
+        "wires": [
+            [
+                "sd_Vk3kAec54HmCo4hD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Vk3kAec54HmCo4hD",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdUrl + \"update\"\n\n\n",
+        "functionName": "sd_Vk3kAec54HmCo4hD",
+        "category": "Function",
+        "x": 1105,
+        "y": 420,
+        "wires": [
+            [
+                "sd_OlpenlpWNho400AK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_OlpenlpWNho400AK",
+        "type": "HttpRequest",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.user",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "user"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_OlpenlpWNho400AK",
+        "category": "HTTP",
+        "x": 1185,
+        "y": 420,
+        "wires": [
+            [
+                "sd_j2TEP8FyYdRbtL3E"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_j2TEP8FyYdRbtL3E",
+        "type": "SnackBar",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Permanent limits successfully updated"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_j2TEP8FyYdRbtL3E",
+        "category": "General",
+        "x": 1265,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4TwAIW3MqzWl0pbg",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.perm)\n\npage.user.cash_withdrawal_limit_temp = Number(page.temp.cash_withdrawals.substr(1))\npage.user.card_purchases_limit_temp = Number(page.temp.card_machine .substr(1))\npage.user.online_scan_to_pay_phone_temp = Number(page.temp.online_scan.substr(1))\n\n\n\nconsole.log(page.user)",
+        "functionName": "sd_4TwAIW3MqzWl0pbg",
+        "category": "Function",
+        "x": 545,
+        "y": 480,
+        "wires": [
+            [
+                "sd_GODPDOyZaGZLBuxD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GODPDOyZaGZLBuxD",
+        "type": "PageSwitch",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.cash_withdrawal_limit",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.user.cash_withdrawal_limit",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "5000",
+                "vt": "num",
+                "gv": "5000"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_GODPDOyZaGZLBuxD",
+        "category": "Function",
+        "x": 645,
+        "y": 420,
+        "wires": [
+            [
+                "sd_YLIznlzhWT4Y50v0"
+            ],
+            [
+                "sd_y6Y3sgK5vdUKSoKq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YLIznlzhWT4Y50v0",
+        "type": "PageSwitch",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.card_purchases_limit ",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.user.card_purchases_limit ",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "50000",
+                "vt": "num",
+                "gv": "50000"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_YLIznlzhWT4Y50v0",
+        "category": "Function",
+        "x": 745,
+        "y": 420,
+        "wires": [
+            [
+                "sd_0UF2pWYkOSmkmXHn"
+            ],
+            [
+                "sd_3XD1MU1eNNZrpevA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0UF2pWYkOSmkmXHn",
+        "type": "PageSwitch",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.online_scan_to_pay_phone",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.user.online_scan_to_pay_phone",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "50000",
+                "vt": "num",
+                "gv": "50000"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_0UF2pWYkOSmkmXHn",
+        "category": "Function",
+        "x": 865,
+        "y": 420,
+        "wires": [
+            [
+                "sd_oDMPVmixFAb0I9po"
+            ],
+            [
+                "sd_SwWu2MYjn2gODpTj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_y6Y3sgK5vdUKSoKq",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.cash_limit = true",
+        "functionName": "sd_y6Y3sgK5vdUKSoKq",
+        "category": "Function",
+        "x": 725,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3XD1MU1eNNZrpevA",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.card_limit = true",
+        "functionName": "sd_3XD1MU1eNNZrpevA",
+        "category": "Function",
+        "x": 825,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_SwWu2MYjn2gODpTj",
+        "type": "Script",
+        "z": "sd_DhseKfbPmhEGFeC0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.online_limit = true",
+        "functionName": "sd_SwWu2MYjn2gODpTj",
+        "category": "Function",
+        "x": 945,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "set_temporary_limitsComponent",
+        "generated": true
+    }
+]

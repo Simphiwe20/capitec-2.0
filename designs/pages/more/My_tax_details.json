@@ -1,0 +1,148 @@
+[
+    {
+        "id": "sd_QJlpQ5J1qA6fC96v",
+        "type": "tab",
+        "createdDate": "2024-05-23T07:51:25.574Z",
+        "label": "My_tax_details",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "My_tax_detailsComponent"
+    },
+    {
+        "id": "sd_fAuSRz4NYVBWFC8I",
+        "type": "OnInit",
+        "z": "sd_QJlpQ5J1qA6fC96v",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_fAuSRz4NYVBWFC8I",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_sBqoh9RnRM2EeW5m"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "My_tax_detailsComponent"
+    },
+    {
+        "id": "sd_rqecVWnvHdsCFSLV",
+        "type": "PageVariables",
+        "z": "sd_QJlpQ5J1qA6fC96v",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "location",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_rqecVWnvHdsCFSLV",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "My_tax_detailsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_g9zMYRTxJUBBfB1e",
+        "type": "PageStart",
+        "z": "sd_QJlpQ5J1qA6fC96v",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "back",
+        "category": "General",
+        "x": 65,
+        "y": 140,
+        "wires": [
+            [
+                "sd_67qZaMwcXYFs19s9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "My_tax_detailsComponent"
+    },
+    {
+        "id": "sd_67qZaMwcXYFs19s9",
+        "type": "Script",
+        "z": "sd_QJlpQ5J1qA6fC96v",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.location.back();",
+        "functionName": "sd_67qZaMwcXYFs19s9",
+        "category": "Function",
+        "x": 165,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "My_tax_detailsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_sBqoh9RnRM2EeW5m",
+        "type": "UseDependency",
+        "z": "sd_QJlpQ5J1qA6fC96v",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Location",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "location"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/common",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_sBqoh9RnRM2EeW5m",
+        "category": "Function",
+        "x": 100,
+        "y": 20,
+        "wires": [
+            [
+                "sd_rqecVWnvHdsCFSLV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "My_tax_detailsComponent",
+        "generated": true
+    }
+]

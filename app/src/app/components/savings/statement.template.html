@@ -1,0 +1,70 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="z-index fixed-width fixed padding-0px-15px border-btm-cyan-b color-w bg-blue height-50px" fxLayoutAlign="start center" [fxShow]="true"><mat-icon>arrow_back</mat-icon>
+      <div fxLayout="column wrap" fxFlex="92" fxLayoutAlign="start center" [fxShow]="true">
+        <p class="no-margin poppins">
+          Statement</p>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="margin-t-50px" fxLayoutAlign="start stretch" [fxShow]="true"><mat-tab-group mat-align-tabs="start"><mat-tab label="View" class="hide-scrollbar full-height">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" class="padding-0px-15px height-50px" fxLayoutAlign="start center" [fxShow]="true">
+              <h4 class="poppins no-margin">
+                Select your date range</h4>
+            </div>
+            <div fxLayout="column wrap" class="bg-white" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let option of page.options">
+              <div fxLayout="row wrap" class="padding-0px-15px height-50px" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p class="no-margin poppins">
+                    {{option.name}}
+                  </p><small class="grey-color">
+                    {{option?.range}}
+                  </small>
+                </div><mat-radio-button [required]="false"></mat-radio-button>
+              </div>
+              <div class="padding-0px-15px">
+                <hr class="no-margin">
+              </div>
+            </div>
+            <div fxLayout="column wrap" class="margin-b-16px margin-top-16px padding-0px-15px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" class="get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="generatePdf()">View Statement</button></div>
+              <div fxLayout="column wrap" class="blue-border-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-b">Share Statetement</button></div>
+            </div>
+          </div>
+        </mat-tab><mat-tab label="Email" class="hide-scrollbar">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" class="padding-0px-15px height-50px" fxLayoutAlign="center stretch" [fxShow]="true">
+              <h5 class="poppins no-margin">
+                Details</h5>
+            </div>
+            <div fxLayout="column wrap" class="height-50px box-shadow-grey bg-white" fxLayoutAlign="start stretch" [fxShow]="true"><small class="padding-0px-15px no-margin poppins">
+                Email address</small>
+              <h5 class="padding-0px-15px no-margin poppins">
+                {{page.user?.email}}
+              </h5>
+            </div>
+            <div fxLayout="row wrap" class="padding-0px-15px height-50px" fxLayoutAlign="start center" [fxShow]="true">
+              <h4 class="poppins no-margin">
+                Select your date range</h4>
+            </div>
+            <div fxLayout="column wrap" class="bg-white" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let option of page.options">
+              <div fxLayout="row wrap" class="padding-0px-15px height-50px" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p class="no-margin poppins">
+                    {{option.name}}
+                  </p><small class="grey-color">
+                    {{option?.range}}
+                  </small>
+                </div><mat-radio-button [required]="false"></mat-radio-button>
+              </div>
+              <div class="padding-0px-15px">
+                <hr class="no-margin">
+              </div>
+            </div>
+            <div fxLayout="column wrap" class="margin-top-16px padding-0px-15px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" class="get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w">Send Statement</button></div>
+            </div>
+          </div>
+        </mat-tab></mat-tab-group></div>
+  </div>
+</div>

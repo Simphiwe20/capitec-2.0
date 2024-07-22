@@ -1,0 +1,151 @@
+[
+    {
+        "id": "sd_DPiEUfxqrWsWl3UU",
+        "type": "tab",
+        "createdDate": "2024-06-23T20:33:26.912Z",
+        "label": "confirm_reg_cancellation",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "confirm_reg_cancellationComponent"
+    },
+    {
+        "id": "sd_snG1FzZXi7NCbxQn",
+        "type": "OnInit",
+        "z": "sd_DPiEUfxqrWsWl3UU",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_snG1FzZXi7NCbxQn",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_V54YWIgpEtru80rZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "confirm_reg_cancellationComponent"
+    },
+    {
+        "id": "sd_V54YWIgpEtru80rZ",
+        "type": "PageVariables",
+        "z": "sd_DPiEUfxqrWsWl3UU",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_V54YWIgpEtru80rZ",
+        "category": "Function",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "confirm_reg_cancellationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yNq1oj4Qi4UE0I4l",
+        "type": "PageStart",
+        "z": "sd_DPiEUfxqrWsWl3UU",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "routeToFtLanding",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "routeToFtLanding",
+        "category": "General",
+        "x": 65,
+        "y": 160,
+        "wires": [
+            [
+                "sd_idM0DwSZNUNVC87o"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "confirm_reg_cancellationComponent"
+    },
+    {
+        "id": "sd_idM0DwSZNUNVC87o",
+        "type": "Navigation",
+        "z": "sd_DPiEUfxqrWsWl3UU",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/ft-landing",
+        "functionName": "sd_idM0DwSZNUNVC87o",
+        "category": "Navigation",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "confirm_reg_cancellationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_gGH0cnDL4raxvwb8",
+        "type": "PageStart",
+        "z": "sd_DPiEUfxqrWsWl3UU",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "closeDialog",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "closeDialog",
+        "category": "General",
+        "x": 65,
+        "y": 260,
+        "wires": [
+            [
+                "sd_ilMyhbYdOPfQDDJP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "confirm_reg_cancellationComponent"
+    },
+    {
+        "id": "sd_ilMyhbYdOPfQDDJP",
+        "type": "CloseDialog",
+        "z": "sd_DPiEUfxqrWsWl3UU",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "data": "this.page.dialogData",
+        "functionName": "sd_ilMyhbYdOPfQDDJP",
+        "category": "Dialog",
+        "x": 280,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "dialogData",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "confirm_reg_cancellationComponent",
+        "generated": true
+    }
+]

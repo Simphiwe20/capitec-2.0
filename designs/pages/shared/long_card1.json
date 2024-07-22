@@ -1,0 +1,226 @@
+[
+    {
+        "id": "sd_JyGsTdQtpNCFYmkF",
+        "type": "tab",
+        "createdDate": "2024-05-20T19:32:31.992Z",
+        "label": "long_card1",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "long_card1Component"
+    },
+    {
+        "id": "sd_imEtEtjXTL2ORD73",
+        "type": "OnInit",
+        "z": "sd_JyGsTdQtpNCFYmkF",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_imEtEtjXTL2ORD73",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 100,
+        "wires": [
+            [
+                "sd_upWyUuRsoqHw7gYN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "long_card1Component"
+    },
+    {
+        "id": "sd_nQcmnUEbmmFRTASi",
+        "type": "PageVariables",
+        "z": "sd_JyGsTdQtpNCFYmkF",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "cardsInfor",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "transact",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "inbox",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_nQcmnUEbmmFRTASi",
+        "category": "Function",
+        "x": 265,
+        "y": 100,
+        "wires": [
+            [
+                "sd_R7SWodKRPlzn2QHr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_card1Component",
+        "generated": true
+    },
+    {
+        "id": "sd_R7SWodKRPlzn2QHr",
+        "type": "Script",
+        "z": "sd_JyGsTdQtpNCFYmkF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.cardsInfor = [\n   {\n   card_Container:  {\n     title: 'Manage Card',\n     cards: [{image: '../../../assets/Web/Images/stop_card.jpeg', name: 'Stop Card'},\n        {image: '../../../assets/Web/Images/tap_to_pay.jpeg', name: 'Tap to pay'}]\n     }\n   },\n   {\n      card_Container: {\n      title: 'Manage daily limits',\n      cards: [{ name: 'Update permanent limits', routes: '/logged_in_landing/update_permanent_limit'},\n              { name: 'Set temporary limits', routes: '/logged_in_landing/update_temporary_limit'}]\n      }\n   }\n]\n\n\npage.transact = [\n   {\n   card_Container:  {\n     cards: [{image: '../../../assets/Web/Images/pay_beneficiary.jpeg', name: 'Pay beneficiary', routes: '/logged_in_landing/pay_beneficiary'},\n          {image: '../../../assets/Web/Images/payshap.jpeg', name: 'PayShap', routes: '/underconstruction'},\n          {image: '../../../assets/Web/Images/pay_bills.jpeg', name: 'Pay bills', routes: '/underconstruction'},\n          {image: '../../../assets/Web/Images/international_payment.jpeg', name: 'International payments', routes: '/underconstruction'}\n          ]\n     }\n   },\n   {\n      card_Container: {\n      cards: [{image: '../../../assets/Web/Images/mobile_prepaid.jpg', name: 'Buy prepaid mobile', routes: '/logged_in_landing/buy_prepaid_mobile'},\n          {image: '../../../assets/Web/Images/electricity.jpg', name: 'Buy electricity', routes: '/logged_in_landing/buy_electricity/pay_ben_electric'},\n          {image: '../../../assets/Web/Images/lotto.jpeg', name: 'Play Lotto', routes: '/underconstruction'},\n          {image: '../../../assets/Web/Images/buy_voucher.jpeg', name: 'Buy vouchers', routes: '/underconstruction'},\n          {image: '../../../assets/Web/Images/renew_licence_disk.jpeg', name: 'Renew licence disk', routes: '/underconstruction'}\n         ]\n      }\n   },\n   {\n      card_Container: {\n      cards: [{image: '../../../assets/Web/Images/transfer_money.jpeg', name: 'Transfer money', routes: '/logged_in_landing/transfer_money'},\n          {image: '../../../assets/Web/Images/future_dated.jpeg', name: 'Recurring/future-dated', routes: '/underconstruction'},\n          {image: '../../../assets/Web/Images/send_cash.jpeg', name: 'Send cash', routes: '/logged_in_landing/send_cash'}\n         ]\n      }\n   },\n   {\n      card_Container: {\n      cards: [{image: '../../../assets/Web/Images/scan_to_pay.jpeg', name: 'Scan to pay', routes: '/scan_to_pay'},\n          {image: '../../../assets/Web/Images/pay_me.jpeg', name: 'Pay me', routes: '/logged_in_landing/pay_me'},\n          {image: '../../../assets/Web/Images/capitec_pay.jpeg', name: 'Capitec pay', routes: '/logged_in_landing/capitec_pay'}\n         ]\n      }\n   },\n   {\n      card_Container: {\n      cards: [{image: '../../../assets/Web/Images/debit_orders.jpeg', name: 'Debit orders', routes: '/logged_in_landing/debit_orders'},\n          {image: '../../../assets/Web/Images/sars_efiling.jpeg', name: 'SARS eFilling', routes: '/logged_in_landing/sars_efilling'}\n         ]\n      }\n   }\n]\n\npage.inbox = [\n   {\n   card_Container:  {\n     cards: [{image: '../../../assets/Web/Images/important.jpeg', name: 'Keep your money safe', date: new Date()},\n        {image: '../../../assets/Web/Images/warning.jpeg', name: 'PayShap Payments', date: new Date()}]\n     }\n   }\n]\n\n// if(page.router.url == '/logged_in_landing/transact') {\n//       page.cardsInfor = page.transact\n// }else if(page.router.url == '/logged_in_landing/messages') {\n//       page.cardsInfor = page.inbox\n// }\n\nconsole.log(page.transact)",
+        "functionName": "sd_R7SWodKRPlzn2QHr",
+        "category": "Function",
+        "x": 365,
+        "y": 100,
+        "wires": [
+            [
+                "sd_riMs6rwXfSCR8v1E"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_card1Component",
+        "generated": true
+    },
+    {
+        "id": "sd_upWyUuRsoqHw7gYN",
+        "type": "UseDependency",
+        "z": "sd_JyGsTdQtpNCFYmkF",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_upWyUuRsoqHw7gYN",
+        "category": "Function",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "sd_nQcmnUEbmmFRTASi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_card1Component",
+        "generated": true
+    },
+    {
+        "id": "sd_riMs6rwXfSCR8v1E",
+        "type": "PageSwitch",
+        "z": "sd_JyGsTdQtpNCFYmkF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "router.url",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.router.url",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/logged_in_landing/transact",
+                "vt": "str",
+                "gv": "\"/logged_in_landing/transact\""
+            },
+            {
+                "t": "eq",
+                "v": "/logged_in_landing/messages",
+                "vt": "str",
+                "gv": "\"/logged_in_landing/messages\""
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_riMs6rwXfSCR8v1E",
+        "category": "Function",
+        "x": 465,
+        "y": 100,
+        "wires": [
+            [
+                "sd_NC9lZlWR7RKMbyOg"
+            ],
+            [
+                "sd_PTVeQE6CNIh6ZTJa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_card1Component",
+        "generated": true
+    },
+    {
+        "id": "sd_NC9lZlWR7RKMbyOg",
+        "type": "Script",
+        "z": "sd_JyGsTdQtpNCFYmkF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "      page.cardsInfor = page.transact\n",
+        "functionName": "sd_NC9lZlWR7RKMbyOg",
+        "category": "Function",
+        "x": 605,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_card1Component",
+        "generated": true
+    },
+    {
+        "id": "sd_PTVeQE6CNIh6ZTJa",
+        "type": "Script",
+        "z": "sd_JyGsTdQtpNCFYmkF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "      page.cardsInfor = page.inbox\n",
+        "functionName": "sd_PTVeQE6CNIh6ZTJa",
+        "category": "Function",
+        "x": 605,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_card1Component",
+        "generated": true
+    }
+]

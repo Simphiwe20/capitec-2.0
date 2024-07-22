@@ -1,0 +1,924 @@
+[
+    {
+        "id": "sd_VWX1Hs56TGV1AkWp",
+        "type": "tab",
+        "createdDate": "2024-05-17T10:25:55.117Z",
+        "label": "enter_remote_pin",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "enter_remote_pinComponent"
+    },
+    {
+        "id": "sd_5cKyaJCV93nGwrsf",
+        "type": "OnInit",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_5cKyaJCV93nGwrsf",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_5c33W7dZR9yPhak3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "enter_remote_pinComponent"
+    },
+    {
+        "id": "sd_5c33W7dZR9yPhak3",
+        "type": "PageVariables",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "remotePin",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{remotePin : ''}"
+                }
+            }
+        ],
+        "functionName": "sd_5c33W7dZR9yPhak3",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GVLEUzjjfPPMksom",
+        "type": "PageStart",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "submit",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "submit",
+        "category": "General",
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_MTuDkLpVXXt40Ru4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "enter_remote_pinComponent"
+    },
+    {
+        "id": "sd_MTuDkLpVXXt40Ru4",
+        "type": "Environment",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_MTuDkLpVXXt40Ru4",
+        "category": "General",
+        "x": 185,
+        "y": 200,
+        "wires": [
+            [
+                "sd_8NQkzbDQ2Matuf6t"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8NQkzbDQ2Matuf6t",
+        "type": "Script",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true;\nbh.url = page.ssdUrl + 'get-customers';\nbh.collection = \"users\"",
+        "functionName": "sd_8NQkzbDQ2Matuf6t",
+        "category": "Function",
+        "x": 285,
+        "y": 200,
+        "wires": [
+            [
+                "sd_o5gODXCH13pEkvKN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_o5gODXCH13pEkvKN",
+        "type": "PageSwitch",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "form.valid",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.form.valid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_o5gODXCH13pEkvKN",
+        "category": "Function",
+        "x": 385,
+        "y": 200,
+        "wires": [
+            [
+                "sd_R5hkVDoYsSgECEJa"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_R5hkVDoYsSgECEJa",
+        "type": "HttpRequest",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.collection",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "collection"
+        },
+        "resultMapping": "bh.result",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_R5hkVDoYsSgECEJa",
+        "category": "HTTP",
+        "x": 505,
+        "y": 200,
+        "wires": [
+            [
+                "sd_qaie8aKatWjdRniB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_qaie8aKatWjdRniB",
+        "type": "Script",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.result)\nbh.user = bh.result.find((user:any) => user.re == page.userPin.remotePin)\n\n\nconsole.log(bh.user)\n\n\n// console.log(page.accNo.accNo)\n// if( bh.user.accountNumber == page.accNo.accNo) {\n//     console.log('Account numbers match ')\n// }else {\n//     console.log('Doesn\\'t match')\n// }\n//  if(!bh.user) {\n//           alert(\"user does not exist!\");\n//           return\n//         } else {\n//           alert(\"hi\")\n//           console.log(bh.user)\n//         }",
+        "functionName": "sd_qaie8aKatWjdRniB",
+        "category": "Function",
+        "x": 605,
+        "y": 200,
+        "wires": [
+            [
+                "sd_VPaApkdilwcg4cMj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_VPaApkdilwcg4cMj",
+        "type": "PageSwitch",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.remotePin",
+        "propertyType": "bh",
+        "propertyGv": "bh.user.remotePin",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "pin.pin",
+                "vt": "this.page",
+                "gv": "this.page.pin.pin"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_VPaApkdilwcg4cMj",
+        "category": "Function",
+        "x": 720,
+        "y": 200,
+        "wires": [
+            [
+                "sd_JdCrk1LAV4NiX4sB"
+            ],
+            [
+                "sd_GCNmDBEuuIF3BVXL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JdCrk1LAV4NiX4sB",
+        "type": "SnackBar",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "true"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_JdCrk1LAV4NiX4sB",
+        "category": "General",
+        "x": 820,
+        "y": 160,
+        "wires": [
+            [
+                "sd_o2q5cc8zYpBisVFl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GCNmDBEuuIF3BVXL",
+        "type": "SnackBar",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "does not exist"
+        },
+        "action": {
+            "type": "str",
+            "value": "ok"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_GCNmDBEuuIF3BVXL",
+        "category": "General",
+        "x": 865,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_SlCBuWhheXfzmxWs",
+        "type": "Navigation",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_SlCBuWhheXfzmxWs",
+        "category": "Navigation",
+        "x": 1025,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_o2q5cc8zYpBisVFl",
+        "type": "Storage",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {
+            "type": "bh",
+            "value": "user"
+        },
+        "resultMapping": {},
+        "functionName": "sd_o2q5cc8zYpBisVFl",
+        "category": "Storage",
+        "x": 920,
+        "y": 180,
+        "wires": [
+            [
+                "sd_SlCBuWhheXfzmxWs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lLXz6zQ1hfHKK2hx",
+        "type": "PageStart",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "submit pin",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "submitPin",
+        "category": "General",
+        "x": 80,
+        "y": 360,
+        "wires": [
+            [
+                "sd_Nf75GrS4D61HJC0W"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "enter_remote_pinComponent"
+    },
+    {
+        "id": "sd_Nf75GrS4D61HJC0W",
+        "type": "PageSwitch",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "form.valid",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.form.valid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_Nf75GrS4D61HJC0W",
+        "category": "Function",
+        "x": 185,
+        "y": 360,
+        "wires": [
+            [
+                "sd_l6W1niEA0hfqyxb4"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_l6W1niEA0hfqyxb4",
+        "type": "PageSwitch",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "userPin.pin",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.userPin.pin",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "user[0].remotePin",
+                "vt": "this.page",
+                "gv": "this.page.user[0].remotePin"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_l6W1niEA0hfqyxb4",
+        "category": "Function",
+        "x": 305,
+        "y": 320,
+        "wires": [
+            [
+                "sd_9zp4ZRHxnodeedeB"
+            ],
+            [
+                "sd_4lIXJ2ZUSZ86YYd8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9zp4ZRHxnodeedeB",
+        "type": "Navigation",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_9zp4ZRHxnodeedeB",
+        "category": "Navigation",
+        "x": 445,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4lIXJ2ZUSZ86YYd8",
+        "type": "SnackBar",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Pin does not match"
+        },
+        "action": {
+            "type": "str",
+            "value": "ok"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_4lIXJ2ZUSZ86YYd8",
+        "category": "General",
+        "x": 445,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8BxyLsOLa5XIsosQ",
+        "type": "PageStart",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "pin",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "pin",
+        "category": "General",
+        "x": 45,
+        "y": 560,
+        "wires": [
+            [
+                "sd_OcKLZTVIb1JrHcrY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "enter_remote_pinComponent"
+    },
+    {
+        "id": "sd_2psBQLgPcP8d28km",
+        "type": "Script",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true;\n\nbh.url = page.ssdURL + 'log-in' \n\nconsole.log(bh.input.form)",
+        "functionName": "sd_2psBQLgPcP8d28km",
+        "category": "Function",
+        "x": 205,
+        "y": 560,
+        "wires": [
+            [
+                "sd_rYXNYMXOXirhGBzF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_VYPcz68JDQaqOgZg",
+        "type": "SnackBar",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "ENTER YOUR PIN"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_VYPcz68JDQaqOgZg",
+        "category": "General",
+        "x": 385,
+        "y": 640,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FldfSXF1A1WlNleN",
+        "type": "Storage",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_FldfSXF1A1WlNleN",
+        "category": "Storage",
+        "x": 385,
+        "y": 480,
+        "wires": [
+            [
+                "sd_sBgSTvH9bAEkkWHc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_rYXNYMXOXirhGBzF",
+        "type": "PageSwitch",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "form.valid",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.form.valid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_rYXNYMXOXirhGBzF",
+        "category": "Function",
+        "x": 305,
+        "y": 560,
+        "wires": [
+            [
+                "sd_FldfSXF1A1WlNleN"
+            ],
+            [
+                "sd_VYPcz68JDQaqOgZg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TCyg1YLAXkDoMTwT",
+        "type": "Navigation",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_TCyg1YLAXkDoMTwT",
+        "category": "Navigation",
+        "x": 705,
+        "y": 560,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_OcKLZTVIb1JrHcrY",
+        "type": "Environment",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_OcKLZTVIb1JrHcrY",
+        "category": "General",
+        "x": 125,
+        "y": 560,
+        "wires": [
+            [
+                "sd_2psBQLgPcP8d28km"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_l0xW7rEfbtlq3Lto",
+        "type": "HttpRequest",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.remotePin",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "remotePin"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_l0xW7rEfbtlq3Lto",
+        "category": "HTTP",
+        "x": 585,
+        "y": 480,
+        "wires": [
+            [
+                "sd_TCyg1YLAXkDoMTwT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_sBgSTvH9bAEkkWHc",
+        "type": "Script",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.remotePin.email = page.result.email\nconsole.log('Body: ', page.remotePin)",
+        "functionName": "sd_sBgSTvH9bAEkkWHc",
+        "category": "Function",
+        "x": 465,
+        "y": 480,
+        "wires": [
+            [
+                "sd_l0xW7rEfbtlq3Lto"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    }
+]

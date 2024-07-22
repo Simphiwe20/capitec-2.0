@@ -1,0 +1,253 @@
+[
+    {
+        "id": "sd_mYxr32GISpPtd8BG",
+        "type": "tab",
+        "createdDate": "2024-05-17T10:27:52.753Z",
+        "label": "prepare_for_selfie",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "prepare_for_selfieComponent"
+    },
+    {
+        "id": "sd_8xFIzc0OwxYZJ3QY",
+        "type": "OnInit",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_8xFIzc0OwxYZJ3QY",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 40,
+        "wires": [
+            [
+                "sd_xZjYdCKi3oyssZVv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepare_for_selfieComponent"
+    },
+    {
+        "id": "sd_xZjYdCKi3oyssZVv",
+        "type": "PageVariables",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "routeData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_xZjYdCKi3oyssZVv",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            [
+                "sd_BVwRS5ZRXiavXdKg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepare_for_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_BVwRS5ZRXiavXdKg",
+        "type": "NavigationData",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "queryParams",
+        "operation": "keys",
+        "key": "bh",
+        "resultMapping": "this.page.routeData",
+        "functionName": "sd_BVwRS5ZRXiavXdKg",
+        "category": "Navigation",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            [
+                "sd_M6mt3noUsGlCB4E8"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "key": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "routeData",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepare_for_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_M6mt3noUsGlCB4E8",
+        "type": "Log",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.routeData",
+        "functionName": "sd_M6mt3noUsGlCB4E8",
+        "category": "General",
+        "x": 445,
+        "y": 40,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "routeData",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepare_for_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9tIddj3O6b4z2LUS",
+        "type": "PageStart",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "takePic",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "takePic",
+        "category": "General",
+        "x": 45,
+        "y": 140,
+        "wires": [
+            [
+                "sd_kMV0n7791fndSeuo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepare_for_selfieComponent"
+    },
+    {
+        "id": "sd_kMV0n7791fndSeuo",
+        "type": "Navigation",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/take_selfie",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": {
+            "type": "this.page",
+            "value": "routeData"
+        },
+        "qparamsArray": "",
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_kMV0n7791fndSeuo",
+        "category": "Navigation",
+        "x": 165,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepare_for_selfieComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7lLEhVWxrdKBYrpM",
+        "type": "PageStart",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "goBack",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goBack",
+        "category": "General",
+        "x": 45,
+        "y": 240,
+        "wires": [
+            [
+                "sd_PwMQz2cHYldk2wCm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepare_for_selfieComponent"
+    },
+    {
+        "id": "sd_PwMQz2cHYldk2wCm",
+        "type": "PageCallService",
+        "z": "sd_mYxr32GISpPtd8BG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_crCsmk2T9Wr8C9jG",
+            "flowName": "backBtn"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "backBtn",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_PwMQz2cHYldk2wCm",
+        "category": "General",
+        "x": 165,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepare_for_selfieComponent",
+        "generated": true
+    }
+]

@@ -1,0 +1,416 @@
+[
+    {
+        "id": "sd_Y5l3A9yQrgmwkkfd",
+        "type": "tab",
+        "createdDate": "2024-05-20T09:18:35.111Z",
+        "label": "medium_card",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "medium_cardComponent"
+    },
+    {
+        "id": "sd_zH9yRGJhq9fOVEcJ",
+        "type": "OnInit",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_zH9yRGJhq9fOVEcJ",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 40,
+        "wires": [
+            [
+                "sd_JVuwiufKCahYP4tp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "medium_cardComponent"
+    },
+    {
+        "id": "sd_TqDatvZrTQgXaayj",
+        "type": "PageVariables",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "cardsInfor",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "isLanding",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            }
+        ],
+        "functionName": "sd_TqDatvZrTQgXaayj",
+        "category": "Function",
+        "x": 245,
+        "y": 40,
+        "wires": [
+            [
+                "sd_W30lVBTItkzfqGjd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "medium_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_W30lVBTItkzfqGjd",
+        "type": "Storage",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "myFav"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "cardsInfor"
+        },
+        "functionName": "sd_W30lVBTItkzfqGjd",
+        "category": "Storage",
+        "x": 325,
+        "y": 40,
+        "wires": [
+            [
+                "sd_dwviufaEUSxef65M"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "medium_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dwviufaEUSxef65M",
+        "type": "Script",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.router.url)\nif(page.router.url === '/landing') {\n    page.isLanding = true\n}\n\nlet card = {cards : [] }\nlet cards = []\npage.cardsInfor = page.cardsInfor?.forEach((_card: any, i: number) => {\n        if(card.cards.length <= 2) {\n           card.cards.push(_card) \n        }\n        console.log('2 lengths conditions', ((card.cards.length == 1 && (page.cardsInfor.length - 1 == i)) ));\n        console.log('length condition', card.cards.length == 1)\n        if((card.cards.length == 1 && (page.cardsInfor.length - 1 == i)) || card.cards.length == 2) {\n            cards.push(card)\n            card = {cards : [] }\n        }\n        // if()\n        // if(page.cardsInfor[i+1]){\n        //    cards.push({\n        //        \"cards\" : [].push(_card)\n        //    }) \n        // }else{\n        //     cards.push({\n        //        \"cards\" : [].push(_card)\n        //    }) \n        // }\n})\n\nconsole.log(cards)\nif(!cards.length) {\n    page.cardsInfor = [\n        {cards : [\n             {image: '../../../assets/Web/Images/pay_beneficiary.jpeg', name: 'Pay beneficiary', routes: '/logged_in_landing/pay_beneficiary'},\n             {image: '../../../assets/Web/Images/payshap.jpeg', name: 'PayShap', routes: '/logged_in_landing/pay_shap'},\n        ]},\n        {cards : [\n              {image: '../../../assets/Web/Images/pay_bills.jpeg', name: 'Pay bills', routes: '/logged_in_landing/pay_bills'},\n            {image: '../../../assets/Web/Images/international_payment.jpeg', name: 'International payments', routes: '/logged_in_landing/intrenational_payment'},\n        ]},\n            {cards : [\n               {image: '../../../assets/Web/Images/mobile_prepaid.jpg', name: 'Buy prepaid mobile', routes: '/logged_in_landing/buy_prepaid_mobile'},\n                {image: '../../../assets/Web/Images/electricity.jpg', name: 'Buy electricity', routes: '/logged_in_landing/buy_electricity/pay_ben_electric'}\n        ]}\n    ]\n}else {\n    page.cardsInfor = cards\n}",
+        "functionName": "sd_dwviufaEUSxef65M",
+        "category": "Function",
+        "x": 405,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "medium_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JVuwiufKCahYP4tp",
+        "type": "UseDependency",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_JVuwiufKCahYP4tp",
+        "category": "Function",
+        "x": 140,
+        "y": 40,
+        "wires": [
+            [
+                "sd_TqDatvZrTQgXaayj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "medium_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_js6IzSjvVrYbObgA",
+        "type": "PageStart",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "openDialog",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "routes",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "openDialog",
+        "category": "General",
+        "x": 40,
+        "y": 180,
+        "wires": [
+            [
+                "sd_wAQWWGn1bkfScgYs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "medium_cardComponent"
+    },
+    {
+        "id": "sd_wAQWWGn1bkfScgYs",
+        "type": "PageSwitch",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "isLanding",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.isLanding",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_wAQWWGn1bkfScgYs",
+        "category": "Function",
+        "x": 145,
+        "y": 180,
+        "wires": [
+            [
+                "sd_OnHdsQHSTs5zbViV"
+            ],
+            [
+                "sd_5aXVOIOXPEgYEsp6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "medium_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5aXVOIOXPEgYEsp6",
+        "type": "Navigation",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "pathMap": {
+            "type": "bh.input",
+            "value": "routes"
+        },
+        "functionName": "sd_5aXVOIOXPEgYEsp6",
+        "category": "Navigation",
+        "x": 265,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "medium_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_OnHdsQHSTs5zbViV",
+        "type": "OpenDialog",
+        "z": "sd_Y5l3A9yQrgmwkkfd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_lA3dVsZwBasBKkQy",
+            "label": "sign_in"
+        },
+        "relativePath": "app/components/PopUps/sign_in",
+        "data": "bh.input.routes",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "\"100%\"",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page",
+        "functionName": "sd_OnHdsQHSTs5zbViV",
+        "category": "Dialog",
+        "x": 265,
+        "y": 140,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "bh.input",
+                "value": "routes",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "str",
+                "value": "100%",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "medium_cardComponent",
+        "generated": true
+    }
+]

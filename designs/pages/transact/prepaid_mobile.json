@@ -1,0 +1,525 @@
+[
+    {
+        "id": "sd_4rZ3WgUbNz2tohJd",
+        "type": "tab",
+        "createdDate": "2024-06-16T15:24:32.606Z",
+        "label": "prepaid_mobile",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "prepaid_mobileComponent"
+    },
+    {
+        "id": "sd_FjiqlzOGvFHlx960",
+        "type": "PageVariables",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "initials",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "searchValue",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_FjiqlzOGvFHlx960",
+        "category": "Function",
+        "x": 165,
+        "y": 60,
+        "wires": [
+            [
+                "sd_BXQIbf3F22gMNuPk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_BXQIbf3F22gMNuPk",
+        "type": "Environment",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_BXQIbf3F22gMNuPk",
+        "category": "General",
+        "x": 245,
+        "y": 60,
+        "wires": [
+            [
+                "sd_JdjvJT6p0Tr28ypJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JdjvJT6p0Tr28ypJ",
+        "type": "Script",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdURL + 'get-beneficiary-money'\nconsole.log(bh.url)",
+        "functionName": "sd_JdjvJT6p0Tr28ypJ",
+        "category": "Function",
+        "x": 325,
+        "y": 60,
+        "wires": [
+            [
+                "sd_gh2xd36Ve3gfMBXt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_gh2xd36Ve3gfMBXt",
+        "type": "HttpRequest",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.ben",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "ben"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_gh2xd36Ve3gfMBXt",
+        "category": "HTTP",
+        "x": 405,
+        "y": 60,
+        "wires": [
+            [
+                "sd_5OF3UPUkrMHYNg2w"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xPxqDRfBvxyaSEfA",
+        "type": "Environment",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdurl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_xPxqDRfBvxyaSEfA",
+        "category": "General",
+        "x": 585,
+        "y": 60,
+        "wires": [
+            [
+                "sd_UHZLfmenRpyBI3yS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UHZLfmenRpyBI3yS",
+        "type": "Script",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.url = page.ssdurl + \"get-beneficiary-electricity\";\n// page.collection = \"beneficiary-electricity\";\n\nconsole.log(page.user)\nconsole.log('Beneficiaries: ', page.ben)\n\npage.ben = page.ben.filter(ben => ben.belongsTo === page.user.accountNumber)\n\nconsole.log(page.ben)",
+        "functionName": "sd_UHZLfmenRpyBI3yS",
+        "category": "Function",
+        "x": 685,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5OF3UPUkrMHYNg2w",
+        "type": "Storage",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_5OF3UPUkrMHYNg2w",
+        "category": "Storage",
+        "x": 485,
+        "y": 60,
+        "wires": [
+            [
+                "sd_xPxqDRfBvxyaSEfA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_h81qn81w9FB08Yix",
+        "type": "PageStart",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sd_h81qn81w9FB08Yix",
+        "category": "General",
+        "x": 65,
+        "y": 260,
+        "wires": [
+            [
+                "sd_IT9EoIIYBKkIPGAW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepaid_mobileComponent"
+    },
+    {
+        "id": "sd_IT9EoIIYBKkIPGAW",
+        "type": "Script",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true",
+        "functionName": "sd_IT9EoIIYBKkIPGAW",
+        "category": "Function",
+        "x": 225,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_jbOwQQNMGDhxz8ag",
+        "type": "PageStart",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "routeBen",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "ben",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "routeBen",
+        "category": "General",
+        "x": 60,
+        "y": 180,
+        "wires": [
+            [
+                "sd_VQDePcyCXZKN6vVN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepaid_mobileComponent"
+    },
+    {
+        "id": "sd_jlSe5188JDxC1ehw",
+        "type": "Navigation",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/pay_user",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": {
+            "type": "this.page",
+            "value": "routeData"
+        },
+        "qparamsArray": "",
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_jlSe5188JDxC1ehw",
+        "category": "Navigation",
+        "x": 385,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_VQDePcyCXZKN6vVN",
+        "type": "Script",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.routeData = {routeData: JSON.stringify(bh.input.ben)}",
+        "functionName": "sd_VQDePcyCXZKN6vVN",
+        "category": "Function",
+        "x": 225,
+        "y": 180,
+        "wires": [
+            [
+                "sd_jlSe5188JDxC1ehw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_CYzHTRqmn6SGXo3B",
+        "type": "PageStart",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "search",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "value",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "search",
+        "category": "General",
+        "x": 65,
+        "y": 360,
+        "wires": [
+            [
+                "sd_siOtqgDEepYnHgVJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepaid_mobileComponent"
+    },
+    {
+        "id": "sd_siOtqgDEepYnHgVJ",
+        "type": "Script",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let bens = page.ben\nlet result = []\nconsole.log(bh.input.event)\n\n\npage.ben = bens.filter((ben: any) => {\n    if(ben.benName.indexOf(page.searchValue)) {\n        console.log(bh.input.event)\n        console.log(ben.benName.indexOf(page.searchValue))\n        console.log('Includes', ben)\n        return ben\n    }\n})\n\n// page.ben = result\nconsole.log(page.searchValue)\n\nif(!bh.input.value.value) {\n    page.ben = page.ben\n    console.log('value:', page.ben)\n}\n// console.log(bh.input.event.key)\n// console.log(bh.input.value)",
+        "functionName": "sd_siOtqgDEepYnHgVJ",
+        "category": "Function",
+        "x": 225,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_a6sBhvhXJoLYjZ8Z",
+        "type": "OnInit",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_a6sBhvhXJoLYjZ8Z",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 60,
+        "wires": [
+            [
+                "sd_FjiqlzOGvFHlx960"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepaid_mobileComponent"
+    },
+    {
+        "id": "sd_3LNgheth3KG1E0Gu",
+        "type": "PageStart",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "goBack",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goBack",
+        "category": "General",
+        "x": 65,
+        "y": 480,
+        "wires": [
+            [
+                "sd_H1CC70JdnvJUj7Zh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "prepaid_mobileComponent"
+    },
+    {
+        "id": "sd_H1CC70JdnvJUj7Zh",
+        "type": "PageCallService",
+        "z": "sd_4rZ3WgUbNz2tohJd",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_crCsmk2T9Wr8C9jG",
+            "flowName": "backBtn"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "backBtn",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_H1CC70JdnvJUj7Zh",
+        "category": "General",
+        "x": 205,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "prepaid_mobileComponent",
+        "generated": true
+    }
+]

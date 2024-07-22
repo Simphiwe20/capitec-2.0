@@ -1,0 +1,389 @@
+[
+    {
+        "id": "sd_pHkIpybNgj8UrLNA",
+        "type": "tab",
+        "createdDate": "2024-05-07T18:39:30.854Z",
+        "label": "buy_electricity",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "buy_electricityComponent"
+    },
+    {
+        "id": "sd_RhetJNiooF2SX7DS",
+        "type": "OnInit",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_RhetJNiooF2SX7DS",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_GnFOuCY1M8rEoqSR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "buy_electricityComponent"
+    },
+    {
+        "id": "sd_GnFOuCY1M8rEoqSR",
+        "type": "PageVariables",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "benArray",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "selected",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_GnFOuCY1M8rEoqSR",
+        "category": "Function",
+        "x": 145,
+        "y": 40,
+        "wires": [
+            [
+                "sd_gSJD88CnfKGvEozs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_LJP7U07GCLQChPnj",
+        "type": "Environment",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdurl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_LJP7U07GCLQChPnj",
+        "category": "General",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            [
+                "sd_Rno4OEhQVlCORiaL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Rno4OEhQVlCORiaL",
+        "type": "Script",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdurl + \"get-beneficiary-electricity\";\npage.collection = \"beneficiary-electricity\";\n\n",
+        "functionName": "sd_Rno4OEhQVlCORiaL",
+        "category": "Function",
+        "x": 480,
+        "y": 40,
+        "wires": [
+            [
+                "sd_Gbgac9bKVClCx6yH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Gbgac9bKVClCx6yH",
+        "type": "HttpRequest",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.collection",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "collection"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_Gbgac9bKVClCx6yH",
+        "category": "HTTP",
+        "x": 580,
+        "y": 40,
+        "wires": [
+            [
+                "sd_dNY8MfPEYD17kDAG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dNY8MfPEYD17kDAG",
+        "type": "Script",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.beneficiaries = page.results.filter((user:any) => {\n  return  user.belongsTo == page.user.accountNumber;\n})\npage.benArray = bh.beneficiaries",
+        "functionName": "sd_dNY8MfPEYD17kDAG",
+        "category": "Function",
+        "x": 700,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_gSJD88CnfKGvEozs",
+        "type": "Storage",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_gSJD88CnfKGvEozs",
+        "category": "Storage",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            [
+                "sd_LJP7U07GCLQChPnj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0aJD3XniKPm4UEzK",
+        "type": "PageStart",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "Index",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sd_0aJD3XniKPm4UEzK",
+        "category": "General",
+        "x": 80,
+        "y": 220,
+        "wires": [
+            [
+                "sd_6HiFRhzbHYhSN1Be"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "buy_electricityComponent"
+    },
+    {
+        "id": "sd_6HiFRhzbHYhSN1Be",
+        "type": "Script",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.selected = bh.input.Index\n",
+        "functionName": "sd_6HiFRhzbHYhSN1Be",
+        "category": "Function",
+        "x": 205,
+        "y": 220,
+        "wires": [
+            [
+                "sd_n7gHGsIp9RCqVyuj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_n7gHGsIp9RCqVyuj",
+        "type": "Storage",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "electricBen"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "selected"
+        },
+        "resultMapping": {},
+        "functionName": "sd_n7gHGsIp9RCqVyuj",
+        "category": "Storage",
+        "x": 305,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_epBRYOaXd6G9NDUk",
+        "type": "PageStart",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "goBack",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goBack",
+        "category": "General",
+        "x": 85,
+        "y": 360,
+        "wires": [
+            [
+                "sd_jQumYFVMcdw7ayhy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "buy_electricityComponent"
+    },
+    {
+        "id": "sd_jQumYFVMcdw7ayhy",
+        "type": "PageCallService",
+        "z": "sd_pHkIpybNgj8UrLNA",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_crCsmk2T9Wr8C9jG",
+            "flowName": "backBtn"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "backBtn",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_jQumYFVMcdw7ayhy",
+        "category": "General",
+        "x": 225,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "buy_electricityComponent",
+        "generated": true
+    }
+]

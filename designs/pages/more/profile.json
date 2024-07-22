@@ -1,0 +1,170 @@
+[
+    {
+        "id": "sd_1bjnt0Qwkqh0MImb",
+        "type": "tab",
+        "createdDate": "2024-05-31T03:30:20.614Z",
+        "label": "profile",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "profileComponent"
+    },
+    {
+        "id": "sd_3WzYqbHoWlM3vM6c",
+        "type": "OnInit",
+        "z": "sd_1bjnt0Qwkqh0MImb",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_3WzYqbHoWlM3vM6c",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_CMSPRayg7WVF41UY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "profileComponent"
+    },
+    {
+        "id": "sd_miLhLSpqaBKVhWTQ",
+        "type": "PageVariables",
+        "z": "sd_1bjnt0Qwkqh0MImb",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "location",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_miLhLSpqaBKVhWTQ",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_4vpePHhvR7aTiAzd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4vpePHhvR7aTiAzd",
+        "type": "Script",
+        "z": "sd_1bjnt0Qwkqh0MImb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "  page.profile =\n  [{icon:'my-detail-icon.png',text:'My details' , link:'/my-details'},\n  {icon:'email-update-icon.png',text:'My email address' , link:'/email'},\n  {icon:'tax-icon.png',text:'My tax details' , link:'/my-tax-details'},\n  {icon:'agreement-icon.png',text:'My agreement & disclamers'},\n  {icon:'privacy-icon.png',text:'Our Primary Center' , link:'/policy'}]\n  ",
+        "functionName": "sd_4vpePHhvR7aTiAzd",
+        "category": "Function",
+        "x": 280,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_VJtdk0gQo6IXGKqk",
+        "type": "PageStart",
+        "z": "sd_1bjnt0Qwkqh0MImb",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "back",
+        "category": "General",
+        "x": 85,
+        "y": 200,
+        "wires": [
+            [
+                "sd_lT7x6JewQXy5Vpf6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "profileComponent"
+    },
+    {
+        "id": "sd_lT7x6JewQXy5Vpf6",
+        "type": "Script",
+        "z": "sd_1bjnt0Qwkqh0MImb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.location.back();",
+        "functionName": "sd_lT7x6JewQXy5Vpf6",
+        "category": "Function",
+        "x": 185,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_CMSPRayg7WVF41UY",
+        "type": "UseDependency",
+        "z": "sd_1bjnt0Qwkqh0MImb",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Location",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "location"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/common",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_CMSPRayg7WVF41UY",
+        "category": "Function",
+        "x": 105,
+        "y": 20,
+        "wires": [
+            [
+                "sd_miLhLSpqaBKVhWTQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    }
+]

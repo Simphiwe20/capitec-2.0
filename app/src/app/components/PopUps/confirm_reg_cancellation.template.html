@@ -1,0 +1,10 @@
+<div fxLayout="column wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <p class="small no-margin poppins">
+      Are you sure, you want to cancel. It also cancels registration ? </p>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="pointer blue-border-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-b" (click)="closeDialog()">No</button></div>
+    <div fxLayout="column wrap" class="pointer get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="ft-landing" class="color-w" (click)="closeDialog()">Yes</button></div>
+  </div>
+</div>

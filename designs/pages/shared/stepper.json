@@ -1,0 +1,282 @@
+[
+    {
+        "id": "sd_814fAAOZSh2o1xl6",
+        "type": "tab",
+        "createdDate": "2024-05-18T09:39:41.582Z",
+        "label": "stepper",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "stepperComponent"
+    },
+    {
+        "id": "sd_laE0eDvThWJOUqKM",
+        "type": "OnInit",
+        "z": "sd_814fAAOZSh2o1xl6",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_laE0eDvThWJOUqKM",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 100,
+        "wires": [
+            [
+                "sd_Iiu2SgKx58TqgKit"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "stepperComponent"
+    },
+    {
+        "id": "sd_iV85bSOc9jLk45Qk",
+        "type": "PageVariables",
+        "z": "sd_814fAAOZSh2o1xl6",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "openAccount",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "lastInfor",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "routes",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "doing",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "showDescription",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_iV85bSOc9jLk45Qk",
+        "category": "Function",
+        "x": 285,
+        "y": 100,
+        "wires": [
+            [
+                "sd_HLVcXfAIYs4vqMSj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "stepperComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Iiu2SgKx58TqgKit",
+        "type": "UseDependency",
+        "z": "sd_814fAAOZSh2o1xl6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_Iiu2SgKx58TqgKit",
+        "category": "Function",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "sd_iV85bSOc9jLk45Qk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "stepperComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HLVcXfAIYs4vqMSj",
+        "type": "PageSwitch",
+        "z": "sd_814fAAOZSh2o1xl6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "router.url",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.router.url",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/sign_up_stepper",
+                "vt": "str",
+                "gv": "\"/sign_up_stepper\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_HLVcXfAIYs4vqMSj",
+        "category": "Function",
+        "x": 405,
+        "y": 100,
+        "wires": [
+            [
+                "sd_rGAleI0MFTXcwZXJ"
+            ],
+            [
+                "sd_H2QdIIb5IXrTQB8f"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "stepperComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_rGAleI0MFTXcwZXJ",
+        "type": "Script",
+        "z": "sd_814fAAOZSh2o1xl6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.router.url)\npage.showDescription = true\npage.doing = 'Open a Personal Account'\npage.stepperInfor = [\n    {title: 'Complete basic details', action: 'Employment and financial information'},\n    {title: 'Sign the agreement', action: 'Take another selfie to sign'},\n    {title: 'Set your PIN', action: 'Create a 5-digits app PIN'}\n] \n\npage.lastInfor = 'Start transacting'\npage.routes = '/open_account_instructions'\n\nconsole.log('NEW CHANGES !!!!')\n",
+        "functionName": "sd_rGAleI0MFTXcwZXJ",
+        "category": "Function",
+        "x": 565,
+        "y": 20,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "stepperComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_H2QdIIb5IXrTQB8f",
+        "type": "Script",
+        "z": "sd_814fAAOZSh2o1xl6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.router.url)\npage.showDescription = false\npage.doing = 'Activate your app'\npage.stepperInfor = [\n    {title: 'Enter account number', action: 'You\\'ll find it on you Capitec card'},\n    {title: 'Enter PIN', action: 'Your existing banking app PIN'},\n    {title: 'Verify your identity', action: 'Take a selfie'}\n] \n\npage.lastInfor = 'Start using the app'\npage.routes = '/account_number'\n\nconsole.log('NEW CHANGES !!!!')",
+        "functionName": "sd_H2QdIIb5IXrTQB8f",
+        "category": "Function",
+        "x": 565,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "stepperComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WIAOk0qXvI7ZkROw",
+        "type": "PageStart",
+        "z": "sd_814fAAOZSh2o1xl6",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "back",
+        "category": "General",
+        "x": 60,
+        "y": 220,
+        "wires": [
+            [
+                "sd_yGXXp5CDXEcQOWmX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "stepperComponent"
+    },
+    {
+        "id": "sd_yGXXp5CDXEcQOWmX",
+        "type": "PageCallService",
+        "z": "sd_814fAAOZSh2o1xl6",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_crCsmk2T9Wr8C9jG",
+            "flowName": "backBtn"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "backBtn",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_yGXXp5CDXEcQOWmX",
+        "category": "General",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "stepperComponent",
+        "generated": true
+    }
+]

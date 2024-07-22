@@ -1,0 +1,119 @@
+[
+    {
+        "id": "sd_MG6qnpt25Kl9pKRj",
+        "type": "tab",
+        "createdDate": "2024-05-07T18:49:48.112Z",
+        "label": "landing",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "landingComponent"
+    },
+    {
+        "id": "sd_GshVIoKNmdvI93fw",
+        "type": "OnInit",
+        "z": "sd_MG6qnpt25Kl9pKRj",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_GshVIoKNmdvI93fw",
+        "category": "Lifecycle Events",
+        "x": 85,
+        "y": 40,
+        "wires": [
+            [
+                "sd_xV0StEqkp7VzwxqT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "landingComponent"
+    },
+    {
+        "id": "sd_xV0StEqkp7VzwxqT",
+        "type": "PageVariables",
+        "z": "sd_MG6qnpt25Kl9pKRj",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{fullName: \"Simphiwe\"}"
+                }
+            }
+        ],
+        "functionName": "sd_xV0StEqkp7VzwxqT",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_hSXkVqbQP8cTtYzI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hI3gfhVm39WC4LqQ",
+        "type": "Script",
+        "z": "sd_MG6qnpt25Kl9pKRj",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.user = page.result.fullName.split(' ')[0]\nconsole.log(page.user)\nconsole.log(page.result.fullName.split(' '))",
+        "functionName": "sd_hI3gfhVm39WC4LqQ",
+        "category": "Function",
+        "x": 465,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hSXkVqbQP8cTtYzI",
+        "type": "Storage",
+        "z": "sd_MG6qnpt25Kl9pKRj",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_hSXkVqbQP8cTtYzI",
+        "category": "Storage",
+        "x": 285,
+        "y": 40,
+        "wires": [
+            [
+                "sd_hI3gfhVm39WC4LqQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    }
+]

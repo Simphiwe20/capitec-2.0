@@ -1,0 +1,484 @@
+[
+    {
+        "id": "sd_2p1bFF3BtpntnpjC",
+        "type": "tab",
+        "createdDate": "2024-06-13T07:23:30.071Z",
+        "label": "face_api",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "face_api",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_xyYEnNvDDfLtQl41",
+        "type": "Start",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "loadModels",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "loadModels",
+        "category": "General",
+        "x": 85,
+        "y": 140,
+        "wires": [
+            [
+                "sd_wuqgnli9O8HmSebv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_QJ2CS66ghxWp73fK",
+        "type": "Script",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('Cordova file system: ', cordova.file.applicationDirectory)\nreturn new Promise((resolve, reject) => {\n  document.addEventListener('deviceready', async () => {\n    try {\n      const modelPath = cordova.file.applicationDirectory + 'www/assets/models/';\n      console.log('Model path: ', modelPath)\n      this.checkFilePath(modelPath + 'tiny_face_detector_model-weights_manifest.json');\n      this.checkFilePath(modelPath + 'face_landmark_68_model-weights_manifest.json');\n      this.checkFilePath(modelPath + 'face_recognition_model-weights_manifest.json');\n      this.checkFilePath(modelPath + 'ssd_mobilenetv1_model-weights_manifest.json');\n\n      await this.loadModel(faceapi.nets.tinyFaceDetector, modelPath, 'tiny_face_detector_model-weights_manifest.json');\n      await this.loadModel(faceapi.nets.faceLandmark68Net, modelPath, 'face_landmark_68_model-weights_manifest.json');\n      await this.loadModel(faceapi.nets.faceRecognitionNet, modelPath, 'face_recognition_model-weights_manifest.json');\n      await this.loadModel(faceapi.nets.ssdMobilenetv1, modelPath, 'ssd_mobilenetv1_model-weights_manifest.json');\n\n      resolve('Resolved');\n    } catch (error) {\n      console.error('Error loading models: ', error)\n      reject(error);\n    }\n  });\n});",
+        "functionName": "sd_QJ2CS66ghxWp73fK",
+        "category": "Function",
+        "x": 345,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "face_api",
+        "generated": true
+    },
+    {
+        "id": "sd_5r4awku7W7SqUWN2",
+        "type": "Async",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "res",
+        "flowNodes": [
+            {
+                "serviceId": "sd_54PzYAXeeWhXZO4M",
+                "serviceName": "api_service",
+                "flowId": "sd_qInNkHnPGTb7joQB",
+                "flowName": "loadModels",
+                "functionName": "loadModels",
+                "inputParams": [],
+                "inputVariables": [],
+                "accept_bh": false,
+                "randomVal": 973375,
+                "relativePath": "./api_service"
+            }
+        ],
+        "_flowNodes": [
+            {
+                "serviceId": "sd_54PzYAXeeWhXZO4M",
+                "serviceName": "api_service",
+                "flowId": "sd_qInNkHnPGTb7joQB",
+                "flowName": "loadModels",
+                "functionName": "loadModels",
+                "inputParams": [],
+                "inputVariables": [],
+                "accept_bh": false,
+                "randomVal": 973375,
+                "relativePath": "./api_service"
+            }
+        ],
+        "resultMapping": "bh.result",
+        "isValidNode": true,
+        "functionName": "res",
+        "category": "Function",
+        "x": 85,
+        "y": 220,
+        "wires": [
+            [
+                "sd_DdY6UZmzklbWkH6v"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_DdY6UZmzklbWkH6v",
+        "type": "Log",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh.result",
+        "functionName": "sd_DdY6UZmzklbWkH6v",
+        "category": "General",
+        "x": 185,
+        "y": 220,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_wuqgnli9O8HmSebv",
+        "type": "UseDependency",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "faceapi",
+        "propertyType": "bh",
+        "propertyGv": "bh.faceapi",
+        "alias": "faceapi",
+        "modules": [],
+        "import_all": true,
+        "library": "face-api.js",
+        "serviceDesignerType": "client",
+        "functionName": "sd_wuqgnli9O8HmSebv",
+        "category": "Function",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "sd_QJ2CS66ghxWp73fK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "face_api",
+        "generated": true
+    },
+    {
+        "id": "sd_ZKEzlKLidNaK3Din",
+        "type": "Start",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "checkFilePath",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "filePath",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "checkFilePath",
+        "category": "General",
+        "x": 85,
+        "y": 40,
+        "wires": [
+            [
+                "sd_j0Exa4jRACYayk4c"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_j0Exa4jRACYayk4c",
+        "type": "Script",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " return new Promise((resolve, reject) => {\n      console.log(`Checking file path: ${bh.input.filePath}`);\n      window.resolveLocalFileSystemURL(bh.input.filePath, (fileEntry) => {\n        console.log(`File found: ${bh.input.filePath}`);\n        resolve('Resolved');\n      }, (err) => {\n        console.error(`File not found: ${bh.input.filePath}`, err);\n        reject(err);\n      });\n    });",
+        "functionName": "sd_j0Exa4jRACYayk4c",
+        "category": "Function",
+        "x": 205,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "face_api",
+        "generated": true
+    },
+    {
+        "id": "sd_VSjfQNCFQpn6YyJB",
+        "type": "Start",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "loadModel",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "net",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "manifestFile",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "modelPath",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "loadModel",
+        "category": "General",
+        "x": 85,
+        "y": 320,
+        "wires": [
+            [
+                "sd_huShByNjvcgWOEeG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_huShByNjvcgWOEeG",
+        "type": "Script",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.readJsonFile(bh.input.manifestFile + bh.input.modelPath)\n  .then((file) => {\n    file.local.result\n      .then( async(res) => {\n        console.log('FIle before the json: ', res)\n        // res.json()\n        let manifest = res[0]\n        console.log(\"manifest object: \",manifest)\n\n\n        const weightPaths = manifest.weights.map((weight: any) => bh.input.manifestFile + manifest.paths[0]);\n        console.log('Weight paths:', weightPaths);\n\n        const weights = await Promise.all(weightPaths.map((weightPath: string) => {\n          console.log( 'Console loging the resolved new: ', this.readBinaryFile(weightPath))\n          return this.readBinaryFile(weightPath)\n          }));\n        console.log('Loaded weights:', weights);\n\n        if (!bh.input.net || typeof bh.input.net.load !== 'function') {\n        throw new Error('Invalid net object: load method is missing');\n      }\n        console.log('Net: ', bh.input.net)\n        await bh.input.net.load(weights);\n        console.log('Models loaded successfully')\n      })\n    .catch(err =>  {\n      console.log('Error occured when loading models: ', err)\n    })\n    })\n    .catch(err =>  {\n      console.log('Error occured when loading models: ', err)\n    })\n\n// try {\n//       console.log('BH in the loadModel ', bh)\n//       let manifest = await this.readJsonFile(bh.input.manifestFile + bh.input.modelPath);\n//       manifest = manifest.local.result.__zone_symbol__value\n//       console.log('Loaded manifest:', manifest.local.result);\n//       // console.log('Loaded manifest without the wait:', this.readJsonFile(bh.input.manifestFile + bh.input.modelPath));\n\n//       const weightPaths = manifest.weights.map((weight: any) => bh.input.modelPath + weight.paths[0]);\n//       console.log('Weight paths:', weightPaths);\n\n//       const weights = await Promise.all(weightPaths.map((weightPath: string) => this.readBinaryFile(weightPath)));\n//       console.log('Loaded weights:', weights);\n\n//       console.log('Net: ', bh.input.net)\n//       await bh.input.net.load(weights);\n//     } catch (error) {\n//       console.log('BH in the loadModel ', bh)\n//       console.error('Error loading model:', error);\n//       throw error;\n//     }",
+        "functionName": "sd_huShByNjvcgWOEeG",
+        "category": "Function",
+        "x": 265,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "face_api",
+        "generated": true
+    },
+    {
+        "id": "sd_auANTU5PjF8EDNh9",
+        "type": "Start",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "readJsonFile",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "filePath",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "readJsonFile",
+        "category": "General",
+        "x": 85,
+        "y": 400,
+        "wires": [
+            [
+                "sd_HQ9Ob6mNfVTiAb9U"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_HQ9Ob6mNfVTiAb9U",
+        "type": "Script",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " bh.local.result = new Promise((resolve, reject) => {\n    window.resolveLocalFileSystemURL(bh.input.filePath, (fileEntry) => {\n      fileEntry.file((file) => {\n        const reader = new FileReader();\n        reader.onloadend = () => {\n          try {\n            const json = JSON.parse(reader.result as string);\n            resolve(json);\n          } catch (err) {\n            console.error('Error parsing JSON file:', err);\n            reject({ message: 'Error parsing JSON file', error: err });\n          }\n        };\n        reader.onerror = (err) => {\n          console.error('Error reading JSON file:', err);\n          reject({ message: 'Error reading JSON file', error: err });\n        };\n        reader.readAsText(file);\n      }, (err) => {\n        console.error('Error getting file:', err);\n        reject({ message: 'Error getting file', error: err });\n      });\n    }, (err) => {\n      console.error('Error resolving file system URL:', err);\n      reject({ message: 'Error resolving file system URL', error: err });\n    });\n\n})",
+        "functionName": "sd_HQ9Ob6mNfVTiAb9U",
+        "category": "Function",
+        "x": 265,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "face_api",
+        "generated": true
+    },
+    {
+        "id": "sd_aIHEgHpLwYpGWdgD",
+        "type": "Start",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "readBinaryFile",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "filePath",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "file",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "readBinaryFile",
+        "category": "General",
+        "x": 85,
+        "y": 480,
+        "wires": [
+            [
+                "sd_jhGxZb9xjaZ0Cc3J"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_jhGxZb9xjaZ0Cc3J",
+        "type": "Script",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('Filepath to be resolved: ', bh.input.filePath)\n\nbh.local.file = new Promise((resolve, reject) => {\n      window.resolveLocalFileSystemURL(bh.input.filePath, (fileEntry) => {\n        fileEntry.file((file) => {\n          console.log('Inside the fileEntry: ', file)\n          const reader = new FileReader();\n          console.log('Reader: ', reader)\n          reader.onloadend = () => {\n            console.log('Read binary file:', reader.result);\n            console.log('Reader: ', reader)\n            let b = new Blob([reader.result as ArrayBuffer], { type: 'application/octet-stream' })\n            console.log('Returned blob: ', b)\n            console.log(bh)\n            resolve(new Blob([reader.result as ArrayBuffer], { type: 'application/octet-stream' }));\n          };\n          reader.onerror = (error) => {\n            console.error('Error reading binary file:', error);\n            reject(error);\n          };\n          reader.readAsArrayBuffer(file);\n        }, (err) => {\n          console.log('Did get inside the resolving of the file')\n          console.error('Error resolving file system URL:', err);\n          reject(err);\n        });\n      }, (err) => {\n        console.log('Didn\\'t even get inside the resolving of the file')\n        console.error('Error resolving file system URL:', err);\n        reject(err);\n      });\n    });",
+        "functionName": "sd_jhGxZb9xjaZ0Cc3J",
+        "category": "Function",
+        "x": 265,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "face_api",
+        "generated": true
+    },
+    {
+        "id": "sd_xkOyDlON7Fkz8Qku",
+        "type": "ServiceVariables",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_xkOyDlON7Fkz8Qku",
+        "category": "Function",
+        "x": 380,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_icUyTyDYjBUu7EWr",
+        "type": "Start",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "loadModelsFromGit",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "loadModelsFromGit",
+        "category": "General",
+        "x": 85,
+        "y": 600,
+        "wires": [
+            [
+                "sd_hx5dcbGG5uxvLOd7"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "face_api"
+    },
+    {
+        "id": "sd_hx5dcbGG5uxvLOd7",
+        "type": "Script",
+        "z": "sd_2p1bFF3BtpntnpjC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const modelBaseUrl = 'https://raw.githubusercontent.com/Simphiwe20/models/main/';\n\nconst loadAllModels = async () => {\n  try {\n    await faceapi.nets.tinyFaceDetector.loadFromUri(modelBaseUrl);\n    await faceapi.nets.faceLandmark68Net.loadFromUri(modelBaseUrl);\n    await faceapi.nets.faceRecognitionNet.loadFromUri(modelBaseUrl);\n    await faceapi.nets.ssdMobilenetv1.loadFromUri(modelBaseUrl);\n    console.log('All models loaded successfully');\n  } catch (error) {\n    console.error('Error loading models:', error);\n  }\n};\n\nloadAllModels();\n",
+        "functionName": "sd_hx5dcbGG5uxvLOd7",
+        "category": "Function",
+        "x": 250,
+        "y": 600,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "face_api",
+        "generated": true
+    }
+]

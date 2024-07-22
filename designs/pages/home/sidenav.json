@@ -1,0 +1,412 @@
+[
+    {
+        "id": "sd_knvlScIcaYQjwqZj",
+        "type": "tab",
+        "createdDate": "2024-05-23T18:34:47.741Z",
+        "label": "sidenav_home",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "sidenavComponent"
+    },
+    {
+        "id": "sd_9zi3ynftUbaH5N6S",
+        "type": "OnInit",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_9zi3ynftUbaH5N6S",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_o8U93aMFu8A74mwG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sidenavComponent"
+    },
+    {
+        "id": "sd_o8U93aMFu8A74mwG",
+        "type": "PageVariables",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "name",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "sidenavOpen",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
+            }
+        ],
+        "functionName": "sd_o8U93aMFu8A74mwG",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_QKP6HPEh75DvB1M9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_pFk4BIOonAcaIknb",
+        "type": "Script",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.name = 'angel'\nconsole.log(page.user)",
+        "functionName": "sd_pFk4BIOonAcaIknb",
+        "category": "Function",
+        "x": 365,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_r7O4zdl4qvAle9JE",
+        "type": "PageStart",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "sidenavshow",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sidenavshow",
+        "category": "General",
+        "x": 85,
+        "y": 220,
+        "wires": [
+            [
+                "sd_DICsI6jwZThjABaz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sidenavComponent"
+    },
+    {
+        "id": "sd_DICsI6jwZThjABaz",
+        "type": "Script",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.sidenavOpen = false",
+        "functionName": "sd_DICsI6jwZThjABaz",
+        "category": "Function",
+        "x": 205,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_QKP6HPEh75DvB1M9",
+        "type": "Storage",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_QKP6HPEh75DvB1M9",
+        "category": "Storage",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            [
+                "sd_pFk4BIOonAcaIknb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_d7tqY6eyHjD9S3ef",
+        "type": "PageStart",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "migrate",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "migrate",
+        "category": "General",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "sd_xRAoQC8NON5v6DHo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sidenavComponent"
+    },
+    {
+        "id": "sd_sRiZcPBuJbfRnOlx",
+        "type": "OpenDialog",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_UgcX5BoSzsT9FFhy",
+            "label": "terms_and_condtions"
+        },
+        "relativePath": "app/components/home/terms_and_condtions",
+        "data": "this.page",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "this.page",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page",
+        "functionName": "sd_sRiZcPBuJbfRnOlx",
+        "category": "Dialog",
+        "x": 385,
+        "y": 140,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xRAoQC8NON5v6DHo",
+        "type": "Navigation",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/cards",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_xRAoQC8NON5v6DHo",
+        "category": "Navigation",
+        "x": 205,
+        "y": 140,
+        "wires": [
+            [
+                "sd_HWnxuWLUbrvXZYay"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HWnxuWLUbrvXZYay",
+        "type": "Navigation",
+        "z": "sd_knvlScIcaYQjwqZj",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_HWnxuWLUbrvXZYay",
+        "category": "Navigation",
+        "x": 285,
+        "y": 140,
+        "wires": [
+            [
+                "sd_sRiZcPBuJbfRnOlx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sidenavComponent",
+        "generated": true
+    }
+]

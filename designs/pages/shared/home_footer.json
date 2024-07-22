@@ -1,0 +1,1175 @@
+[
+    {
+        "id": "sd_MncTxFOUMvrbvqkG",
+        "type": "tab",
+        "createdDate": "2024-05-20T12:06:52.589Z",
+        "label": "home_footer",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_AF8lhhmyqOMFCymo",
+        "type": "OnInit",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_AF8lhhmyqOMFCymo",
+        "category": "Lifecycle Events",
+        "x": 25,
+        "y": 40,
+        "wires": [
+            [
+                "sd_VlkaV0GUiqlQNcQA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_7gfjrecDpNKV8VUQ",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.menuItems = [\n        {image: '../../../assets/Web/Images/home.PNG', menuName: 'Home', routes: '/logged_in_landing/home'},\n        {image: '../../../assets/Web/Images/card.jpg', menuName: 'Cards', routes: '/logged_in_landing/cards'},\n        {image: '../../../assets/Web/Images/trans.jpg', menuName: 'Transact', routes: '/logged_in_landing/transact'},\n        {image: '../../../assets/Web/Images/message.png', menuName: 'Messages', routes: '/logged_in_landing/messages'},\n        {image: '../../../assets/Web/Images/explore.jpg', menuName: 'Explore', routes: '/logged_in_landing/explore'}\n\n]",
+        "functionName": "sd_7gfjrecDpNKV8VUQ",
+        "category": "Function",
+        "x": 225,
+        "y": 40,
+        "wires": [
+            [
+                "sd_fPplJH230ZLJ37mO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_MqzcLtCYtKQY8GC2",
+        "type": "PageStart",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "getElectricity",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getElectricity",
+        "category": "General",
+        "x": 50,
+        "y": 250,
+        "wires": [
+            [
+                "sd_NT16hPbG3ySc80z1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_NT16hPbG3ySc80z1",
+        "type": "Environment",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_NT16hPbG3ySc80z1",
+        "category": "General",
+        "x": 150,
+        "y": 250,
+        "wires": [
+            [
+                "sd_6VoMuQorf7LMaKnp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fPplJH230ZLJ37mO",
+        "type": "Storage",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_fPplJH230ZLJ37mO",
+        "category": "Storage",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            [
+                "sd_a6lxvc5gCM2PWU3i"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6VoMuQorf7LMaKnp",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url_electric = page.ssdUrl + \"get-electricity\"\n\nbh.body = {\n    collection : \"electricity\"\n}",
+        "functionName": "sd_6VoMuQorf7LMaKnp",
+        "category": "Function",
+        "x": 250,
+        "y": 250,
+        "wires": [
+            [
+                "sd_JOFDMgXeAz5lxj7M"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JOFDMgXeAz5lxj7M",
+        "type": "HttpRequest",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_electric",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_electric"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_JOFDMgXeAz5lxj7M",
+        "category": "HTTP",
+        "x": 330,
+        "y": 250,
+        "wires": [
+            [
+                "sd_ziKfwAzWPyt7j8Oe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ioiw4kJ5HujF2xMb",
+        "type": "PageCallService",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "electricity",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_MncTxFOUMvrbvqkG",
+            "type": "tab",
+            "createdDate": "2024-05-20T12:06:52.589Z",
+            "label": "home_footer",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_MqzcLtCYtKQY8GC2",
+            "flowName": "getElectricity"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "getElectricity",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": false,
+        "functionName": "electricity",
+        "category": "General",
+        "x": 925,
+        "y": 40,
+        "wires": [
+            [
+                "sd_4F8id4fEsry6Y35k"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_ziKfwAzWPyt7j8Oe",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.electricity = page.result.filter((user:any) =>{\n   return user.belongsTo == page.user.accountNumber\n})\n\npage.electricity_array = bh.electricity\nconsole.log(page.electricity_array)\n",
+        "functionName": "sd_ziKfwAzWPyt7j8Oe",
+        "category": "Function",
+        "x": 410,
+        "y": 250,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KgCqLKxoajVHrFNC",
+        "type": "PageStart",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "getScan",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getScan",
+        "category": "General",
+        "x": 50,
+        "y": 330,
+        "wires": [
+            [
+                "sd_43Qrw6opf1ZhVy3A"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_43Qrw6opf1ZhVy3A",
+        "type": "Environment",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_43Qrw6opf1ZhVy3A",
+        "category": "General",
+        "x": 150,
+        "y": 330,
+        "wires": [
+            [
+                "sd_jmNKUcK66maUQ6BY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_jmNKUcK66maUQ6BY",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url_scanned = page.ssdUrl + \"get-scanned\"\n\nbh.body = {\n    collection : \"scan_to_pay\"\n}",
+        "functionName": "sd_jmNKUcK66maUQ6BY",
+        "category": "Function",
+        "x": 250,
+        "y": 330,
+        "wires": [
+            [
+                "sd_nQ5Ns5PuQku8Tzcs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_nQ5Ns5PuQku8Tzcs",
+        "type": "HttpRequest",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_scanned",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_scanned"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_nQ5Ns5PuQku8Tzcs",
+        "category": "HTTP",
+        "x": 330,
+        "y": 330,
+        "wires": [
+            [
+                "sd_KnxvAdJnDx3RjvXV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KnxvAdJnDx3RjvXV",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.scanner = page.results.filter((user:any) =>{\n   return user.belongsTo == page.user.accountNumber\n})\n\npage.scanned = bh.scanner\n",
+        "functionName": "sd_KnxvAdJnDx3RjvXV",
+        "category": "Function",
+        "x": 410,
+        "y": 330,
+        "wires": [
+            [
+                "sd_zwEQoL5X6jrVhJeC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4F8id4fEsry6Y35k",
+        "type": "PageCallService",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "scanner",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_MncTxFOUMvrbvqkG",
+            "type": "tab",
+            "createdDate": "2024-05-20T12:06:52.589Z",
+            "label": "home_footer",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_KgCqLKxoajVHrFNC",
+            "flowName": "getScan"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "getScan",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": false,
+        "functionName": "scanner",
+        "category": "General",
+        "x": 1000,
+        "y": 40,
+        "wires": [
+            [
+                "sd_i64vTOHL0OmAQeQr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_pS5gQUUgm02NtcWe",
+        "type": "PageStart",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "get airtime",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getAirtime",
+        "category": "General",
+        "x": 70,
+        "y": 410,
+        "wires": [
+            [
+                "sd_86D2WWac7O7hItDB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_86D2WWac7O7hItDB",
+        "type": "Environment",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_86D2WWac7O7hItDB",
+        "category": "General",
+        "x": 170,
+        "y": 410,
+        "wires": [
+            [
+                "sd_WAQmMZposmlVfMHO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WAQmMZposmlVfMHO",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url_airtime = page.ssdUrl + \"get-airtime\"\n\nbh.body_airtime = {\n    collection : \"airtime\"\n}",
+        "functionName": "sd_WAQmMZposmlVfMHO",
+        "category": "Function",
+        "x": 255,
+        "y": 410,
+        "wires": [
+            [
+                "sd_fTayJ1exxv9u39lS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fTayJ1exxv9u39lS",
+        "type": "HttpRequest",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_airtime",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_airtime"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body_airtime",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body_airtime"
+        },
+        "resultMapping": "this.page.results_airtime",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results_airtime"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_fTayJ1exxv9u39lS",
+        "category": "HTTP",
+        "x": 345,
+        "y": 420,
+        "wires": [
+            [
+                "sd_7sU4nMFQWXUY45eC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7sU4nMFQWXUY45eC",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.airtime = page.results_airtime.filter((user:any) =>{\n   return user.belongsTo == page.user.accountNumber\n})\n\npage.airtime = bh.airtime\n",
+        "functionName": "sd_7sU4nMFQWXUY45eC",
+        "category": "Function",
+        "x": 415,
+        "y": 410,
+        "wires": [
+            [
+                "sd_hnQoWJPWPeV3wd4Y"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KSjY2sXFWAQPMRe7",
+        "type": "PageStart",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "get beneficiary",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getBeneficiary",
+        "category": "General",
+        "x": 70,
+        "y": 510,
+        "wires": [
+            [
+                "sd_4PZlrevaqDHn8ihZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_4PZlrevaqDHn8ihZ",
+        "type": "Environment",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_4PZlrevaqDHn8ihZ",
+        "category": "General",
+        "x": 190,
+        "y": 510,
+        "wires": [
+            [
+                "sd_5XlozTVYG3epixVd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5XlozTVYG3epixVd",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url_payed = page.ssdUrl + \"get-payed-ben\"\n\nbh.body_payed = {\n    collection : \"payed-ben\"\n}",
+        "functionName": "sd_5XlozTVYG3epixVd",
+        "category": "Function",
+        "x": 270,
+        "y": 510,
+        "wires": [
+            [
+                "sd_C5E4mWkqc1WHr2Cw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_C5E4mWkqc1WHr2Cw",
+        "type": "HttpRequest",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_payed",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_payed"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body_payed",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body_payed"
+        },
+        "resultMapping": "this.page.results_payed",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results_payed"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_C5E4mWkqc1WHr2Cw",
+        "category": "HTTP",
+        "x": 345,
+        "y": 520,
+        "wires": [
+            [
+                "sd_LJAZJJgsJvC8A6kQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_LJAZJJgsJvC8A6kQ",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.payed_ben = page.results_payed.filter((user:any) =>{\n   return user.belongsTo == page.user.accountNumber\n})\n\npage.ben = bh.payed_ben\n",
+        "functionName": "sd_LJAZJJgsJvC8A6kQ",
+        "category": "Function",
+        "x": 430,
+        "y": 510,
+        "wires": [
+            [
+                "sd_Lzh0oK7R52L4FAGL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_i64vTOHL0OmAQeQr",
+        "type": "PageCallService",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "airtime",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_MncTxFOUMvrbvqkG",
+            "type": "tab",
+            "createdDate": "2024-05-20T12:06:52.589Z",
+            "label": "home_footer",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_pS5gQUUgm02NtcWe",
+            "flowName": "getAirtime"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "getAirtime",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": false,
+        "functionName": "airtime",
+        "category": "General",
+        "x": 1085,
+        "y": 40,
+        "wires": [
+            [
+                "sd_2vp8OfdRhLWC4SOu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_2vp8OfdRhLWC4SOu",
+        "type": "PageCallService",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "benefciary",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_MncTxFOUMvrbvqkG",
+            "type": "tab",
+            "createdDate": "2024-05-20T12:06:52.589Z",
+            "label": "home_footer",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_KSjY2sXFWAQPMRe7",
+            "flowName": "getBeneficiary"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "getBeneficiary",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": false,
+        "functionName": "benefciary",
+        "category": "General",
+        "x": 1165,
+        "y": 40,
+        "wires": [
+            [
+                "sd_Ii9IutJMHmQi3Mkt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_zwEQoL5X6jrVhJeC",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"scanned ==>\", page.scanned)\n\npage.contacanated = page.scanned.concat(page.electricity_array)\nconsole.log('new1', page.contacanated)\nconsole.log('elec', bh.electricity)",
+        "functionName": "sd_zwEQoL5X6jrVhJeC",
+        "category": "Function",
+        "x": 550,
+        "y": 270,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hnQoWJPWPeV3wd4Y",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"airtime ==>\", page.airtime)",
+        "functionName": "sd_hnQoWJPWPeV3wd4Y",
+        "category": "Function",
+        "x": 555,
+        "y": 370,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Lzh0oK7R52L4FAGL",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"beneficiary ==>\", page.ben)\npage.contacanated = page.contacanated.concat(bh.payed_ben)\nconsole.log('new2', page.contacanated)",
+        "functionName": "sd_Lzh0oK7R52L4FAGL",
+        "category": "Function",
+        "x": 570,
+        "y": 470,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Ii9IutJMHmQi3Mkt",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.contacanated = bh.payed_ben.concat(bh.scanner)\n// console.log('new1', page.contacanated)\n\n// page.contacanated = page.contacanated.concat(bh.electricity)\n// console.log('new2', page.contacanated)\n\n// console.log(bh.payed_ben)",
+        "functionName": "sd_Ii9IutJMHmQi3Mkt",
+        "category": "Function",
+        "x": 1280,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_VlkaV0GUiqlQNcQA",
+        "type": "PageVariables",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "electricity_array",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "scanned",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "airitme",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "ben",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "messages",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_VlkaV0GUiqlQNcQA",
+        "category": "Function",
+        "x": 125,
+        "y": 40,
+        "wires": [
+            [
+                "sd_7gfjrecDpNKV8VUQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_a6lxvc5gCM2PWU3i",
+        "type": "PageCallService",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_MoMIY02qFsSklHfG",
+            "flowName": "getTransMessage"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "messages",
+                "valueType": "this.page",
+                "value": "messages",
+                "mapVarName": "messages",
+                "localVar": "this.page.messages"
+            },
+            {
+                "mapVarType": "local",
+                "key": "bhSub",
+                "valueType": "this.page",
+                "value": "obsData",
+                "mapVarName": "bhSub",
+                "localVar": "this.page.obsData"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "getTransMessage",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_a6lxvc5gCM2PWU3i",
+        "category": "General",
+        "x": 405,
+        "y": 40,
+        "wires": [
+            [
+                "sd_YszqubFNKQBwjAgy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YszqubFNKQBwjAgy",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.messages)\nconsole.log(page.user)\npage.messages = page.messages?.filter(message => message.belongsTo == page.user.accountNumber)\nconsole.log('All messages: ', page.messages)\npage.messages = page.messages.filter((message) => !message.read)\n\nconsole.log('unread messages: ', page.messages)\n",
+        "functionName": "sd_YszqubFNKQBwjAgy",
+        "category": "Function",
+        "x": 485,
+        "y": 40,
+        "wires": [
+            [
+                "sd_zdrU1xTSVYRPpmVq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bDOocDqNN90lJajv",
+        "type": "PageServiceVariables",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "obsData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "obsData"
+                }
+            }
+        ],
+        "functionName": "sd_bDOocDqNN90lJajv",
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client",
+            "generateNext": true,
+            "serviceName": "api_service",
+            "relativeParentPath": "",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/api_service",
+        "category": "Function",
+        "x": 605,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "home_footerComponent"
+    },
+    {
+        "id": "sd_zdrU1xTSVYRPpmVq",
+        "type": "Script",
+        "z": "sd_MncTxFOUMvrbvqkG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let sub = page.obsData.subscribe({\n    next: (res) => console.log('From a footer res: ', res),\n    error: (err) => console.log('From a footer err: ', err),\n    complete: () => console.log('From a footer: complete ')\n})\n\nconsole.log(page.obsData)\nconsole.log(sub)",
+        "functionName": "sd_zdrU1xTSVYRPpmVq",
+        "category": "Function",
+        "x": 665,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "home_footerComponent",
+        "generated": true
+    }
+]

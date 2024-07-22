@@ -1,0 +1,637 @@
+[
+    {
+        "id": "sd_56fMMdFaMPEibdPl",
+        "type": "tab",
+        "createdDate": "2024-05-13T10:50:48.084Z",
+        "label": "saving_account",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "saving_accountComponent"
+    },
+    {
+        "id": "sd_9utjFzd17ucYPa7E",
+        "type": "OnInit",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_9utjFzd17ucYPa7E",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 60,
+        "wires": [
+            [
+                "sd_OxfpvBF66qJL4jyU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "saving_accountComponent"
+    },
+    {
+        "id": "sd_OxfpvBF66qJL4jyU",
+        "type": "PageVariables",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "submitted",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "accNo",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{accNo: \"\"}"
+                }
+            },
+            {
+                "textIp": "userInfor",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{email: \"\", accountNumber: \"\", fullName: \"\"}"
+                }
+            }
+        ],
+        "functionName": "sd_OxfpvBF66qJL4jyU",
+        "category": "Function",
+        "x": 185,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5nu1tL9qPuuH2x6P",
+        "type": "PageStart",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "openInfo",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "openInfo",
+        "category": "General",
+        "x": 285,
+        "y": 60,
+        "wires": [
+            [
+                "sd_FdMXZfSbe5SjG4as"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "saving_accountComponent"
+    },
+    {
+        "id": "sd_FdMXZfSbe5SjG4as",
+        "type": "OpenDialog",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_yAO9UqmUHSj9hosA",
+            "label": "infor"
+        },
+        "relativePath": "app/components/auth/activate_app/infor",
+        "data": "this.page",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "this.page",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page",
+        "functionName": "sd_FdMXZfSbe5SjG4as",
+        "category": "Dialog",
+        "x": 405,
+        "y": 60,
+        "wires": [
+            [
+                "sd_OIoq9DOR6k6WJW9v"
+            ],
+            [],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Otlqxan15c6188tr",
+        "type": "PageStart",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "accNumber",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "accNumber",
+        "category": "General",
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_wPot6HEP4qKPMMGw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "saving_accountComponent"
+    },
+    {
+        "id": "sd_wPot6HEP4qKPMMGw",
+        "type": "Environment",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_wPot6HEP4qKPMMGw",
+        "category": "General",
+        "x": 185,
+        "y": 200,
+        "wires": [
+            [
+                "sd_lomoohtD9RcmkROp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lomoohtD9RcmkROp",
+        "type": "Script",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true;\nbh.url = page.ssdUrl + 'get-customers';\nbh.collection = \"users\"",
+        "functionName": "sd_lomoohtD9RcmkROp",
+        "category": "Function",
+        "x": 265,
+        "y": 200,
+        "wires": [
+            [
+                "sd_tRiMCvkOzaMM5shS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_tRiMCvkOzaMM5shS",
+        "type": "PageSwitch",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "form.valid",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.form.valid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_tRiMCvkOzaMM5shS",
+        "category": "Function",
+        "x": 365,
+        "y": 200,
+        "wires": [
+            [
+                "sd_owjXem7BnP24XSLq"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_owjXem7BnP24XSLq",
+        "type": "HttpRequest",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.collection",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "collection"
+        },
+        "resultMapping": "bh.result",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_owjXem7BnP24XSLq",
+        "category": "HTTP",
+        "x": 485,
+        "y": 200,
+        "wires": [
+            [
+                "sd_25qbmaWtCWioINyk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_25qbmaWtCWioINyk",
+        "type": "Script",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.result)\nbh.user = bh.result.find((user:any) => user.accountNumber == page.accNo.accNo)\n\n\nconsole.log(bh.user)\n\n\nconsole.log(page.accNo.accNo)\nif( bh.user.accountNumber == page.accNo.accNo) {\n    console.log('Account numbers match ')\n}else {\n    console.log('Doesn\\'t match')\n}\n//  if(!bh.user) {\n//           alert(\"user does not exist!\");\n//           return\n//         } else {\n//           alert(\"hi\")\n//           console.log(bh.user)\n//         }",
+        "functionName": "sd_25qbmaWtCWioINyk",
+        "category": "Function",
+        "x": 585,
+        "y": 200,
+        "wires": [
+            [
+                "sd_JLl3W05a99SJC5mK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JLl3W05a99SJC5mK",
+        "type": "PageSwitch",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.accountNumber",
+        "propertyType": "bh",
+        "propertyGv": "bh.user.accountNumber",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "accNo.accNo",
+                "vt": "this.page",
+                "gv": "this.page.accNo.accNo"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_JLl3W05a99SJC5mK",
+        "category": "Function",
+        "x": 700,
+        "y": 200,
+        "wires": [
+            [
+                "sd_mLYV4znYZhm2YUWA"
+            ],
+            [
+                "sd_k9bjPiuJWb7fSK3t"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_k9bjPiuJWb7fSK3t",
+        "type": "SnackBar",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "does not exist"
+        },
+        "action": {
+            "type": "str",
+            "value": "ok"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_k9bjPiuJWb7fSK3t",
+        "category": "General",
+        "x": 805,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7CE8g6QtNrkyHw08",
+        "type": "Navigation",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/remote_app_pin",
+        "functionName": "sd_7CE8g6QtNrkyHw08",
+        "category": "Navigation",
+        "x": 1025,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_w2oSYlhAmBXWr25j",
+        "type": "Storage",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "userInfor"
+        },
+        "resultMapping": {},
+        "functionName": "sd_w2oSYlhAmBXWr25j",
+        "category": "Storage",
+        "x": 925,
+        "y": 100,
+        "wires": [
+            [
+                "sd_7CE8g6QtNrkyHw08"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_OIoq9DOR6k6WJW9v",
+        "type": "CloseDialog",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "data": "this.page.infor",
+        "functionName": "sd_OIoq9DOR6k6WJW9v",
+        "category": "Dialog",
+        "x": 565,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "info",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_mLYV4znYZhm2YUWA",
+        "type": "Script",
+        "z": "sd_56fMMdFaMPEibdPl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.userInfor.fullName = bh.user.fullName\npage.userInfor.accountNumber = bh.user.accountNumber\npage.userInfor.email = bh.user.email\n\nconsole.log('New Infor: ', page.userInfor)",
+        "functionName": "sd_mLYV4znYZhm2YUWA",
+        "category": "Function",
+        "x": 805,
+        "y": 100,
+        "wires": [
+            [
+                "sd_w2oSYlhAmBXWr25j"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "saving_accountComponent",
+        "generated": true
+    }
+]

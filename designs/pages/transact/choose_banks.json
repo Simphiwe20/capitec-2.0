@@ -1,0 +1,337 @@
+[
+    {
+        "id": "sd_sptYUzQ5VgCEOV3c",
+        "type": "tab",
+        "createdDate": "2024-05-23T17:26:16.315Z",
+        "label": "choose_banks",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "choose_banksComponent"
+    },
+    {
+        "id": "sd_jCG8yh1EQ0URZNF1",
+        "type": "OnInit",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_jCG8yh1EQ0URZNF1",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 60,
+        "wires": [
+            [
+                "sd_cP56GcbrJzoSdH5l"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "choose_banksComponent"
+    },
+    {
+        "id": "sd_cP56GcbrJzoSdH5l",
+        "type": "PageVariables",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "banks",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "benDetails",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_cP56GcbrJzoSdH5l",
+        "category": "Function",
+        "x": 185,
+        "y": 60,
+        "wires": [
+            [
+                "sd_eUoRGRXRo8pKC6Pf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "choose_banksComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_eUoRGRXRo8pKC6Pf",
+        "type": "Script",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.banks = [\n    {bankName: 'Capitec Bank', branchCode: '470010'},\n    {bankName: 'Absa Bank', branchCode: '632005'},\n    {bankName: 'First National Bank', branchCode: '250655'},\n    {bankName: 'Nedbank', branchCode: '19865'},\n    {bankName: 'Standard Bank', branchCode: '051001'}\n]",
+        "functionName": "sd_eUoRGRXRo8pKC6Pf",
+        "category": "Function",
+        "x": 305,
+        "y": 60,
+        "wires": [
+            [
+                "sd_eeu8GFvkc2pFenMM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "choose_banksComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Ix0kJtzs0aAvGiwR",
+        "type": "PageStart",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "chosenBank",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "bank",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "chosenBank",
+        "category": "General",
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_MHBL0c4lu9uYtrKp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "choose_banksComponent"
+    },
+    {
+        "id": "sd_MHBL0c4lu9uYtrKp",
+        "type": "Script",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.benDetails.bankName = bh.input.bank?.bankName\npage.benDetails.branchCode = bh.input.bank?.branchCode\nconsole.log(page.benDetails)\n\npage.routeData = {data: JSON.stringify(page.benDetails)}\nconsole.log(page.routeData)",
+        "functionName": "sd_MHBL0c4lu9uYtrKp",
+        "category": "Function",
+        "x": 185,
+        "y": 200,
+        "wires": [
+            [
+                "sd_TcFisP25MSSjYN0F"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "choose_banksComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TcFisP25MSSjYN0F",
+        "type": "Navigation",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/bank_account",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": {
+            "type": "this.page",
+            "value": "routeData"
+        },
+        "qparamsArray": "",
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_TcFisP25MSSjYN0F",
+        "category": "Navigation",
+        "x": 305,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "choose_banksComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_eeu8GFvkc2pFenMM",
+        "type": "NavigationData",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "tmpOp": "",
+        "tmpOpType": "",
+        "operationType": "queryParams",
+        "operation": "keys",
+        "key": "bh",
+        "resultMapping": "bh.routeData",
+        "functionName": "sd_eeu8GFvkc2pFenMM",
+        "category": "Navigation",
+        "x": 405,
+        "y": 60,
+        "wires": [
+            [
+                "sd_hTpJLxUalXCBpUEs"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "key": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "routeData",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "choose_banksComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hTpJLxUalXCBpUEs",
+        "type": "Script",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.benDetails = JSON.parse(bh.routeData.routeData)\nconsole.log(page.benDetails)",
+        "functionName": "sd_hTpJLxUalXCBpUEs",
+        "category": "Function",
+        "x": 505,
+        "y": 60,
+        "wires": [
+            [
+                "sd_iB2EpwcEyfNArj8O"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "choose_banksComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iB2EpwcEyfNArj8O",
+        "type": "Log",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.benDetails",
+        "functionName": "sd_iB2EpwcEyfNArj8O",
+        "category": "General",
+        "x": 605,
+        "y": 60,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "benDetails",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "choose_banksComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_XlecMceGzJY3cw6C",
+        "type": "PageStart",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "goBack",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goBack",
+        "category": "General",
+        "x": 65,
+        "y": 340,
+        "wires": [
+            [
+                "sd_1RR6Ak7neNnzni86"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "choose_banksComponent"
+    },
+    {
+        "id": "sd_1RR6Ak7neNnzni86",
+        "type": "PageCallService",
+        "z": "sd_sptYUzQ5VgCEOV3c",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_crCsmk2T9Wr8C9jG",
+            "flowName": "backBtn"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "backBtn",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_1RR6Ak7neNnzni86",
+        "category": "General",
+        "x": 205,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "choose_banksComponent",
+        "generated": true
+    }
+]

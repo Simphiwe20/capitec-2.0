@@ -1,0 +1,33 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="height:60px;" class="blue-bg" fxLayoutAlign="space-between center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="white">arrow_back</mat-icon>
+        <h3 class="white">
+          Buy Prepaid Mobile</h3><mat-icon class="white">search</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="space-between center" [fxShow]="true" routerLink="/buy-prepaid">
+        <p class="padding-left">
+          Add beneficiary</p><mat-icon style="padding-right:10px;" class="blue-color">add_circle</mat-icon>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h3 style="margin-bottom: 10px;" class="m-b-0 padding-left">
+            All</h3>
+          <div fxLayout="row wrap" style="height:60px;border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let air of page.airArray" routerLink="/buy-airtime" (click)="sd_tyTSmuGEA6EKXtaG(air)">
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="padding-left blue-color">face</mat-icon></div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  {{air.benName}}
+                </p>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon style="padding-right:10px;" class="blue-color">chevron_right</mat-icon></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

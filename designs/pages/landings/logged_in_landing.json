@@ -1,0 +1,118 @@
+[
+    {
+        "id": "sd_HqxO21JK81N4zSoD",
+        "type": "tab",
+        "createdDate": "2024-05-20T11:58:22.112Z",
+        "label": "logged_in_landing",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "logged_in_landingComponent"
+    },
+    {
+        "id": "sd_XF0gShbhqyAaYvau",
+        "type": "OnInit",
+        "z": "sd_HqxO21JK81N4zSoD",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_XF0gShbhqyAaYvau",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_xkyc4kOM44EIss9T"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "logged_in_landingComponent"
+    },
+    {
+        "id": "sd_1l91qiTYiwAw5Kaq",
+        "type": "PageVariables",
+        "z": "sd_HqxO21JK81N4zSoD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_1l91qiTYiwAw5Kaq",
+        "category": "Function",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            [
+                "sd_vamgXGR64QI3u8Ga"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "logged_in_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_vamgXGR64QI3u8Ga",
+        "type": "Script",
+        "z": "sd_HqxO21JK81N4zSoD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.router.navigate(['/logged_in_landing/home'])",
+        "functionName": "sd_vamgXGR64QI3u8Ga",
+        "category": "Function",
+        "x": 385,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "logged_in_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xkyc4kOM44EIss9T",
+        "type": "UseDependency",
+        "z": "sd_HqxO21JK81N4zSoD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_xkyc4kOM44EIss9T",
+        "category": "Function",
+        "x": 145,
+        "y": 40,
+        "wires": [
+            [
+                "sd_1l91qiTYiwAw5Kaq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "logged_in_landingComponent",
+        "generated": true
+    }
+]

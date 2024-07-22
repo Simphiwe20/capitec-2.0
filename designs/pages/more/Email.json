@@ -1,0 +1,210 @@
+[
+    {
+        "id": "sd_QfptWt23HkmwSIFH",
+        "type": "tab",
+        "createdDate": "2024-05-29T14:43:15.474Z",
+        "label": "Email",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "EmailComponent"
+    },
+    {
+        "id": "sd_vySl4XHPSURg3BlS",
+        "type": "OnInit",
+        "z": "sd_QfptWt23HkmwSIFH",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_vySl4XHPSURg3BlS",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_fxmTSabF36wkXmuB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "EmailComponent"
+    },
+    {
+        "id": "sd_bXamP2fsESvyedSq",
+        "type": "PageVariables",
+        "z": "sd_QfptWt23HkmwSIFH",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "email",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "location",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_bXamP2fsESvyedSq",
+        "category": "Function",
+        "x": 245,
+        "y": 40,
+        "wires": [
+            [
+                "sd_6D89pOuVkddz2SOz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "EmailComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6D89pOuVkddz2SOz",
+        "type": "Script",
+        "z": "sd_QfptWt23HkmwSIFH",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.email = 'angel@gmail.com'",
+        "functionName": "sd_6D89pOuVkddz2SOz",
+        "category": "Function",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            [
+                "sd_2YNvzpLHJpH5QTKF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "EmailComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oOc8vGRHP6aUBqEh",
+        "type": "PageStart",
+        "z": "sd_QfptWt23HkmwSIFH",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "back",
+        "category": "General",
+        "x": 45,
+        "y": 240,
+        "wires": [
+            [
+                "sd_o88c9YPHpsSqqy7v"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "EmailComponent"
+    },
+    {
+        "id": "sd_o88c9YPHpsSqqy7v",
+        "type": "Script",
+        "z": "sd_QfptWt23HkmwSIFH",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.location.back();",
+        "functionName": "sd_o88c9YPHpsSqqy7v",
+        "category": "Function",
+        "x": 145,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "EmailComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fxmTSabF36wkXmuB",
+        "type": "UseDependency",
+        "z": "sd_QfptWt23HkmwSIFH",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Location",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "location"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/common",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_fxmTSabF36wkXmuB",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            [
+                "sd_bXamP2fsESvyedSq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "EmailComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_2YNvzpLHJpH5QTKF",
+        "type": "Storage",
+        "z": "sd_QfptWt23HkmwSIFH",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_2YNvzpLHJpH5QTKF",
+        "category": "Storage",
+        "x": 460,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "EmailComponent",
+        "generated": true
+    }
+]

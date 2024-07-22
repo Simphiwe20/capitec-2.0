@@ -1,0 +1,553 @@
+[
+    {
+        "id": "sd_V9teRku874KDWT3C",
+        "type": "tab",
+        "createdDate": "2024-05-18T06:38:45.286Z",
+        "label": "ft_landing",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "ft_landingComponent"
+    },
+    {
+        "id": "sd_IlYBtzF7lNSUS4C7",
+        "type": "OnInit",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_IlYBtzF7lNSUS4C7",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_yJKGCJnUP14qfurL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ft_landingComponent"
+    },
+    {
+        "id": "sd_yJKGCJnUP14qfurL",
+        "type": "PageVariables",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "toggleValue",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "toggled",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "secondToggled",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "signingIn",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "forMySelf",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "routes",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_yJKGCJnUP14qfurL",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            [
+                "sd_KyjpI80hBNTvXWRy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_kLwFxLDrCSx2njEU",
+        "type": "PageStart",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "toggle",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "doing",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "toggle",
+        "category": "General",
+        "x": 65,
+        "y": 160,
+        "wires": [
+            [
+                "sd_FqGOOwmvstX9QSyj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ft_landingComponent"
+    },
+    {
+        "id": "sd_KyjpI80hBNTvXWRy",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.toggle = {\n    toggle1: '',\n    toggle2: ''\n}\n\nconsole.log('NEW CHANGES')",
+        "functionName": "sd_KyjpI80hBNTvXWRy",
+        "category": "Function",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FqGOOwmvstX9QSyj",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.toggled = true\nconsole.log(bh.input.doing)\n",
+        "functionName": "sd_FqGOOwmvstX9QSyj",
+        "category": "Function",
+        "x": 165,
+        "y": 160,
+        "wires": [
+            [
+                "sd_mxgyZcmuHHOrDk57"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fnsCRP4cE6AznV2U",
+        "type": "PageStart",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "secondToggle",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "For",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "secondToggle",
+        "category": "General",
+        "x": 65,
+        "y": 320,
+        "wires": [
+            [
+                "sd_tYa9FYGPl2JlsbDy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ft_landingComponent"
+    },
+    {
+        "id": "sd_tYa9FYGPl2JlsbDy",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.secondToggled = true",
+        "functionName": "sd_tYa9FYGPl2JlsbDy",
+        "category": "Function",
+        "x": 165,
+        "y": 320,
+        "wires": [
+            [
+                "sd_Gu1eTAgXqVcMa0mh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Gu1eTAgXqVcMa0mh",
+        "type": "PageSwitch",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "For",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.For",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "myself",
+                "vt": "str",
+                "gv": "\"myself\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_Gu1eTAgXqVcMa0mh",
+        "category": "Function",
+        "x": 265,
+        "y": 320,
+        "wires": [
+            [
+                "sd_WzZv1hHhQBToQwpq"
+            ],
+            [
+                "sd_Cyw1RaNSYYYytPlg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WzZv1hHhQBToQwpq",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " page.forMySelf = true\nconsole.log(bh.input.For)\n",
+        "functionName": "sd_WzZv1hHhQBToQwpq",
+        "category": "Function",
+        "x": 405,
+        "y": 280,
+        "wires": [
+            [
+                "sd_BssnCf0DfEhhlJUR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Cyw1RaNSYYYytPlg",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " page.forMySelf = false\nconsole.log(bh.input.For)\n ",
+        "functionName": "sd_Cyw1RaNSYYYytPlg",
+        "category": "Function",
+        "x": 405,
+        "y": 360,
+        "wires": [
+            [
+                "sd_fVq7anyGYvaGUfxW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_mxgyZcmuHHOrDk57",
+        "type": "PageSwitch",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "checkDoing",
+        "property": "doing",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.doing",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "sign-in",
+                "vt": "str",
+                "gv": "\"sign-in\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "checkDoing",
+        "category": "Function",
+        "x": 265,
+        "y": 160,
+        "wires": [
+            [
+                "sd_ZyY81xufkWwNr5mm"
+            ],
+            [
+                "sd_iq3b8JdZ2fpE987l"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ZyY81xufkWwNr5mm",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.signingIn = true\nconsole.log(bh.input.doing)",
+        "functionName": "sd_ZyY81xufkWwNr5mm",
+        "category": "Function",
+        "x": 405,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iq3b8JdZ2fpE987l",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.signingIn = false\nconsole.log(bh.input.doing)\nconsole.log(bh)\n",
+        "functionName": "sd_iq3b8JdZ2fpE987l",
+        "category": "Function",
+        "x": 405,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_BssnCf0DfEhhlJUR",
+        "type": "PageSwitch",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "signingIn",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.signingIn",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_BssnCf0DfEhhlJUR",
+        "category": "Function",
+        "x": 505,
+        "y": 240,
+        "wires": [
+            [
+                "sd_6uZRrWhAfiWxYKbq"
+            ],
+            [
+                "sd_7sF8DuIjEeC4jBxb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fVq7anyGYvaGUfxW",
+        "type": "PageSwitch",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "signingIn",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.signingIn",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_fVq7anyGYvaGUfxW",
+        "category": "Function",
+        "x": 505,
+        "y": 400,
+        "wires": [
+            [
+                "sd_1JdgMnGF8MyQYljb"
+            ],
+            [
+                "sd_7XlgcTX4ZOW2CeOO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6uZRrWhAfiWxYKbq",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.routes = '/sign_in_stepper'",
+        "functionName": "sd_6uZRrWhAfiWxYKbq",
+        "category": "Function",
+        "x": 605,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7sF8DuIjEeC4jBxb",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.routes = '/sign_up_stepper'\n",
+        "functionName": "sd_7sF8DuIjEeC4jBxb",
+        "category": "Function",
+        "x": 605,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1JdgMnGF8MyQYljb",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.routes = '/company_activate'\n",
+        "functionName": "sd_1JdgMnGF8MyQYljb",
+        "category": "Function",
+        "x": 605,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7XlgcTX4ZOW2CeOO",
+        "type": "Script",
+        "z": "sd_V9teRku874KDWT3C",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.routes = '/company_open_account'\n",
+        "functionName": "sd_7XlgcTX4ZOW2CeOO",
+        "category": "Function",
+        "x": 605,
+        "y": 460,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ft_landingComponent",
+        "generated": true
+    }
+]

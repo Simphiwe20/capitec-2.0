@@ -1,0 +1,148 @@
+[
+    {
+        "id": "sd_O3HzKrKQL15jaK0M",
+        "type": "tab",
+        "createdDate": "2024-05-23T06:30:52.790Z",
+        "label": "Our_privacy_center",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "Our_privacy_centerComponent"
+    },
+    {
+        "id": "sd_8IypCuKzEFLCsP0X",
+        "type": "OnInit",
+        "z": "sd_O3HzKrKQL15jaK0M",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_8IypCuKzEFLCsP0X",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_SKNs6snOKd5PrUHw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Our_privacy_centerComponent"
+    },
+    {
+        "id": "sd_eGgv1qrPtFxTDkOL",
+        "type": "PageVariables",
+        "z": "sd_O3HzKrKQL15jaK0M",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "location",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_eGgv1qrPtFxTDkOL",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Our_privacy_centerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xQIauQuuLvB7bge3",
+        "type": "PageStart",
+        "z": "sd_O3HzKrKQL15jaK0M",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "back",
+        "category": "General",
+        "x": 85,
+        "y": 200,
+        "wires": [
+            [
+                "sd_e21NPAfpMwbtkZ9U"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Our_privacy_centerComponent"
+    },
+    {
+        "id": "sd_e21NPAfpMwbtkZ9U",
+        "type": "Script",
+        "z": "sd_O3HzKrKQL15jaK0M",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.location.back();",
+        "functionName": "sd_e21NPAfpMwbtkZ9U",
+        "category": "Function",
+        "x": 185,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Our_privacy_centerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_SKNs6snOKd5PrUHw",
+        "type": "UseDependency",
+        "z": "sd_O3HzKrKQL15jaK0M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Location",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "location"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/common",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_SKNs6snOKd5PrUHw",
+        "category": "Function",
+        "x": 100,
+        "y": 40,
+        "wires": [
+            [
+                "sd_eGgv1qrPtFxTDkOL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Our_privacy_centerComponent",
+        "generated": true
+    }
+]

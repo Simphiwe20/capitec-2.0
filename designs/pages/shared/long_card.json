@@ -1,0 +1,190 @@
+[
+    {
+        "id": "sd_ZRKsbEO4znXt7zyD",
+        "type": "tab",
+        "createdDate": "2024-05-20T09:17:39.568Z",
+        "label": "long_card",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "long_cardComponent"
+    },
+    {
+        "id": "sd_oeK98C0MwVwJxQJr",
+        "type": "OnInit",
+        "z": "sd_ZRKsbEO4znXt7zyD",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_oeK98C0MwVwJxQJr",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 80,
+        "wires": [
+            [
+                "sd_ouI8cCaFhVASRm8Y"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "long_cardComponent"
+    },
+    {
+        "id": "sd_cAPaYKLUwffSwu5n",
+        "type": "PageVariables",
+        "z": "sd_ZRKsbEO4znXt7zyD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "cardsInfor",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "globalOne",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_cAPaYKLUwffSwu5n",
+        "category": "Function",
+        "x": 225,
+        "y": 80,
+        "wires": [
+            [
+                "sd_RhOUvOnBv5xFmRDt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_RhOUvOnBv5xFmRDt",
+        "type": "Script",
+        "z": "sd_ZRKsbEO4znXt7zyD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.cardsInfor = [\n    {image: '../../../assets/Web/Images/savings.jpg', name: 'Savings Account', routes: '/logged_in_landing/savings_account'},\n    {image: '../../../assets/Web/Images/saving_plan.jpg', name: 'Saving', routes: '/underconstruction'},\n    {image: '../../../assets/Web/Images/better_living.jpg', name: 'Live Better', title: 'Live Better', routes: '/underconstruction'}\n]\n\npage.globalOne = [\n    {image: '../../../assets/Web/Images/savings.jpg', name: 'Savings Account', name1: 'Tranactional savings account', routes: '/logged_in_landing/savings_account'},\n    {image: '../../../assets/Web/Images/saving_plan.jpg', name: 'Save', name1:'Flexible, Fixed-Term & Tax-Free Savings', routes: '/logged_in_landing/savings_account'},\n    {image: '../../../assets/Web/Images/insure.png', name: 'Insure', name1: 'Cover for you and your family', routes: '/logged_in_landing/savings_account'},\n    {image: '../../../assets/Web/Images/credit.png', name: 'Credit', name1: 'Credit Card, Facility & Loan', routes: '/logged_in_landing/credit'}\n\n]",
+        "functionName": "sd_RhOUvOnBv5xFmRDt",
+        "category": "Function",
+        "x": 325,
+        "y": 80,
+        "wires": [
+            [
+                "sd_YqOri42kYUCjimZE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ouI8cCaFhVASRm8Y",
+        "type": "UseDependency",
+        "z": "sd_ZRKsbEO4znXt7zyD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_ouI8cCaFhVASRm8Y",
+        "category": "Function",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "sd_cAPaYKLUwffSwu5n"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YqOri42kYUCjimZE",
+        "type": "PageSwitch",
+        "z": "sd_ZRKsbEO4znXt7zyD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "router.url",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.router.url",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/logged_in_landing/explore",
+                "vt": "str",
+                "gv": "\"/logged_in_landing/explore\""
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_YqOri42kYUCjimZE",
+        "category": "Function",
+        "x": 460,
+        "y": 80,
+        "wires": [
+            [
+                "sd_Axw8rnfthbJugwRA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Axw8rnfthbJugwRA",
+        "type": "Script",
+        "z": "sd_ZRKsbEO4znXt7zyD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.cardsInfor = page.globalOne",
+        "functionName": "sd_Axw8rnfthbJugwRA",
+        "category": "Function",
+        "x": 600,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "long_cardComponent",
+        "generated": true
+    }
+]

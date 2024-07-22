@@ -1,0 +1,218 @@
+[
+    {
+        "id": "sd_9vYcIuMzuJoy5oki",
+        "type": "tab",
+        "createdDate": "2024-06-02T11:24:57.214Z",
+        "label": "sucess",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "sucessComponent"
+    },
+    {
+        "id": "sd_gzgVNswepMNZKRg8",
+        "type": "OnInit",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_gzgVNswepMNZKRg8",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_HEPNtgrh9aBFkLzS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sucessComponent"
+    },
+    {
+        "id": "sd_HEPNtgrh9aBFkLzS",
+        "type": "PageVariables",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "routeData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "feedback",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "isPayment",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": "false"
+                }
+            }
+        ],
+        "functionName": "sd_HEPNtgrh9aBFkLzS",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_iX3VNQRqEzNotSgf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sucessComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iX3VNQRqEzNotSgf",
+        "type": "NavigationData",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "tmpOp": "",
+        "tmpOpType": "",
+        "operationType": "queryParams",
+        "operation": "keys",
+        "key": "bh",
+        "resultMapping": "this.page.routeData",
+        "functionName": "sd_iX3VNQRqEzNotSgf",
+        "category": "Navigation",
+        "x": 300,
+        "y": 40,
+        "wires": [
+            [
+                "sd_pUxBkGov8ooZznwt"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "key": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "routeData",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sucessComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_W7CHMmSdOZ185aR9",
+        "type": "Log",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.routeData",
+        "functionName": "sd_W7CHMmSdOZ185aR9",
+        "category": "General",
+        "x": 505,
+        "y": 40,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "routeData",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sucessComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_pUxBkGov8ooZznwt",
+        "type": "Script",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let ben = JSON.parse(page.routeData.routeData ? page.routeData.routeData : page.routeData.data)\nif(page.routeData._type === 'payment') {\n    page.feedback = `Payment to ${ben.benName} was sucessfully`\n    page.isPayment = true\n}else if(page.routeData._type === 'ele') {\n    page.feedback = `${ben.benName}'s Electricity has been purchased sucessfully`\n}else if(page.routeData._type === 'transfer') {\n    page.feedback = `${ben.benName} Transfer was made sucessfully`\n}else {\n    page.feedback = ` ${ben.benName} has been added to your benefeciaries`\n}\n\npage.routeData = JSON.parse(page.routeData.routeData)\n",
+        "functionName": "sd_pUxBkGov8ooZznwt",
+        "category": "Function",
+        "x": 400,
+        "y": 40,
+        "wires": [
+            [
+                "sd_W7CHMmSdOZ185aR9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sucessComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ja1ZqA8GhkW0ERUq",
+        "type": "PageStart",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "done",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "done",
+        "category": "General",
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "sd_UPGqBtmDeeo9VSH1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sucessComponent"
+    },
+    {
+        "id": "sd_UPGqBtmDeeo9VSH1",
+        "type": "Navigation",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/logged_in_landing/pay_beneficiary",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_UPGqBtmDeeo9VSH1",
+        "category": "Navigation",
+        "x": 200,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sucessComponent",
+        "generated": true
+    }
+]

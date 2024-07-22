@@ -1,0 +1,389 @@
+[
+    {
+        "id": "sd_a3FrcERJwF9lEhv4",
+        "type": "tab",
+        "createdDate": "2024-05-19T18:01:34.491Z",
+        "label": "unable_to_capture",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "unable_to_captureComponent"
+    },
+    {
+        "id": "sd_GEcjoZvfGb2FTorJ",
+        "type": "OnInit",
+        "z": "sd_a3FrcERJwF9lEhv4",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_GEcjoZvfGb2FTorJ",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_9iJGgYdxXOorGQZu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "unable_to_captureComponent"
+    },
+    {
+        "id": "sd_9iJGgYdxXOorGQZu",
+        "type": "PageVariables",
+        "z": "sd_a3FrcERJwF9lEhv4",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "routeData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_9iJGgYdxXOorGQZu",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_FSzLsUDgt61UlUkz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "unable_to_captureComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WTjz7mlkSoXm1Unw",
+        "type": "PageStart",
+        "z": "sd_a3FrcERJwF9lEhv4",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "takePic",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "takePic",
+        "category": "General",
+        "x": 65,
+        "y": 140,
+        "wires": [
+            [
+                "sd_EsmateBZPve7Ugnc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "unable_to_captureComponent"
+    },
+    {
+        "id": "sd_EsmateBZPve7Ugnc",
+        "type": "Navigation",
+        "z": "sd_a3FrcERJwF9lEhv4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/take_selfie",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": {
+            "type": "this.page",
+            "value": "routeData"
+        },
+        "qparamsArray": "",
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_EsmateBZPve7Ugnc",
+        "category": "Navigation",
+        "x": 185,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "unable_to_captureComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FSzLsUDgt61UlUkz",
+        "type": "NavigationData",
+        "z": "sd_a3FrcERJwF9lEhv4",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "queryParams",
+        "operation": "keys",
+        "key": "bh",
+        "resultMapping": "this.page.routeData",
+        "functionName": "sd_FSzLsUDgt61UlUkz",
+        "category": "Navigation",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "key": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "routeData",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "unable_to_captureComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_G1OhHhaA1w1sBiSu",
+        "type": "PageStart",
+        "z": "sd_a3FrcERJwF9lEhv4",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "confirmCancellation",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "confirmCancellation",
+        "category": "General",
+        "x": 60,
+        "y": 240,
+        "wires": [
+            [
+                "sd_dSEIhIWVNJiinHUn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "unable_to_captureComponent"
+    },
+    {
+        "id": "sd_dSEIhIWVNJiinHUn",
+        "type": "OpenDialog",
+        "z": "sd_a3FrcERJwF9lEhv4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_DPiEUfxqrWsWl3UU",
+            "label": "confirm_reg_cancellation"
+        },
+        "relativePath": "app/components/PopUps/confirm_reg_cancellation",
+        "data": "this.page",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "\"350px\"",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page",
+        "functionName": "sd_dSEIhIWVNJiinHUn",
+        "category": "Dialog",
+        "x": 185,
+        "y": 240,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "str",
+                "value": "350px",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "unable_to_captureComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TdO3QO1AehHUqa2Y",
+        "type": "PageCallService",
+        "z": "sd_a3FrcERJwF9lEhv4",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_xLeM7OqXo1NurqSE",
+            "flowName": "getPic"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "userImage",
+                "valueType": "this.page",
+                "value": "userImage",
+                "mapVarName": "userImage",
+                "localVar": "this.page.userImage"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "getPic",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_TdO3QO1AehHUqa2Y",
+        "category": "General",
+        "x": 425,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "unable_to_captureComponent"
+    }
+]

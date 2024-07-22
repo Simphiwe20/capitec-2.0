@@ -1,0 +1,1032 @@
+[
+    {
+        "id": "sd_xarQKC5ME4WVPnbE",
+        "type": "tab",
+        "createdDate": "2024-05-07T18:46:04.860Z",
+        "label": "messages",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "messagesComponent"
+    },
+    {
+        "id": "sd_LcvImEeazBu1tGQG",
+        "type": "OnInit",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_LcvImEeazBu1tGQG",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_AIGBMD2nlwzvORPj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_AIGBMD2nlwzvORPj",
+        "type": "PageVariables",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "electricity_array",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "scanned",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "airitme",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "ben",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "contacanated",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "messages",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "unreadMessages",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_AIGBMD2nlwzvORPj",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_2hOeDMIyzMBjcPQY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_NjfHHCxJjOJV0vnR",
+        "type": "PageStart",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "getElectricity",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getElectricity",
+        "category": "General",
+        "x": 65,
+        "y": 140,
+        "wires": [
+            [
+                "sd_KgAvLx72RX0GLFJx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_KgAvLx72RX0GLFJx",
+        "type": "Environment",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_KgAvLx72RX0GLFJx",
+        "category": "General",
+        "x": 165,
+        "y": 140,
+        "wires": [
+            [
+                "sd_Gj8SZ3kfDvMOjBJt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_2hOeDMIyzMBjcPQY",
+        "type": "Storage",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_2hOeDMIyzMBjcPQY",
+        "category": "Storage",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            [
+                "sd_idKJnZUv0o15F4gd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Gj8SZ3kfDvMOjBJt",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url_electric = page.ssdUrl + \"get-electricity\"\n\nbh.body = {\n    collection : \"electricity\"\n}",
+        "functionName": "sd_Gj8SZ3kfDvMOjBJt",
+        "category": "Function",
+        "x": 265,
+        "y": 140,
+        "wires": [
+            [
+                "sd_kWxlBgP7jub4HX9j"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_kWxlBgP7jub4HX9j",
+        "type": "HttpRequest",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_electric",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_electric"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_kWxlBgP7jub4HX9j",
+        "category": "HTTP",
+        "x": 345,
+        "y": 140,
+        "wires": [
+            [
+                "sd_R435umt3s3rq9mO0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_R435umt3s3rq9mO0",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.electricity = page.result.filter((user:any) =>{\n   return user.belongsTo == page.user.accountNumber\n})\n\npage.electricity_array = bh.electricity\nconsole.log(page.electricity_array)\n",
+        "functionName": "sd_R435umt3s3rq9mO0",
+        "category": "Function",
+        "x": 465,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_uaF0Ztq3Kbxr1bor",
+        "type": "PageStart",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "getScan",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getScan",
+        "category": "General",
+        "x": 65,
+        "y": 220,
+        "wires": [
+            [
+                "sd_z5ioaXk9YOX0ts3M"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_z5ioaXk9YOX0ts3M",
+        "type": "Environment",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_z5ioaXk9YOX0ts3M",
+        "category": "General",
+        "x": 165,
+        "y": 220,
+        "wires": [
+            [
+                "sd_6vsQuDjlD3pho4J4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6vsQuDjlD3pho4J4",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url_scanned = page.ssdUrl + \"get-scanned\"\n\nbh.body = {\n    collection : \"scan_to_pay\"\n}",
+        "functionName": "sd_6vsQuDjlD3pho4J4",
+        "category": "Function",
+        "x": 265,
+        "y": 220,
+        "wires": [
+            [
+                "sd_ldDcrkXEyoSKYHhf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ldDcrkXEyoSKYHhf",
+        "type": "HttpRequest",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_scanned",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_scanned"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_ldDcrkXEyoSKYHhf",
+        "category": "HTTP",
+        "x": 345,
+        "y": 220,
+        "wires": [
+            [
+                "sd_93Acfxr8d3FbtmFT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_93Acfxr8d3FbtmFT",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.scanner = page.results.filter((user:any) =>{\n   return user.belongsTo == page.user.accountNumber\n})\n\npage.scanned = bh.scanner\n",
+        "functionName": "sd_93Acfxr8d3FbtmFT",
+        "category": "Function",
+        "x": 425,
+        "y": 220,
+        "wires": [
+            [
+                "sd_9Mts9oTjlkMuIPG9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_x9m0p9mzequl3sZ3",
+        "type": "PageStart",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "get airtime",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getAirtime",
+        "category": "General",
+        "x": 85,
+        "y": 300,
+        "wires": [
+            [
+                "sd_NaIyo7cEWVdfjJHz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_NaIyo7cEWVdfjJHz",
+        "type": "Environment",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_NaIyo7cEWVdfjJHz",
+        "category": "General",
+        "x": 185,
+        "y": 300,
+        "wires": [
+            [
+                "sd_2sVzz4ZMmJKttY7j"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_2sVzz4ZMmJKttY7j",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url_airtime = page.ssdUrl + \"get-airtime\"\n\nbh.body_airtime = {\n    collection : \"airtime\"\n}",
+        "functionName": "sd_2sVzz4ZMmJKttY7j",
+        "category": "Function",
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "sd_JSZIpftIEmJyh2st"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JSZIpftIEmJyh2st",
+        "type": "HttpRequest",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_airtime",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_airtime"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body_airtime",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body_airtime"
+        },
+        "resultMapping": "this.page.results_airtime",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results_airtime"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_JSZIpftIEmJyh2st",
+        "category": "HTTP",
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "sd_svyuHWAJZwPOtGQT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_svyuHWAJZwPOtGQT",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.airtime = page.results_airtime.filter((user:any) =>{\n   return user.belongsTo == page.user.accountNumber\n})\n\npage.airtime = bh.airtime\n",
+        "functionName": "sd_svyuHWAJZwPOtGQT",
+        "category": "Function",
+        "x": 430,
+        "y": 300,
+        "wires": [
+            [
+                "sd_bNfpBkgAt22iOEF5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_XHIm2cslpcv4jpll",
+        "type": "PageStart",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "get beneficiary",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getBeneficiary",
+        "category": "General",
+        "x": 85,
+        "y": 400,
+        "wires": [
+            [
+                "sd_B2SF1jKSYwErsrng"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_B2SF1jKSYwErsrng",
+        "type": "Environment",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_B2SF1jKSYwErsrng",
+        "category": "General",
+        "x": 205,
+        "y": 400,
+        "wires": [
+            [
+                "sd_QCTW6HruhkNOZsDF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_QCTW6HruhkNOZsDF",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url_payed = page.ssdUrl + \"get-payed-ben\"\n\nbh.body_payed = {\n    collection : \"payed-ben\"\n}",
+        "functionName": "sd_QCTW6HruhkNOZsDF",
+        "category": "Function",
+        "x": 285,
+        "y": 400,
+        "wires": [
+            [
+                "sd_WNtB0sEMcXAdg857"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WNtB0sEMcXAdg857",
+        "type": "HttpRequest",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url_payed",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url_payed"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body_payed",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body_payed"
+        },
+        "resultMapping": "this.page.results_payed",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results_payed"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_WNtB0sEMcXAdg857",
+        "category": "HTTP",
+        "x": 365,
+        "y": 400,
+        "wires": [
+            [
+                "sd_jtkIHqRPN3YCnxLa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_jtkIHqRPN3YCnxLa",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.payed_ben = page.results_payed.filter((user:any) =>{\n   return user.belongsTo == page.user.accountNumber\n})\n\npage.ben = bh.payed_ben\n",
+        "functionName": "sd_jtkIHqRPN3YCnxLa",
+        "category": "Function",
+        "x": 445,
+        "y": 400,
+        "wires": [
+            [
+                "sd_TrXnyxUrkhKXppe8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_idKJnZUv0o15F4gd",
+        "type": "PageCallService",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "get-messages",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_MoMIY02qFsSklHfG",
+            "flowName": "getTransMessage"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "messages",
+                "valueType": "bh",
+                "value": "messages",
+                "mapVarName": "messages",
+                "localVar": "bh.messages"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "getTransMessage",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "getMessages",
+        "category": "General",
+        "x": 405,
+        "y": 40,
+        "wires": [
+            [
+                "sd_PqI5bKDCALhoRBZD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "messagesComponent"
+    },
+    {
+        "id": "sd_9Mts9oTjlkMuIPG9",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"scanned ==>\", page.scanned)",
+        "functionName": "sd_9Mts9oTjlkMuIPG9",
+        "category": "Function",
+        "x": 565,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bNfpBkgAt22iOEF5",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"airtime ==>\", page.airtime)",
+        "functionName": "sd_bNfpBkgAt22iOEF5",
+        "category": "Function",
+        "x": 570,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TrXnyxUrkhKXppe8",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"beneficiary ==>\", page.ben)",
+        "functionName": "sd_TrXnyxUrkhKXppe8",
+        "category": "Function",
+        "x": 585,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PqI5bKDCALhoRBZD",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.messages = bh.messages.filter((message, indx) => message.belongsTo == page.user.accountNumber)\npage.unreadMessages = page.messages.filter((message) => !message.read)\nconsole.log('Unread messages: ', page.unreadMessages)",
+        "functionName": "sd_PqI5bKDCALhoRBZD",
+        "category": "Function",
+        "x": 525,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_L2nh9SXrWCG5en3S",
+        "type": "PageStart",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "updateMessage",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "message",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "updateMessage",
+        "category": "General",
+        "x": 85,
+        "y": 540,
+        "wires": [
+            [
+                "sd_0iaFYiV7SVKaS3O0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_wdSKgCrmsvVb34HG",
+        "type": "PageCallService",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_6Sij7Ib64exZaxKV",
+            "flowName": "updateTransMessage"
+        },
+        "inputVariables": [
+            {
+                "key": "message",
+                "map": true,
+                "valueType": "bh",
+                "value": "message"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "updateTransMessage",
+        "inputParams": [
+            "bh.message"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_wdSKgCrmsvVb34HG",
+        "category": "General",
+        "x": 445,
+        "y": 540,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "messagesComponent"
+    },
+    {
+        "id": "sd_0iaFYiV7SVKaS3O0",
+        "type": "Script",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.message.read = !bh.input.message.read\nbh.message = bh.input.message\n\nconsole.log('Read message: ', bh.message)",
+        "functionName": "sd_0iaFYiV7SVKaS3O0",
+        "category": "Function",
+        "x": 300,
+        "y": 540,
+        "wires": [
+            [
+                "sd_wdSKgCrmsvVb34HG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "messagesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EzY2hCKyYGqdtrEp",
+        "type": "PageSwitch",
+        "z": "sd_xarQKC5ME4WVPnbE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "message.read",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.message.read",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_EzY2hCKyYGqdtrEp",
+        "category": "Function",
+        "x": 205,
+        "y": 640,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "messagesComponent",
+        "generated": false
+    }
+]

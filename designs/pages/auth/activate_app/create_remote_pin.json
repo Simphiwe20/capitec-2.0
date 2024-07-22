@@ -1,0 +1,628 @@
+[
+    {
+        "id": "sd_SIcQNKcxgBax0mkk",
+        "type": "tab",
+        "createdDate": "2024-05-13T10:49:23.122Z",
+        "label": "create_remote_pin",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "create_remote_pinComponent"
+    },
+    {
+        "id": "sd_K5WCWoiwzadZofnW",
+        "type": "OnInit",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_K5WCWoiwzadZofnW",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_T5Ow9Qz0IgZnlS9I"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "create_remote_pinComponent"
+    },
+    {
+        "id": "sd_T5Ow9Qz0IgZnlS9I",
+        "type": "PageVariables",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "pinForm",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{createPin:\"\", confirmPin:\"\"}"
+                }
+            },
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "user"
+                }
+            },
+            {
+                "textIp": "submitted",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "pin",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "pin"
+                }
+            },
+            {
+                "textIp": "email",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "email"
+                }
+            }
+        ],
+        "functionName": "sd_T5Ow9Qz0IgZnlS9I",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_tkig3xKi6iA5R0rX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_tkig3xKi6iA5R0rX",
+        "type": "Storage",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "result"
+        },
+        "functionName": "sd_tkig3xKi6iA5R0rX",
+        "category": "Storage",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            [
+                "sd_oMKZlag4pdS8DbDl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oMKZlag4pdS8DbDl",
+        "type": "Script",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.user = page.result\n",
+        "functionName": "sd_oMKZlag4pdS8DbDl",
+        "category": "Function",
+        "x": 405,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3WQTZvnddTpQcB9m",
+        "type": "PageStart",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "sd_3WQTZvnddTpQcB9m",
+        "category": "General",
+        "x": 60,
+        "y": 220,
+        "wires": [
+            [
+                "sd_IaSA3HH7SGKrCeOR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "create_remote_pinComponent"
+    },
+    {
+        "id": "sd_IaSA3HH7SGKrCeOR",
+        "type": "Script",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = true",
+        "functionName": "sd_IaSA3HH7SGKrCeOR",
+        "category": "Function",
+        "x": 185,
+        "y": 220,
+        "wires": [
+            [
+                "sd_8ZH14Xufv22pDJAG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8ZH14Xufv22pDJAG",
+        "type": "PageSwitch",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "form.valid",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.form.valid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_8ZH14Xufv22pDJAG",
+        "category": "Function",
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "sd_0DpBm1UU56hlaWmP"
+            ],
+            [
+                "sd_SVU5e9y1shkJiUI3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_SVU5e9y1shkJiUI3",
+        "type": "SnackBar",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "INVALID"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_SVU5e9y1shkJiUI3",
+        "category": "General",
+        "x": 405,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0DpBm1UU56hlaWmP",
+        "type": "SnackBar",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "VALID"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "2000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_0DpBm1UU56hlaWmP",
+        "category": "General",
+        "x": 405,
+        "y": 160,
+        "wires": [
+            [
+                "sd_JNGrxh5EnRrUyl3m"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JNGrxh5EnRrUyl3m",
+        "type": "Script",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.email = page.user.email;\npage.pin = page.user.remotePin\n\nbh.body = page.user\n\n\n\n",
+        "functionName": "sd_JNGrxh5EnRrUyl3m",
+        "category": "Function",
+        "x": 500,
+        "y": 160,
+        "wires": [
+            [
+                "sd_yO95M9Kj3sjuwb2S"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yO95M9Kj3sjuwb2S",
+        "type": "Environment",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_yO95M9Kj3sjuwb2S",
+        "category": "General",
+        "x": 580,
+        "y": 160,
+        "wires": [
+            [
+                "sd_FD0Re7Fkh98vlSkN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hhzbQQKcIJRgbN4b",
+        "type": "Script",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdUrl + \"update\"\n\nbh.body.remotePin = page.pinForm.createPin\n\n",
+        "functionName": "sd_hhzbQQKcIJRgbN4b",
+        "category": "Function",
+        "x": 785,
+        "y": 140,
+        "wires": [
+            [
+                "sd_RoQA3dmzrUDfFjKr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_RoQA3dmzrUDfFjKr",
+        "type": "HttpRequest",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMapping": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "functionName": "sd_RoQA3dmzrUDfFjKr",
+        "category": "HTTP",
+        "x": 880,
+        "y": 140,
+        "wires": [
+            [
+                "sd_czL6sLA4AwCWHMNk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FD0Re7Fkh98vlSkN",
+        "type": "PageSwitch",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "pinForm.confirmPin",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.pinForm.confirmPin",
+        "rules": [
+            {
+                "t": "se",
+                "v": "pinForm.createPin",
+                "vt": "this.page",
+                "gv": "this.page.pinForm.createPin"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_FD0Re7Fkh98vlSkN",
+        "category": "Function",
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "sd_hhzbQQKcIJRgbN4b"
+            ],
+            [
+                "sd_TlmOyQyHy3JAOd8Z"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TlmOyQyHy3JAOd8Z",
+        "type": "SnackBar",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "PIN DOES NOT MATCH"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_TlmOyQyHy3JAOd8Z",
+        "category": "General",
+        "x": 800,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_c0s5mAXh7MXGuw9z",
+        "type": "Navigation",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/enter_remote_pin",
+        "functionName": "sd_c0s5mAXh7MXGuw9z",
+        "category": "Navigation",
+        "x": 1065,
+        "y": 140,
+        "wires": [
+            [
+                "sd_HNRCFPczWHckqSv1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HNRCFPczWHckqSv1",
+        "type": "SnackBar",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Pin successfully updated"
+        },
+        "action": {
+            "type": "str",
+            "value": "OK"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_HNRCFPczWHckqSv1",
+        "category": "General",
+        "x": 1145,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_czL6sLA4AwCWHMNk",
+        "type": "Storage",
+        "z": "sd_SIcQNKcxgBax0mkk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {
+            "type": "bh",
+            "value": "body"
+        },
+        "resultMapping": {},
+        "functionName": "sd_czL6sLA4AwCWHMNk",
+        "category": "Storage",
+        "x": 960,
+        "y": 140,
+        "wires": [
+            [
+                "sd_c0s5mAXh7MXGuw9z"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "create_remote_pinComponent",
+        "generated": true
+    }
+]

@@ -1,0 +1,479 @@
+[
+    {
+        "id": "sd_YBFGvzQSmCWfy2bl",
+        "type": "tab",
+        "createdDate": "2024-05-21T19:08:24.097Z",
+        "label": "tailor_made_card",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "tailor_made_cardComponent"
+    },
+    {
+        "id": "sd_RkyrJRYttvjtIGnt",
+        "type": "OnInit",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_RkyrJRYttvjtIGnt",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 80,
+        "wires": [
+            [
+                "sd_yQ60gFGizvhn9HIB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tailor_made_cardComponent"
+    },
+    {
+        "id": "sd_yQ60gFGizvhn9HIB",
+        "type": "PageVariables",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "cardsInfor",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "myFav",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_yQ60gFGizvhn9HIB",
+        "category": "Function",
+        "x": 225,
+        "y": 80,
+        "wires": [
+            [
+                "sd_THjJlxPfVFtomdxI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_THjJlxPfVFtomdxI",
+        "type": "Script",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.cardsInfor = [{image: '../../../assets/Web/Images/pay_beneficiary.jpeg', name: 'Pay beneficiary', routes: '/logged_in_landing/pay_beneficiary'},\n             {image: '../../../assets/Web/Images/payshap.jpeg', name: 'PayShap', routes: '/underconstruction'},\n             {image: '../../../assets/Web/Images/pay_bills.jpeg', name: 'Pay bills', routes: '/underconstruction'},\n            {image: '../../../assets/Web/Images/international_payment.jpeg', name: 'International payments', routes: '/underconstruction'},\n            {image: '../../../assets/Web/Images/mobile_prepaid.jpg', name: 'Buy prepaid mobile', routes: '/logged_in_landing/buy_prepaid_mobile'},\n            {image: '../../../assets/Web/Images/electricity.jpg', name: 'Buy electricity', routes: '/logged_in_landing/buy_electricity/pay_ben_electric'},\n            {image: '../../../assets/Web/Images/lotto.jpeg', name: 'Play Lotto', routes: '/underconstruction'},\n            {image: '../../../assets/Web/Images/buy_voucher.jpeg', name: 'Buy vouchers', routes: '/underconstruction'},\n            {image: '../../../assets/Web/Images/renew_licence_disk.jpeg', name: 'Renew licence disk', routes: '/underconstruction'},\n            {image: '../../../assets/Web/Images/transfer_money.jpeg', name: 'Transfer money', routes: '/logged_in_landing/transfer_money'},\n            {image: '../../../assets/Web/Images/future_dated.jpeg', name: 'Recurring/future-dated', routes: '/underconstruction'},\n            {image: '../../../assets/Web/Images/send_cash.jpeg', name: 'Send cash', routes: '/logged_in_landing/send_cash'},\n            {image: '../../../assets/Web/Images/scan_to_pay.jpeg', name: 'Scan to pay', routes: '/scan_to_pay'},\n          {image: '../../../assets/Web/Images/pay_me.jpeg', name: 'Pay me', routes: '/logged_in_landing/pay_me'},\n          {image: '../../../assets/Web/Images/capitec_pay.jpeg', name: 'Capitec pay', routes: '/logged_in_landing/capitec_pay'},\n            {image: '../../../assets/Web/Images/debit_orders.jpeg', name: 'Debit orders', routes: '/underconstruction'},\n            {image: '../../../assets/Web/Images/sars_efiling.jpeg', name: 'SARS eFilling', routes: '/underconstruction'}\n          ]",
+        "functionName": "sd_THjJlxPfVFtomdxI",
+        "category": "Function",
+        "x": 365,
+        "y": 80,
+        "wires": [
+            [
+                "sd_zFlZ9zmn3yH12Kfr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TpdLqaWb2i4djwtz",
+        "type": "PageStart",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "addFav",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "added",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "addFav",
+        "category": "General",
+        "x": 45,
+        "y": 200,
+        "wires": [
+            [
+                "sd_vDMhwGchrxYaHrMR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tailor_made_cardComponent"
+    },
+    {
+        "id": "sd_zFlZ9zmn3yH12Kfr",
+        "type": "Storage",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "myFav"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "myFav"
+        },
+        "functionName": "sd_zFlZ9zmn3yH12Kfr",
+        "category": "Storage",
+        "x": 585,
+        "y": 80,
+        "wires": [
+            [
+                "sd_ovCvHDZkrfq1N9Hu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ovCvHDZkrfq1N9Hu",
+        "type": "PageSwitch",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "myFav",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.myFav",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_ovCvHDZkrfq1N9Hu",
+        "category": "Function",
+        "x": 665,
+        "y": 80,
+        "wires": [
+            [
+                "sd_WPzWXkMnmpKcSSIh"
+            ],
+            [
+                "sd_IBH7HEuAObFkhqbr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WPzWXkMnmpKcSSIh",
+        "type": "Script",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.myFav = []\n",
+        "functionName": "sd_WPzWXkMnmpKcSSIh",
+        "category": "Function",
+        "x": 785,
+        "y": 20,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_I3W8vVlpxdVxeUwA",
+        "type": "Script",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.myFav.length)\npage.myFav.push(bh.input.added)\npage.cardsInfor.splice(page.cardsInfor.indexOf(bh.input.added), 1)",
+        "functionName": "sd_I3W8vVlpxdVxeUwA",
+        "category": "Function",
+        "x": 245,
+        "y": 200,
+        "wires": [
+            [
+                "sd_w3VyS5sQtTrOG4aL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_w3VyS5sQtTrOG4aL",
+        "type": "Storage",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "myFav"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "myFav"
+        },
+        "resultMapping": {},
+        "functionName": "sd_w3VyS5sQtTrOG4aL",
+        "category": "Storage",
+        "x": 345,
+        "y": 200,
+        "wires": [
+            [
+                "sd_UsFwwOLuQOlGAsOg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UsFwwOLuQOlGAsOg",
+        "type": "Storage",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "myFav"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "myFav"
+        },
+        "functionName": "sd_UsFwwOLuQOlGAsOg",
+        "category": "Storage",
+        "x": 445,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_IBH7HEuAObFkhqbr",
+        "type": "Script",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let cardsInforStr = []\nlet myFavStr = []\nconsole.log(page.myFav)\n\npage.cardsInfor.forEach((card: any, indx: number) => {\n    let cardStr = JSON.stringify(card)\n    cardsInforStr.push(cardStr)\n})\n\npage.myFav.forEach((fav: any, indx: number) => {\n    let favStr = JSON.stringify(fav)\n    myFavStr.push(favStr)\n})\n\nlet newCardsInfor = cardsInforStr.filter((card:any) => {\n    if(!myFavStr.includes(card)) {\n        return card\n    }\n    // console.log(myFavStr.includes(card))\n})\n\nconsole.log('Cards infor str: ', cardsInforStr)\nconsole.log('My fav Str: ', myFavStr)\n\nconsole.log('New cards infor: ', newCardsInfor)\n\npage.cardsInfor = []\nnewCardsInfor.forEach((card: any) => {\n    let parsedCard = JSON.parse(card)\n    console.log('Parsed cards: ', parsedCard)\n    page.cardsInfor.push(parsedCard)\n})\n\nconsole.log('Parsed cards: ', page.cardsInfor)\n",
+        "functionName": "sd_IBH7HEuAObFkhqbr",
+        "category": "Function",
+        "x": 785,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8vvp2yJjBCwCFTX0",
+        "type": "PageStart",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "deSelect",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "selected",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "deSelect",
+        "category": "General",
+        "x": 45,
+        "y": 300,
+        "wires": [
+            [
+                "sd_JBBxMmKn8I7GmeDT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tailor_made_cardComponent"
+    },
+    {
+        "id": "sd_JBBxMmKn8I7GmeDT",
+        "type": "Script",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.myFav.push(bh.input.selected)\npage.cardsInfor.unshift(bh.input.selected)\npage.myFav.splice(page.myFav.indexOf(bh.input.selected), 1)",
+        "functionName": "sd_JBBxMmKn8I7GmeDT",
+        "category": "Function",
+        "x": 145,
+        "y": 300,
+        "wires": [
+            [
+                "sd_eb79FmqwtjcyQOOU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_eb79FmqwtjcyQOOU",
+        "type": "Storage",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "myFav"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "myFav"
+        },
+        "resultMapping": {},
+        "functionName": "sd_eb79FmqwtjcyQOOU",
+        "category": "Storage",
+        "x": 245,
+        "y": 300,
+        "wires": [
+            [
+                "sd_dRUFpYPAOMHpacA8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dRUFpYPAOMHpacA8",
+        "type": "Storage",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "myFav"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "myFav"
+        },
+        "functionName": "sd_dRUFpYPAOMHpacA8",
+        "category": "Storage",
+        "x": 345,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_vDMhwGchrxYaHrMR",
+        "type": "PageSwitch",
+        "z": "sd_YBFGvzQSmCWfy2bl",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "myFav.length",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.myFav.length",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "5",
+                "vt": "num",
+                "gv": "5"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_vDMhwGchrxYaHrMR",
+        "category": "Function",
+        "x": 125,
+        "y": 200,
+        "wires": [
+            [
+                "sd_I3W8vVlpxdVxeUwA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tailor_made_cardComponent",
+        "generated": true
+    }
+]

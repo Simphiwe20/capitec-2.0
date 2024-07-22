@@ -1,0 +1,118 @@
+[
+    {
+        "id": "sd_4JANvNIWhJiKft6p",
+        "type": "tab",
+        "createdDate": "2024-05-28T06:46:16.512Z",
+        "label": "register_feedback",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "register_feedbackComponent"
+    },
+    {
+        "id": "sd_mqB74TINubkIjsNP",
+        "type": "OnInit",
+        "z": "sd_4JANvNIWhJiKft6p",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_mqB74TINubkIjsNP",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 80,
+        "wires": [
+            [
+                "sd_AObngPNXEtHAZ99j"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "register_feedbackComponent"
+    },
+    {
+        "id": "sd_ZDIikGmLSDFIbWN2",
+        "type": "PageVariables",
+        "z": "sd_4JANvNIWhJiKft6p",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_ZDIikGmLSDFIbWN2",
+        "category": "Function",
+        "x": 245,
+        "y": 80,
+        "wires": [
+            [
+                "sd_Huxs80G68vogfx2W"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "register_feedbackComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Huxs80G68vogfx2W",
+        "type": "Script",
+        "z": "sd_4JANvNIWhJiKft6p",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "setTimeout(() => {\n    page.router.navigate(['/ft-landing'])\n}, 5000)",
+        "functionName": "sd_Huxs80G68vogfx2W",
+        "category": "Function",
+        "x": 340,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "register_feedbackComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_AObngPNXEtHAZ99j",
+        "type": "UseDependency",
+        "z": "sd_4JANvNIWhJiKft6p",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_AObngPNXEtHAZ99j",
+        "category": "Function",
+        "x": 145,
+        "y": 80,
+        "wires": [
+            [
+                "sd_ZDIikGmLSDFIbWN2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "register_feedbackComponent",
+        "generated": true
+    }
+]

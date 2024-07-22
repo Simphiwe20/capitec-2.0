@@ -1,0 +1,173 @@
+[
+    {
+        "id": "sd_V2lCkAkJpFIXtiIq",
+        "type": "tab",
+        "createdDate": "2024-05-20T17:41:41.413Z",
+        "label": "cards",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "cardsComponent"
+    },
+    {
+        "id": "sd_qOHXOKY3yqWoTu6j",
+        "type": "OnInit",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_qOHXOKY3yqWoTu6j",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 40,
+        "wires": [
+            [
+                "sd_9br5SIlar8wPCTNp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cardsComponent"
+    },
+    {
+        "id": "sd_9br5SIlar8wPCTNp",
+        "type": "PageVariables",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "hide",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
+            },
+            {
+                "textIp": "user",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_9br5SIlar8wPCTNp",
+        "category": "Function",
+        "x": 145,
+        "y": 40,
+        "wires": [
+            [
+                "sd_Y7bPLTy1TTtvfVoY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cardsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_vZplwie72amkSdbv",
+        "type": "PageStart",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "hideCard",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "hideCard",
+        "category": "General",
+        "x": 80,
+        "y": 180,
+        "wires": [
+            [
+                "sd_64K6Av8icu4MUani"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cardsComponent"
+    },
+    {
+        "id": "sd_64K6Av8icu4MUani",
+        "type": "Script",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.hide = !page.hide",
+        "functionName": "sd_64K6Av8icu4MUani",
+        "category": "Function",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cardsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_csmP6Qpq4HgkSOej",
+        "type": "Log",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.user",
+        "functionName": "sd_csmP6Qpq4HgkSOej",
+        "category": "General",
+        "x": 360,
+        "y": 140,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "user",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cardsComponent"
+    },
+    {
+        "id": "sd_Y7bPLTy1TTtvfVoY",
+        "type": "Storage",
+        "z": "sd_V2lCkAkJpFIXtiIq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_Y7bPLTy1TTtvfVoY",
+        "category": "Storage",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cardsComponent",
+        "generated": true
+    }
+]
