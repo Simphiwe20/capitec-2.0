@@ -108,6 +108,7 @@ export class enter_remote_pinComponent {
   sd_5c33W7dZR9yPhak3(bh) {
     try {
       this.page.remotePin = { remotePin: '' };
+      this.page.showLoader = false;
       //appendnew_next_sd_5c33W7dZR9yPhak3
       return bh;
     } catch (e) {
@@ -398,7 +399,7 @@ export class enter_remote_pinComponent {
           undefined
         )
       ) {
-        bh = this.sd_FldfSXF1A1WlNleN(bh);
+        bh = this.sd_c3GBqx3yPYjonxzO(bh);
       } else {
         bh = await this.sd_VYPcz68JDQaqOgZg(bh);
       }
@@ -406,6 +407,18 @@ export class enter_remote_pinComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_rYXNYMXOXirhGBzF');
+    }
+  }
+
+  sd_c3GBqx3yPYjonxzO(bh) {
+    try {
+      const page = this.page;
+      page.showLoader = true;
+      bh = this.sd_FldfSXF1A1WlNleN(bh);
+      //appendnew_next_sd_c3GBqx3yPYjonxzO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_c3GBqx3yPYjonxzO');
     }
   }
 

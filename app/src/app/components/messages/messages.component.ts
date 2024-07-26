@@ -141,6 +141,7 @@ export class messagesComponent {
       this.page.contacanated = undefined;
       this.page.messages = undefined;
       this.page.unreadMessages = undefined;
+      this.page.month = undefined;
       bh = this.sd_2hOeDMIyzMBjcPQY(bh);
       //appendnew_next_sd_AIGBMD2nlwzvORPj
       return bh;
@@ -165,7 +166,9 @@ export class messagesComponent {
       const api_serviceInstance: api_service =
         this.__page_injector__.get(api_service);
 
-      let outputVariables = await api_serviceInstance.getTransMessage();
+      let outputVariables = await api_serviceInstance.getTransMessage(
+        undefined
+      );
       bh.messages = outputVariables.local.messages;
 
       bh = this.sd_PqI5bKDCALhoRBZD(bh);
@@ -184,6 +187,8 @@ export class messagesComponent {
       );
       page.unreadMessages = page.messages.filter((message) => !message.read);
       console.log('Unread messages: ', page.unreadMessages);
+
+      page.month = new Date();
       //appendnew_next_sd_PqI5bKDCALhoRBZD
       return bh;
     } catch (e) {

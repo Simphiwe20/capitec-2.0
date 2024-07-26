@@ -68,7 +68,7 @@ export class confirm_detailsComponent {
         .constructFlowObject(this);
       bh.input = { form };
       bh.local = {};
-      bh = this.sd_rC31Oq7XeoHG8EIH(bh);
+      bh = this.sd_hkIXtF1gNWvb1Tvd(bh);
       //appendnew_next_remotePin
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_wOAQkF9PJxFOn3u9');
@@ -94,6 +94,7 @@ export class confirm_detailsComponent {
   sd_VhQy0vig3OA1kzEu(bh) {
     try {
       this.page.submitted = undefined;
+      this.page.showLoader = true;
       bh = this.sd_USJylmvw0CCxAS13(bh);
       //appendnew_next_sd_VhQy0vig3OA1kzEu
       return bh;
@@ -135,7 +136,7 @@ export class confirm_detailsComponent {
     }
   }
 
-  sd_rC31Oq7XeoHG8EIH(bh) {
+  sd_hkIXtF1gNWvb1Tvd(bh) {
     try {
       const page = this.page;
       page.submitted = false;
@@ -145,10 +146,10 @@ export class confirm_detailsComponent {
         remotePin: page.migrate.remotePin,
       };
       bh = this.sd_5cOsZTOstboDyV4t(bh);
-      //appendnew_next_sd_rC31Oq7XeoHG8EIH
+      //appendnew_next_sd_hkIXtF1gNWvb1Tvd
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_rC31Oq7XeoHG8EIH');
+      return this.errorHandler(bh, e, 'sd_hkIXtF1gNWvb1Tvd');
     }
   }
 
@@ -162,7 +163,7 @@ export class confirm_detailsComponent {
           undefined
         )
       ) {
-        bh = this.sd_8VXydPVAWI5T0BbT(bh);
+        bh = this.sd_D3rz0LHUtUQHm4LK(bh);
       } else {
         bh = await this.sd_fa0mvl53mOq7MG6x(bh);
       }
@@ -170,6 +171,18 @@ export class confirm_detailsComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_5cOsZTOstboDyV4t');
+    }
+  }
+
+  sd_D3rz0LHUtUQHm4LK(bh) {
+    try {
+      const page = this.page;
+      page.showLoader = true;
+      bh = this.sd_8VXydPVAWI5T0BbT(bh);
+      //appendnew_next_sd_D3rz0LHUtUQHm4LK
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_D3rz0LHUtUQHm4LK');
     }
   }
 

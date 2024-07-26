@@ -47,6 +47,13 @@
                     "type": "literal",
                     "value": "{remotePin : ''}"
                 }
+            },
+            {
+                "textIp": "showLoader",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
             }
         ],
         "functionName": "sd_5c33W7dZR9yPhak3",
@@ -736,7 +743,7 @@
         },
         "functionName": "sd_FldfSXF1A1WlNleN",
         "category": "Storage",
-        "x": 385,
+        "x": 505,
         "y": 480,
         "wires": [
             [
@@ -775,7 +782,7 @@
         "y": 560,
         "wires": [
             [
-                "sd_FldfSXF1A1WlNleN"
+                "sd_c3GBqx3yPYjonxzO"
             ],
             [
                 "sd_VYPcz68JDQaqOgZg"
@@ -803,7 +810,7 @@
         "resultMapping": "",
         "functionName": "sd_TCyg1YLAXkDoMTwT",
         "category": "Navigation",
-        "x": 705,
+        "x": 765,
         "y": 560,
         "wires": [
             []
@@ -887,7 +894,7 @@
         "paramMappingObj": {},
         "functionName": "sd_l0xW7rEfbtlq3Lto",
         "category": "HTTP",
-        "x": 585,
+        "x": 665,
         "y": 480,
         "wires": [
             [
@@ -909,11 +916,33 @@
         "script": "page.remotePin.email = page.result.email\nconsole.log('Body: ', page.remotePin)",
         "functionName": "sd_sBgSTvH9bAEkkWHc",
         "category": "Function",
-        "x": 465,
+        "x": 585,
         "y": 480,
         "wires": [
             [
                 "sd_l0xW7rEfbtlq3Lto"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "enter_remote_pinComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_c3GBqx3yPYjonxzO",
+        "type": "Script",
+        "z": "sd_VWX1Hs56TGV1AkWp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.showLoader = true",
+        "functionName": "sd_c3GBqx3yPYjonxzO",
+        "category": "Function",
+        "x": 385,
+        "y": 480,
+        "wires": [
+            [
+                "sd_FldfSXF1A1WlNleN"
             ]
         ],
         "__n_excludedFromValidation__": {},

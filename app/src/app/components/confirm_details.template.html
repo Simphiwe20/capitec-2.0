@@ -1,4 +1,11 @@
 <div fxLayout="column wrap" class="full-height full-width" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="z-index over" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.showLoader">
+      <div>
+        <span class="loader"></span>
+      </div>
+    </div>
+  </div>
   <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
     <div class="full-width color-w bg-blue">
       <h3 class="poppins">Enter Remote Pin</h3>

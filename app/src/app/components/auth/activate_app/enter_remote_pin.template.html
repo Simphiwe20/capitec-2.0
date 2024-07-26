@@ -1,5 +1,12 @@
 <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
   <div fxLayout="column wrap" class="relative standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="over z-index" fxLayoutAlign="center stretch" [fxShow]="true" *ngIf="page.showLoader">
+      <div fxLayout="column wrap" class="z-index over" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.showLoader">
+        <div>
+          <span class="loader"></span>
+        </div>
+      </div>
+    </div>
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="row wrap" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="pointer color-b" routerLink="/landing">arrow_back</mat-icon>
         <p class="padding-5px-20px poppins border-r-30px color-w bg-blue">

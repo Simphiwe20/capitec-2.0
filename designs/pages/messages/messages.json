@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_LcvImEeazBu1tGQG",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 40,
         "wires": [
             [
                 "sd_AIGBMD2nlwzvORPj"
@@ -28,8 +28,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "messagesComponent",
-        "generated": false
+        "serviceName": "messagesComponent"
     },
     {
         "id": "sd_AIGBMD2nlwzvORPj",
@@ -90,12 +89,19 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "month",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_AIGBMD2nlwzvORPj",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 145,
+        "y": 40,
         "wires": [
             [
                 "sd_2hOeDMIyzMBjcPQY"
@@ -128,8 +134,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "messagesComponent",
-        "generated": false
+        "serviceName": "messagesComponent"
     },
     {
         "id": "sd_KgAvLx72RX0GLFJx",
@@ -183,7 +188,7 @@
         },
         "functionName": "sd_2hOeDMIyzMBjcPQY",
         "category": "Storage",
-        "x": 265,
+        "x": 245,
         "y": 40,
         "wires": [
             [
@@ -314,8 +319,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "messagesComponent",
-        "generated": false
+        "serviceName": "messagesComponent"
     },
     {
         "id": "sd_z5ioaXk9YOX0ts3M",
@@ -469,8 +473,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "messagesComponent",
-        "generated": false
+        "serviceName": "messagesComponent"
     },
     {
         "id": "sd_NaIyo7cEWVdfjJHz",
@@ -624,8 +627,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "messagesComponent",
-        "generated": false
+        "serviceName": "messagesComponent"
     },
     {
         "id": "sd_B2SF1jKSYwErsrng",
@@ -781,7 +783,14 @@
             "flowId": "sd_MoMIY02qFsSklHfG",
             "flowName": "getTransMessage"
         },
-        "inputVariables": [],
+        "inputVariables": [
+            {
+                "key": "isFooter",
+                "map": true,
+                "valueType": "this.page",
+                "value": ""
+            }
+        ],
         "outputMapping": [
             {
                 "mapVarType": "local",
@@ -790,11 +799,20 @@
                 "value": "messages",
                 "mapVarName": "messages",
                 "localVar": "bh.messages"
+            },
+            {
+                "mapVarType": "local",
+                "key": "Obs",
+                "valueType": "bh",
+                "value": "",
+                "mapVarName": "Obs"
             }
         ],
         "serviceImportPath": "app/sd-services/api_service",
         "startName": "getTransMessage",
-        "inputParams": [],
+        "inputParams": [
+            null
+        ],
         "accept_bh": false,
         "accept_csd": true,
         "functionName": "getMessages",
@@ -807,9 +825,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "messagesComponent"
+        "serviceName": "messagesComponent",
+        "generated": true
     },
     {
         "id": "sd_9Mts9oTjlkMuIPG9",
@@ -878,7 +896,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.messages = bh.messages.filter((message, indx) => message.belongsTo == page.user.accountNumber)\npage.unreadMessages = page.messages.filter((message) => !message.read)\nconsole.log('Unread messages: ', page.unreadMessages)",
+        "script": "page.messages = bh.messages.filter((message, indx) => message.belongsTo == page.user.accountNumber)\npage.unreadMessages = page.messages.filter((message) => !message.read)\nconsole.log('Unread messages: ', page.unreadMessages)\n\npage.month = new Date()",
         "functionName": "sd_PqI5bKDCALhoRBZD",
         "category": "Function",
         "x": 525,
@@ -922,8 +940,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "messagesComponent",
-        "generated": false
+        "serviceName": "messagesComponent"
     },
     {
         "id": "sd_wdSKgCrmsvVb34HG",
@@ -973,9 +990,9 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "messagesComponent"
+        "serviceName": "messagesComponent",
+        "generated": true
     },
     {
         "id": "sd_0iaFYiV7SVKaS3O0",
@@ -1026,7 +1043,6 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "messagesComponent",
-        "generated": false
+        "serviceName": "messagesComponent"
     }
 ]

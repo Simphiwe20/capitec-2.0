@@ -1,0 +1,413 @@
+[
+    {
+        "id": "sd_8Eus7zAkxMUGe117",
+        "type": "tab",
+        "createdDate": "2024-07-23T18:03:57.743Z",
+        "label": "pdf_statement",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "pdf_statementComponent"
+    },
+    {
+        "id": "sd_fN2cljXF7vQz5034",
+        "type": "OnInit",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_fN2cljXF7vQz5034",
+        "category": "Lifecycle Events",
+        "x": 25,
+        "y": 20,
+        "wires": [
+            [
+                "sd_KyrwwlxmBEBQOZup"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "pdf_statementComponent"
+    },
+    {
+        "id": "sd_OfFL6vbANAbsE1wY",
+        "type": "PageVariables",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_OfFL6vbANAbsE1wY",
+        "category": "Function",
+        "x": 225,
+        "y": 20,
+        "wires": [
+            [
+                "sd_rlJlqniaGe1hXtAL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3AUw8tEtnFy3klkh",
+        "type": "Script",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.options = [\n    {name: 'Last 1 month'},\n    {name: 'Last 3 month'},\n    {name: 'Last 6 month'},\n    {name: 'Last 12 month'},\n    {name: 'Choose date range', range: 'Up to 3 years'}\n]\n\n// page.str= new SafeResourceUrl\n\nconsole.log(page.sanitizer)\nconsole.log(page.str)\n\n// let w = window.open('', '_blank')\n// console.log('Window: ', w)\n\npage.jsPDF = new page.jspdf()\n\nconsole.log('PDF', page.jsPDF)\n// let autoTable: autoTable\n// console.log('Table: ', page.autoTable)\n// console.log('Table: ', autoTable)\n\n",
+        "functionName": "sd_3AUw8tEtnFy3klkh",
+        "category": "Function",
+        "x": 625,
+        "y": 20,
+        "wires": [
+            [
+                "sd_ZPHKZioxvW4PM1yX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ZPHKZioxvW4PM1yX",
+        "type": "Storage",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_ZPHKZioxvW4PM1yX",
+        "category": "Storage",
+        "x": 745,
+        "y": 20,
+        "wires": [
+            [
+                "sd_Y3EKPFLYHc8oNt5u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_rlJlqniaGe1hXtAL",
+        "type": "UseDependency",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "jsPDF",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "jspdf"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "jspdf",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_rlJlqniaGe1hXtAL",
+        "category": "Function",
+        "x": 345,
+        "y": 20,
+        "wires": [
+            [
+                "sd_1xKnTij9d6QXmSVi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bSckPQsAgq3f4ATW",
+        "type": "PageStart",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "generatePDF",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "generatePdf",
+        "category": "General",
+        "x": 200,
+        "y": 160,
+        "wires": [
+            [
+                "sd_4OZE4Mm6Z29wsmzq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "pdf_statementComponent"
+    },
+    {
+        "id": "sd_4OZE4Mm6Z29wsmzq",
+        "type": "Script",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// Add content to the PDF.\npage.jsPDF.setFontSize(16);\npage.jsPDF.text('Savings Account Statement', 10, 10);\npage.jsPDF.setFontSize(12);\npage.jsPDF.text(\n\t`${page.user.fullName}`,\n\t10,\n\t20,\n);\n\nlet capitecLogo = new Image()\ncapitecLogo.src = '../../../assets/Web/Images/capitec-l.png'\npage.jsPDF.addImage(capitecLogo, 'PNG', 130, 1, 70, 20)\n\n// Create a table using `jspdf-autotable`.\nconst headers = [['Posting Date', 'Transaction Date', 'Description', 'Money In(R)', 'Money Out(R)', 'Balance(R)']];\nconst data = [\n\t[new Date().toDateString(), new Date().toDateString(), 'Sweden', '200', '', '200'],\n\t[new Date().toDateString(), new Date().toDateString(), 'Spain', '', '- 200', '0.50'],\n\t// ...\n];\n\n// console.log('autoTable: ', page.jsPDF.autoTable)\nconsole.log('jsPDF: ', page.jsPDF)\n\nconsole.log('Autotable in jsPDF: ', page.jsPDF.autoTable)\n\npage.jsPDF.autoTable({\n\thead: headers,\n\tbody: data,\n\tstartY: 30, // Adjust the `startY` position as needed.\n});\n\nvar str = page.jsPDF.output('datauristring');\n\nvar embed = \"<embed width='100%' height='100%' src='\" + str + \"'/>\"\n\n\nconsole.log(embed)\nconsole.log(window)\nlet win = window.open('', '_blank').document.write(embed);\n// let w = window.open('', '_blank');\nconsole.log('Win: ', win)\n// win.document.open();\n\n// win.document.write(embed);\n// win.document.close()",
+        "functionName": "sd_4OZE4Mm6Z29wsmzq",
+        "category": "Function",
+        "x": 385,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4tFEyJDQ2TGNjp4P",
+        "type": "PageVariables",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "options",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "jsPDF",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "str",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "safeURL"
+                }
+            }
+        ],
+        "functionName": "sd_4tFEyJDQ2TGNjp4P",
+        "category": "Function",
+        "x": 545,
+        "y": 20,
+        "wires": [
+            [
+                "sd_3AUw8tEtnFy3klkh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1xKnTij9d6QXmSVi",
+        "type": "UseDependency",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "autoTable",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.autoTable",
+        "alias": "autoTable",
+        "modules": [],
+        "import_all": true,
+        "library": "jspdf-autotable",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_1xKnTij9d6QXmSVi",
+        "category": "Function",
+        "x": 445,
+        "y": 20,
+        "wires": [
+            [
+                "sd_4tFEyJDQ2TGNjp4P"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Y3EKPFLYHc8oNt5u",
+        "type": "Script",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// Add content to the PDF.\npage.jsPDF.setFontSize(16);\npage.jsPDF.text('Savings Account Statement', 10, 10);\npage.jsPDF.setFontSize(12);\npage.jsPDF.text(\n\t`${page.user.fullName}`,\n\t10,\n\t20,\n);\n\nlet capitecLogo = new Image()\ncapitecLogo.src = '../../../assets/Web/Images/capitec-l.png'\npage.jsPDF.addImage(capitecLogo, 'PNG', 130, 1, 70, 20)\n\n// Create a table using `jspdf-autotable`.\nconst headers = [['Transaction Date', 'Description', 'Money In(R)', 'Money Out(R)', 'Balance(R)']];\nconst data = [\n\t[new Date().toDateString(), 'Preapaid aitime', '200', '', '200'],\n\t[new Date().toDateString(), 'Payment made', '', '- 200', '0.50'],\n\t// ...\n];\n\n// console.log('autoTable: ', page.jsPDF.autoTable)\nconsole.log('jsPDF: ', page.jsPDF)\n\nconsole.log('Autotable in jsPDF: ', page.jsPDF.autoTable)\n\npage.jsPDF.autoTable({\n\thead: headers,\n\tbody: data,\n\tstartY: 30, // Adjust the `startY` position as needed.\n});\n\nlet str = page.jsPDF.output('datauristring')\n\n// page.str = \"<embed width='100%' height='100%' src='\" + str + \"'/>\"\n\npage.str = page.jsPDF.output('datauristring')\n// page.str = str\n\n// const blob = this.base64ToBlob(page.str, 'application/pdf');\n// page.str = URL.createObjectURL(blob);\n\npage.str = page.sanitizer.bypassSecurityTrustResourceUrl(page.str);\nconsole.log(\"Blob: \", page.str)\n// var embed = \"<embed width='100%' height='100%' src='\" + str + \"'/>\"\n\n// console.log(embed)\n// console.log(window)\n// let win = window.open('', '_blank').document.write(embed);\n// let w = window.open('', '_blank');\n// console.log('Win: ', win)\n// win.document.open();\n\n// win.document.write(embed);\n// win.document.close()",
+        "functionName": "sd_Y3EKPFLYHc8oNt5u",
+        "category": "Function",
+        "x": 845,
+        "y": 20,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KyrwwlxmBEBQOZup",
+        "type": "UseDependency",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "DomSanitizer",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "sanitizer"
+                },
+                "injectable": true
+            },
+            {
+                "textIp": "SafeResourceUrl",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/platform-browser",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_KyrwwlxmBEBQOZup",
+        "category": "Function",
+        "x": 125,
+        "y": 20,
+        "wires": [
+            [
+                "sd_OfFL6vbANAbsE1wY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_XJnxDMHRWusvPnOG",
+        "type": "PageStart",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "base64toBlob",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "base64",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "fileType",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "blob",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "flow_type": "sync",
+        "functionName": "base64ToBlob",
+        "category": "General",
+        "x": 220,
+        "y": 300,
+        "wires": [
+            [
+                "sd_bAYD6IimXJbSvNNF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "pdf_statementComponent"
+    },
+    {
+        "id": "sd_bAYD6IimXJbSvNNF",
+        "type": "Script",
+        "z": "sd_8Eus7zAkxMUGe117",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const byteCharacters = atob(bh.input.base64.split(',')[1]);\nconst byteNumbers = new Array(byteCharacters.length);\nfor (let i = 0; i < byteCharacters.length; i++) {\n\tbyteNumbers[i] = byteCharacters.charCodeAt(i);\n}\n\nconst byteArray = new Uint8Array(byteNumbers);\n// let _type: Blob = bh.input.fileType\n\nconsole.log('byteNumbers: ', byteNumbers)\nconsole.log('byteCharacters: ', byteCharacters)\n\n// bh.blob = new Blob([byteArray], { _type });",
+        "functionName": "sd_bAYD6IimXJbSvNNF",
+        "category": "Function",
+        "x": 400,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "pdf_statementComponent",
+        "generated": true
+    }
+]

@@ -995,6 +995,13 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "isFooter",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
             }
         ],
         "functionName": "sd_VlkaV0GUiqlQNcQA",
@@ -1035,7 +1042,14 @@
             "flowId": "sd_MoMIY02qFsSklHfG",
             "flowName": "getTransMessage"
         },
-        "inputVariables": [],
+        "inputVariables": [
+            {
+                "key": "isFooter",
+                "map": true,
+                "valueType": "this.page",
+                "value": "isFooter"
+            }
+        ],
         "outputMapping": [
             {
                 "mapVarType": "local",
@@ -1047,16 +1061,18 @@
             },
             {
                 "mapVarType": "local",
-                "key": "bhSub",
+                "key": "Obs",
                 "valueType": "this.page",
                 "value": "obsData",
-                "mapVarName": "bhSub",
+                "mapVarName": "Obs",
                 "localVar": "this.page.obsData"
             }
         ],
         "serviceImportPath": "app/sd-services/api_service",
         "startName": "getTransMessage",
-        "inputParams": [],
+        "inputParams": [
+            "this.page.isFooter"
+        ],
         "accept_bh": false,
         "accept_csd": true,
         "functionName": "sd_a6lxvc5gCM2PWU3i",
@@ -1080,7 +1096,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.messages)\nconsole.log(page.user)\npage.messages = page.messages?.filter(message => message.belongsTo == page.user.accountNumber)\nconsole.log('All messages: ', page.messages)\npage.messages = page.messages.filter((message) => !message.read)\n\nconsole.log('unread messages: ', page.messages)\n",
+        "script": "// console.log(page.messages)\n// console.log(page.user)\npage.messages = page.messages?.filter(message => message.belongsTo == page.user.accountNumber)\n// console.log('All messages: ', page.messages)\npage.messages = page.messages.filter((message) => !message.read)\n\npage.messages = page.messages?.length == undefined ? 0 : page.messages.length\n\nconsole.log('unread messages: ', page.messages)\n",
         "functionName": "sd_YszqubFNKQBwjAgy",
         "category": "Function",
         "x": 485,
@@ -1159,7 +1175,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let sub = page.obsData.subscribe({\n    next: (res) => console.log('From a footer res: ', res),\n    error: (err) => console.log('From a footer err: ', err),\n    complete: () => console.log('From a footer: complete ')\n})\n\nconsole.log(page.obsData)\nconsole.log(sub)",
+        "script": "let sub = page.obsData.subscribe({\n    next: (res) => {\n        console.log('From a footer res: ', res)\n        console.log('Before Messages increment or decrement:', page.messages)\n\n        if (res.belongsTo) {\n            if (!res.read) {\n                page.messages++\n            }else if(page.messages > 0 && res.read){\n                page.messages--\n            }\n\n        console.log('After Messages count inside if:', page.messages)\n        }\n        console.log('Outside the if:', page.messages)\n\n    },\n    error: (err) => console.log('From a footer err: ', err),\n    complete: () => console.log('From a footer: complete ')\n})\n\nconsole.log('Observable in the footer: ', page.obsData)\nconsole.log('Subscribed observable: ', sub)",
         "functionName": "sd_zdrU1xTSVYRPpmVq",
         "category": "Function",
         "x": 665,

@@ -110,8 +110,7 @@ export class medium_cardComponent {
 
   sd_dwviufaEUSxef65M(bh) {
     try {
-      const page = this.page;
-      console.log(page.router.url);
+      const page = this.page; // console.log(page.router.url)
       if (page.router.url === '/landing') {
         page.isLanding = true;
       }
@@ -122,11 +121,8 @@ export class medium_cardComponent {
         if (card.cards.length <= 2) {
           card.cards.push(_card);
         }
-        console.log(
-          '2 lengths conditions',
-          card.cards.length == 1 && page.cardsInfor.length - 1 == i
-        );
-        console.log('length condition', card.cards.length == 1);
+        // console.log('2 lengths conditions', ((card.cards.length == 1 && (page.cardsInfor.length - 1 == i)) ));
+        // console.log('length condition', card.cards.length == 1)
         if (
           (card.cards.length == 1 && page.cardsInfor.length - 1 == i) ||
           card.cards.length == 2
@@ -146,7 +142,7 @@ export class medium_cardComponent {
         // }
       });
 
-      console.log(cards);
+      // console.log(cards)
       if (!cards.length) {
         page.cardsInfor = [
           {
@@ -243,7 +239,9 @@ export class medium_cardComponent {
         this.sdService.getPathAndQParamsObj(bh.input.routes);
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_5aXVOIOXPEgYEsp6
       return bh;
     } catch (e) {

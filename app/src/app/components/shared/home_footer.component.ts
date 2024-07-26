@@ -124,6 +124,7 @@ export class home_footerComponent {
       this.page.airitme = undefined;
       this.page.ben = undefined;
       this.page.messages = undefined;
+      this.page.isFooter = true;
       bh = this.sd_7gfjrecDpNKV8VUQ(bh);
       //appendnew_next_sd_VlkaV0GUiqlQNcQA
       return bh;
@@ -186,9 +187,11 @@ export class home_footerComponent {
       const api_serviceInstance: api_service =
         this.__page_injector__.get(api_service);
 
-      let outputVariables = await api_serviceInstance.getTransMessage();
+      let outputVariables = await api_serviceInstance.getTransMessage(
+        this.page.isFooter
+      );
       this.page.messages = outputVariables.local.messages;
-      this.page.obsData = outputVariables.local.bhSub;
+      this.page.obsData = outputVariables.local.Obs;
 
       bh = this.sd_YszqubFNKQBwjAgy(bh);
       //appendnew_next_sd_a6lxvc5gCM2PWU3i
@@ -200,14 +203,16 @@ export class home_footerComponent {
 
   sd_YszqubFNKQBwjAgy(bh) {
     try {
-      const page = this.page;
-      console.log(page.messages);
-      console.log(page.user);
+      const page = this.page; // console.log(page.messages)
+      // console.log(page.user)
       page.messages = page.messages?.filter(
         (message) => message.belongsTo == page.user.accountNumber
       );
-      console.log('All messages: ', page.messages);
+      // console.log('All messages: ', page.messages)
       page.messages = page.messages.filter((message) => !message.read);
+
+      page.messages =
+        page.messages?.length == undefined ? 0 : page.messages.length;
 
       console.log('unread messages: ', page.messages);
 
@@ -223,13 +228,27 @@ export class home_footerComponent {
     try {
       const page = this.page;
       let sub = page.obsData.subscribe({
-        next: (res) => console.log('From a footer res: ', res),
+        next: (res) => {
+          console.log('From a footer res: ', res);
+          console.log('Before Messages increment or decrement:', page.messages);
+
+          if (res.belongsTo) {
+            if (!res.read) {
+              page.messages++;
+            } else if (page.messages > 0 && res.read) {
+              page.messages--;
+            }
+
+            console.log('After Messages count inside if:', page.messages);
+          }
+          console.log('Outside the if:', page.messages);
+        },
         error: (err) => console.log('From a footer err: ', err),
         complete: () => console.log('From a footer: complete '),
       });
 
-      console.log(page.obsData);
-      console.log(sub);
+      console.log('Observable in the footer: ', page.obsData);
+      console.log('Subscribed observable: ', sub);
       //appendnew_next_sd_zdrU1xTSVYRPpmVq
       return bh;
     } catch (e) {

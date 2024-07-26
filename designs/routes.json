@@ -273,6 +273,10 @@
             "component": "undercostructionsComponent"
         },
         {
+            "path": "bank_statement",
+            "component": "pdf_statementComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/capitec",
             "pathMatch": "full",

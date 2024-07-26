@@ -20,7 +20,6 @@ declare const cordova: any;
 export class api_service {
   public obsData: any;
   public behaviourSubject: any;
-  public counts: any;
   public userInfor: any;
   public userPic: any;
 
@@ -292,9 +291,11 @@ export class api_service {
     }
   }
 
-  async getTransMessage(...others) {
+  async getTransMessage(isFooter: any = undefined, ...others) {
     let bh: any = {
-      input: {},
+      input: {
+        isFooter,
+      },
       local: {
         messages: undefined,
         Obs: undefined,
@@ -312,7 +313,7 @@ export class api_service {
           input: {},
           local: {
             messages: bh.local.messages,
-            bhSub: bh.local.bhSub,
+            Obs: bh.local.Obs,
           },
         }
       );
@@ -941,13 +942,16 @@ export class api_service {
 
       console.log('From Service: ', bh.message);
 
-      bh.Subject = new bh.behaviorSubject({ data: 'not available' });
-      bh.local.bhSub = bh.Subject;
-      bh.local.Obs = bh.Subject.asObservable();
+      if (bh.input.isFooter) {
+        bh.local.bhSub = new bh.behaviorSubject({ data: 'not available' });
+        // bh.local.bhSub = bh.Subject
+        bh.local.Obs = bh.local.bhSub.asObservable();
 
-      // if(data._type === 'payment') {
+        console.log('Behavior subject to emit a new value to', bh.local.bhSub);
 
-      // }
+        console.log('Observables to subscribe to: ', bh.local.Obs);
+      }
+
       bh = await this.sd_cGLHq0aplermAVDe(bh);
       //appendnew_next_sd_SB50TJb95C4AmLA9
       return bh;
@@ -967,7 +971,7 @@ export class api_service {
         body: undefined,
       };
       bh.local.messages = await this.sdService.nHttpRequest(requestOptions);
-      bh = await this.sd_1Vtd4IFBK5G80UhL(bh);
+      bh = await this.sd_JwskMXdc66VOUsVJ(bh);
       //appendnew_next_sd_cGLHq0aplermAVDe
       return bh;
     } catch (e) {
@@ -975,10 +979,29 @@ export class api_service {
     }
   }
 
+  async sd_JwskMXdc66VOUsVJ(bh) {
+    try {
+      if (
+        this.sdService.operators['true'](
+          bh.input.isFooter,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_1Vtd4IFBK5G80UhL(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_JwskMXdc66VOUsVJ');
+    }
+  }
+
   async sd_1Vtd4IFBK5G80UhL(bh) {
     try {
       this.obsData = bh.local.Obs;
-      this.behaviourSubject = bh.Subject;
+      this.behaviourSubject = bh.local.bhSub;
       //appendnew_next_sd_1Vtd4IFBK5G80UhL
       return bh;
     } catch (e) {
@@ -1003,29 +1026,20 @@ export class api_service {
       bh.message = bh.input.message;
       console.log('Update message From Service: ', bh.message);
 
-      if (bh.message.read) {
-        bh.local.counts--;
-      } else {
-        bh.local.counts++;
-      }
+      // if(bh.message.read) {
+      //     Number(bh.local.counts)--
+      //     console.log(bh.local.counts)
+      // }else {
+      //     Number(bh.local.counts++)
+      //     console.log(counts)
+      // }
 
       console.log('Counts: ', bh.local.counts);
-      bh = await this.sd_7ru4upL2o5Y3UUqd(bh);
+      bh = await this.sd_UUIfMEVneWZQE2Xd(bh);
       //appendnew_next_sd_PiB0C8Y8oIElspMj
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_PiB0C8Y8oIElspMj');
-    }
-  }
-
-  async sd_7ru4upL2o5Y3UUqd(bh) {
-    try {
-      this.counts = bh.local.counts;
-      bh = await this.sd_UUIfMEVneWZQE2Xd(bh);
-      //appendnew_next_sd_7ru4upL2o5Y3UUqd
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_7ru4upL2o5Y3UUqd');
     }
   }
 

@@ -37,10 +37,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.options = [\n    {name: 'Last 1 month'},\n    {name: 'Last 3 month'},\n    {name: 'Last 6 month'},\n    {name: 'Last 12 month'},\n    {name: 'Choose date range', range: 'Up to 3 years'}\n]\n\nlet w = window.open('', '_blank')\nconsole.log('Window: ', w)\n\npage.jsPDF = new page.jspdf()\n\nconsole.log('PDF', page.jsPDF)\n// let autoTable: autoTable\n// console.log('Table: ', page.autoTable)",
+        "script": "page.options = [\n    {name: 'Last 1 month'},\n    {name: 'Last 3 month'},\n    {name: 'Last 6 month'},\n    {name: 'Last 12 month'},\n    {name: 'Choose date range', range: 'Up to 3 years'}\n]\n\n// let w = window.open('', '_blank')\n// console.log('Window: ', w)\n\npage.jsPDF = new page.jspdf()\n\nconsole.log('PDF', page.jsPDF)\n// let autoTable: autoTable\n// console.log('Table: ', page.autoTable)\n// console.log('Table: ', autoTable)",
         "functionName": "sd_cHLrbUR8FYzX2Loo",
         "category": "Function",
-        "x": 325,
+        "x": 425,
         "y": 40,
         "wires": [
             [
@@ -73,7 +73,7 @@
         },
         "functionName": "sd_8jXwjqighOUUXCWf",
         "category": "Storage",
-        "x": 425,
+        "x": 505,
         "y": 40,
         "wires": [
             []
@@ -115,7 +115,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_rx6uLMUPuILZhdh1"
+                "sd_ILlrG1WxKCfihDWc"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -154,7 +154,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// Add content to the PDF.\npage.jsPDF.setFontSize(16);\npage.jsPDF.text('Savings Account Statement', 10, 10);\npage.jsPDF.setFontSize(12);\npage.jsPDF.text(\n\t`${page.user.fullName}`,\n\t10,\n\t20,\n);\n\nlet capitecLogo = new Image()\ncapitecLogo.src = '../../../assets/Web/Images/capitec-l.png'\npage.jsPDF.addImage(capitecLogo, 'PNG', 130, 1, 70, 20)\n\n// Create a table using `jspdf-autotable`.\nconst headers = [['Posting Date', 'Transaction Date', 'Description', 'Money In(R)', 'Money Out(R)', 'Balance(R)']];\nconst data = [\n\t[new Date().toDateString(), new Date().toDateString(), 'Sweden', '200', '', '200'],\n\t[new Date().toDateString(), new Date().toDateString(), 'Spain', '', '- 200', '0.50'],\n\t// ...\n];\n\n// page.jsPDF.autoTable({\n// \thead: headers,\n// \tbody: data,\n// \tstartY: 30, // Adjust the `startY` position as needed.\n// });\n\nvar str = page.jsPDF.output('datauristring');\n\nvar embed = \"<embed width='100%' height='100%' src='\" + str + \"'/>\"\nconsole.log(embed)\nconsole.log(window)\nlet win = window.open('', '_blank');\nlet w = window.open('', '_blank');\nconsole.log('Win: ', w, win)\nwin.document.open();\nwin.document.write(embed);\nwin.document.close()",
+        "script": "// Add content to the PDF.\npage.jsPDF.setFontSize(16);\npage.jsPDF.text('Savings Account Statement', 10, 10);\npage.jsPDF.setFontSize(12);\npage.jsPDF.text(\n\t`${page.user.fullName}`,\n\t10,\n\t20,\n);\n\nlet capitecLogo = new Image()\ncapitecLogo.src = '../../../assets/Web/Images/capitec-l.png'\npage.jsPDF.addImage(capitecLogo, 'PNG', 130, 1, 70, 20)\n\n// Create a table using `jspdf-autotable`.\nconst headers = [['Posting Date', 'Transaction Date', 'Description', 'Money In(R)', 'Money Out(R)', 'Balance(R)']];\nconst data = [\n\t[new Date().toDateString(), new Date().toDateString(), 'Sweden', '200', '', '200'],\n\t[new Date().toDateString(), new Date().toDateString(), 'Spain', '', '- 200', '0.50'],\n\t// ...\n];\n\n// console.log('autoTable: ', page.jsPDF.autoTable)\nconsole.log('jsPDF: ', page.jsPDF)\n\nconsole.log('Autotable in jsPDF: ', page.jsPDF.autoTable)\n\npage.jsPDF.autoTable({\n\thead: headers,\n\tbody: data,\n\tstartY: 30, // Adjust the `startY` position as needed.\n});\n\npage.pdf = page.jsPDF.output('datauristring');\n\n// var embed = \"<embed width='100%' height='100%' src='\" + str + \"'/>\"\n\n// let pdfURL = URL.createObjectURL(str);\n\nconsole.log('base64 pdf: ', page.pdf)\n\n// let windowOpen = window.open('', '_blank')\n// window.open('', '_blank').location.href = pdfURL\n// console.log('Opened window: ', windowOpen)\n\n// if(windowOpen) {\n// \twindowOpen.location.href = pdfURL\n// }else {\n// \talert('Please allow pop Ups')\n// }\n\n// console.log(embed)\n// console.log(window)\n\n// page.win = window.open('http://localhost:4200/bank_statement', '_blank')\n\n// window.open(pdfURL);\n// console.log('Win: ', page.win)\n// document.open();\n\n// document.write(embed);\n// document.close()",
         "functionName": "sd_m1eliMgupRWCpD66",
         "category": "Function",
         "x": 225,
@@ -191,15 +191,60 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "win",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "pdf",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_rx6uLMUPuILZhdh1",
+        "category": "Function",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            [
+                "sd_cHLrbUR8FYzX2Loo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "statementComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ILlrG1WxKCfihDWc",
+        "type": "UseDependency",
+        "z": "sd_GI5RqZjBjRisNRTn",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "autoTable",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.autoTable",
+        "alias": "autoTable",
+        "modules": [],
+        "import_all": true,
+        "library": "jspdf-autotable",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_ILlrG1WxKCfihDWc",
         "category": "Function",
         "x": 225,
         "y": 40,
         "wires": [
             [
-                "sd_cHLrbUR8FYzX2Loo"
+                "sd_rx6uLMUPuILZhdh1"
             ]
         ],
         "__n_excludedFromValidation__": {},

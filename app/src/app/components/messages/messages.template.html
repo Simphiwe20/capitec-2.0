@@ -11,13 +11,14 @@
         </div>
       </div><mat-tab-group mat-align-tabs="center" mat-stretch-tabs><mat-tab label="Transactions">
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-            <div fxLayout="row wrap" class="no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
-              <h3 class="padding-left">
-                June 2024</h3>
+            <div fxLayout="row wrap" class="padding-0px-15px no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+              <h3>
+                {{page.month | date: &quot;MMM, y&quot;}}
+              </h3>
             </div>
             <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey; font-size: small" class="poppins height-50px padding-0px-15px bg-white" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let message of page.messages">
               <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true">
-                <p class="poppins padding-left">
+                <p class="font-12px no-margin poppins padding-left">
                   {{message.message}}
                 </p>
               </div>

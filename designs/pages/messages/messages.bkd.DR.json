@@ -963,6 +963,7 @@
                                     {
                                         "_key": "class",
                                         "_value": [
+                                            "padding-0px-15px",
                                             "no-margin"
                                         ],
                                         "_type": "dav",
@@ -1019,9 +1020,7 @@
                                         },
                                         {
                                             "_key": "class",
-                                            "_value": [
-                                                "padding-left"
-                                            ],
+                                            "_value": [],
                                             "_type": "dav",
                                             "_attrDef": "p"
                                         },
@@ -1214,7 +1213,7 @@
                                             },
                                             {
                                                 "_key": "html",
-                                                "_value": "June 2024",
+                                                "_value": "{{page.month | date: \"MMM, y\"}}",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             }
@@ -1370,6 +1369,8 @@
                                             {
                                                 "_key": "class",
                                                 "_value": [
+                                                    "font-12px",
+                                                    "no-margin",
                                                     "poppins",
                                                     "padding-left"
                                                 ],

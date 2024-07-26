@@ -1230,7 +1230,7 @@
         "accept_bh": false,
         "functionName": "updateUser",
         "category": "General",
-        "x": 85,
+        "x": 45,
         "y": 1160,
         "wires": [
             [
@@ -1355,7 +1355,16 @@
         "nodeType": "start",
         "name": "get-trans-message",
         "outputs": 1,
-        "inputVariables": [],
+        "inputVariables": [
+            {
+                "key": "isFooter",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
         "localVariables": [
             {
                 "key": "messages",
@@ -1371,7 +1380,7 @@
                     "type": "any",
                     "value": ""
                 },
-                "output": false
+                "output": true
             },
             {
                 "key": "bhSub",
@@ -1379,13 +1388,13 @@
                     "type": "any",
                     "value": ""
                 },
-                "output": true
+                "output": false
             }
         ],
         "accept_bh": false,
         "functionName": "getTransMessage",
         "category": "General",
-        "x": 85,
+        "x": 65,
         "y": 1260,
         "wires": [
             [
@@ -1433,11 +1442,11 @@
         "paramMappingObj": {},
         "functionName": "sd_cGLHq0aplermAVDe",
         "category": "HTTP",
-        "x": 505,
+        "x": 565,
         "y": 1260,
         "wires": [
             [
-                "sd_1Vtd4IFBK5G80UhL"
+                "sd_JwskMXdc66VOUsVJ"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1464,7 +1473,7 @@
         ],
         "functionName": "sd_G5q3O9ZxQ4L60k7R",
         "category": "General",
-        "x": 305,
+        "x": 345,
         "y": 1260,
         "wires": [
             [
@@ -1483,10 +1492,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = bh.url + 'get-messages'\n\nconsole.log('From Service: ', bh.message)\n\nbh.Subject = new bh.behaviorSubject({data: 'not available'})\nbh.local.bhSub = bh.Subject\nbh.local.Obs = bh.Subject.asObservable()\n\n// if(data._type === 'payment') {\n\n// }",
+        "script": "bh.url = bh.url + 'get-messages'\n\nconsole.log('From Service: ', bh.message)\n\n\nif (bh.input.isFooter) {\n    bh.local.bhSub = new bh.behaviorSubject({ data: 'not available' })\n    // bh.local.bhSub = bh.Subject\n    bh.local.Obs = bh.local.bhSub.asObservable()\n\n    console.log('Behavior subject to emit a new value to', bh.local.bhSub)\n\n    console.log('Observables to subscribe to: ', bh.local.Obs)\n}\n",
         "functionName": "sd_SB50TJb95C4AmLA9",
         "category": "Function",
-        "x": 385,
+        "x": 465,
         "y": 1260,
         "wires": [
             [
@@ -1548,7 +1557,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "put",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -1556,10 +1564,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -1575,15 +1581,13 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_UUIfMEVneWZQE2Xd",
         "category": "HTTP",
-        "x": 545,
+        "x": 565,
         "y": 1380,
         "wires": [
             [
@@ -1614,7 +1618,7 @@
         ],
         "functionName": "sd_NifhwVNgnBWF0Txq",
         "category": "General",
-        "x": 205,
+        "x": 345,
         "y": 1380,
         "wires": [
             [
@@ -1633,14 +1637,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = bh.url + 'update-message'\nbh.message = bh.input.message\nconsole.log('Update message From Service: ', bh.message)\n\n\nif(bh.message.read) {\n    bh.local.counts--\n}else {\n    bh.local.counts++\n}\n\nconsole.log('Counts: ', bh.local.counts)",
+        "script": "bh.url = bh.url + 'update-message'\nbh.message = bh.input.message\nconsole.log('Update message From Service: ', bh.message)\n\n\n// if(bh.message.read) {\n//     Number(bh.local.counts)--\n//     console.log(bh.local.counts)\n// }else {\n//     Number(bh.local.counts++)\n//     console.log(counts)\n// }\n\nconsole.log('Counts: ', bh.local.counts)",
         "functionName": "sd_PiB0C8Y8oIElspMj",
         "category": "Function",
-        "x": 305,
+        "x": 465,
         "y": 1380,
         "wires": [
             [
-                "sd_7ru4upL2o5Y3UUqd"
+                "sd_UUIfMEVneWZQE2Xd"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -2241,39 +2245,6 @@
         "generated": true
     },
     {
-        "id": "sd_7ru4upL2o5Y3UUqd",
-        "type": "ServiceVariables",
-        "z": "sd_54PzYAXeeWhXZO4M",
-        "viewType": "client-server",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "set",
-        "globalVariables": [
-            {
-                "textIp": "counts",
-                "typedIpValue": {
-                    "type": "bh.local",
-                    "value": "counts"
-                }
-            }
-        ],
-        "functionName": "sd_7ru4upL2o5Y3UUqd",
-        "category": "Function",
-        "x": 425,
-        "y": 1380,
-        "wires": [
-            [
-                "sd_UUIfMEVneWZQE2Xd"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "api_service",
-        "generated": true
-    },
-    {
         "id": "sd_KwG5AieqZoONpUbw",
         "type": "Start",
         "z": "sd_54PzYAXeeWhXZO4M",
@@ -2436,7 +2407,7 @@
         "serviceDesignerType": "client",
         "functionName": "sd_Rwa9h6jtGJfMb4XW",
         "category": "Function",
-        "x": 205,
+        "x": 225,
         "y": 1260,
         "wires": [
             [
@@ -2469,14 +2440,14 @@
             {
                 "textIp": "behaviourSubject",
                 "typedIpValue": {
-                    "type": "bh",
-                    "value": "Subject"
+                    "type": "bh.local",
+                    "value": "bhSub"
                 }
             }
         ],
         "functionName": "sd_1Vtd4IFBK5G80UhL",
         "category": "Function",
-        "x": 625,
+        "x": 785,
         "y": 1260,
         "wires": [
             []
@@ -2512,6 +2483,38 @@
         "wires": [
             [
                 "sd_TAd8A0jJtrrG6PGM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_JwskMXdc66VOUsVJ",
+        "type": "Switch",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "isFooter",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.isFooter",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_JwskMXdc66VOUsVJ",
+        "category": "Function",
+        "x": 660,
+        "y": 1260,
+        "wires": [
+            [
+                "sd_1Vtd4IFBK5G80UhL"
             ]
         ],
         "__n_excludedFromValidation__": {},

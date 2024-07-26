@@ -330,7 +330,7 @@
                             },
                             {
                                 "_key": "*ngIf",
-                                "_value": "menu.menuName === 'Messages' && page.messages?.length",
+                                "_value": "menu.menuName === 'Messages' && page.messages",
                                 "_type": "kv",
                                 "_attrDef": "c"
                             }
@@ -544,7 +544,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "{{page.messages?.length}}",
+                                        "_value": "{{page.messages}}",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }

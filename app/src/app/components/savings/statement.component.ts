@@ -8,6 +8,7 @@ import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
 import { jsPDF } from 'jspdf'; //_splitter_
+import * as autoTable from 'jspdf-autotable'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -75,7 +76,7 @@ export class statementComponent {
   sd_pd2vV3DHQ3FmrTEb(bh) {
     try {
       this.page.jspdf = jsPDF;
-      bh = this.sd_rx6uLMUPuILZhdh1(bh);
+      bh = this.sd_ILlrG1WxKCfihDWc(bh);
       //appendnew_next_sd_pd2vV3DHQ3FmrTEb
       return bh;
     } catch (e) {
@@ -83,10 +84,23 @@ export class statementComponent {
     }
   }
 
+  sd_ILlrG1WxKCfihDWc(bh) {
+    try {
+      this.page.autoTable = autoTable;
+      bh = this.sd_rx6uLMUPuILZhdh1(bh);
+      //appendnew_next_sd_ILlrG1WxKCfihDWc
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ILlrG1WxKCfihDWc');
+    }
+  }
+
   sd_rx6uLMUPuILZhdh1(bh) {
     try {
       this.page.options = undefined;
       this.page.jsPDF = undefined;
+      this.page.win = undefined;
+      this.page.pdf = undefined;
       bh = this.sd_cHLrbUR8FYzX2Loo(bh);
       //appendnew_next_sd_rx6uLMUPuILZhdh1
       return bh;
@@ -106,14 +120,15 @@ export class statementComponent {
         { name: 'Choose date range', range: 'Up to 3 years' },
       ];
 
-      let w = window.open('', '_blank');
-      console.log('Window: ', w);
+      // let w = window.open('', '_blank')
+      // console.log('Window: ', w)
 
       page.jsPDF = new page.jspdf();
 
       console.log('PDF', page.jsPDF);
       // let autoTable: autoTable
       // console.log('Table: ', page.autoTable)
+      // console.log('Table: ', autoTable)
       bh = this.sd_8jXwjqighOUUXCWf(bh);
       //appendnew_next_sd_cHLrbUR8FYzX2Loo
       return bh;
@@ -175,23 +190,46 @@ export class statementComponent {
         // ...
       ];
 
-      // page.jsPDF.autoTable({
-      // 	head: headers,
-      // 	body: data,
-      // 	startY: 30, // Adjust the `startY` position as needed.
-      // });
+      // console.log('autoTable: ', page.jsPDF.autoTable)
+      console.log('jsPDF: ', page.jsPDF);
 
-      var str = page.jsPDF.output('datauristring');
+      console.log('Autotable in jsPDF: ', page.jsPDF.autoTable);
 
-      var embed = "<embed width='100%' height='100%' src='" + str + "'/>";
-      console.log(embed);
-      console.log(window);
-      let win = window.open('', '_blank');
-      let w = window.open('', '_blank');
-      console.log('Win: ', w, win);
-      win.document.open();
-      win.document.write(embed);
-      win.document.close();
+      page.jsPDF.autoTable({
+        head: headers,
+        body: data,
+        startY: 30, // Adjust the `startY` position as needed.
+      });
+
+      page.pdf = page.jsPDF.output('datauristring');
+
+      // var embed = "<embed width='100%' height='100%' src='" + str + "'/>"
+
+      // let pdfURL = URL.createObjectURL(str);
+
+      console.log('base64 pdf: ', page.pdf);
+
+      // let windowOpen = window.open('', '_blank')
+      // window.open('', '_blank').location.href = pdfURL
+      // console.log('Opened window: ', windowOpen)
+
+      // if(windowOpen) {
+      // 	windowOpen.location.href = pdfURL
+      // }else {
+      // 	alert('Please allow pop Ups')
+      // }
+
+      // console.log(embed)
+      // console.log(window)
+
+      // page.win = window.open('http://localhost:4200/bank_statement', '_blank')
+
+      // window.open(pdfURL);
+      // console.log('Win: ', page.win)
+      // document.open();
+
+      // document.write(embed);
+      // document.close()
       //appendnew_next_sd_m1eliMgupRWCpD66
       return bh;
     } catch (e) {

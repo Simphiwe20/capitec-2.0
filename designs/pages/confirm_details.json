@@ -47,6 +47,13 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "showLoader",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "true"
+                }
             }
         ],
         "functionName": "sd_VhQy0vig3OA1kzEu",
@@ -142,34 +149,12 @@
         "y": 200,
         "wires": [
             [
-                "sd_rC31Oq7XeoHG8EIH"
+                "sd_hkIXtF1gNWvb1Tvd"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "confirm_detailsComponent"
-    },
-    {
-        "id": "sd_rC31Oq7XeoHG8EIH",
-        "type": "Script",
-        "z": "sd_HwlNnYqBqQ87n7TQ",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "page.submitted = false\n\nbh.body = {\n    email: page.user.email,\n    remotePin: page.migrate.remotePin\n}",
-        "functionName": "sd_rC31Oq7XeoHG8EIH",
-        "category": "Function",
-        "x": 140,
-        "y": 200,
-        "wires": [
-            [
-                "sd_5cOsZTOstboDyV4t"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "confirm_detailsComponent",
-        "generated": true
     },
     {
         "id": "sd_5cOsZTOstboDyV4t",
@@ -194,11 +179,11 @@
         "outputs": 2,
         "functionName": "sd_5cOsZTOstboDyV4t",
         "category": "Function",
-        "x": 220,
+        "x": 205,
         "y": 200,
         "wires": [
             [
-                "sd_8VXydPVAWI5T0BbT"
+                "sd_D3rz0LHUtUQHm4LK"
             ],
             [
                 "sd_fa0mvl53mOq7MG6x"
@@ -268,7 +253,7 @@
         ],
         "functionName": "sd_8VXydPVAWI5T0BbT",
         "category": "General",
-        "x": 300,
+        "x": 365,
         "y": 160,
         "wires": [
             [
@@ -290,7 +275,7 @@
         "script": "bh.url = page.ssdURL + \"log-in\"",
         "functionName": "sd_vZ81L7jffFjMszLW",
         "category": "Function",
-        "x": 380,
+        "x": 445,
         "y": 160,
         "wires": [
             [
@@ -345,7 +330,7 @@
         "paramMappingObj": {},
         "functionName": "sd_uTKnCdeuD1u41cJX",
         "category": "HTTP",
-        "x": 460,
+        "x": 525,
         "y": 160,
         "wires": [
             [
@@ -380,8 +365,8 @@
         "outputs": 2,
         "functionName": "sd_MwtpWx7EjoXuff44",
         "category": "Function",
-        "x": 545,
-        "y": 200,
+        "x": 605,
+        "y": 160,
         "wires": [
             [
                 "sd_TUjIgZny1n5HwI5b"
@@ -403,7 +388,7 @@
         "script": "bh.update_url = page.ssdURL + \"update\"\n\nbh.update_body = {\n    email: page.user.email,\n    registered: \"false\"\n}",
         "functionName": "sd_TUjIgZny1n5HwI5b",
         "category": "Function",
-        "x": 625,
+        "x": 705,
         "y": 160,
         "wires": [
             [
@@ -458,7 +443,7 @@
         "paramMappingObj": {},
         "functionName": "sd_OUH2CP7Qa8JQabIn",
         "category": "HTTP",
-        "x": 720,
+        "x": 785,
         "y": 160,
         "wires": [
             [
@@ -480,7 +465,7 @@
         "script": "bh.migrate_url = \"https://37bd-169-239-176-9.ngrok-free.app/api/register\"",
         "functionName": "sd_A2bsn0LunRVWHSme",
         "category": "Function",
-        "x": 805,
+        "x": 865,
         "y": 160,
         "wires": [
             [
@@ -560,7 +545,7 @@
         "resultMapping": "",
         "functionName": "sd_gWfYb1rOgCkLWvoI",
         "category": "Navigation",
-        "x": 1045,
+        "x": 1105,
         "y": 160,
         "wires": [
             []
@@ -580,7 +565,7 @@
         "data": "bh.system",
         "functionName": "sd_JxIcDxVAPSxeQApy",
         "category": "Dialog",
-        "x": 965,
+        "x": 1025,
         "y": 160,
         "wires": [
             [
@@ -642,11 +627,55 @@
         "paramMappingObj": {},
         "functionName": "sd_NkHzkqPb5YFD7Qix",
         "category": "HTTP",
-        "x": 885,
+        "x": 945,
         "y": 160,
         "wires": [
             [
                 "sd_JxIcDxVAPSxeQApy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "confirm_detailsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_D3rz0LHUtUQHm4LK",
+        "type": "Script",
+        "z": "sd_HwlNnYqBqQ87n7TQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.showLoader = true",
+        "functionName": "sd_D3rz0LHUtUQHm4LK",
+        "category": "Function",
+        "x": 285,
+        "y": 160,
+        "wires": [
+            [
+                "sd_8VXydPVAWI5T0BbT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "confirm_detailsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hkIXtF1gNWvb1Tvd",
+        "type": "Script",
+        "z": "sd_HwlNnYqBqQ87n7TQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.submitted = false\n\nbh.body = {\n    email: page.user.email,\n    remotePin: page.migrate.remotePin\n}",
+        "functionName": "sd_hkIXtF1gNWvb1Tvd",
+        "category": "Function",
+        "x": 125,
+        "y": 200,
+        "wires": [
+            [
+                "sd_5cOsZTOstboDyV4t"
             ]
         ],
         "__n_excludedFromValidation__": {},

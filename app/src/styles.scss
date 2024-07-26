@@ -312,6 +312,10 @@ body {
     font-size: x-small;
 }
 
+.font-12px {
+    font-size: 12px
+}
+
 // Margin and Padding styles
 .margin-left-right-20 {
     margin: 0px 20px;
@@ -764,7 +768,7 @@ bh-bank_account, bh-pay_user, bh-pay_beneficiary, bh-transfer_money, bh-messages
   }
   
 .over {
-    height: 190vh;
+    height: 100vh;
     background-color: rgba(255, 255, 255);
     position: absolute;
     top: 0;
