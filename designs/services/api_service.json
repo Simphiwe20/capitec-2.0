@@ -1230,7 +1230,7 @@
         "accept_bh": false,
         "functionName": "updateUser",
         "category": "General",
-        "x": 45,
+        "x": 65,
         "y": 1160,
         "wires": [
             [
@@ -1302,7 +1302,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "put",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -1310,10 +1309,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -1329,11 +1326,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_DqBETi9MKlf1U8IT",
         "category": "HTTP",
@@ -2011,7 +2006,7 @@
         ],
         "functionName": "sd_6WjkGdpWYZVpsbyK",
         "category": "Function",
-        "x": 225,
+        "x": 165,
         "y": 1860,
         "wires": [
             [
@@ -2077,7 +2072,7 @@
         ],
         "functionName": "sd_iRD94c0kAfDoKGFy",
         "category": "Function",
-        "x": 230,
+        "x": 165,
         "y": 1960,
         "wires": [
             []
@@ -2117,7 +2112,7 @@
         "script": "console.log('User Image from service: ', bh.input.userImage)",
         "functionName": "sd_ZfgFDu6Hg9x8iLnv",
         "category": "Function",
-        "x": 345,
+        "x": 285,
         "y": 1860,
         "wires": [
             []
@@ -2516,6 +2511,139 @@
             [
                 "sd_1Vtd4IFBK5G80UhL"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_Eq7wG5g5TyIO4m9o",
+        "type": "Start",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getLoans",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "Loans",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getLoans",
+        "category": "General",
+        "x": 65,
+        "y": 2080,
+        "wires": [
+            [
+                "sd_TmpOisgZnbCSlFF0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "api_service"
+    },
+    {
+        "id": "sd_TmpOisgZnbCSlFF0",
+        "type": "Environment",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_TmpOisgZnbCSlFF0",
+        "category": "General",
+        "x": 185,
+        "y": 2080,
+        "wires": [
+            [
+                "sd_iAL4nB2Qo4BBoR0k"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_iAL4nB2Qo4BBoR0k",
+        "type": "Script",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.url = bh.ssdURL + 'get-loans'",
+        "functionName": "sd_iAL4nB2Qo4BBoR0k",
+        "category": "Function",
+        "x": 285,
+        "y": 2080,
+        "wires": [
+            [
+                "sd_mldnQ91Jffow9AD0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "api_service",
+        "generated": true
+    },
+    {
+        "id": "sd_mldnQ91Jffow9AD0",
+        "type": "HttpRequest",
+        "z": "sd_54PzYAXeeWhXZO4M",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.Loans",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "Loans"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_mldnQ91Jffow9AD0",
+        "category": "HTTP",
+        "x": 385,
+        "y": 2080,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

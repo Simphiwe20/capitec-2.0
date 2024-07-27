@@ -65,7 +65,7 @@
         ],
         "functionName": "sd_GBIm80ZcCtEHO1sG",
         "category": "Function",
-        "x": 225,
+        "x": 265,
         "y": 20,
         "wires": [
             [
@@ -133,7 +133,7 @@
         "y": 20,
         "wires": [
             [
-                "sd_GBIm80ZcCtEHO1sG"
+                "sd_9dwFqJuKNpLT9alF"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -152,7 +152,7 @@
         "logObject": "this.page.profile",
         "functionName": "sd_PEAoC4jYU9pajsGm",
         "category": "General",
-        "x": 545,
+        "x": 785,
         "y": 20,
         "wires": [],
         "__ssdTypeInputs__": {
@@ -284,10 +284,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.profile = new FormGroup ({\n    fullName :new FormControl ({value:page.results.fullName,disabled: page.disabled}),\n    nickName :new FormControl ({value:page.results.nickName ? page.results.nickName : page.results.fullName.split(' ')[0],disabled: page.disabled}),\n    idNum : new FormControl({value: page.results.idNum,disabled: page.disabled}),\n    contacts :new FormControl ({value:page.results.contacts,disabled: page.disabled}),\n    email :new FormControl ({value:page.results.email,disabled: page.disabled})\n})",
+        "script": "console.log(page.users)\npage.results = page.users.find(user => user.email == page.results.email)\n\nconsole.log('Logged In users: ', page.results)\n\npage.profile = new FormGroup ({\n    fullName :new FormControl ({value:page.results.fullName,disabled: page.disabled}),\n    nickName :new FormControl ({value:page.results.nickName ? page.results.nickName : page.results.fullName.split(' ')[0],disabled: page.disabled}),\n    idNum : new FormControl({value: page.results.idNum,disabled: page.disabled}),\n    contacts :new FormControl ({value:page.results.contacts,disabled: page.disabled}),\n    email :new FormControl ({value:page.results.email,disabled: page.disabled})\n})",
         "functionName": "sd_PnEta2viXfeh8A9o",
         "category": "Function",
-        "x": 485,
+        "x": 705,
         "y": 20,
         "wires": [
             [
@@ -371,7 +371,7 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_e8TZuQT6I6jJ65Gp",
         "category": "Function",
-        "x": 325,
+        "x": 365,
         "y": 20,
         "wires": [
             [
@@ -437,11 +437,11 @@
         },
         "functionName": "sd_yeEPbSTFD4r4g4Um",
         "category": "Storage",
-        "x": 405,
+        "x": 445,
         "y": 20,
         "wires": [
             [
-                "sd_PnEta2viXfeh8A9o"
+                "sd_1rFfUC8JdaxeqB1y"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -699,6 +699,108 @@
         "y": 200,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "my_detailsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_byfXoeEVszCBX6Zd",
+        "type": "HttpRequest",
+        "z": "sd_EUGc6ApcMdjsMOzD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.users",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "users"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_byfXoeEVszCBX6Zd",
+        "category": "HTTP",
+        "x": 625,
+        "y": 20,
+        "wires": [
+            [
+                "sd_PnEta2viXfeh8A9o"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "my_detailsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9dwFqJuKNpLT9alF",
+        "type": "Environment",
+        "z": "sd_EUGc6ApcMdjsMOzD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_9dwFqJuKNpLT9alF",
+        "category": "General",
+        "x": 185,
+        "y": 20,
+        "wires": [
+            [
+                "sd_GBIm80ZcCtEHO1sG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "my_detailsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1rFfUC8JdaxeqB1y",
+        "type": "Script",
+        "z": "sd_EUGc6ApcMdjsMOzD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = bh.ssdURL + 'get-customers'\n\nconsole.log('ssdURL: ', bh.url)",
+        "functionName": "sd_1rFfUC8JdaxeqB1y",
+        "category": "Function",
+        "x": 545,
+        "y": 20,
+        "wires": [
+            [
+                "sd_byfXoeEVszCBX6Zd"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

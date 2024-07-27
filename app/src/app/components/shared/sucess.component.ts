@@ -112,6 +112,9 @@ export class sucessComponent {
         page.feedback = `${ben.benName}'s Electricity has been purchased sucessfully`;
       } else if (page.routeData._type === 'transfer') {
         page.feedback = `${ben.benName} Transfer was made sucessfully`;
+      } else if (page.routeData._type === 'loan') {
+        page.feedback = `${ben.reason} loan application of R${ben.amount} was sent`;
+        console.log(page.feedback);
       } else {
         page.feedback = ` ${ben.benName} has been added to your benefeciaries`;
       }

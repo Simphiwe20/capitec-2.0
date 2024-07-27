@@ -522,6 +522,32 @@ export class api_service {
       return await this.errorHandler(bh, e, 'sd_KwG5AieqZoONpUbw');
     }
   }
+
+  async getLoans(...others) {
+    let bh: any = {
+      input: {},
+      local: {
+        Loans: undefined,
+      },
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+
+      bh = await this.sd_TmpOisgZnbCSlFF0(bh);
+      //appendnew_next_getLoans
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            Loans: bh.local.Loans,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Eq7wG5g5TyIO4m9o');
+    }
+  }
   //appendnew_flow_api_service_start
 
   async sd_fqxLeQ5rHACesUM2(bh) {
@@ -1247,6 +1273,46 @@ export class api_service {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_TAd8A0jJtrrG6PGM');
+    }
+  }
+
+  async sd_TmpOisgZnbCSlFF0(bh) {
+    try {
+      bh.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = await this.sd_iAL4nB2Qo4BBoR0k(bh);
+      //appendnew_next_sd_TmpOisgZnbCSlFF0
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_TmpOisgZnbCSlFF0');
+    }
+  }
+
+  async sd_iAL4nB2Qo4BBoR0k(bh) {
+    try {
+      bh.url = bh.ssdURL + 'get-loans';
+      bh = await this.sd_mldnQ91Jffow9AD0(bh);
+      //appendnew_next_sd_iAL4nB2Qo4BBoR0k
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_iAL4nB2Qo4BBoR0k');
+    }
+  }
+
+  async sd_mldnQ91Jffow9AD0(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.Loans = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_mldnQ91Jffow9AD0
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_mldnQ91Jffow9AD0');
     }
   }
 

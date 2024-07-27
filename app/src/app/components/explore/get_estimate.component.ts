@@ -168,7 +168,7 @@ export class get_estimateComponent {
           undefined
         )
       ) {
-        bh = this.sd_QcmaC6YC3n0PCukE(bh);
+        bh = this.sd_apIJD4PmQy2uNWAT(bh);
       } else {
         bh = await this.sd_2BUhyhGh6oUweanQ(bh);
       }
@@ -176,22 +176,6 @@ export class get_estimateComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_2DoGR90xSWXujHbV');
-    }
-  }
-
-  sd_QcmaC6YC3n0PCukE(bh) {
-    try {
-      this.__page_injector__.get(MatSnackBar).open('Yes Girl', 'OK', {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-      });
-      bh = this.sd_apIJD4PmQy2uNWAT(bh);
-      //appendnew_next_sd_QcmaC6YC3n0PCukE
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_QcmaC6YC3n0PCukE');
     }
   }
 
@@ -210,6 +194,8 @@ export class get_estimateComponent {
     try {
       const page = this.page;
       bh.url = page.ssdURL + 'add-loan';
+
+      bh.loanForm = { routeData: JSON.stringify(page.loanForm), _type: 'loan' };
 
       bh = this.sd_gSSwid5YoEpCPg0C(bh);
       //appendnew_next_sd_dYcfqmB6pzPZ8ckt
@@ -230,7 +216,7 @@ export class get_estimateComponent {
         body: this.page.loanForm,
       };
       this.page.results = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_teYW9n2H6hGislJ2(bh);
+      bh = this.sd_FIrHcfFSUN4UZI7u(bh);
       //appendnew_next_sd_gSSwid5YoEpCPg0C
       return bh;
     } catch (e) {
@@ -238,32 +224,14 @@ export class get_estimateComponent {
     }
   }
 
-  sd_teYW9n2H6hGislJ2(bh) {
-    try {
-      this.__page_injector__
-        .get(MatSnackBar)
-        .open('Loan successfully sent', 'Ok', {
-          duration: 3000,
-          direction: 'ltr',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        });
-      bh = this.sd_FIrHcfFSUN4UZI7u(bh);
-      //appendnew_next_sd_teYW9n2H6hGislJ2
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_teYW9n2H6hGislJ2');
-    }
-  }
-
   async sd_FIrHcfFSUN4UZI7u(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/logged_in_landing/get_estimate');
+        this.sdService.getPathAndQParamsObj('/sucess');
       await this.__page_injector__
         .get(Router)
         .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
+          queryParams: Object.assign(qprm, bh.loanForm),
         });
       //appendnew_next_sd_FIrHcfFSUN4UZI7u
       return bh;

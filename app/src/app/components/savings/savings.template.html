@@ -11,7 +11,7 @@
       </div>
     </div>
     <div fxLayout="column wrap" class="margin-t-50px bg-blue" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="column wrap" class="bg-dark-blue border-radius-10px margin-t-l-r-10px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="margin-b-16px bg-dark-blue border-radius-10px margin-t-l-r-10px" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxLayout="row wrap" class="height-60px" fxLayoutAlign="center center" [fxShow]="true">
           <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true">
             <p class="no-margin poppins color-w">
@@ -21,15 +21,13 @@
           </div><mat-icon class="color-w">infor</mat-icon>
         </div>
       </div>
-      <div fxLayout="column wrap" class="padding-right-10px" fxLayoutAlign="start center" [fxShow]="true"><small class="poppins color-w">
-          Balance</small><small class="poppins color-w">
-          R151.07</small></div>
     </div>
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-tab-group mat-align-tabs="start"><mat-tab label="All" class="hide-scrollbar full-height">
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-            <div fxLayout="row wrap" class="height-50px" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="row wrap" class="padding-0px-15px height-50px" fxLayoutAlign="space-between center" [fxShow]="true">
               <h5 class="no-margin poppins">
-                June 2024</h5>
+                {{page.month | date: &quot;MMM, y&quot;}}
+              </h5>
               <div fxLayout="row wrap" class="pointer" fxLayoutAlign="start center" [fxShow]="true" routerLink="/logged_in_landing/statement">
                 <h5 class="poppins no-margin color-b">
                   Statement</h5><mat-icon class="color-b">chevron_right</mat-icon>
@@ -44,7 +42,7 @@
                     {{trans.day}} - {{trans.transType}}</small>
                 </div>
                 <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><small>
-                    {{trans.moneyType == &apos;moneyOut&apos; ? &apos;-&apos; : &apos;&apos;}}R{{trans.amount}}</small></div>
+                    {{trans.moneyType == &apos;moneyOut&apos; ? &apos;-&apos; : &apos;+&apos;}}R{{trans.amount}}</small></div>
               </div>
               <div>
                 <hr>

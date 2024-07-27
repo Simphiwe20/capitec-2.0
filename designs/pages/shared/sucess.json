@@ -149,7 +149,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let ben = JSON.parse(page.routeData.routeData ? page.routeData.routeData : page.routeData.data)\nif(page.routeData._type === 'payment') {\n    page.feedback = `Payment to ${ben.benName} was sucessfully`\n    page.isPayment = true\n}else if(page.routeData._type === 'ele') {\n    page.feedback = `${ben.benName}'s Electricity has been purchased sucessfully`\n}else if(page.routeData._type === 'transfer') {\n    page.feedback = `${ben.benName} Transfer was made sucessfully`\n}else {\n    page.feedback = ` ${ben.benName} has been added to your benefeciaries`\n}\n\npage.routeData = JSON.parse(page.routeData.routeData)\n",
+        "script": "let ben = JSON.parse(page.routeData.routeData ? page.routeData.routeData : page.routeData.data)\nif(page.routeData._type === 'payment') {\n    page.feedback = `Payment to ${ben.benName} was sucessfully`\n    page.isPayment = true\n}else if(page.routeData._type === 'ele') {\n    page.feedback = `${ben.benName}'s Electricity has been purchased sucessfully`\n}else if(page.routeData._type === 'transfer') {\n    page.feedback = `${ben.benName} Transfer was made sucessfully`\n}else if(page.routeData._type === 'loan') {\n    page.feedback = `${ben.reason} loan application of R${ben.amount} was sent`\n    console.log(page.feedback)\n}\nelse {\n    page.feedback = ` ${ben.benName} has been added to your benefeciaries`\n}\n\npage.routeData = JSON.parse(page.routeData.routeData)\n",
         "functionName": "sd_pUxBkGov8ooZznwt",
         "category": "Function",
         "x": 400,

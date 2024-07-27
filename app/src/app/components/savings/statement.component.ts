@@ -162,7 +162,6 @@ export class statementComponent {
       // Create a table using `jspdf-autotable`.
       const headers = [
         [
-          'Posting Date',
           'Transaction Date',
           'Description',
           'Money In(R)',
@@ -171,22 +170,8 @@ export class statementComponent {
         ],
       ];
       const data = [
-        [
-          new Date().toDateString(),
-          new Date().toDateString(),
-          'Sweden',
-          '200',
-          '',
-          '200',
-        ],
-        [
-          new Date().toDateString(),
-          new Date().toDateString(),
-          'Spain',
-          '',
-          '- 200',
-          '0.50',
-        ],
+        [new Date().toDateString(), 'Sweden', '200', '', '200'],
+        [new Date().toDateString(), 'Spain', '', '- 200', '0.50'],
         // ...
       ];
 

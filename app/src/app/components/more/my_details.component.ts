@@ -91,11 +91,22 @@ export class my_detailsComponent {
 
   sd_xyBLfv2MRtAwqMVf(bh) {
     try {
-      bh = this.sd_GBIm80ZcCtEHO1sG(bh);
+      bh = this.sd_9dwFqJuKNpLT9alF(bh);
       //appendnew_next_sd_xyBLfv2MRtAwqMVf
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_xyBLfv2MRtAwqMVf');
+    }
+  }
+
+  sd_9dwFqJuKNpLT9alF(bh) {
+    try {
+      bh.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_GBIm80ZcCtEHO1sG(bh);
+      //appendnew_next_sd_9dwFqJuKNpLT9alF
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_9dwFqJuKNpLT9alF');
     }
   }
 
@@ -126,7 +137,7 @@ export class my_detailsComponent {
   sd_yeEPbSTFD4r4g4Um(bh) {
     try {
       this.page.results = JSON.parse(sessionStorage.getItem('accNo'));
-      bh = this.sd_PnEta2viXfeh8A9o(bh);
+      bh = this.sd_1rFfUC8JdaxeqB1y(bh);
       //appendnew_next_sd_yeEPbSTFD4r4g4Um
       return bh;
     } catch (e) {
@@ -134,9 +145,49 @@ export class my_detailsComponent {
     }
   }
 
+  sd_1rFfUC8JdaxeqB1y(bh) {
+    try {
+      const page = this.page;
+      bh.url = bh.ssdURL + 'get-customers';
+
+      console.log('ssdURL: ', bh.url);
+      bh = this.sd_byfXoeEVszCBX6Zd(bh);
+      //appendnew_next_sd_1rFfUC8JdaxeqB1y
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1rFfUC8JdaxeqB1y');
+    }
+  }
+
+  async sd_byfXoeEVszCBX6Zd(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.users = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_PnEta2viXfeh8A9o(bh);
+      //appendnew_next_sd_byfXoeEVszCBX6Zd
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_byfXoeEVszCBX6Zd');
+    }
+  }
+
   sd_PnEta2viXfeh8A9o(bh) {
     try {
       const page = this.page;
+      console.log(page.users);
+      page.results = page.users.find(
+        (user) => user.email == page.results.email
+      );
+
+      console.log('Logged In users: ', page.results);
+
       page.profile = new FormGroup({
         fullName: new FormControl({
           value: page.results.fullName,

@@ -871,6 +871,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "margin-b-16px",
                                 "bg-dark-blue",
                                 "border-radius-10px",
                                 "margin-t-l-r-10px"
@@ -1521,7 +1522,8 @@
                 "cfa60c32-40e9-8127-065f-59842c27d98c": {
                     "paletteKey": "FlexLayoutCol",
                     "parentEditorKey": "7063186d-16f8-74eb-b8b8-d91423ecec65",
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1722020587989",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -1585,7 +1587,8 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "cfa60c32-40e9-8127-065f-59842c27d98c",
                         "isAdvancedComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1722020587989",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1776,7 +1779,8 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "5171aea0-9881-1828-e5eb-7c7752139118",
                             "isAdvancedChildComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1722020587989",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1803,7 +1807,8 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "cfa60c32-40e9-8127-065f-59842c27d98c",
                         "isAdvancedComponent": true,
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1722020587989",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1994,7 +1999,8 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "a590109e-3487-4358-b907-b06a97d451c9",
                             "isAdvancedChildComponent": true,
-                            "commentid": null,
+                            "isCommented": "true",
+                            "commentid": "1722020587989",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2357,6 +2363,7 @@
                                     {
                                         "_key": "class",
                                         "_value": [
+                                            "padding-0px-15px",
                                             "height-50px"
                                         ],
                                         "_type": "dav",
@@ -2609,7 +2616,7 @@
                                             },
                                             {
                                                 "_key": "html",
-                                                "_value": "June 2024",
+                                                "_value": "{{page.month | date: \"MMM, y\"}}",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             }
@@ -3845,7 +3852,7 @@
                                                     },
                                                     {
                                                         "_key": "html",
-                                                        "_value": "{{trans.moneyType == 'moneyOut' ? '-' : ''}}R{{trans.amount}}",
+                                                        "_value": "{{trans.moneyType == 'moneyOut' ? '-' : '+'}}R{{trans.amount}}",
                                                         "_type": "a",
                                                         "_attrDef": "p"
                                                     }

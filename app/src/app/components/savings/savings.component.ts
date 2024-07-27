@@ -66,6 +66,7 @@ export class savingsComponent {
       this.page.moneyOut = undefined;
       this.page.trans = undefined;
       this.page.dtype = undefined;
+      this.page.month = undefined;
       bh = this.sd_dfCpMXjWPojUorhH(bh);
       //appendnew_next_sd_NcxYGB4Zjw58EuAK
       return bh;
@@ -101,6 +102,7 @@ export class savingsComponent {
       const page = this.page;
       bh.url = page.ssdUrl + 'get-customers';
 
+      page.month = new Date();
       bh = this.sd_13UF8k1s3DBqPXpA(bh);
       //appendnew_next_sd_HLVusWP0adg7ObT2
       return bh;
@@ -243,7 +245,7 @@ export class savingsComponent {
       let outputVariables = await api_serviceInstance.getScanToPays();
       bh.scanned = outputVariables.local.data;
 
-      bh = this.sd_rftktp2UPREHp7RO(bh);
+      bh = this.getLoans(bh);
       //appendnew_next_getScanned
       return bh;
     } catch (e) {
@@ -251,16 +253,66 @@ export class savingsComponent {
     }
   }
 
+  async getLoans(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.getLoans();
+      bh.loans = outputVariables.local.Loans;
+
+      bh = this.sd_rftktp2UPREHp7RO(bh);
+      //appendnew_next_getLoans
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_EkPkh6j6rWN2DRl2');
+    }
+  }
+
   sd_rftktp2UPREHp7RO(bh) {
     try {
       const page = this.page;
       console.log(bh.payedBen);
+
       console.log(bh.payedAirtime);
+
+      let trans = {
+        amount: 0,
+        transDate: '',
+        moneyType: '',
+        transType: '',
+        belongsTo: '',
+        statement: '',
+      };
+
+      let approvedLoans = [];
+
+      bh.loans.forEach((loan, indx) => {
+        if (loan.status == 'approved') {
+          trans.amount = loan.amount;
+          trans.transDate = loan.date;
+          trans.transType = `${loan.reason} Credit`;
+          trans.moneyType = 'moneyIn';
+          (trans.belongsTo = loan.accountNumber),
+            (trans.statement = 'Capitec Credit');
+
+          console.log(`Loans ${indx}`, trans);
+
+          // return loan
+          approvedLoans.push(trans);
+        }
+      });
+
+      console.log('Approved Loans: ', approvedLoans);
+      console.log('All Loans: ', bh.loans);
 
       page.trans = bh.payedBen.concat(bh.payedAirtime);
       page.trans = page.trans.concat(bh.transfers);
       page.trans = page.trans.concat(bh.payedElec);
       page.trans = page.trans.concat(bh.scanned);
+      page.trans = approvedLoans?.length
+        ? page.trans.concat(approvedLoans)
+        : '';
       console.log('Before sort', page.trans);
 
       page.trans = page.trans.filter(
@@ -269,6 +321,7 @@ export class savingsComponent {
       page.moneyOut = page.trans.filter(
         (trans) => trans.moneyType === 'moneyOut'
       );
+      page.trans.reverse();
       console.log('after sort', page.trans);
 
       page.trans.map((trans: any) => {

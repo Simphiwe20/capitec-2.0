@@ -82,6 +82,13 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "month",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_NcxYGB4Zjw58EuAK",
@@ -138,7 +145,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + 'get-customers'\n\n",
+        "script": "bh.url = page.ssdUrl + 'get-customers'\n\n\npage.month = new Date()",
         "functionName": "sd_HLVusWP0adg7ObT2",
         "category": "Function",
         "x": 465,
@@ -312,11 +319,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.payedBen)\nconsole.log(bh.payedAirtime)\n\npage.trans = bh.payedBen.concat(bh.payedAirtime)\npage.trans = page.trans.concat(bh.transfers)\npage.trans = page.trans.concat(bh.payedElec)\npage.trans = page.trans.concat(bh.scanned)\nconsole.log('Before sort', page.trans)\n\npage.trans = page.trans.filter(trans => trans.belongsTo === page.user.accountNumber)\npage.moneyOut = page.trans.filter(trans => trans.moneyType === \"moneyOut\")\nconsole.log('after sort', page.trans)\n\npage.trans.map((trans: any) => {\n    if(new Date(trans.transDate).getDate() == new Date().getDate() - 1){\n        trans.day = 'Yesterday'\n    }else if(new Date(trans.transDate).getDate() == new Date().getDate()) {\n        trans.day = 'Today'\n    }else {\n        trans.day = new Date(trans.transDate).toDateString()\n        page.dtype = typeof trans.day\n        \n    } \n}\n)\n\nconsole.log('Date type: ', page.dtype)\n\nconsole.log(page.trans)\nconsole.log(bh.transfers)\nconsole.log(bh.payedElec)\nconsole.log(bh.scanned)",
+        "script": "console.log(bh.payedBen)\n\nconsole.log(bh.payedAirtime)\n\nlet trans = {amount: 0, transDate: '', moneyType: '', transType: '', belongsTo: '', statement: ''}\n\nlet approvedLoans = []\n\nbh.loans.forEach((loan, indx) => {\n    if(loan.status == 'approved') {\n        trans.amount = loan.amount\n        trans.transDate = loan.date\n        trans.transType = `${loan.reason} Credit`\n        trans.moneyType = 'moneyIn'\n        trans.belongsTo = loan.accountNumber,\n        trans.statement = 'Capitec Credit'\n\n        console.log(`Loans ${indx}`, trans)\n\n        // return loan\n        approvedLoans.push(trans)\n\n    }   \n\n    }\n)\n\nconsole.log('Approved Loans: ', approvedLoans)\nconsole.log('All Loans: ', bh.loans)\n\n\npage.trans = bh.payedBen.concat(bh.payedAirtime)\npage.trans = page.trans.concat(bh.transfers)\npage.trans = page.trans.concat(bh.payedElec)\npage.trans = page.trans.concat(bh.scanned)\npage.trans = approvedLoans?.length ? page.trans.concat(approvedLoans) : ''\nconsole.log('Before sort', page.trans)\n\npage.trans = page.trans.filter(trans => trans.belongsTo === page.user.accountNumber)\npage.moneyOut = page.trans.filter(trans => trans.moneyType === \"moneyOut\")\npage.trans.reverse()\nconsole.log('after sort', page.trans)\n\npage.trans.map((trans: any) => {\n    if(new Date(trans.transDate).getDate() == new Date().getDate() - 1){\n        trans.day = 'Yesterday'\n    }else if(new Date(trans.transDate).getDate() == new Date().getDate()) {\n        trans.day = 'Today'\n    }else {\n        trans.day = new Date(trans.transDate).toDateString()\n        page.dtype = typeof trans.day\n        \n    } \n}\n)\n\nconsole.log('Date type: ', page.dtype)\n\nconsole.log(page.trans)\nconsole.log(bh.transfers)\nconsole.log(bh.payedElec)\nconsole.log(bh.scanned)",
         "functionName": "sd_rftktp2UPREHp7RO",
         "category": "Function",
-        "x": 1345,
-        "y": 300,
+        "x": 1485,
+        "y": 340,
         "wires": [
             []
         ],
@@ -534,7 +541,7 @@
         "y": 260,
         "wires": [
             [
-                "sd_rftktp2UPREHp7RO"
+                "sd_EkPkh6j6rWN2DRl2"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -566,6 +573,60 @@
         "wires": [
             [
                 "sd_ws3eRWrAAi88Wt29"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savingsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EkPkh6j6rWN2DRl2",
+        "type": "PageCallService",
+        "z": "sd_zdHwUt4VD3FKSWQV",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "getLoans",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_Eq7wG5g5TyIO4m9o",
+            "flowName": "getLoans"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "Loans",
+                "valueType": "bh",
+                "value": "loans",
+                "mapVarName": "Loans",
+                "localVar": "bh.loans"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "getLoans",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "getLoans",
+        "category": "General",
+        "x": 1345,
+        "y": 300,
+        "wires": [
+            [
+                "sd_rftktp2UPREHp7RO"
             ]
         ],
         "__n_excludedFromValidation__": {},
