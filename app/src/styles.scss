@@ -806,3 +806,13 @@ bh-bank_account, bh-pay_user, bh-pay_beneficiary, bh-transfer_money, bh-messages
     font-size: 35px !important;
     margin-bottom: 0.3em !important;
 }
+
+.mat-input-element:disabled {
+    color: black
+}
+
+.grey-disabled-color {
+    .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-label {
+            color: grey !important;
+    }
+}

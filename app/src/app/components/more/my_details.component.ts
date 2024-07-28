@@ -6,9 +6,11 @@
 import { Location } from '@angular/common'; //_splitter_
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
+import { api_service } from 'app/sd-services/api_service'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -115,6 +117,8 @@ export class my_detailsComponent {
       this.page.disabled = true;
       this.page.location = undefined;
       this.page.profile = undefined;
+      this.page.hide = true;
+      this.page.dob = undefined;
       bh = this.sd_e8TZuQT6I6jJ65Gp(bh);
       //appendnew_next_sd_GBIm80ZcCtEHO1sG
       return bh;
@@ -136,7 +140,7 @@ export class my_detailsComponent {
 
   sd_yeEPbSTFD4r4g4Um(bh) {
     try {
-      this.page.results = JSON.parse(sessionStorage.getItem('accNo'));
+      this.page.results = JSON.parse(localStorage.getItem('accNo'));
       bh = this.sd_1rFfUC8JdaxeqB1y(bh);
       //appendnew_next_sd_yeEPbSTFD4r4g4Um
       return bh;
@@ -182,6 +186,8 @@ export class my_detailsComponent {
     try {
       const page = this.page;
       console.log(page.users);
+      console.log('Result values: ', page.results);
+
       page.results = page.users.find(
         (user) => user.email == page.results.email
       );
@@ -207,11 +213,32 @@ export class my_detailsComponent {
           value: page.results.contacts,
           disabled: page.disabled,
         }),
-        email: new FormControl({
-          value: page.results.email,
-          disabled: page.disabled,
-        }),
+        // email :new FormControl ({value:page.results.email,disabled: page.disabled})
       });
+
+      bh.dob = page.results.idNum.substring(0, 6);
+      let [y, m, d] = [
+        bh.dob.substring(0, 2),
+        bh.dob.substring(2, 4),
+        bh.dob.substring(4, 6),
+      ];
+      console.log('date of birth', bh.dob);
+      console.log(y, m, d);
+
+      // y = Number(y)
+
+      if (Number(y) <= 8) {
+        bh.dob = m + '/' + d + '/' + '20' + y;
+        console.log('DOB: ', bh.dob);
+        console.log('DOB: ', new Date(bh.dob));
+      } else {
+        bh.dob = m + '/' + d + '/' + '19' + y;
+        console.log('DOB: ', bh.dob);
+
+        console.log('DOB: ', new Date(bh.dob));
+      }
+
+      page.dob = new Date(bh.dob);
       this.sd_PEAoC4jYU9pajsGm(bh);
       //appendnew_next_sd_PnEta2viXfeh8A9o
       return bh;
@@ -233,7 +260,8 @@ export class my_detailsComponent {
   sd_Jww2DnA0AVHAJf1u(bh) {
     try {
       const page = this.page;
-      console.log('FORM LOG');
+      console.log('Form values: ', page.profile.value);
+      console.log('User details: ', page.results);
       bh = this.sd_MTHfmRGokcaQDjJH(bh);
       //appendnew_next_sd_Jww2DnA0AVHAJf1u
       return bh;
@@ -246,7 +274,7 @@ export class my_detailsComponent {
     try {
       if (
         this.sdService.operators['eq'](
-          this.page.profile.controls.fullName.status,
+          this.page.profile.controls.nickName.status,
           'enabled',
           undefined,
           undefined
@@ -255,7 +283,7 @@ export class my_detailsComponent {
         bh = this.sd_VDHuomHkWmw8HXAb(bh);
       } else if (
         this.sdService.operators['eq'](
-          this.page.profile.controls.fullName.status,
+          this.page.profile.controls.nickName.status,
           'DISABLED',
           undefined,
           undefined
@@ -297,11 +325,80 @@ export class my_detailsComponent {
       const page = this.page;
       bh.url = page.ssdURL + 'update';
       console.log(page.profile.value);
-      bh = this.sd_xnjDnReLa8czDDtW(bh);
+      bh = this.sd_Xg5ewzd7Yzgq3CKJ(bh);
       //appendnew_next_sd_e64XEJPGJE0B5fh3
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_e64XEJPGJE0B5fh3');
+    }
+  }
+
+  async sd_Xg5ewzd7Yzgq3CKJ(bh) {
+    try {
+      if (
+        this.sdService.operators['neq'](
+          this.page.profile.value.email,
+          this.page.results.email,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_FD2uZb0WecBdLNqq(bh);
+      } else {
+        bh = await this.sd_xnjDnReLa8czDDtW(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Xg5ewzd7Yzgq3CKJ');
+    }
+  }
+
+  sd_FD2uZb0WecBdLNqq(bh) {
+    try {
+      const page = this.page;
+      console.log('User: ', page.result);
+
+      page.results.email = page.profile.value.email;
+
+      console.log('updated user infor: ', page.results);
+
+      bh = this.sd_m5d2c48Poq5hHpAJ(bh);
+      //appendnew_next_sd_FD2uZb0WecBdLNqq
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_FD2uZb0WecBdLNqq');
+    }
+  }
+
+  async sd_m5d2c48Poq5hHpAJ(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.setInfor(
+        this.page.results
+      );
+
+      bh = this.sd_mpKj9Hjo1T46hz3u(bh);
+      //appendnew_next_sd_m5d2c48Poq5hHpAJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_m5d2c48Poq5hHpAJ');
+    }
+  }
+
+  async sd_mpKj9Hjo1T46hz3u(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/confirm_updates');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_mpKj9Hjo1T46hz3u
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_mpKj9Hjo1T46hz3u');
     }
   }
 
@@ -316,22 +413,11 @@ export class my_detailsComponent {
         body: this.page.profile.value,
       };
       this.page.results = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_mgfAJTAYjeJEZ1r7(bh);
       bh = this.sd_HrLEMErrCnWdOT9H(bh);
       //appendnew_next_sd_xnjDnReLa8czDDtW
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_xnjDnReLa8czDDtW');
-    }
-  }
-
-  sd_mgfAJTAYjeJEZ1r7(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.results);
-      //appendnew_next_sd_mgfAJTAYjeJEZ1r7
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_mgfAJTAYjeJEZ1r7');
     }
   }
 
@@ -416,11 +502,10 @@ export class my_detailsComponent {
 
   sd_ozcgboC9LBKlKYSb(bh) {
     try {
-      const page = this.page;
-      page.profile.controls.fullName.status = 'enabled';
+      const page = this.page; // page.profile.controls.fullName.status = 'enabled';
       page.profile.controls.nickName.status = 'enabled';
-      page.profile.controls.idNum.status = 'enabled';
-      page.profile.controls.contacts.status = 'enabled';
+      // page.profile.controls.idNum.status = 'enabled';
+      // page.profile.controls.contacts.status = 'enabled';
       page.profile.controls.email.status = 'enabled';
       bh = this.sd_HGugHOALWZf8acey(bh);
       //appendnew_next_sd_ozcgboC9LBKlKYSb

@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-confirm_changesComponent
+import { confirm_changesComponent } from '../components/auth/activate_app/confirm_changes.component';
 //CORE_REFERENCE_IMPORT-pdf_statementComponent
 import { pdf_statementComponent } from '../components/savings/pdf_statement.component';
 //CORE_REFERENCE_IMPORT-test_imgComponent
@@ -224,6 +226,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-confirm_changesComponent
+  confirm_changesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pdf_statementComponent
   pdf_statementComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-test_imgComponent
@@ -518,6 +522,7 @@ export const appRoutes = [
   { path: 'sucess', component: sucessComponent },
   { path: 'underconstruction', component: undercostructionsComponent },
   { path: 'bank_statement', component: pdf_statementComponent },
+  { path: 'confirm_updates', component: confirm_changesComponent },
   { path: '', redirectTo: '/capitec', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

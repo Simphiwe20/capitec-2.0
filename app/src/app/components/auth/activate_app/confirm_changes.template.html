@@ -1,0 +1,34 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="padding-0px-15px border-btm-cyan-b bg-blue height-50px" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="color-w" (click)="__serviceInvoker__.invoke(&apos;sd_54PzYAXeeWhXZO4M&apos;, &apos;backBtn&apos;)">arrow_back</mat-icon>
+      <div fxLayout="column wrap" class="color-w poppins" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+        <p class="poppins no-margin">
+          Confirm updates</p>
+      </div>
+    </div>
+    <form #form="ngForm" style="margin-top: 10px">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.userNewInfor.email" name="email" placeholder="Email" [required]="true" [disabled]="true">
+          <mat-label>Email</mat-label>
+        </mat-form-field><small class="padding-0px-15px poppins">
+          <!-- <span *ngIf="!(page.submitted || form.controls['email']?.touched) && form.controls['email']?.errors?.required || page.clientDetails.email">New email</span> -->
+          <!-- <span class="color-red" *ngIf="(page.submitted || form.controls['email']?.touched) && form.controls['email']?.errors?.required">Required field</span> -->
+        </small>
+      </div>
+      <div fxLayout="column wrap" class="margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.userInfor.confirmEmail" name="confirmEmail" placeholder="Confirm Email" [required]="true">
+          <mat-label>Confirm Email</mat-label>
+        </mat-form-field><small class="padding-0px-15px poppins">
+          <span *ngIf="!(page.submitted || form.controls[&apos;confirmEmail&apos;]?.touched) &amp;&amp; form.controls[&apos;confirmEmail&apos;]?.errors?.required || page.userInfor.confirmEmail">This email should be the same as your new email</span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;confirmEmail&apos;]?.touched) &amp;&amp; form.controls[&apos;confirmEmail&apos;]?.errors?.required">Required field</span>
+        </small>
+      </div>
+      <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="bg-blue color-w get-started-btn" (click)="submit(form)">Continue</button></div>
+      <div class="text-center poppins no-margin">
+        Your personal information is safe with us</div>
+    </form>
+  </div>
+</div>
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>

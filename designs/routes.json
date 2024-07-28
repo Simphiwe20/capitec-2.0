@@ -277,6 +277,10 @@
             "component": "pdf_statementComponent"
         },
         {
+            "path": "confirm_updates",
+            "component": "confirm_changesComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/capitec",
             "pathMatch": "full",
