@@ -1,0 +1,16 @@
+<div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" fxFill>
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="bg-blue" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="margin-left-12px color-w" (click)="goBack()">arrow_back</mat-icon>
+      <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="    margin-right: 8%" class="poppins color-w">
+          Forgot PIN</div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="height-30 box-shadow-grey bg-white" fxLayoutAlign="space-around center" [fxShow]="true">
+      <div fxLayout="column wrap" class="small-pic-size" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="./Web/Images/phone.PNG" class="full-height full-width"></div><small class="poppins">
+        You&apos;ll need to take a selfie to reset your PIN in two steps.</small><small class="margin-b-10px text-center poppins grey-color no-margin">
+        We will digitally identify you using your selfie</small>
+    </div>
+    <div fxLayout="column wrap" class="margin-top-20px padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/app_activation_instructions" class="color-w" (click)="route()">Continue</button></div>
+  </div>
+</div>

@@ -219,52 +219,10 @@
         "y": 200,
         "wires": [
             [
-                "sd_eTM5HEadG8mluSeT"
+                "sd_kfifbo2sIFGm5kl9"
             ],
             [
                 "sd_GKVxOWd4q4y2a21K"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "add_electricity_benComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_eTM5HEadG8mluSeT",
-        "type": "SnackBar",
-        "z": "sd_D1hMzChH8qZpINvk",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "message": {
-            "type": "str",
-            "value": "Ke yona"
-        },
-        "action": {
-            "type": "str",
-            "value": "OK"
-        },
-        "duration": {
-            "type": "num",
-            "value": "3000"
-        },
-        "horizontalPosition": "center",
-        "horizontalPositionMap": "",
-        "verticalPosition": "bottom",
-        "verticalPositionMap": "",
-        "panelClass": {
-            "type": "str",
-            "value": ""
-        },
-        "direction": "ltr",
-        "functionName": "sd_eTM5HEadG8mluSeT",
-        "category": "General",
-        "x": 465,
-        "y": 160,
-        "wires": [
-            [
-                "sd_kfifbo2sIFGm5kl9"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -281,7 +239,7 @@
         "name": "",
         "message": {
             "type": "str",
-            "value": "Never"
+            "value": "All fields are required"
         },
         "action": {
             "type": "str",
@@ -292,9 +250,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -303,7 +259,7 @@
         "functionName": "sd_GKVxOWd4q4y2a21K",
         "category": "General",
         "x": 465,
-        "y": 300,
+        "y": 280,
         "wires": [
             []
         ],
@@ -331,7 +287,7 @@
         ],
         "functionName": "sd_kfifbo2sIFGm5kl9",
         "category": "General",
-        "x": 600,
+        "x": 465,
         "y": 160,
         "wires": [
             [
@@ -353,7 +309,7 @@
         "script": "bh.url = page.ssdUrl + \"add-beneficiary-electricity\";\nbh.body = page.electric\n\npage.routeData = page.electric\npage.routeData = {routeData: JSON.stringify(page.routeData)}\n",
         "functionName": "sd_LCL8IPnUcbpewMH1",
         "category": "Function",
-        "x": 740,
+        "x": 585,
         "y": 160,
         "wires": [
             [
@@ -408,7 +364,7 @@
         "paramMappingObj": {},
         "functionName": "sd_YhPqqvVDcXPL2FM5",
         "category": "HTTP",
-        "x": 885,
+        "x": 685,
         "y": 160,
         "wires": [
             [
@@ -440,7 +396,7 @@
         "resultMapping": "",
         "functionName": "sd_2TVgBTSmMuYcgjkK",
         "category": "Navigation",
-        "x": 960,
+        "x": 785,
         "y": 160,
         "wires": [
             []

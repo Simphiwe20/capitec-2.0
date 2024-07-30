@@ -155,7 +155,7 @@ export class add_electricity_benComponent {
           undefined
         )
       ) {
-        bh = this.sd_eTM5HEadG8mluSeT(bh);
+        bh = this.sd_kfifbo2sIFGm5kl9(bh);
       } else {
         bh = await this.sd_GKVxOWd4q4y2a21K(bh);
       }
@@ -163,22 +163,6 @@ export class add_electricity_benComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ZulLOSXrNMHmQzky');
-    }
-  }
-
-  sd_eTM5HEadG8mluSeT(bh) {
-    try {
-      this.__page_injector__.get(MatSnackBar).open('Ke yona', 'OK', {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-      });
-      bh = this.sd_kfifbo2sIFGm5kl9(bh);
-      //appendnew_next_sd_eTM5HEadG8mluSeT
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_eTM5HEadG8mluSeT');
     }
   }
 
@@ -247,12 +231,14 @@ export class add_electricity_benComponent {
 
   sd_GKVxOWd4q4y2a21K(bh) {
     try {
-      this.__page_injector__.get(MatSnackBar).open('Never', 'OK', {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-      });
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('All fields are required', 'OK', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
       //appendnew_next_sd_GKVxOWd4q4y2a21K
       return bh;
     } catch (e) {

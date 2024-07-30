@@ -22,6 +22,7 @@ export class api_service {
   public behaviourSubject: any;
   public userInfor: any;
   public userPic: any;
+  public code: any;
 
   constructor(
     private sdService: SDBaseService,
@@ -359,7 +360,7 @@ export class api_service {
     try {
       bh = this.sdService.__constructDefault(bh);
 
-      bh = await this.sd_B52qXwwdrQFiwvrV(bh);
+      bh = await this.sd_UnP4023zXEia8rV2(bh);
       //appendnew_next_uploadFile
       return (
         // formatting output variables
@@ -546,6 +547,56 @@ export class api_service {
       );
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_Eq7wG5g5TyIO4m9o');
+    }
+  }
+
+  async setCode(code: any = undefined, ...others) {
+    let bh: any = {
+      input: {
+        code,
+      },
+      local: {},
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+
+      bh = await this.sd_SDPQytDDS5QMUpgL(bh);
+      //appendnew_next_setCode
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {},
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Dk2rGgmA0oTjhqk1');
+    }
+  }
+
+  async getCode(...others) {
+    let bh: any = {
+      input: {},
+      local: {
+        code: undefined,
+      },
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+
+      bh = await this.sd_cLjGyn4JN2KeAeYk(bh);
+      //appendnew_next_getCode
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            code: bh.local.code,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_5L8rx8uHwQXOEPYs');
     }
   }
   //appendnew_flow_api_service_start
@@ -1099,6 +1150,17 @@ export class api_service {
     }
   }
 
+  async sd_UnP4023zXEia8rV2(bh) {
+    try {
+      bh.user = this.userInfor;
+      bh = await this.sd_B52qXwwdrQFiwvrV(bh);
+      //appendnew_next_sd_UnP4023zXEia8rV2
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_UnP4023zXEia8rV2');
+    }
+  }
+
   async sd_B52qXwwdrQFiwvrV(bh) {
     try {
       bh.url = bh.system.environment.properties.ssdURL;
@@ -1113,6 +1175,14 @@ export class api_service {
   async sd_hStNMnPwaTtF2r7r(bh) {
     try {
       bh.url = bh.url + bh.input.url;
+
+      console.log('User Email: ', bh.user.userInfor);
+
+      console.log('UserInfor: ', bh.input.file);
+
+      bh.email = { email: bh.user.userInfor.email };
+
+      console.log('Email: ', bh.email);
       bh = await this.sd_SIKRF6VpAl8mFwdI(bh);
       //appendnew_next_sd_hStNMnPwaTtF2r7r
       return bh;
@@ -1127,7 +1197,7 @@ export class api_service {
         url: bh.url,
         method: 'post',
         responseType: 'json',
-        headers: {},
+        headers: bh.email,
         params: {},
         body: bh.input.file,
       };
@@ -1313,6 +1383,26 @@ export class api_service {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_mldnQ91Jffow9AD0');
+    }
+  }
+
+  async sd_SDPQytDDS5QMUpgL(bh) {
+    try {
+      this.code = bh.input.code;
+      //appendnew_next_sd_SDPQytDDS5QMUpgL
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_SDPQytDDS5QMUpgL');
+    }
+  }
+
+  async sd_cLjGyn4JN2KeAeYk(bh) {
+    try {
+      bh.local.code = this.code;
+      //appendnew_next_sd_cLjGyn4JN2KeAeYk
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_cLjGyn4JN2KeAeYk');
     }
   }
 

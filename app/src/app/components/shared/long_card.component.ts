@@ -93,7 +93,7 @@ export class long_cardComponent {
         {
           image: '../../../assets/Web/Images/saving_plan.jpg',
           name: 'Saving',
-          routes: '/underconstruction',
+          routes: '/saving_plan',
         },
         {
           image: '../../../assets/Web/Images/better_living.jpg',

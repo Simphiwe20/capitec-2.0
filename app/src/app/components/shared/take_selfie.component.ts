@@ -291,6 +291,8 @@ export class take_selfieComponent implements AfterViewInit {
 
       if (page.routeData.data === 'activate_app') {
         page.image = bh.image;
+      } else if (page.routeData.data === 'forgot_pwd') {
+        page.image = bh.image;
       }
 
       console.log('User new page image: ', page.image);
@@ -556,8 +558,10 @@ export class take_selfieComponent implements AfterViewInit {
               this.storeUserInfor('upload-picture', page.formData2);
             }
             page.num++;
-          } else {
+          } else if (page.routeData.data == 'activate_app') {
             page.router.navigate(['/feedback']);
+          } else if (page.routeData.data == 'forgot_pwd') {
+            page.router.navigate(['/reset_pin']);
           }
         } else {
           // page.clearInterval(page.intervalID)

@@ -191,7 +191,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -270,6 +272,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -277,8 +280,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -294,9 +299,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_gSSwid5YoEpCPg0C",
         "category": "HTTP",
@@ -399,10 +406,16 @@
         "nodeType": "flow",
         "name": "",
         "path": "/sucess",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
         "qparamsMap": {
             "type": "bh",
             "value": "loanForm"
         },
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_FIrHcfFSUN4UZI7u",
         "category": "Navigation",
         "x": 965,
@@ -672,5 +685,72 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "get_estimateComponent"
+    },
+    {
+        "id": "sd_7Jo0khI8yAg8QmRF",
+        "type": "PageStart",
+        "z": "sd_kKFuP5nWCrGUP4ql",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "goBack",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goBack",
+        "category": "General",
+        "x": 160,
+        "y": 840,
+        "wires": [
+            [
+                "sd_XGIT0VnKgNJ2XrTB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "get_estimateComponent"
+    },
+    {
+        "id": "sd_XGIT0VnKgNJ2XrTB",
+        "type": "PageCallService",
+        "z": "sd_kKFuP5nWCrGUP4ql",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_crCsmk2T9Wr8C9jG",
+            "flowName": "backBtn"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "backBtn",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_XGIT0VnKgNJ2XrTB",
+        "category": "General",
+        "x": 300,
+        "y": 840,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "get_estimateComponent",
+        "generated": true
     }
 ]

@@ -145,6 +145,13 @@
                     "type": "literal",
                     "value": "false"
                 }
+            },
+            {
+                "textIp": "idPattern",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "/(([0-9]{2})(0|1)([0-9])([0-3])([0-9]))([ ]?)(([ 0-9]{4})([ ]?)([ 0-1][8]([ ]?)[ 0-9]))/"
+                }
             }
         ],
         "functionName": "sd_iqcHnNX7jsgHG1KD",
@@ -989,7 +996,6 @@
         "serviceImportPath": "./",
         "startName": "upload1",
         "inputParams": [],
-        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_LexQ4t2N1P8VU9mC",
         "category": "General",
@@ -1190,9 +1196,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -1247,7 +1251,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let queryImage = bh.pageViews.image.nativeElement\nconsole.log(queryImage)\nlet detectqueryImage = await faceapi.detectSingleFace(queryImage, new  faceapi.TinyFaceDetectorOptions())\n                            // .withFaceLandmarks().withFaceExpressions().withFaceDescriptor()\n\n\nif(!detectqueryImage) {\n    page.detected = false\n}else {\n    page.detected = true\n}",
+        "script": "let queryImage = bh.pageViews.image.nativeElement\nconsole.log(queryImage)\nlet detectqueryImage = await faceapi.detectSingleFace(queryImage, new  faceapi.TinyFaceDetectorOptions())\n                            // .withFaceLandmarks().withFaceExpressions().withFaceDescriptor()\n\n\nif(!detectqueryImage) {\n    page.detected = false\n}else {\n    page.detected = true\n}\n\npage.showLoader = true",
         "functionName": "sd_SV7LEu4ccRmnkN59",
         "category": "Function",
         "x": 885,
@@ -1341,7 +1345,7 @@
         "name": "",
         "message": {
             "type": "str",
-            "value": "The face on your picture is not detectable, please upload a picture with a clear face"
+            "value": "The face on your image is not detectable, please upload a clear picture"
         },
         "action": {
             "type": "str",
@@ -1349,12 +1353,10 @@
         },
         "duration": {
             "type": "num",
-            "value": "2000"
+            "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -1379,7 +1381,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.showLoader = true\n\ndelete page.clientDetails.ID_doc\ndelete page.clientDetails.proof_of_res\ndelete page.clientDetails.picture\ndelete page.clientDetails.confirmRemotePin ",
+        "script": "// page.showLoader = true\n\ndelete page.clientDetails.ID_doc\ndelete page.clientDetails.proof_of_res\ndelete page.clientDetails.picture\ndelete page.clientDetails.confirmRemotePin ",
         "functionName": "sd_qi7thJp7eJAp0VNG",
         "category": "Function",
         "x": 1085,
@@ -1423,7 +1425,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.showLoader = false\nbh.routeData = {isRegister: true}\n\nconsole.log('blob Image: ', page.uploadedImage)\n\n// ID\npage.formData = new FormData()\nconsole.log('File in the submit flow: ', page.file)\npage.formData.append('name', page.file)\nconsole.log('Form data: ', page.formData)\n// picture\npage.formData2 = new FormData()\npage.formData2.append('name', page.file2)\nconsole.log('Pictures: ', page.formData2)\n\n// Proof of residence\npage.formData1 = new FormData()\npage.formData1.append('name', page.file1)\n\n\nbh.user = {\n    \"ID\": page.file,\n    \"POR\": page.file1,\n    \"Pic\": page.file2,\n    \"userInfor\": page.clientDetails\n}\n\nconsole.log(\"To be stored user: \", bh.user)",
+        "script": "// page.showLoader = false\nbh.routeData = {isRegister: true}\n\nconsole.log('blob Image: ', page.uploadedImage)\n\n// ID\npage.formData = new FormData()\nconsole.log('File in the submit flow: ', page.file)\npage.formData.append('name', page.file)\nconsole.log('Form data: ', page.formData)\n// picture\npage.formData2 = new FormData()\npage.formData2.append('name', page.file2)\nconsole.log('Pictures: ', page.formData2)\n\n// Proof of residence\npage.formData1 = new FormData()\npage.formData1.append('name', page.file1)\n\n\nbh.user = {\n    \"ID\": page.file,\n    \"POR\": page.file1,\n    \"Pic\": page.file2,\n    \"userInfor\": page.clientDetails\n}\n\nconsole.log(\"To be stored user: \", bh.user)",
         "functionName": "sd_cMRjItrAz1TfAlWt",
         "category": "Function",
         "x": 1185,
@@ -1510,7 +1512,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.submitted = true\n\nconsole.log(bh.input.form)\n\nconsole.log(page.clientDetails.idNum.substring(0, 1))\nlet birthYear = Number(page.clientDetails.idNum.substring(0, 2))\n\nif(birthYear > 24 && birthYear <= 99) {\n    let year = '19' + page.clientDetails.idNum.substring(0, 2).toString()\n    console.log('String year 1990s: ', year)\n\n    birthYear =  Number(year)\n }else {\n    let year = '20' + page.clientDetails.idNum.substring(0, 2).toString()\n    birthYear =  Number(year)\n    console.log('String year 200s: ', year)\n\n }\n\npage.year = 2024 - birthYear\nconsole.log('Year: ', page.year)",
+        "script": "page.submitted = true\n\nconsole.log(\"Form: \", bh.input.form)\n\nconsole.log(page.clientDetails.idNum.substring(0, 1))\nlet birthYear = Number(page.clientDetails.idNum.substring(0, 2))\n\nif(birthYear > 24 && birthYear <= 99) {\n    let year = '19' + page.clientDetails.idNum.substring(0, 2).toString()\n    console.log('String year 1990s: ', year)\n\n    birthYear =  Number(year)\n }else {\n    let year = '20' + page.clientDetails.idNum.substring(0, 2).toString()\n    birthYear =  Number(year)\n    console.log('String year 200s: ', year)\n\n }\n\npage.year = 2024 - birthYear\nconsole.log('Year: ', page.year)",
         "functionName": "sd_iy0k1URc5RBDtesS",
         "category": "Function",
         "x": 120,
@@ -2374,7 +2376,6 @@
         "serviceImportPath": "./",
         "startName": "upload",
         "inputParams": [],
-        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_3BdgbHiRvJgKJlHU",
         "category": "General",

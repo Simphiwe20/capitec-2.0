@@ -52,7 +52,7 @@ export class sign_inComponent {
 
   sd_5JsP3BNwG80wAkMx(bh) {
     try {
-      bh = this.sd_ic4YpsSwlTCKhn8J(bh);
+      bh = this.sd_iI58iEnEmdYSWYDm(bh);
       //appendnew_next_sd_5JsP3BNwG80wAkMx
       return bh;
     } catch (e) {
@@ -105,6 +105,17 @@ export class sign_inComponent {
     }
   }
   //appendnew_flow_sign_inComponent_start
+
+  sd_iI58iEnEmdYSWYDm(bh) {
+    try {
+      this.page.router = this.__page_injector__.get(Router);
+      bh = this.sd_ic4YpsSwlTCKhn8J(bh);
+      //appendnew_next_sd_iI58iEnEmdYSWYDm
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_iI58iEnEmdYSWYDm');
+    }
+  }
 
   sd_ic4YpsSwlTCKhn8J(bh) {
     try {
@@ -249,7 +260,7 @@ export class sign_inComponent {
         body: this.page.remotePin,
       };
       this.page.result = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_Us1fSWNnzxoyieBk(bh);
+      bh = this.sd_ThxTUviuYsW41lAu(bh);
       //appendnew_next_sd_Lb4YpPPAWpr2NFGO
       return bh;
     } catch (e) {
@@ -257,28 +268,14 @@ export class sign_inComponent {
     }
   }
 
-  async sd_Us1fSWNnzxoyieBk(bh) {
+  sd_ThxTUviuYsW41lAu(bh) {
     try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj(this.page.route);
-      this.page.res = await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
-      this.sd_rbkvi0IIBt0nmuUJ(bh);
-      //appendnew_next_sd_Us1fSWNnzxoyieBk
+      const page = this.page;
+      page.router.navigate([page.route]);
+      //appendnew_next_sd_ThxTUviuYsW41lAu
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Us1fSWNnzxoyieBk');
-    }
-  }
-
-  sd_rbkvi0IIBt0nmuUJ(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.res);
-      //appendnew_next_sd_rbkvi0IIBt0nmuUJ
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_rbkvi0IIBt0nmuUJ');
+      return this.errorHandler(bh, e, 'sd_ThxTUviuYsW41lAu');
     }
   }
 

@@ -1,22 +1,22 @@
 <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
   <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
     <p class="poppins no-margin">
-      Add Beneficiary</p>
+      {{page.data._type}}
+    </p>
     <p class="no-margin">
-      Enter a Remote Pin to add beneficiary with cell no. 0628107203 belonging to a MR NENE</p>
+      {{page.data.msg}}
+    </p>
     <div fxLayout="column wrap" class="grey-btn-border" fxLayoutAlign="start stretch" [fxShow]="true">
       <form #form="ngForm" class="full-width">
         <mat-form-field class="full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
           <input matInput [(ngModel)]="page.remotePin.remotePin" name="remotePin" [required]="true">
-          <mat-label>Remote PIN</mat-label>
+          <mat-label>{{ page.data?.placeholder ? page.data?.placeholder : &quot;Remote PIN&quot; }}</mat-label>
         </mat-form-field>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>
       </form>
     </div>
-    <div fxLayout="row wrap" class="color-b" fxLayoutAlign="space-between stretch" [fxShow]="true">
-      <p (click)="closeDialog()" class="pointer poppins no-margin">
-        Cancel</p>
-      <p (click)="pin(form)" class="poppins no-margin">
-        Confirm</p>
-    </div>
+    <div fxLayout="row wrap" style="justify-content: space-between;" class="flex color-b" fxLayoutAlign="space-between center" [fxShow]="true"><small (click)="closeDialog()" class="pointer poppins no-margin">
+        Cancel</small><small (click)="page.data?.verify ? confirm(form) : pin(form)" class="poppins no-margin">
+        Confirm</small></div>
   </div>
 </div>

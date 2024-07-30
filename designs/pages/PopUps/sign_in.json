@@ -23,7 +23,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_ic4YpsSwlTCKhn8J"
+                "sd_iI58iEnEmdYSWYDm"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -65,7 +65,7 @@
         ],
         "functionName": "sd_ic4YpsSwlTCKhn8J",
         "category": "Function",
-        "x": 185,
+        "x": 285,
         "y": 40,
         "wires": [
             [
@@ -319,9 +319,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "sign_inComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "sign_inComponent"
     },
     {
         "id": "sd_9CLuEYB1TzPU05xD",
@@ -401,7 +400,7 @@
         "y": 220,
         "wires": [
             [
-                "sd_Us1fSWNnzxoyieBk"
+                "sd_ThxTUviuYsW41lAu"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -529,7 +528,7 @@
         "dialogDataMapping": "this.page.route",
         "functionName": "sd_0LqEzkpXv0YuSuCa",
         "category": "Dialog",
-        "x": 305,
+        "x": 405,
         "y": 40,
         "wires": [
             [
@@ -559,7 +558,7 @@
         "logObject": "this.page.route",
         "functionName": "sd_3JvHdLCcxxTN7THh",
         "category": "General",
-        "x": 465,
+        "x": 505,
         "y": 40,
         "wires": [],
         "__ssdTypeInputs__": {
@@ -595,6 +594,65 @@
                 "constant": false
             }
         },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sign_inComponent"
+    },
+    {
+        "id": "sd_ThxTUviuYsW41lAu",
+        "type": "Script",
+        "z": "sd_lA3dVsZwBasBKkQy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.router.navigate([page.route])",
+        "functionName": "sd_ThxTUviuYsW41lAu",
+        "category": "Function",
+        "x": 785,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sign_inComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iI58iEnEmdYSWYDm",
+        "type": "UseDependency",
+        "z": "sd_lA3dVsZwBasBKkQy",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_iI58iEnEmdYSWYDm",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            [
+                "sd_ic4YpsSwlTCKhn8J"
+            ]
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "sign_inComponent",

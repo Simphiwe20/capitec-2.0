@@ -5,8 +5,10 @@
 
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { FormBuilder } from '@angular/forms'; //_splitter_
+import { MatDialog } from '@angular/material/dialog'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
+import { confirmComponent } from 'app/components/PopUps/confirm.component'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -87,6 +89,21 @@ export class eleComponent {
       //appendnew_next_goBack
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_NIZ8zwFrjb4BY8vH');
+    }
+  }
+
+  confirm(data: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { data };
+      bh.local = {};
+      bh = this.sd_SaOLcjqAktmjC0G8(bh);
+      //appendnew_next_confirm
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_sz19sywiSfRuBM0p');
     }
   }
   //appendnew_flow_eleComponent_start
@@ -275,41 +292,11 @@ export class eleComponent {
   sd_Zjl8aFu13LJgM18S(bh) {
     try {
       const page = this.page;
-      bh.url = page.ssdUrl + 'buy-electricity';
-      bh.update = page.ssdUrl + 'update';
-      bh.newUser = page.ssdUrl + 'find-one-user';
-      bh.difference = page.user['available_balance'] - page.electricForm.amount;
-
-      bh.userEmail = {
-        collection: 'users',
+      bh.confirm = {
+        _type: 'Buy Electricity',
+        msg: `Enter a Remote Pin to buy electricity for ${page.electricForm.benName}`,
       };
-
-      bh.body = {
-        email: page.user.email,
-        available_balance: bh.difference,
-      };
-
-      bh.date = page.electricForm.transDate.toDateString();
-      bh.date = bh.date.split(' ');
-      bh.date = `${bh.date[1]} ${bh.date[2]} ${bh.date[3]}`;
-
-      page.message = `Capitec: Payment -R${
-        page.electricForm.amount
-      } from Savings Ref; ${page.electricForm.transType}. Avail R${
-        page.user['available balance']
-          ? page.user['available balance']
-          : page.user['available_balance']
-      }; ${bh.date}.info: 082 123 1234`;
-      page.message = {
-        message: page.message,
-        read: false,
-        _type: 'payment',
-        belongsTo: page.electricForm.belongsTo,
-      };
-
-      console.log(page.message);
-
-      bh = this.sd_uCiycIzJ79O6k0qN(bh);
+      bh = this.sd_fdOydRg5NNpYNqbP(bh);
       //appendnew_next_sd_Zjl8aFu13LJgM18S
       return bh;
     } catch (e) {
@@ -317,128 +304,14 @@ export class eleComponent {
     }
   }
 
-  async sd_uCiycIzJ79O6k0qN(bh) {
+  sd_fdOydRg5NNpYNqbP(bh) {
     try {
-      const api_serviceInstance: api_service =
-        this.__page_injector__.get(api_service);
+      let outputVariables = this.confirm(bh.confirm);
 
-      let outputVariables = await api_serviceInstance.addTransMessage(
-        this.page.message
-      );
-
-      bh = this.updateBalance(bh);
-      //appendnew_next_sd_uCiycIzJ79O6k0qN
+      //appendnew_next_sd_fdOydRg5NNpYNqbP
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uCiycIzJ79O6k0qN');
-    }
-  }
-
-  async updateBalance(bh) {
-    try {
-      let requestOptions = {
-        url: bh.update,
-        method: 'put',
-        responseType: 'json',
-        headers: {},
-        params: {},
-        body: bh.body,
-      };
-      this.page.updateResults = await this.sdService.nHttpRequest(
-        requestOptions
-      );
-      bh = this.buyElectricity(bh);
-      //appendnew_next_updateBalance
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_1PWEO0zol8akitPv');
-    }
-  }
-
-  async buyElectricity(bh) {
-    try {
-      let requestOptions = {
-        url: bh.url,
-        method: 'post',
-        responseType: 'json',
-        headers: {},
-        params: {},
-        body: this.page.electricForm,
-      };
-      this.page.results = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.updateUser(bh);
-      //appendnew_next_buyElectricity
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_pNDNsVw1uKOuTZyA');
-    }
-  }
-
-  async updateUser(bh) {
-    try {
-      let requestOptions = {
-        url: bh.newUser,
-        method: 'get',
-        responseType: 'json',
-        headers: {},
-        params: {},
-        body: bh.userEmail,
-      };
-      this.page.updatedUser = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_2hf16kLp6PKzH5bb(bh);
-      //appendnew_next_updateUser
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_NwsIJfNo26nwwwU4');
-    }
-  }
-
-  sd_2hf16kLp6PKzH5bb(bh) {
-    try {
-      const page = this.page;
-      bh.newBalance = page.updatedUser.filter((user: any) => {
-        return user.belongsTo == page.user.accountNumber;
-      });
-
-      bh.Results = bh.newBalance[0];
-
-      page.routeData = {
-        routeData: JSON.stringify(page.electricForm),
-        _type: 'ele',
-      };
-
-      bh = this.sd_ESOK0J7zRg0sTlYY(bh);
-      //appendnew_next_sd_2hf16kLp6PKzH5bb
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_2hf16kLp6PKzH5bb');
-    }
-  }
-
-  sd_ESOK0J7zRg0sTlYY(bh) {
-    try {
-      sessionStorage.setItem('accNo', JSON.stringify(bh.Results));
-      bh = this.sd_rsiNwe2paQu9Zglr(bh);
-      //appendnew_next_sd_ESOK0J7zRg0sTlYY
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ESOK0J7zRg0sTlYY');
-    }
-  }
-
-  async sd_rsiNwe2paQu9Zglr(bh) {
-    try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/sucess');
-      await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, this.page.routeData),
-        });
-      //appendnew_next_sd_rsiNwe2paQu9Zglr
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_rsiNwe2paQu9Zglr');
+      return this.errorHandler(bh, e, 'sd_fdOydRg5NNpYNqbP');
     }
   }
 
@@ -510,6 +383,158 @@ export class eleComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_AyMc23F67a8WKcop');
+    }
+  }
+
+  sd_SaOLcjqAktmjC0G8(bh) {
+    try {
+      const confirmDialog = this.__page_injector__.get(MatDialog);
+      const confirmDialogRef = confirmDialog.open(confirmComponent, {
+        data: bh.input.data,
+      });
+      confirmDialogRef.afterClosed().subscribe((event) => {
+        this.page.result = event;
+        this.sd_W7PwuRSH9qwOphs4(bh);
+
+        //appendnew_next_sd_SaOLcjqAktmjC0G8;
+      });
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_SaOLcjqAktmjC0G8');
+    }
+  }
+
+  sd_W7PwuRSH9qwOphs4(bh) {
+    try {
+      if (
+        this.sdService.operators['nempty'](
+          this.page.result,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_Vgvi2AvZVgiYX833(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_W7PwuRSH9qwOphs4');
+    }
+  }
+
+  sd_Vgvi2AvZVgiYX833(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdUrl + 'buy-electricity';
+      bh.update = page.ssdUrl + 'update';
+      bh.newUser = page.ssdUrl + 'find-one-user';
+      bh.difference = page.user['available_balance'] - page.electricForm.amount;
+
+      bh.userEmail = {
+        collection: 'users',
+      };
+
+      // bh.body = {
+      //     email: page.user.email,
+      //     available_balance: bh.difference
+      // }
+
+      page.user.available_balance = bh.difference;
+
+      bh.date = page.electricForm.transDate.toDateString();
+      bh.date = bh.date.split(' ');
+      bh.date = `${bh.date[1]} ${bh.date[2]} ${bh.date[3]}`;
+
+      page.message = `Capitec: Payment -R${page.electricForm.amount} from Savings Ref; ${page.electricForm.transType}. Avail R${bh.difference}; ${bh.date}.info: 082 123 1234`;
+      page.message = {
+        message: page.message,
+        read: false,
+        _type: 'Electricity purchased',
+        belongsTo: page.electricForm.belongsTo,
+      };
+
+      console.log(page.message);
+
+      page.routeData = {
+        routeData: JSON.stringify(page.electricForm),
+        _type: 'ele',
+      };
+      bh = this.sd_SrdMyvwztgWJWcgK(bh);
+      //appendnew_next_sd_Vgvi2AvZVgiYX833
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Vgvi2AvZVgiYX833');
+    }
+  }
+
+  async sd_SrdMyvwztgWJWcgK(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.addTransMessage(
+        this.page.message
+      );
+
+      bh = this.sd_aPveZ9xF3QZiAwgu(bh);
+      //appendnew_next_sd_SrdMyvwztgWJWcgK
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_SrdMyvwztgWJWcgK');
+    }
+  }
+
+  async sd_aPveZ9xF3QZiAwgu(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.updateUser(
+        this.page.user
+      );
+
+      bh = this.sd_U91veNvpxJUkTSvo(bh);
+      //appendnew_next_sd_aPveZ9xF3QZiAwgu
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_aPveZ9xF3QZiAwgu');
+    }
+  }
+
+  async sd_U91veNvpxJUkTSvo(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: this.page.electricForm,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_QWMqxzjtfICsCdxS(bh);
+      //appendnew_next_sd_U91veNvpxJUkTSvo
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_U91veNvpxJUkTSvo');
+    }
+  }
+
+  async sd_QWMqxzjtfICsCdxS(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/sucess');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, this.page.routeData),
+        });
+      //appendnew_next_sd_QWMqxzjtfICsCdxS
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_QWMqxzjtfICsCdxS');
     }
   }
 

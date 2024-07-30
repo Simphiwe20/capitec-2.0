@@ -281,6 +281,26 @@
             "component": "confirm_changesComponent"
         },
         {
+            "path": "forgot_password",
+            "component": "forgot_pinComponent"
+        },
+        {
+            "path": "reset_pin",
+            "component": "create_remote_pinComponent"
+        },
+        {
+            "path": "verify_email",
+            "component": "verify_emailComponent"
+        },
+        {
+            "path": "email_add",
+            "component": "email_addressComponent"
+        },
+        {
+            "path": "saving_plan",
+            "component": "savings_planComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/capitec",
             "pathMatch": "full",

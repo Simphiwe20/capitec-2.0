@@ -863,10 +863,153 @@
                         "_attrDef": "p"
                     }
                 ],
-                "cad541af-b0d7-07d7-3329-f7d6901d8bc1": {
+                "c47c8b81-b023-3461-7c7d-419600e86635": {
                     "paletteKey": "FlexLayoutCol",
                     "parentEditorKey": "0f33ed9b-3fe2-6c40-a3f8-2be4c9147069",
                     "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Column",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": [
+                                "blue-border-btn",
+                                "padding-0px-15px"
+                            ],
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxFlex",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxLayoutGap",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "wrap",
+                            "_value": "wrap",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "layoutAlign",
+                            "_value": "start",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "pLayoutAlign",
+                            "_value": "stretch",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[fxShow]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngIf",
+                            "_value": "page.routeData.data == 'Nun'",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ],
+                    "ec10faf6-9ed1-3004-5bd5-6908b82847fa": {
+                        "paletteKey": "NG-RaisedButton",
+                        "parentEditorKey": "c47c8b81-b023-3461-7c7d-419600e86635",
+                        "commentid": null,
+                        "designerReference": [
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": [
+                                    "color-b"
+                                ],
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "buttonname",
+                                "_value": "Log In",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "color",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "login()",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "objValue": {
+                                    "nodeID": "sd_axYQxJ4RGvcbOjb3",
+                                    "functionName": "login",
+                                    "activeTree": "pages",
+                                    "z": "sd_9vYcIuMzuJoy5oki",
+                                    "input": []
+                                }
+                            },
+                            {
+                                "_key": "[disabled]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disableRipple]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "type",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "routerLink",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            }
+                        ]
+                    }
+                },
+                "cad541af-b0d7-07d7-3329-f7d6901d8bc1": {
+                    "paletteKey": "FlexLayoutCol",
+                    "parentEditorKey": "0f33ed9b-3fe2-6c40-a3f8-2be4c9147069",
+                    "isCommented": "true",
+                    "commentid": "1722207483870",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -936,7 +1079,8 @@
                     "afacf42b-4c76-8262-d9d6-9f96d827ad0c": {
                         "paletteKey": "NG-RaisedButton",
                         "parentEditorKey": "cad541af-b0d7-07d7-3329-f7d6901d8bc1",
-                        "commentid": null,
+                        "isCommented": "true",
+                        "commentid": "1722207483870",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1060,6 +1204,12 @@
                             "_value": "true",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngIf",
+                            "_value": "page.routeData.data !== 'Nun'",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
                     "c4611ef4-d8e9-8415-c481-70bdcfb2c57f": {

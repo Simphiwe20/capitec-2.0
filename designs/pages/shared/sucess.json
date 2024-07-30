@@ -149,7 +149,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let ben = JSON.parse(page.routeData.routeData ? page.routeData.routeData : page.routeData.data)\nif(page.routeData._type === 'payment') {\n    page.feedback = `Payment to ${ben.benName} was sucessfully`\n    page.isPayment = true\n}else if(page.routeData._type === 'ele') {\n    page.feedback = `${ben.benName}'s Electricity has been purchased sucessfully`\n}else if(page.routeData._type === 'transfer') {\n    page.feedback = `${ben.benName} Transfer was made sucessfully`\n}else if(page.routeData._type === 'loan') {\n    page.feedback = `${ben.reason} loan application of R${ben.amount} was sent`\n    console.log(page.feedback)\n}\nelse {\n    page.feedback = ` ${ben.benName} has been added to your benefeciaries`\n}\n\npage.routeData = JSON.parse(page.routeData.routeData)\n",
+        "script": "let ben = JSON.parse(page.routeData.routeData ? page.routeData.routeData : page.routeData.data)\n\nconsole.log('Route data: ', page.routeData)\n\nif(page.routeData._type === 'payment') {\n    page.feedback = `Payment to ${ben.benName} was sucessfully`\n    page.isPayment = true\n}else if(page.routeData._type === 'ele') {\n    page.feedback = `${ben.benName}'s Electricity has been purchased sucessfully`\n}else if(page.routeData._type === 'transfer') {\n    page.feedback = `${ben.benName} Transfer was made sucessfully`\n}else if(page.routeData._type === 'loan') {\n    page.feedback = `${ben.reason} loan application of R${ben.amount} was sent`\n    console.log(page.feedback)\n}else if(page.routeData._type == 'forgot_pin') {\n   page.feedback = 'Your pin has been sucessfuly updated' \n}\nelse {\n    page.feedback = ` ${ben.benName} has been added to your benefeciaries`\n}\n\npage.routeData = JSON.parse(page.routeData.routeData)\n",
         "functionName": "sd_pUxBkGov8ooZznwt",
         "category": "Function",
         "x": 400,
@@ -209,6 +209,112 @@
         "y": 200,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sucessComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_axYQxJ4RGvcbOjb3",
+        "type": "PageStart",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "login",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "login",
+        "category": "General",
+        "x": 85,
+        "y": 300,
+        "wires": [
+            [
+                "sd_eDlhOtNgKUsQIu7c"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sucessComponent"
+    },
+    {
+        "id": "sd_9bwhb4eUUjjWLCGT",
+        "type": "Navigation",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "pathMap": {
+            "type": "bh",
+            "value": "route"
+        },
+        "functionName": "sd_9bwhb4eUUjjWLCGT",
+        "category": "Navigation",
+        "x": 485,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sucessComponent"
+    },
+    {
+        "id": "sd_i63OY4aSc438N6sU",
+        "type": "Script",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.route = '/enter_remote_pin'\n\npage.router.navigate(['/enter_remote_pin'])",
+        "functionName": "sd_i63OY4aSc438N6sU",
+        "category": "Function",
+        "x": 305,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sucessComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_eDlhOtNgKUsQIu7c",
+        "type": "UseDependency",
+        "z": "sd_9vYcIuMzuJoy5oki",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_eDlhOtNgKUsQIu7c",
+        "category": "Function",
+        "x": 185,
+        "y": 300,
+        "wires": [
+            [
+                "sd_i63OY4aSc438N6sU"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

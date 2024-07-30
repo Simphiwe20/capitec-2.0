@@ -362,14 +362,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + \"buy-electricity\"\nbh.update = page.ssdUrl + \"update\"\nbh.newUser = page.ssdUrl + \"find-one-user\"\nbh.difference = page.user['available_balance'] - page.electricForm.amount\n\nbh.userEmail = {\n    collection : \"users\"\n}\n\nbh.body = {\n    email: page.user.email,\n    available_balance: bh.difference\n}\n\nbh.date = page.electricForm.transDate.toDateString()\nbh.date = bh.date.split(' ')\nbh.date = `${bh.date[1]} ${bh.date[2]} ${bh.date[3]}`\n\npage.message = `Capitec: Payment -R${page.electricForm.amount} from Savings Ref; ${page.electricForm.transType}. Avail R${page.user['available balance'] ? page.user['available balance'] : page.user['available_balance']}; ${bh.date}.info: 082 123 1234`\npage.message = {\n    message: page.message,\n    read: false,\n    _type: 'payment',\n    belongsTo: page.electricForm.belongsTo\n}\n\nconsole.log(page.message)\n\n",
+        "script": "bh.confirm = {\n    _type: \"Buy Electricity\",\n    msg: `Enter a Remote Pin to buy electricity for ${page.electricForm.benName}`\n}",
         "functionName": "sd_Zjl8aFu13LJgM18S",
         "category": "Function",
         "x": 585,
         "y": 240,
         "wires": [
             [
-                "sd_uCiycIzJ79O6k0qN"
+                "sd_fdOydRg5NNpYNqbP"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -428,9 +428,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "eleComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "eleComponent"
     },
     {
         "id": "sd_qk0uDfeytHrhDCxl",
@@ -567,9 +566,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "eleComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "eleComponent"
     },
     {
         "id": "sd_2hf16kLp6PKzH5bb",
@@ -589,9 +587,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "eleComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "eleComponent"
     },
     {
         "id": "sd_NwsIJfNo26nwwwU4",
@@ -644,9 +641,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "eleComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "eleComponent"
     },
     {
         "id": "sd_ESOK0J7zRg0sTlYY",
@@ -677,9 +673,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "eleComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "eleComponent"
     },
     {
         "id": "sd_YaWxql2wWodOZKT2",
@@ -759,9 +754,8 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "eleComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "eleComponent"
     },
     {
         "id": "sd_Ypckas6FBahls4ox",
@@ -939,7 +933,103 @@
         "generated": true
     },
     {
-        "id": "sd_uCiycIzJ79O6k0qN",
+        "id": "sd_Vgvi2AvZVgiYX833",
+        "type": "Script",
+        "z": "sd_zpKRNUPOQbwYIsa8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdUrl + \"buy-electricity\"\nbh.update = page.ssdUrl + \"update\"\nbh.newUser = page.ssdUrl + \"find-one-user\"\nbh.difference = page.user['available_balance'] - page.electricForm.amount\n\nbh.userEmail = {\n    collection : \"users\"\n}\n\n// bh.body = {\n//     email: page.user.email,\n//     available_balance: bh.difference\n// }\n\npage.user.available_balance = bh.difference\n\nbh.date = page.electricForm.transDate.toDateString()\nbh.date = bh.date.split(' ')\nbh.date = `${bh.date[1]} ${bh.date[2]} ${bh.date[3]}`\n\npage.message = `Capitec: Payment -R${page.electricForm.amount} from Savings Ref; ${page.electricForm.transType}. Avail R${bh.difference}; ${bh.date}.info: 082 123 1234`\npage.message = {\n    message: page.message,\n    read: false,\n    _type: 'Electricity purchased',\n    belongsTo: page.electricForm.belongsTo\n}\n\nconsole.log(page.message)\n\n\npage.routeData = {routeData: JSON.stringify(page.electricForm), _type: \"ele\"}",
+        "functionName": "sd_Vgvi2AvZVgiYX833",
+        "category": "Function",
+        "x": 345,
+        "y": 760,
+        "wires": [
+            [
+                "sd_SrdMyvwztgWJWcgK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "eleComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_QWMqxzjtfICsCdxS",
+        "type": "Navigation",
+        "z": "sd_zpKRNUPOQbwYIsa8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/sucess",
+        "qparamsMap": {
+            "type": "this.page",
+            "value": "routeData"
+        },
+        "functionName": "sd_QWMqxzjtfICsCdxS",
+        "category": "Navigation",
+        "x": 725,
+        "y": 760,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "eleComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_U91veNvpxJUkTSvo",
+        "type": "HttpRequest",
+        "z": "sd_zpKRNUPOQbwYIsa8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.electricForm",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "electricForm"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_U91veNvpxJUkTSvo",
+        "category": "HTTP",
+        "x": 625,
+        "y": 760,
+        "wires": [
+            [
+                "sd_QWMqxzjtfICsCdxS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "eleComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_SrdMyvwztgWJWcgK",
         "type": "PageCallService",
         "z": "sd_zpKRNUPOQbwYIsa8",
         "viewType": "pages",
@@ -978,14 +1068,341 @@
         ],
         "accept_bh": false,
         "accept_csd": true,
-        "functionName": "sd_uCiycIzJ79O6k0qN",
+        "functionName": "sd_SrdMyvwztgWJWcgK",
         "category": "General",
-        "x": 680,
-        "y": 240,
+        "x": 425,
+        "y": 760,
         "wires": [
             [
-                "sd_1PWEO0zol8akitPv"
+                "sd_aPveZ9xF3QZiAwgu"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "eleComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_aPveZ9xF3QZiAwgu",
+        "type": "PageCallService",
+        "z": "sd_zpKRNUPOQbwYIsa8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_lY0defyqXhQJt4BJ",
+            "flowName": "updateUser"
+        },
+        "inputVariables": [
+            {
+                "key": "data",
+                "map": true,
+                "valueType": "this.page",
+                "value": "user"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "updateUser",
+        "inputParams": [
+            "this.page.user"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_aPveZ9xF3QZiAwgu",
+        "category": "General",
+        "x": 525,
+        "y": 760,
+        "wires": [
+            [
+                "sd_U91veNvpxJUkTSvo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "eleComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_sz19sywiSfRuBM0p",
+        "type": "PageStart",
+        "z": "sd_zpKRNUPOQbwYIsa8",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "confirm",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "data",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "confirm",
+        "category": "General",
+        "x": 85,
+        "y": 760,
+        "wires": [
+            [
+                "sd_SaOLcjqAktmjC0G8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "eleComponent"
+    },
+    {
+        "id": "sd_SaOLcjqAktmjC0G8",
+        "type": "OpenDialog",
+        "z": "sd_zpKRNUPOQbwYIsa8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_kFnWQ7JIsWQlNXgG",
+            "label": "confirm"
+        },
+        "relativePath": "app/components/PopUps/confirm",
+        "data": "bh.input.data",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "this.page",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page.result",
+        "functionName": "sd_SaOLcjqAktmjC0G8",
+        "category": "Dialog",
+        "x": 185,
+        "y": 760,
+        "wires": [
+            [],
+            [
+                "sd_W7PwuRSH9qwOphs4"
+            ],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "bh.input",
+                "value": "data",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "eleComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_W7PwuRSH9qwOphs4",
+        "type": "PageSwitch",
+        "z": "sd_zpKRNUPOQbwYIsa8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "result",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.result",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_W7PwuRSH9qwOphs4",
+        "category": "Function",
+        "x": 265,
+        "y": 760,
+        "wires": [
+            [
+                "sd_Vgvi2AvZVgiYX833"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "eleComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_fdOydRg5NNpYNqbP",
+        "type": "PageCallService",
+        "z": "sd_zpKRNUPOQbwYIsa8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_zpKRNUPOQbwYIsa8",
+            "type": "tab",
+            "createdDate": "2024-06-16T18:26:32.819Z",
+            "label": "ele",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_sz19sywiSfRuBM0p",
+            "flowName": "confirm"
+        },
+        "inputVariables": [
+            {
+                "key": "data",
+                "map": true,
+                "valueType": "bh",
+                "value": "confirm"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "confirm",
+        "inputParams": [
+            "bh.confirm"
+        ],
+        "accept_csd": false,
+        "functionName": "sd_fdOydRg5NNpYNqbP",
+        "category": "General",
+        "x": 700,
+        "y": 240,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

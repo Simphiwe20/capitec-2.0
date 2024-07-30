@@ -59,7 +59,7 @@
               <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
                   <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                    <input matInput [(ngModel)]="page.payBen.amount" name="amount" placeholder="Amount " [required]="false" #amount="ngModel">
+                    <input matInput [(ngModel)]="page.payBen.amount" name="amount" placeholder="Amount " [required]="true" #amount="ngModel">
 
                   </mat-form-field><small *ngIf="(page.submitted || form.controls[&apos;amount&apos;]?.touched) &amp;&amp; form.controls[&apos;amount&apos;].errors?.required" class="x-small color-red poppins">
                     Required</small>
@@ -107,13 +107,14 @@
         <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
           <div fxLayout="row wrap" class="padding-0px-15px box-shadow-grey bg-white height-50px" fxLayoutAlign="space-between center" [fxShow]="true">
             <h4 class="poppins no-margin">
-              Total(from June 2023)</h4>
+              Total(from {{page.month | date: &quot;MMM, y&quot;}})</h4>
             <p class="poppins no-margin">
               R{{page.total }}</p>
           </div>
           <div fxLayout="column wrap" class="padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true">
             <h5 class="no-margin poppins">
-              June 2024</h5>
+              {{page.month | date: &quot;MMM, y&quot;}}
+            </h5>
           </div>
           <div fxLayout="column wrap" class="height-60px padding-0px-15px bg-white" fxLayoutAlign="space-between stretch" [fxShow]="true" *ngFor="let trans of page.transHistory ">
             <div fxLayout="row wrap" class="margin-top-8px" fxLayoutAlign="space-between center" [fxShow]="true">

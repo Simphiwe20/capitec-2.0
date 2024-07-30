@@ -11,8 +11,8 @@
       </p>
     </div>
     <div fxLayout="column wrap" class="margin-top-16px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="column wrap" class="get-started-btn padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.isPayment"><button mat-raised-button class="color-w">Pay Again</button></div>
-      <div fxLayout="column wrap" class="blue-border-btn padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-b" (click)="done()">Done</button></div>
+      <div fxLayout="column wrap" class="blue-border-btn padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.routeData.data == &apos;Nun&apos;"><button mat-raised-button class="color-b" (click)="login()">Log In</button></div>
+      <div fxLayout="column wrap" class="blue-border-btn padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.routeData.data !== &apos;Nun&apos;"><button mat-raised-button class="color-b" (click)="done()">Done</button></div>
     </div>
   </div>
 </div>

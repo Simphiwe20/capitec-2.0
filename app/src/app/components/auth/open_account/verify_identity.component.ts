@@ -302,6 +302,8 @@ export class verify_identityComponent implements AfterViewInit {
       this.page.year = undefined;
       this.page.visible = false;
       this.page.visibleRemote = false;
+      this.page.idPattern =
+        /(([0-9]{2})(0|1)([0-9])([0-3])([0-9]))([ ]?)(([ 0-9]{4})([ ]?)([ 0-1][8]([ ]?)[ 0-9]))/;
       bh = this.sd_vh3M7aFNa9ZH2tRe(bh);
       //appendnew_next_sd_iqcHnNX7jsgHG1KD
       return bh;
@@ -348,7 +350,7 @@ export class verify_identityComponent implements AfterViewInit {
       const page = this.page;
       page.submitted = true;
 
-      console.log(bh.input.form);
+      console.log('Form: ', bh.input.form);
 
       console.log(page.clientDetails.idNum.substring(0, 1));
       let birthYear = Number(page.clientDetails.idNum.substring(0, 2));
@@ -501,6 +503,8 @@ export class verify_identityComponent implements AfterViewInit {
       } else {
         page.detected = true;
       }
+
+      page.showLoader = true;
       bh = this.sd_Vqwl6KW5osLETFZH(bh);
       //appendnew_next_sd_SV7LEu4ccRmnkN59
       return bh;
@@ -532,8 +536,7 @@ export class verify_identityComponent implements AfterViewInit {
 
   sd_qi7thJp7eJAp0VNG(bh) {
     try {
-      const page = this.page;
-      page.showLoader = true;
+      const page = this.page; // page.showLoader = true
 
       delete page.clientDetails.ID_doc;
       delete page.clientDetails.proof_of_res;
@@ -549,8 +552,7 @@ export class verify_identityComponent implements AfterViewInit {
 
   sd_cMRjItrAz1TfAlWt(bh) {
     try {
-      const page = this.page;
-      page.showLoader = false;
+      const page = this.page; // page.showLoader = false
       bh.routeData = { isRegister: true };
 
       console.log('blob Image: ', page.uploadedImage);
@@ -652,10 +654,10 @@ export class verify_identityComponent implements AfterViewInit {
       this.__page_injector__
         .get(MatSnackBar)
         .open(
-          'The face on your picture is not detectable, please upload a picture with a clear face',
+          'The face on your image is not detectable, please upload a clear picture',
           'OK',
           {
-            duration: 2000,
+            duration: 3000,
             direction: 'ltr',
             horizontalPosition: 'center',
             verticalPosition: 'bottom',

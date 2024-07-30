@@ -10,6 +10,7 @@ import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
+import { api_service } from 'app/sd-services/api_service'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -92,8 +93,8 @@ export class create_remote_pinComponent {
 
   sd_tkig3xKi6iA5R0rX(bh) {
     try {
-      this.page.result = JSON.parse(sessionStorage.getItem('accNo'));
-      bh = this.sd_oMKZlag4pdS8DbDl(bh);
+      this.page.result = JSON.parse(localStorage.getItem('accNo'));
+      bh = this.sd_r4roe4gw3GnVYcFK(bh);
       //appendnew_next_sd_tkig3xKi6iA5R0rX
       return bh;
     } catch (e) {
@@ -101,10 +102,29 @@ export class create_remote_pinComponent {
     }
   }
 
+  async sd_r4roe4gw3GnVYcFK(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.getCustomers();
+      bh.users = outputVariables.local.customers;
+
+      bh = this.sd_oMKZlag4pdS8DbDl(bh);
+      //appendnew_next_sd_r4roe4gw3GnVYcFK
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_r4roe4gw3GnVYcFK');
+    }
+  }
+
   sd_oMKZlag4pdS8DbDl(bh) {
     try {
       const page = this.page;
-      page.user = page.result;
+      page.user = bh.users.find(
+        (user, indx) => page.result.email == user.email
+      );
+      console.log('Logged In User:', page.user);
 
       //appendnew_next_sd_oMKZlag4pdS8DbDl
       return bh;
@@ -135,7 +155,7 @@ export class create_remote_pinComponent {
           undefined
         )
       ) {
-        bh = this.sd_0DpBm1UU56hlaWmP(bh);
+        bh = this.sd_JNGrxh5EnRrUyl3m(bh);
       } else {
         bh = await this.sd_SVU5e9y1shkJiUI3(bh);
       }
@@ -143,22 +163,6 @@ export class create_remote_pinComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8ZH14Xufv22pDJAG');
-    }
-  }
-
-  sd_0DpBm1UU56hlaWmP(bh) {
-    try {
-      this.__page_injector__.get(MatSnackBar).open('VALID', 'OK', {
-        duration: 2000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-      });
-      bh = this.sd_JNGrxh5EnRrUyl3m(bh);
-      //appendnew_next_sd_0DpBm1UU56hlaWmP
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_0DpBm1UU56hlaWmP');
     }
   }
 
@@ -216,7 +220,13 @@ export class create_remote_pinComponent {
       bh.url = page.ssdUrl + 'update';
 
       bh.body.remotePin = page.pinForm.createPin;
+      bh.body.updatePin = true;
+      bh.data = { data: 'Nun' };
 
+      bh.routerData = {
+        routeData: JSON.stringify(bh.data),
+        _type: 'forgot_pin',
+      };
       bh = this.sd_RoQA3dmzrUDfFjKr(bh);
       //appendnew_next_sd_hhzbQQKcIJRgbN4b
       return bh;
@@ -258,32 +268,16 @@ export class create_remote_pinComponent {
   async sd_c0s5mAXh7MXGuw9z(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/enter_remote_pin');
+        this.sdService.getPathAndQParamsObj('/sucess');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
-      bh = this.sd_HNRCFPczWHckqSv1(bh);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, bh.routerData),
+        });
       //appendnew_next_sd_c0s5mAXh7MXGuw9z
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_c0s5mAXh7MXGuw9z');
-    }
-  }
-
-  sd_HNRCFPczWHckqSv1(bh) {
-    try {
-      this.__page_injector__
-        .get(MatSnackBar)
-        .open('Pin successfully updated', 'OK', {
-          duration: 3000,
-          direction: 'ltr',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        });
-      //appendnew_next_sd_HNRCFPczWHckqSv1
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_HNRCFPczWHckqSv1');
     }
   }
 
@@ -304,12 +298,14 @@ export class create_remote_pinComponent {
 
   sd_SVU5e9y1shkJiUI3(bh) {
     try {
-      this.__page_injector__.get(MatSnackBar).open('INVALID', 'OK', {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-      });
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('New pin and confirm new pin is required', 'OK', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
       //appendnew_next_sd_SVU5e9y1shkJiUI3
       return bh;
     } catch (e) {

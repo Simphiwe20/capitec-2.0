@@ -16,6 +16,14 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-savings_planComponent
+import { savings_planComponent } from '../components/savings/savings_plan.component';
+//CORE_REFERENCE_IMPORT-email_addressComponent
+import { email_addressComponent } from '../components/auth/activate_app/email_address.component';
+//CORE_REFERENCE_IMPORT-verify_emailComponent
+import { verify_emailComponent } from '../components/auth/activate_app/verify_email.component';
+//CORE_REFERENCE_IMPORT-forgot_pinComponent
+import { forgot_pinComponent } from '../components/auth/activate_app/forgot_pin.component';
 //CORE_REFERENCE_IMPORT-confirm_changesComponent
 import { confirm_changesComponent } from '../components/auth/activate_app/confirm_changes.component';
 //CORE_REFERENCE_IMPORT-pdf_statementComponent
@@ -226,6 +234,14 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-savings_planComponent
+  savings_planComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-email_addressComponent
+  email_addressComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-verify_emailComponent
+  verify_emailComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-forgot_pinComponent
+  forgot_pinComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-confirm_changesComponent
   confirm_changesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pdf_statementComponent
@@ -523,6 +539,11 @@ export const appRoutes = [
   { path: 'underconstruction', component: undercostructionsComponent },
   { path: 'bank_statement', component: pdf_statementComponent },
   { path: 'confirm_updates', component: confirm_changesComponent },
+  { path: 'forgot_password', component: forgot_pinComponent },
+  { path: 'reset_pin', component: create_remote_pinComponent },
+  { path: 'verify_email', component: verify_emailComponent },
+  { path: 'email_add', component: email_addressComponent },
+  { path: 'saving_plan', component: savings_planComponent },
   { path: '', redirectTo: '/capitec', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

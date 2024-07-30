@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_izhRlQRcu1zBshfS",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 65,
+        "y": 40,
         "wires": [
             [
                 "sd_VhQy0vig3OA1kzEu"
@@ -58,8 +58,8 @@
         ],
         "functionName": "sd_VhQy0vig3OA1kzEu",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 40,
         "wires": [
             [
                 "sd_USJylmvw0CCxAS13"
@@ -78,7 +78,7 @@
         "nodeType": "flow",
         "name": "",
         "operationType": "getItem",
-        "storageType": "sessionStorage",
+        "storageType": "localStorage",
         "outputs": 1,
         "key": {
             "type": "str",
@@ -214,9 +214,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -295,7 +293,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -303,10 +300,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -322,11 +317,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_uTKnCdeuD1u41cJX",
         "category": "HTTP",
@@ -369,7 +362,7 @@
         "y": 160,
         "wires": [
             [
-                "sd_TUjIgZny1n5HwI5b"
+                "sd_IUNY1I7G4aG6E424"
             ],
             []
         ],
@@ -388,17 +381,14 @@
         "script": "bh.update_url = page.ssdURL + \"update\"\n\nbh.update_body = {\n    email: page.user.email,\n    registered: \"false\"\n}",
         "functionName": "sd_TUjIgZny1n5HwI5b",
         "category": "Function",
-        "x": 705,
-        "y": 160,
+        "x": 685,
+        "y": 60,
         "wires": [
-            [
-                "sd_OUH2CP7Qa8JQabIn"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "confirm_detailsComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "confirm_detailsComponent"
     },
     {
         "id": "sd_OUH2CP7Qa8JQabIn",
@@ -408,7 +398,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "put",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.update_url",
         "urlMappingObj": {
@@ -416,10 +405,8 @@
             "mapVarValue": "update_url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -435,25 +422,20 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_OUH2CP7Qa8JQabIn",
         "category": "HTTP",
         "x": 785,
-        "y": 160,
+        "y": 60,
         "wires": [
-            [
-                "sd_A2bsn0LunRVWHSme"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "confirm_detailsComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "confirm_detailsComponent"
     },
     {
         "id": "sd_A2bsn0LunRVWHSme",
@@ -466,16 +448,13 @@
         "functionName": "sd_A2bsn0LunRVWHSme",
         "category": "Function",
         "x": 865,
-        "y": 160,
+        "y": 60,
         "wires": [
-            [
-                "sd_NkHzkqPb5YFD7Qix"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "confirm_detailsComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "confirm_detailsComponent"
     },
     {
         "id": "sd_KBf3IN5fnfgjezJD",
@@ -536,13 +515,6 @@
         "nodeType": "flow",
         "name": "",
         "path": "/ft-landing",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
         "functionName": "sd_gWfYb1rOgCkLWvoI",
         "category": "Navigation",
         "x": 1105,
@@ -551,9 +523,8 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "confirm_detailsComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "confirm_detailsComponent"
     },
     {
         "id": "sd_JxIcDxVAPSxeQApy",
@@ -565,7 +536,7 @@
         "data": "bh.system",
         "functionName": "sd_JxIcDxVAPSxeQApy",
         "category": "Dialog",
-        "x": 1025,
+        "x": 1005,
         "y": 160,
         "wires": [
             [
@@ -580,9 +551,8 @@
             }
         },
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "confirm_detailsComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "confirm_detailsComponent"
     },
     {
         "id": "sd_NkHzkqPb5YFD7Qix",
@@ -592,7 +562,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "put",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.migrate_url",
         "urlMappingObj": {
@@ -600,10 +569,8 @@
             "mapVarValue": "migrate_url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -619,25 +586,20 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_NkHzkqPb5YFD7Qix",
         "category": "HTTP",
         "x": 945,
-        "y": 160,
+        "y": 60,
         "wires": [
-            [
-                "sd_JxIcDxVAPSxeQApy"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "confirm_detailsComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "confirm_detailsComponent"
     },
     {
         "id": "sd_D3rz0LHUtUQHm4LK",
@@ -677,6 +639,26 @@
             [
                 "sd_5cOsZTOstboDyV4t"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "confirm_detailsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_IUNY1I7G4aG6E424",
+        "type": "Script",
+        "z": "sd_HwlNnYqBqQ87n7TQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('Logging In', page.result)",
+        "functionName": "sd_IUNY1I7G4aG6E424",
+        "category": "Function",
+        "x": 720,
+        "y": 160,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

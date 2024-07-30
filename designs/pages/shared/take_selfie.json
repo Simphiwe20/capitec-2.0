@@ -28,7 +28,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_KWg4ptS7NlnGR7eG",
@@ -180,7 +181,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_CL6VBcskCuJZ0KdU",
@@ -276,7 +278,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_zdutScQeAYqmLzib",
@@ -318,7 +321,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_SNdARB2MWIUjYKxX",
@@ -384,7 +388,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_HT4LcPxGtsoJbXfd",
@@ -442,7 +447,8 @@
         },
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_6xpH57tjRBbrXMO2",
@@ -497,7 +503,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_LXXiYoy52SuuzbIg",
@@ -583,7 +590,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_SYRWXoozvB0Z6fFv",
@@ -592,7 +600,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let video = page.video.nativeElement;\nlet queryImage = bh.pageViews.queryImage.nativeElement\n\nif (page.routeData.isRegister) {\n    page.formData = new FormData()\n    page.formData.append('name', page.userInfor.ID)\n\n    page.formData1 = new FormData()\n    page.formData1.append('name', page.userInfor.POR)\n\n    page.formData2 = new FormData()\n    page.formData2.append('name', page.userInfor.Pic)\n}\n\n\nlet detectqueryImage = await faceapi.detectSingleFace(queryImage, new faceapi.TinyFaceDetectorOptions())\n    .withFaceLandmarks().withFaceExpressions().withFaceDescriptor()\n\npage.detectVideoFace.forEach((singleFace: any) => {\n    let distance = faceapi.euclideanDistance(singleFace.descriptor, detectqueryImage.descriptor)\n    console.log(distance)\n\n    if (distance < page.similiarityValue) {\n        //clearInterval(page.intervalID)\n        console.log('You are Simphiwe')\n        if (page.routeData.isRegister) {\n            page.router.navigate(['/register_feedback'])\n            if (page.num < 1) {\n                this.storeUserInfor('registration', page.userInfor.userInfor)\n\n                this.storeUserInfor('upload-ID', page.formData)\n                this.storeUserInfor('upload-proof', page.formData1)\n                this.storeUserInfor('upload-picture', page.formData2)\n            }\n            page.num++\n        } else {\n            page.router.navigate(['/feedback'])\n        }\n    } else {\n        // page.clearInterval(page.intervalID)\n        console.log('You are not Simphiwe')\n        page.router.navigate(['/unable_to_capture'], { queryParams: page.routeData })\n\n    }\n    // clearInterval(page.intervalID)\n})\n\n// navigator.mediaDevices.getUserMedia({video: {}, audio: false})\n//         .then((mediaStream) => {\n//             mediaStream.getTracks().forEach(stream => {\n//                 console.log(stream)\n//                 stream.stop()\n//             })\n//             console.log(page.videoStream)\n//             page.videoStream.srcObject = null\n//             page.videoStream.stop()\n//             console.log(mediaStream)\n//         })",
+        "script": "let video = page.video.nativeElement;\nlet queryImage = bh.pageViews.queryImage.nativeElement\n\nif (page.routeData.isRegister) {\n    page.formData = new FormData()\n    page.formData.append('name', page.userInfor.ID)\n\n    page.formData1 = new FormData()\n    page.formData1.append('name', page.userInfor.POR)\n\n    page.formData2 = new FormData()\n    page.formData2.append('name', page.userInfor.Pic)\n}\n\n\nlet detectqueryImage = await faceapi.detectSingleFace(queryImage, new faceapi.TinyFaceDetectorOptions())\n    .withFaceLandmarks().withFaceExpressions().withFaceDescriptor()\n\npage.detectVideoFace.forEach((singleFace: any) => {\n    let distance = faceapi.euclideanDistance(singleFace.descriptor, detectqueryImage.descriptor)\n    console.log(distance)\n\n    if (distance < page.similiarityValue) {\n        //clearInterval(page.intervalID)\n        console.log('You are Simphiwe')\n        if (page.routeData.isRegister) {\n            page.router.navigate(['/register_feedback'])\n            if (page.num < 1) {\n                this.storeUserInfor('registration', page.userInfor.userInfor)\n\n                this.storeUserInfor('upload-ID', page.formData)\n                this.storeUserInfor('upload-proof', page.formData1)\n                this.storeUserInfor('upload-picture', page.formData2)\n            }\n            page.num++\n        } else if (page.routeData.data == 'activate_app') {\n            page.router.navigate(['/feedback'])\n        }else if (page.routeData.data == 'forgot_pwd') {\n            page.router.navigate(['/reset_pin'])\n        }\n    } else {\n        // page.clearInterval(page.intervalID)\n        console.log('You are not Simphiwe')\n        page.router.navigate(['/unable_to_capture'], { queryParams: page.routeData })\n\n    }\n    // clearInterval(page.intervalID)\n})\n\n// navigator.mediaDevices.getUserMedia({video: {}, audio: false})\n//         .then((mediaStream) => {\n//             mediaStream.getTracks().forEach(stream => {\n//                 console.log(stream)\n//                 stream.stop()\n//             })\n//             console.log(page.videoStream)\n//             page.videoStream.srcObject = null\n//             page.videoStream.stop()\n//             console.log(mediaStream)\n//         })",
         "functionName": "sd_SYRWXoozvB0Z6fFv",
         "category": "Function",
         "x": 245,
@@ -701,7 +709,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_JFgGkJDrgBJUr08x",
@@ -791,7 +800,6 @@
         "serviceImportPath": "./",
         "startName": "stopCamera",
         "inputParams": [],
-        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_79bZT161xRBVxp5e",
         "category": "General",
@@ -923,7 +931,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_758Wv0M4eHNK7wFL",
@@ -1014,7 +1023,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_xKIaCtcmwhHDe7DX",
@@ -1039,7 +1049,8 @@
         },
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "take_selfieComponent"
+        "serviceName": "take_selfieComponent",
+        "generated": false
     },
     {
         "id": "sd_x7q3a2YhyEUDlLY4",
@@ -1103,7 +1114,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log('User from a service: ', page.userInfor)\nconsole.log('User page image: ', page.image)\nconsole.log('User image for activation: ', bh.image)\n\nif(page.routeData.data === 'activate_app') {\n    page.image = bh.image\n}\n\nconsole.log('User new page image: ', page.image)\n",
+        "script": "console.log('User from a service: ', page.userInfor)\nconsole.log('User page image: ', page.image)\nconsole.log('User image for activation: ', bh.image)\n\nif(page.routeData.data === 'activate_app') {\n    page.image = bh.image\n}else if(page.routeData.data === 'forgot_pwd') {\n    page.image = bh.image\n\n}\n\nconsole.log('User new page image: ', page.image)\n",
         "functionName": "sd_V4i6zcu0GGDoXWUc",
         "category": "Function",
         "x": 985,
@@ -1246,8 +1257,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "take_selfieComponent",
-        "generated": true
+        "serviceName": "take_selfieComponent"
     }
 ]

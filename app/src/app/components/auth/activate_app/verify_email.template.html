@@ -1,0 +1,23 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="border-btm-cyan-b bg-blue" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="margin-left-12px color-w" (click)="goBack()">arrow_back</mat-icon>
+      <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="    margin-right: 10%;" class="poppins color-w">
+          Email Address</div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="padding-20px bg-blue box-shadow-grey" fxLayoutAlign="end center" [fxShow]="true"><small *ngIf="page.isEmailVerified" class="color-w margin-b-10px text-center poppins no-margin">
+        Verified</small>
+      <p class="margin-top-8px color-w no-margin poppins">
+        {{page.user.email}}
+      </p><small *ngIf="!page.isEmailVerified" class="color-w margin-b-10px text-center poppins no-margin">
+        Not verified</small><small *ngIf="!page.isEmailVerified" class="color-w margin-b-10px text-center poppins no-margin">
+        A verification code will be sent to the email address supplied</small>
+    </div>
+    <div fxLayout="column wrap" class="margin-top-16px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="!page.isEmailVerified"><button mat-raised-button class="color-w" (click)="verify()">Verify</button></div>
+      <div fxLayout="column wrap" class="padding-0px-15px blue-border-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/email_add" class="color-b">Update</button></div>
+    </div>
+  </div>
+</div>

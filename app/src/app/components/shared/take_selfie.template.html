@@ -23,7 +23,7 @@
       </div>
       <h1 style="top: 300px; width: 40%" class="text-center poppins no-margin z-index absolute color-w">
         {{page.detected ? &quot;Hold...&quot; : &quot;Can&apos;t see your face&quot;}}
-      </h1><img [src]="page.image" #queryImage crossOrigin="anonymous" class="square-50px"><video controls #video autoplay [ngClass]="{&apos;border-red&apos; : !page.detected, &apos;border-green&apos; : page.detected}" class="relative full-height video">
+      </h1><img [src]="page.image" #queryImage crossOrigin="anonymous" hidden class="square-50px"><video controls #video autoplay [ngClass]="{&apos;border-red&apos; : !page.detected, &apos;border-green&apos; : page.detected}" class="relative full-height video">
 
       </video>
     </div>

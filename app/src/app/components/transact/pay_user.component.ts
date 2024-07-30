@@ -5,8 +5,10 @@
 
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { FormBuilder } from '@angular/forms'; //_splitter_
+import { MatDialog } from '@angular/material/dialog'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { ActivatedRoute, Router } from '@angular/router'; //_splitter_
+import { confirmComponent } from 'app/components/PopUps/confirm.component'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -104,6 +106,21 @@ export class pay_userComponent {
       return this.errorHandler(bh, e, 'sd_V9CpZCATjKooFB7V');
     }
   }
+
+  confirm(data: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { data };
+      bh.local = {};
+      bh = this.sd_NpnGJbp6hRYED5q4(bh);
+      //appendnew_next_confirm
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_TdLieVpkbd0Xah8e');
+    }
+  }
   //appendnew_flow_pay_userComponent_start
 
   sd_6osKV4KRTsH0Agg3(bh) {
@@ -131,6 +148,7 @@ export class pay_userComponent {
       this.page.receiver = undefined;
       this.page.customerURL = undefined;
       this.page.message = undefined;
+      this.page.month = undefined;
       bh = this.sd_CbCTCOV3O1UM5x2j(bh);
       //appendnew_next_sd_OKwdCJYrfyWRgvA7
       return bh;
@@ -159,6 +177,8 @@ export class pay_userComponent {
       page.customerURL = page.ssdURL + 'get-customers';
 
       console.log(page.routeData);
+
+      page.month = new Date();
       bh = this.sd_V7AX2BRuCDIKb4po(bh);
       //appendnew_next_sd_ywZo8242QsO12AYj
       return bh;
@@ -363,9 +383,10 @@ export class pay_userComponent {
 
       console.log(page.available_balance);
 
+      console.log('Trans history: ', page.transHistory);
+
       page.transHistory = page.transHistory.filter(
-        (his: any, indx: number) =>
-          his.accountNumber == page.routeData.accountNumber
+        (his: any, indx: number) => his.belongsTo == page.routeData.belongsTo
       );
 
       console.log(page.transHistory);
@@ -395,6 +416,10 @@ export class pay_userComponent {
     try {
       const page = this.page;
       page.submitted = true;
+
+      // page.user['available_balance'] = 10000
+
+      console.log(bh.input.form);
       bh = this.sd_ICO37wevYxw0tp87(bh);
       //appendnew_next_sd_4fDLnHQZIgXLTS7J
       return bh;
@@ -461,7 +486,7 @@ export class pay_userComponent {
           undefined
         )
       ) {
-        bh = this.sd_ixm6rE3WTUbtW0hD(bh);
+        bh = this.sd_94jLZO4U1fH60XRT(bh);
       } else {
         bh = await this.sd_pOQZLnOArFJ2If7e(bh);
       }
@@ -472,9 +497,141 @@ export class pay_userComponent {
     }
   }
 
-  sd_ixm6rE3WTUbtW0hD(bh) {
+  sd_94jLZO4U1fH60XRT(bh) {
     try {
       const page = this.page;
+      bh.confirm = {
+        _type: 'Payment',
+        msg: `Enter a Remote Pin to make a payment to ${page.payBen.statement}`,
+      };
+      bh = this.sd_83ERqkxA4CDUyfbw(bh);
+      //appendnew_next_sd_94jLZO4U1fH60XRT
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_94jLZO4U1fH60XRT');
+    }
+  }
+
+  sd_83ERqkxA4CDUyfbw(bh) {
+    try {
+      let outputVariables = this.confirm(bh.confirm);
+
+      //appendnew_next_sd_83ERqkxA4CDUyfbw
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_83ERqkxA4CDUyfbw');
+    }
+  }
+
+  sd_pOQZLnOArFJ2If7e(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open("You can't pay above your balance", 'OK', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      //appendnew_next_sd_pOQZLnOArFJ2If7e
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pOQZLnOArFJ2If7e');
+    }
+  }
+
+  sd_dG520SOVEstSWTi0(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('All required field should be filled', 'OK', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      //appendnew_next_sd_dG520SOVEstSWTi0
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_dG520SOVEstSWTi0');
+    }
+  }
+
+  sd_Qy38iquir4RoJF9J(bh) {
+    try {
+      //appendnew_next_sd_Qy38iquir4RoJF9J
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Qy38iquir4RoJF9J');
+    }
+  }
+
+  async sd_Nr8GKo5WtGnuFd4l(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.backBtn();
+
+      //appendnew_next_sd_Nr8GKo5WtGnuFd4l
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Nr8GKo5WtGnuFd4l');
+    }
+  }
+
+  sd_NpnGJbp6hRYED5q4(bh) {
+    try {
+      const confirmDialog = this.__page_injector__.get(MatDialog);
+      const confirmDialogRef = confirmDialog.open(confirmComponent, {
+        data: bh.input.data,
+      });
+      confirmDialogRef.afterClosed().subscribe((event) => {
+        this.page.result = event;
+        this.sd_daa2eZHxcW9vmImd(bh);
+
+        //appendnew_next_sd_NpnGJbp6hRYED5q4;
+      });
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_NpnGJbp6hRYED5q4');
+    }
+  }
+
+  sd_daa2eZHxcW9vmImd(bh) {
+    try {
+      if (
+        this.sdService.operators['nempty'](
+          this.page.result,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_ixm6rE3WTUbtW0hD(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_daa2eZHxcW9vmImd');
+    }
+  }
+
+  sd_ixm6rE3WTUbtW0hD(bh) {
+    try {
+      const page = this.page; // page.user['available_balance'] = 10000
+
+      if (page.user['available_balance']) {
+        page.balance = page.user['available_balance'];
+      } else {
+        page.balance = page.user['available balance'];
+      }
+      bh.amount = Number(page.payBen.amount);
+      console.log(typeof bh.amount);
+      console.log('bal: ', page.balance);
+      console.log('amount: ', bh.amount);
+
       console.log('Logged In User', page.user);
 
       if (page.user['available_balance']) {
@@ -513,6 +670,11 @@ export class pay_userComponent {
       };
 
       console.log(page.message);
+
+      bh.confirm = {
+        _type: 'Payment',
+        msg: `Enter a Remote Pin to make a payment to ${page.payBen.statement}`,
+      };
       bh = this.sd_Ibt1wk6gnWWX8LdD(bh);
       //appendnew_next_sd_ixm6rE3WTUbtW0hD
       return bh;
@@ -598,63 +760,6 @@ export class pay_userComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_HrCtVmrSucrmYJy3');
-    }
-  }
-
-  sd_pOQZLnOArFJ2If7e(bh) {
-    try {
-      this.__page_injector__
-        .get(MatSnackBar)
-        .open("You can't pay above your balance", 'OK', {
-          duration: 3000,
-          direction: 'ltr',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        });
-      //appendnew_next_sd_pOQZLnOArFJ2If7e
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_pOQZLnOArFJ2If7e');
-    }
-  }
-
-  sd_dG520SOVEstSWTi0(bh) {
-    try {
-      this.__page_injector__
-        .get(MatSnackBar)
-        .open('All required field should be filled', 'OK', {
-          duration: 3000,
-          direction: 'ltr',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        });
-      //appendnew_next_sd_dG520SOVEstSWTi0
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_dG520SOVEstSWTi0');
-    }
-  }
-
-  sd_Qy38iquir4RoJF9J(bh) {
-    try {
-      //appendnew_next_sd_Qy38iquir4RoJF9J
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Qy38iquir4RoJF9J');
-    }
-  }
-
-  async sd_Nr8GKo5WtGnuFd4l(bh) {
-    try {
-      const api_serviceInstance: api_service =
-        this.__page_injector__.get(api_service);
-
-      let outputVariables = await api_serviceInstance.backBtn();
-
-      //appendnew_next_sd_Nr8GKo5WtGnuFd4l
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Nr8GKo5WtGnuFd4l');
     }
   }
 

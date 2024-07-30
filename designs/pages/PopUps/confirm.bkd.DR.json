@@ -330,7 +330,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "Add Beneficiary",
+                            "_value": "{{page.data._type}}",
                             "_type": "a",
                             "_attrDef": "p"
                         }
@@ -546,7 +546,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "Enter a Remote Pin to add beneficiary with cell no. 0628107203 belonging to a MR NENE",
+                            "_value": "{{page.data.msg}}",
                             "_type": "a",
                             "_attrDef": "p"
                         }
@@ -801,7 +801,7 @@
                             },
                             {
                                 "_key": "Label",
-                                "_value": "Remote PIN",
+                                "_value": "{{ page.data?.placeholder ? page.data?.placeholder : \"Remote PIN\" }}",
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_visibility": true
@@ -849,6 +849,68 @@
                                 "_visibility": true
                             }
                         ]
+                    },
+                    "781686c8-bfee-2ff6-0a91-d1cc9fa834d1": {
+                        "paletteKey": "FlexLayoutCol",
+                        "parentEditorKey": "69911d3f-740a-8b69-124c-6546b142e4d3",
+                        "commentid": null,
+                        "designerReference": [
+                            {
+                                "_key": "componentLabel",
+                                "_value": "Column",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxFlex",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxLayoutGap",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "wrap",
+                                "_value": "wrap",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "layoutAlign",
+                                "_value": "start",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "pLayoutAlign",
+                                "_value": "stretch",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[fxShow]",
+                                "_value": "true",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            }
+                        ]
                     }
                 }
             },
@@ -866,13 +928,14 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "",
+                        "_value": "justify-content: space-between;",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
                     {
                         "_key": "class",
                         "_value": [
+                            "flex",
                             "color-b"
                         ],
                         "_type": "dav",
@@ -904,7 +967,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "stretch",
+                        "_value": "center",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -915,6 +978,69 @@
                         "_attrDef": "p"
                     }
                 ],
+                "4de13d54-2f03-c0ab-b028-bd42ce525eec": {
+                    "paletteKey": "FlexLayoutCol",
+                    "parentEditorKey": "7c060abd-bfe0-3327-5eee-94eb0504b8ac",
+                    "isCommented": "true",
+                    "commentid": "1722213021046",
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Column",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxFlex",
+                            "_value": "20",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxLayoutGap",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "wrap",
+                            "_value": "wrap",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "layoutAlign",
+                            "_value": "start",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "pLayoutAlign",
+                            "_value": "stretch",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[fxShow]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ]
+                },
                 "6a01efb5-0254-7759-2bcd-0829b9353136": {
                     "paletteKey": "Html5",
                     "parentEditorKey": "7c060abd-bfe0-3327-5eee-94eb0504b8ac",
@@ -939,14 +1065,15 @@
                         },
                         {
                             "_key": "htmlElement",
-                            "_value": "p",
+                            "_value": "small",
                             "_type": "dav",
                             "_attrDef": "p",
-                            "_useAsLabel": true
+                            "_useAsLabel": true,
+                            "_customAttributeFlag": "customInput"
                         },
                         {
                             "_key": "tagType",
-                            "_value": "p",
+                            "_value": "small",
                             "_type": "a",
                             "_attrDef": "p",
                             "_visibility": false
@@ -1144,6 +1271,7 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "7c060abd-bfe0-3327-5eee-94eb0504b8ac",
                     "isAdvancedComponent": true,
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -1163,14 +1291,15 @@
                         },
                         {
                             "_key": "htmlElement",
-                            "_value": "p",
+                            "_value": "small",
                             "_type": "dav",
                             "_attrDef": "p",
-                            "_useAsLabel": true
+                            "_useAsLabel": true,
+                            "_customAttributeFlag": "customInput"
                         },
                         {
                             "_key": "tagType",
-                            "_value": "p",
+                            "_value": "small",
                             "_type": "a",
                             "_attrDef": "p",
                             "_visibility": false
@@ -1331,7 +1460,7 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "pin(form)",
+                            "_value": "page.data?.verify ? confirm(form) : pin(form)",
                             "_type": "kv",
                             "_attrDef": "c",
                             "_customAttributeFlag": "customInput"
@@ -1341,6 +1470,7 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "34d4bee8-5b3c-a051-b4d0-4929197fe9b8",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1363,6 +1493,69 @@
                             }
                         ]
                     }
+                },
+                "5aea3271-000e-199d-689d-8777c4b80473": {
+                    "paletteKey": "FlexLayoutCol",
+                    "parentEditorKey": "7c060abd-bfe0-3327-5eee-94eb0504b8ac",
+                    "isCommented": "true",
+                    "commentid": "1722213018551",
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Column",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxFlex",
+                            "_value": "20",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxLayoutGap",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "wrap",
+                            "_value": "wrap",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "layoutAlign",
+                            "_value": "start",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "pLayoutAlign",
+                            "_value": "stretch",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[fxShow]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ]
                 }
             }
         }

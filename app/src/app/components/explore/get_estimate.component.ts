@@ -10,6 +10,7 @@ import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
+import { api_service } from 'app/sd-services/api_service'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -86,6 +87,21 @@ export class get_estimateComponent {
       //appendnew_next_addBalance
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_NsmMGL6cf8Z4vEJI');
+    }
+  }
+
+  goBack(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_XGIT0VnKgNJ2XrTB(bh);
+      //appendnew_next_goBack
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_7Jo0khI8yAg8QmRF');
     }
   }
   //appendnew_flow_get_estimateComponent_start
@@ -340,6 +356,20 @@ export class get_estimateComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_RCb1yTSfRb9R7cpq');
+    }
+  }
+
+  async sd_XGIT0VnKgNJ2XrTB(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.backBtn();
+
+      //appendnew_next_sd_XGIT0VnKgNJ2XrTB
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_XGIT0VnKgNJ2XrTB');
     }
   }
 

@@ -3735,7 +3735,7 @@
                                                 },
                                                 {
                                                     "_key": "[required]",
-                                                    "_value": "false",
+                                                    "_value": "true",
                                                     "_type": "kv",
                                                     "_attrDef": "p"
                                                 },
@@ -6126,7 +6126,7 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "Total(from June 2023)",
+                                            "_value": "Total(from {{page.month | date: \"MMM, y\"}})",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }
@@ -6624,7 +6624,7 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "June 2024",
+                                            "_value": "{{page.month | date: \"MMM, y\"}}",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }

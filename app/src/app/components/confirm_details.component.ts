@@ -7,7 +7,6 @@ import { Component, Injector } from '@angular/core'; //_splitter_
 import { FormBuilder } from '@angular/forms'; //_splitter_
 import { MatDialogRef } from '@angular/material/dialog'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
-import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -105,7 +104,7 @@ export class confirm_detailsComponent {
 
   sd_USJylmvw0CCxAS13(bh) {
     try {
-      this.page.user = JSON.parse(sessionStorage.getItem('accNo'));
+      this.page.user = JSON.parse(localStorage.getItem('accNo'));
       bh = this.sd_CmrvEz1ZrxqdN3Wa(bh);
       //appendnew_next_sd_USJylmvw0CCxAS13
       return bh;
@@ -238,7 +237,7 @@ export class confirm_detailsComponent {
           undefined
         )
       ) {
-        bh = this.sd_TUjIgZny1n5HwI5b(bh);
+        bh = this.sd_IUNY1I7G4aG6E424(bh);
       } else {
       }
 
@@ -248,101 +247,14 @@ export class confirm_detailsComponent {
     }
   }
 
-  sd_TUjIgZny1n5HwI5b(bh) {
+  sd_IUNY1I7G4aG6E424(bh) {
     try {
       const page = this.page;
-      bh.update_url = page.ssdURL + 'update';
-
-      bh.update_body = {
-        email: page.user.email,
-        registered: 'false',
-      };
-      bh = this.sd_OUH2CP7Qa8JQabIn(bh);
-      //appendnew_next_sd_TUjIgZny1n5HwI5b
+      console.log('Logging In', page.result);
+      //appendnew_next_sd_IUNY1I7G4aG6E424
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_TUjIgZny1n5HwI5b');
-    }
-  }
-
-  async sd_OUH2CP7Qa8JQabIn(bh) {
-    try {
-      let requestOptions = {
-        url: bh.update_url,
-        method: 'put',
-        responseType: 'json',
-        headers: {},
-        params: {},
-        body: bh.update_body,
-      };
-      this.page.results = await this.sdService.nHttpRequest(requestOptions);
-      bh = this.sd_A2bsn0LunRVWHSme(bh);
-      //appendnew_next_sd_OUH2CP7Qa8JQabIn
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_OUH2CP7Qa8JQabIn');
-    }
-  }
-
-  sd_A2bsn0LunRVWHSme(bh) {
-    try {
-      const page = this.page;
-      bh.migrate_url = 'https://37bd-169-239-176-9.ngrok-free.app/api/register';
-      bh = this.sd_NkHzkqPb5YFD7Qix(bh);
-      //appendnew_next_sd_A2bsn0LunRVWHSme
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_A2bsn0LunRVWHSme');
-    }
-  }
-
-  async sd_NkHzkqPb5YFD7Qix(bh) {
-    try {
-      let requestOptions = {
-        url: bh.migrate_url,
-        method: 'put',
-        responseType: 'json',
-        headers: {},
-        params: {},
-        body: this.page.user,
-      };
-      this.page.results_migrate = await this.sdService.nHttpRequest(
-        requestOptions
-      );
-      bh = this.sd_JxIcDxVAPSxeQApy(bh);
-      //appendnew_next_sd_NkHzkqPb5YFD7Qix
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_NkHzkqPb5YFD7Qix');
-    }
-  }
-
-  sd_JxIcDxVAPSxeQApy(bh) {
-    try {
-      const _dialogRef = this.__page_injector__.get(MatDialogRef);
-      _dialogRef.close(bh.system);
-
-      bh = this.sd_gWfYb1rOgCkLWvoI(bh);
-      //appendnew_next_sd_JxIcDxVAPSxeQApy
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_JxIcDxVAPSxeQApy');
-    }
-  }
-
-  async sd_gWfYb1rOgCkLWvoI(bh) {
-    try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/ft-landing');
-      await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
-      //appendnew_next_sd_gWfYb1rOgCkLWvoI
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_gWfYb1rOgCkLWvoI');
+      return this.errorHandler(bh, e, 'sd_IUNY1I7G4aG6E424');
     }
   }
 

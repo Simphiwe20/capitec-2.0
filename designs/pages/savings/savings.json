@@ -89,6 +89,13 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "moneyIn",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_NcxYGB4Zjw58EuAK",
@@ -319,7 +326,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.payedBen)\n\nconsole.log(bh.payedAirtime)\n\nlet trans = {amount: 0, transDate: '', moneyType: '', transType: '', belongsTo: '', statement: ''}\n\nlet approvedLoans = []\n\nbh.loans.forEach((loan, indx) => {\n    if(loan.status == 'approved') {\n        trans.amount = loan.amount\n        trans.transDate = loan.date\n        trans.transType = `${loan.reason} Credit`\n        trans.moneyType = 'moneyIn'\n        trans.belongsTo = loan.accountNumber,\n        trans.statement = 'Capitec Credit'\n\n        console.log(`Loans ${indx}`, trans)\n\n        // return loan\n        approvedLoans.push(trans)\n\n    }   \n\n    }\n)\n\nconsole.log('Approved Loans: ', approvedLoans)\nconsole.log('All Loans: ', bh.loans)\n\n\npage.trans = bh.payedBen.concat(bh.payedAirtime)\npage.trans = page.trans.concat(bh.transfers)\npage.trans = page.trans.concat(bh.payedElec)\npage.trans = page.trans.concat(bh.scanned)\npage.trans = approvedLoans?.length ? page.trans.concat(approvedLoans) : ''\nconsole.log('Before sort', page.trans)\n\npage.trans = page.trans.filter(trans => trans.belongsTo === page.user.accountNumber)\npage.moneyOut = page.trans.filter(trans => trans.moneyType === \"moneyOut\")\npage.trans.reverse()\nconsole.log('after sort', page.trans)\n\npage.trans.map((trans: any) => {\n    if(new Date(trans.transDate).getDate() == new Date().getDate() - 1){\n        trans.day = 'Yesterday'\n    }else if(new Date(trans.transDate).getDate() == new Date().getDate()) {\n        trans.day = 'Today'\n    }else {\n        trans.day = new Date(trans.transDate).toDateString()\n        page.dtype = typeof trans.day\n        \n    } \n}\n)\n\nconsole.log('Date type: ', page.dtype)\n\nconsole.log(page.trans)\nconsole.log(bh.transfers)\nconsole.log(bh.payedElec)\nconsole.log(bh.scanned)",
+        "script": "console.log(bh.payedBen)\n\nconsole.log(bh.payedAirtime)\n\nlet trans = { amount: 0, transDate: '', moneyType: '', transType: '', belongsTo: '', statement: '' }\n\nlet approvedLoans = []\n\nbh.loans.forEach((loan, indx) => {\n    if (loan.status == 'approved') {\n        trans.amount = loan.amount\n        trans.transDate = loan.date\n        trans.transType = `${loan.reason} Credit`\n        trans.moneyType = 'moneyIn'\n        trans.belongsTo = loan.accountNumber,\n            trans.statement = 'Capitec Credit'\n\n        console.log(`Loans ${indx}`, trans)\n\n        // return loan\n    }\n        approvedLoans.push(trans)\n\n    })\n\nconsole.log('Approved Loans: ', approvedLoans)\nconsole.log('All Loans: ', bh.loans)\n\n\npage.trans = bh.payedBen.concat(bh.payedAirtime)\npage.trans = page.trans.concat(bh.transfers)\npage.trans = page.trans.concat(bh.payedElec)\npage.trans = page.trans.concat(bh.scanned)\n\nif (approvedLoans?.length) {\n    page.trans = page.trans.concat(approvedLoans)\n}\nconsole.log('Before sort', page.trans)\n\npage.trans = page.trans.filter(trans => trans.belongsTo === page.user.accountNumber)\npage.moneyOut = page.trans.filter(trans => trans.moneyType === \"moneyOut\")\npage.moneyIn = page.trans.filter(trans => trans.moneyType === \"moneyIn\")\npage.trans.reverse()\nconsole.log('after sort', page.trans)\n\npage.trans.map((trans: any) => {\n    if (new Date(trans.transDate).getDate() == new Date().getDate() - 1) {\n        trans.day = 'Yesterday'\n    } else if (new Date(trans.transDate).getDate() == new Date().getDate()) {\n        trans.day = 'Today'\n    } else {\n        trans.day = new Date(trans.transDate).toDateString()\n        page.dtype = typeof trans.day\n\n    }\n}\n)\n\nconsole.log('Date type: ', page.dtype)\n\nconsole.log(page.trans)\nconsole.log(bh.transfers)\nconsole.log(bh.payedElec)\nconsole.log(bh.scanned)",
         "functionName": "sd_rftktp2UPREHp7RO",
         "category": "Function",
         "x": 1485,

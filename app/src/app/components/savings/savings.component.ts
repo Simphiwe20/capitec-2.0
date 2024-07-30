@@ -67,6 +67,7 @@ export class savingsComponent {
       this.page.trans = undefined;
       this.page.dtype = undefined;
       this.page.month = undefined;
+      this.page.moneyIn = undefined;
       bh = this.sd_dfCpMXjWPojUorhH(bh);
       //appendnew_next_sd_NcxYGB4Zjw58EuAK
       return bh;
@@ -299,8 +300,8 @@ export class savingsComponent {
           console.log(`Loans ${indx}`, trans);
 
           // return loan
-          approvedLoans.push(trans);
         }
+        approvedLoans.push(trans);
       });
 
       console.log('Approved Loans: ', approvedLoans);
@@ -310,9 +311,10 @@ export class savingsComponent {
       page.trans = page.trans.concat(bh.transfers);
       page.trans = page.trans.concat(bh.payedElec);
       page.trans = page.trans.concat(bh.scanned);
-      page.trans = approvedLoans?.length
-        ? page.trans.concat(approvedLoans)
-        : '';
+
+      if (approvedLoans?.length) {
+        page.trans = page.trans.concat(approvedLoans);
+      }
       console.log('Before sort', page.trans);
 
       page.trans = page.trans.filter(
@@ -320,6 +322,9 @@ export class savingsComponent {
       );
       page.moneyOut = page.trans.filter(
         (trans) => trans.moneyType === 'moneyOut'
+      );
+      page.moneyIn = page.trans.filter(
+        (trans) => trans.moneyType === 'moneyIn'
       );
       page.trans.reverse();
       console.log('after sort', page.trans);

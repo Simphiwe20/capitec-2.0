@@ -134,7 +134,6 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "614a3f54-0b6d-98bd-c55e-2eef4d531a62",
                 "isAdvancedComponent": true,
-                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -322,7 +321,6 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "c008abbc-1866-79e7-be33-6a2a41b77f3b",
                     "isAdvancedChildComponent": true,
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -2272,6 +2270,12 @@
                                 "_value": "this.value = this.value.replace(/[^\\d]/g, '')",
                                 "_type": "kv",
                                 "_attrDef": "c"
+                            },
+                            {
+                                "_key": "[pattern]",
+                                "_value": "page.idPattern",
+                                "_type": "kv",
+                                "_attrDef": "c"
                             }
                         ]
                     },
@@ -2486,7 +2490,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['idNum']?.touched) && form.controls['idNum']?.errors?.required || page.clientDetails.idNum\">You must be 16 years or older</span>\r\n<!-- <span *ngIf=\"!(page.submitted || form.controls['idNum']?.touched) && form.controls['idNum']?.errors?.expectedLength || page.clientDetails.idNum\">Enter a valid email</span> -->\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['idNum']?.touched) && form.controls['idNum']?.errors?.required\">Required field</span>\r\n",
+                                    "_value": "<span *ngIf=\"!(page.submitted || form.controls['idNum']?.touched) || !(form.controls['idNum']?.errors?.required ||  form.controls['idNum']?.errors?.pattern)\">You must be 16 years or older</span>\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['idNum']?.touched) && (form.controls['idNum']?.errors?.pattern && !form.controls['idNum']?.errors?.required) && (form.controls['idNum']?.errors?.pattern || !form.controls['idNum']?.errors?.required)\">Enter a valid ID number</span>\r\n<!-- <span *ngIf=\"!(page.submitted || form.controls['idNum']?.touched) && form.controls['idNum']?.errors?.expectedLength || page.clientDetails.idNum\">Enter a valid email</span> -->\r\n<span class=\"color-red\" *ngIf=\"(page.submitted || form.controls['idNum']?.touched) && form.controls['idNum']?.errors?.required\">Required field</span>\r\n",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }

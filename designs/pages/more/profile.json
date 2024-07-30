@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_3WzYqbHoWlM3vM6c",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 85,
+        "y": 40,
         "wires": [
             [
                 "sd_CMSPRayg7WVF41UY"
@@ -51,11 +51,11 @@
         ],
         "functionName": "sd_miLhLSpqaBKVhWTQ",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 305,
+        "y": 40,
         "wires": [
             [
-                "sd_4vpePHhvR7aTiAzd"
+                "sd_3fhpvL4lsEGGV5Iv"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -70,10 +70,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "  page.profile =\n  [{icon:'my-detail-icon.png',text:'My details' , link:'/my-details'},\n  {icon:'email-update-icon.png',text:'My email address' , link:'/email'},\n  {icon:'tax-icon.png',text:'My tax details' , link:'/my-tax-details'},\n  {icon:'agreement-icon.png',text:'My agreement & disclamers'},\n  {icon:'privacy-icon.png',text:'Our Primary Center' , link:'/policy'}]\n  ",
+        "script": "  page.user = page.users.find(user => user.email == page.user.email)\n  \n  page.profile =\n  [{icon:'my-detail-icon.png',text:'My details' , link:'/my-details'},\n  {icon:'email-update-icon.png',text:'My email address' , link:'/email', verified: page.user.isEmailVerified},\n  {icon:'tax-icon.png',text:'My tax details' , link:'/my-tax-details'},\n  {icon:'agreement-icon.png',text:'My agreement & disclamers'},\n  {icon:'privacy-icon.png',text:'Our Primary Center' , link:'/policy'}]\n\n  console.log(page.profile)\n  ",
         "functionName": "sd_4vpePHhvR7aTiAzd",
         "category": "Function",
-        "x": 280,
+        "x": 625,
         "y": 40,
         "wires": [
             []
@@ -155,11 +155,98 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_CMSPRayg7WVF41UY",
         "category": "Function",
-        "x": 105,
-        "y": 20,
+        "x": 185,
+        "y": 40,
         "wires": [
             [
                 "sd_miLhLSpqaBKVhWTQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3fhpvL4lsEGGV5Iv",
+        "type": "PageCallService",
+        "z": "sd_1bjnt0Qwkqh0MImb",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_54PzYAXeeWhXZO4M",
+            "type": "tab",
+            "createdDate": "2024-05-27T20:36:06.680Z",
+            "label": "api_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_GHNnLx5QMLnF7xNy",
+            "flowName": "getCustomers"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "customers",
+                "valueType": "this.page",
+                "value": "users",
+                "mapVarName": "customers",
+                "localVar": "this.page.users"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/api_service",
+        "startName": "getCustomers",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_3fhpvL4lsEGGV5Iv",
+        "category": "General",
+        "x": 400,
+        "y": 40,
+        "wires": [
+            [
+                "sd_UXwxztSZRFzDjoqT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UXwxztSZRFzDjoqT",
+        "type": "Storage",
+        "z": "sd_1bjnt0Qwkqh0MImb",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "accNo"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_UXwxztSZRFzDjoqT",
+        "category": "Storage",
+        "x": 500,
+        "y": 40,
+        "wires": [
+            [
+                "sd_4vpePHhvR7aTiAzd"
             ]
         ],
         "__n_excludedFromValidation__": {},

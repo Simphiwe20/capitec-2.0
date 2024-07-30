@@ -265,9 +265,7 @@ export class enter_remote_pinComponent {
         this.sdService.getPathAndQParamsObj('/logged_in_landing/home');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       //appendnew_next_sd_SlCBuWhheXfzmxWs
       return bh;
     } catch (e) {
@@ -412,8 +410,7 @@ export class enter_remote_pinComponent {
 
   sd_c3GBqx3yPYjonxzO(bh) {
     try {
-      const page = this.page;
-      page.showLoader = true;
+      const page = this.page; // page.showLoader = true
       bh = this.sd_FldfSXF1A1WlNleN(bh);
       //appendnew_next_sd_c3GBqx3yPYjonxzO
       return bh;

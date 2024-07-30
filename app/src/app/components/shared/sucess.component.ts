@@ -70,6 +70,21 @@ export class sucessComponent {
       return this.errorHandler(bh, e, 'sd_ja1ZqA8GhkW0ERUq');
     }
   }
+
+  login(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_eDlhOtNgKUsQIu7c(bh);
+      //appendnew_next_login
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_axYQxJ4RGvcbOjb3');
+    }
+  }
   //appendnew_flow_sucessComponent_start
 
   sd_HEPNtgrh9aBFkLzS(bh) {
@@ -105,6 +120,9 @@ export class sucessComponent {
           ? page.routeData.routeData
           : page.routeData.data
       );
+
+      console.log('Route data: ', page.routeData);
+
       if (page.routeData._type === 'payment') {
         page.feedback = `Payment to ${ben.benName} was sucessfully`;
         page.isPayment = true;
@@ -115,6 +133,8 @@ export class sucessComponent {
       } else if (page.routeData._type === 'loan') {
         page.feedback = `${ben.reason} loan application of R${ben.amount} was sent`;
         console.log(page.feedback);
+      } else if (page.routeData._type == 'forgot_pin') {
+        page.feedback = 'Your pin has been sucessfuly updated';
       } else {
         page.feedback = ` ${ben.benName} has been added to your benefeciaries`;
       }
@@ -154,6 +174,30 @@ export class sucessComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_UPGqBtmDeeo9VSH1');
+    }
+  }
+
+  sd_eDlhOtNgKUsQIu7c(bh) {
+    try {
+      this.page.router = this.__page_injector__.get(Router);
+      bh = this.sd_i63OY4aSc438N6sU(bh);
+      //appendnew_next_sd_eDlhOtNgKUsQIu7c
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_eDlhOtNgKUsQIu7c');
+    }
+  }
+
+  sd_i63OY4aSc438N6sU(bh) {
+    try {
+      const page = this.page;
+      bh.route = '/enter_remote_pin';
+
+      page.router.navigate(['/enter_remote_pin']);
+      //appendnew_next_sd_i63OY4aSc438N6sU
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_i63OY4aSc438N6sU');
     }
   }
 

@@ -8,6 +8,7 @@ import { Component, Injector } from '@angular/core'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
+import { api_service } from 'app/sd-services/api_service'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -86,7 +87,7 @@ export class profileComponent {
   sd_miLhLSpqaBKVhWTQ(bh) {
     try {
       this.page.location = undefined;
-      bh = this.sd_4vpePHhvR7aTiAzd(bh);
+      bh = this.sd_3fhpvL4lsEGGV5Iv(bh);
       //appendnew_next_sd_miLhLSpqaBKVhWTQ
       return bh;
     } catch (e) {
@@ -94,15 +95,45 @@ export class profileComponent {
     }
   }
 
+  async sd_3fhpvL4lsEGGV5Iv(bh) {
+    try {
+      const api_serviceInstance: api_service =
+        this.__page_injector__.get(api_service);
+
+      let outputVariables = await api_serviceInstance.getCustomers();
+      this.page.users = outputVariables.local.customers;
+
+      bh = this.sd_UXwxztSZRFzDjoqT(bh);
+      //appendnew_next_sd_3fhpvL4lsEGGV5Iv
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3fhpvL4lsEGGV5Iv');
+    }
+  }
+
+  sd_UXwxztSZRFzDjoqT(bh) {
+    try {
+      this.page.user = JSON.parse(localStorage.getItem('accNo'));
+      bh = this.sd_4vpePHhvR7aTiAzd(bh);
+      //appendnew_next_sd_UXwxztSZRFzDjoqT
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_UXwxztSZRFzDjoqT');
+    }
+  }
+
   sd_4vpePHhvR7aTiAzd(bh) {
     try {
       const page = this.page;
+      page.user = page.users.find((user) => user.email == page.user.email);
+
       page.profile = [
         { icon: 'my-detail-icon.png', text: 'My details', link: '/my-details' },
         {
           icon: 'email-update-icon.png',
           text: 'My email address',
           link: '/email',
+          verified: page.user.isEmailVerified,
         },
         {
           icon: 'tax-icon.png',
@@ -116,6 +147,8 @@ export class profileComponent {
           link: '/policy',
         },
       ];
+
+      console.log(page.profile);
 
       //appendnew_next_sd_4vpePHhvR7aTiAzd
       return bh;
